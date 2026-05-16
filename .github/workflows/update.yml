@@ -2,9 +2,9 @@ name: Atualizar Dados da Guild
 
 on:
   schedule:
-    # Roda todo dia às 12:00 UTC (09:00 Brasília)
-    # Para mudar o horário: https://crontab.guru
-    - cron: '0 12 * * *'
+    # Roda a cada hora (minuto 0 de cada hora)
+    # Para mudar: https://crontab.guru
+    - cron: '0 * * * *'
   workflow_dispatch: # Permite rodar manualmente pelo GitHub
 
 permissions:
