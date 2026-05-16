@@ -2,12 +2,14 @@ name: Atualizar Dados da Guild
 
 on:
   schedule:
-    # Roda a cada hora (minuto 0 de cada hora)
     - cron: '0 * * * *'
-  workflow_dispatch: # Permite rodar manualmente
+  workflow_dispatch:
 
 permissions:
   contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   update-guild:
@@ -15,7 +17,7 @@ jobs:
 
     steps:
       - name: Baixar repositório
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
 
       - name: Instalar Python
         uses: actions/setup-python@v5
@@ -25,26 +27,31 @@ jobs:
       - name: Instalar dependências
         run: pip install requests beautifulsoup4
 
+      - name: Salvar HTML bruto do site (diagnóstico)
+        run: |
+          curl -s -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36" \
+            "https://amonot.online/guilds?name=Lowly+People" \
+            -o debug_page.html
+          echo "=== Primeiras 100 linhas do HTML recebido ==="
+          head -n 100 debug_page.html
+
       - name: Rodar scraper
         run: python scraper.py
 
-      - name: Mostrar conteúdo do guild_data.json gerado
+      - name: Mostrar resultado do scraper
         run: |
-          echo "=== guild_data.json ==="
-          cat guild_data.json | python3 -c "
-          import json,sys
-          d=json.load(sys.stdin)
-          print(f'Total de membros: {d[\"total_members\"]}')
+          python3 -c "
+          import json
+          d=json.load(open('guild_data.json'))
+          print(f'Total: {d[\"total_members\"]}')
           print(f'Online: {d[\"online_count\"]}')
           print(f'Atualizado: {d[\"updated_at\"]}')
           "
 
-      - name: Salvar dados atualizados no repositório
+      - name: Salvar arquivos no repositório
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add guild_data.json
-          # Adiciona debug_page.html se existir (ajuda no diagnóstico)
-          git add debug_page.html 2>/dev/null || true
+          git add guild_data.json debug_page.html
           git diff --staged --quiet || git commit -m "🔄 Guild atualizada - $(TZ='America/Sao_Paulo' date '+%d/%m/%Y %H:%M') (Brasília)"
           git push
