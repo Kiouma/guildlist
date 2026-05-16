@@ -15,6 +15,7 @@
       --bg2:         #0f0d08;
       --bg3:         #16130c;
       --bg4:         #1e1a10;
+      --bg5:         #100e08;
       --border:      #2e2815;
       --border-gold: #3d3218;
       --text:        #d4c9a8;
@@ -22,9 +23,12 @@
       --online:      #5dbf6e;
       --offline:     #5a5040;
       --red:         #c95050;
+      --sidebar-w:   260px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
 
     body {
       background: var(--bg);
@@ -32,121 +36,269 @@
       font-family: 'Crimson Pro', Georgia, serif;
       font-size: 17px;
       line-height: 1.5;
-      min-height: 100vh;
+      display: flex;
+      overflow: hidden;
+      height: 100vh;
     }
 
-    /* ─── Background texture ─── */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
       background-image:
-        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,168,76,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,168,76,0.05) 0%, transparent 60%),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 0;
     }
 
-    .wrap {
+    /* ═══════════════════════════════════════
+       SIDEBAR
+    ═══════════════════════════════════════ */
+    #sidebar {
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      width: var(--sidebar-w);
+      background: var(--bg2);
+      border-right: 1px solid var(--border-gold);
+      display: flex;
+      flex-direction: column;
+      z-index: 100;
+      transform: translateX(0);
+      transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+    }
+    #sidebar.collapsed { transform: translateX(calc(-1 * var(--sidebar-w))); }
+
+    .sidebar-logo {
+      padding: 22px 20px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .sidebar-logo svg { flex-shrink: 0; opacity: 0.85; }
+    .sidebar-logo-text { flex: 1; min-width: 0; }
+    .sidebar-logo-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sidebar-logo-sub {
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+    }
+
+    .sidebar-section {
+      padding: 14px 12px 6px;
+      flex-shrink: 0;
+    }
+    .sidebar-section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      padding: 0 8px;
+      margin-bottom: 4px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      color: var(--text-dim);
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      text-decoration: none;
+      user-select: none;
+    }
+    .nav-item:hover { background: var(--bg4); color: var(--text); }
+    .nav-item.active { background: var(--bg4); color: var(--gold-light); border: 1px solid var(--border-gold); }
+    .nav-item .nav-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+    .nav-item.active .nav-icon { opacity: 1; }
+
+    .sidebar-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 8px 12px;
+    }
+
+    .sidebar-footer {
+      padding: 16px 12px;
+      border-top: 1px solid var(--border);
+      margin-top: auto;
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      color: var(--gold-dim);
+      text-align: center;
+    }
+    .sidebar-footer a { color: var(--gold-dim); text-decoration: none; }
+    .sidebar-footer a:hover { color: var(--gold-light); }
+
+    /* ═══════════════════════════════════════
+       TOGGLE BUTTON
+    ═══════════════════════════════════════ */
+    #toggle-btn {
+      position: fixed;
+      top: 16px;
+      left: calc(var(--sidebar-w) + 12px);
+      z-index: 200;
+      width: 36px;
+      height: 36px;
+      background: var(--bg3);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-dim);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: left 0.28s cubic-bezier(0.4,0,0.2,1), color 0.15s, background 0.15s;
+      border-radius: 4px;
+    }
+    #toggle-btn:hover { background: var(--bg4); color: var(--gold-light); }
+    #toggle-btn.closed { left: 12px; }
+    #toggle-btn svg { width: 18px; height: 18px; transition: transform 0.28s; }
+
+    /* ═══════════════════════════════════════
+       OVERLAY (mobile)
+    ═══════════════════════════════════════ */
+    #overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 90;
+    }
+
+    /* ═══════════════════════════════════════
+       MAIN CONTENT
+    ═══════════════════════════════════════ */
+    #main {
+      flex: 1;
+      margin-left: var(--sidebar-w);
+      overflow-y: auto;
+      overflow-x: hidden;
+      transition: margin-left 0.28s cubic-bezier(0.4,0,0.2,1);
       position: relative;
       z-index: 1;
-      max-width: 1100px;
+      height: 100vh;
+    }
+    #main.full { margin-left: 0; }
+
+    .page { display: none; }
+    .page.active { display: block; }
+
+    .content-wrap {
+      max-width: 1060px;
       margin: 0 auto;
-      padding: 0 24px 80px;
+      padding: 64px 32px 80px;
     }
 
-    /* ─── Header ─── */
+    /* ═══════════════════════════════════════
+       HEADER (guild page)
+    ═══════════════════════════════════════ */
     header {
       text-align: center;
-      padding: 56px 0 40px;
+      padding: 40px 0 36px;
       border-bottom: 1px solid var(--border-gold);
+      margin-bottom: 0;
     }
-
-    .guild-emblem {
-      display: inline-block;
-      width: 64px;
-      height: 64px;
-      margin-bottom: 20px;
-      opacity: 0.85;
-    }
-
+    .guild-emblem { display: inline-block; width: 56px; height: 56px; margin-bottom: 16px; opacity: 0.85; }
     h1 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-size: clamp(1.8rem, 4vw, 3rem);
       font-weight: 900;
       letter-spacing: 0.08em;
       color: var(--gold-light);
-      text-shadow: 0 0 40px rgba(201,168,76,0.3), 0 2px 4px rgba(0,0,0,0.8);
+      text-shadow: 0 0 40px rgba(201,168,76,0.25), 0 2px 4px rgba(0,0,0,0.8);
       line-height: 1.1;
     }
-
     .subtitle {
       font-family: 'Cinzel', serif;
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       letter-spacing: 0.25em;
       color: var(--gold-dim);
       text-transform: uppercase;
-      margin-top: 10px;
+      margin-top: 8px;
     }
-
     .divider {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin: 20px auto;
+      margin: 16px auto;
       width: fit-content;
       color: var(--gold-dim);
-      font-size: 0.7rem;
     }
     .divider::before, .divider::after {
       content: '';
       display: block;
-      width: 80px;
+      width: 60px;
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--gold-dim));
     }
     .divider::after { transform: scaleX(-1); }
 
-    /* ─── Meta info ─── */
     .meta-bar {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 32px;
-      padding: 28px 0 0;
+      gap: 28px;
+      padding: 24px 0 0;
     }
-
-    .meta-item {
-      text-align: center;
-    }
+    .meta-item { text-align: center; }
     .meta-label {
       font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       letter-spacing: 0.2em;
       color: var(--gold-dim);
       text-transform: uppercase;
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
     .meta-value {
       font-family: 'Cinzel', serif;
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--gold-light);
     }
 
-    /* ─── Stats cards ─── */
+    /* ═══════════════════════════════════════
+       STATS
+    ═══════════════════════════════════════ */
     .stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin: 40px 0 32px;
+      gap: 14px;
+      margin: 36px 0 28px;
     }
-
     .stat-card {
       background: var(--bg3);
       border: 1px solid var(--border-gold);
-      padding: 20px;
+      padding: 18px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -159,7 +311,7 @@
     }
     .stat-num {
       font-family: 'Cinzel', serif;
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--gold-light);
       display: block;
@@ -167,46 +319,44 @@
     .stat-num.green { color: var(--online); }
     .stat-num.dim   { color: var(--text-dim); }
     .stat-label {
-      font-size: 0.8rem;
-      color: var(--text-dim);
-      letter-spacing: 0.1em;
       font-family: 'Cinzel', serif;
       text-transform: uppercase;
-      font-size: 0.62rem;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
     }
 
-    /* ─── Controls ─── */
+    /* ═══════════════════════════════════════
+       CONTROLS + TABLE
+    ═══════════════════════════════════════ */
     .controls {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 10px;
+      margin-bottom: 20px;
       align-items: center;
     }
-
     .search-box {
       flex: 1;
-      min-width: 200px;
+      min-width: 180px;
       background: var(--bg3);
       border: 1px solid var(--border-gold);
       color: var(--text);
       font-family: 'Crimson Pro', serif;
       font-size: 1rem;
-      padding: 9px 14px;
+      padding: 8px 13px;
       outline: none;
       transition: border-color 0.2s;
     }
     .search-box::placeholder { color: var(--text-dim); }
     .search-box:focus { border-color: var(--gold-dim); }
-
-    .filter-btns { display: flex; gap: 8px; }
-
+    .filter-btns { display: flex; gap: 7px; }
     .btn {
       font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      padding: 9px 16px;
+      padding: 8px 14px;
       background: var(--bg3);
       border: 1px solid var(--border-gold);
       color: var(--text-dim);
@@ -218,30 +368,16 @@
       border-color: var(--gold-dim);
       color: var(--gold-light);
     }
-
-    /* ─── Table ─── */
-    .table-wrap {
-      border: 1px solid var(--border-gold);
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    thead tr {
-      background: var(--bg3);
-      border-bottom: 2px solid var(--border-gold);
-    }
-
+    .table-wrap { border: 1px solid var(--border-gold); overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    thead tr { background: var(--bg3); border-bottom: 2px solid var(--border-gold); }
     th {
       font-family: 'Cinzel', serif;
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--gold-dim);
-      padding: 13px 16px;
+      padding: 12px 14px;
       text-align: left;
       white-space: nowrap;
       cursor: pointer;
@@ -251,45 +387,19 @@
     th:hover { color: var(--gold-light); }
     th .sort-icon { opacity: 0.4; margin-left: 4px; }
     th.sorted .sort-icon { opacity: 1; color: var(--gold-light); }
-
-    tbody tr {
-      border-bottom: 1px solid var(--border);
-      transition: background 0.15s;
-    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
     tbody tr:hover { background: var(--bg3); }
     tbody tr:last-child { border-bottom: none; }
-
-    td {
-      padding: 11px 16px;
-      font-size: 0.95rem;
-      white-space: nowrap;
-    }
-
-    .td-name a {
-      color: var(--gold-light);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.15s;
-    }
+    td { padding: 10px 14px; font-size: 0.92rem; white-space: nowrap; }
+    .td-name a { color: var(--gold-light); text-decoration: none; font-weight: 600; transition: color 0.15s; }
     .td-name a:hover { color: #fff; text-decoration: underline; }
-
-    .td-num {
-      font-family: 'Cinzel', serif;
-      font-size: 0.88rem;
-      color: var(--text);
-    }
-
-    .td-voc {
-      color: var(--text-dim);
-      font-style: italic;
-      font-size: 0.88rem;
-    }
-
+    .td-num { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--text); }
+    .td-voc { color: var(--text-dim); font-style: italic; font-size: 0.85rem; }
     .badge-rank {
       display: inline-block;
       font-family: 'Cinzel', serif;
-      font-size: 0.58rem;
-      letter-spacing: 0.12em;
+      font-size: 0.56rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       padding: 2px 7px;
       border: 1px solid;
@@ -297,284 +407,971 @@
     .badge-rank.leader  { color: var(--gold-light); border-color: var(--gold-dim); background: rgba(201,168,76,0.08); }
     .badge-rank.vice    { color: #c0a860; border-color: #5a4820; background: rgba(192,168,96,0.06); }
     .badge-rank.member  { color: var(--text-dim); border-color: var(--border); background: transparent; }
-
-    .dot {
-      display: inline-block;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      margin-right: 6px;
-      vertical-align: middle;
-    }
+    .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
     .dot.online  { background: var(--online); box-shadow: 0 0 6px var(--online); }
     .dot.offline { background: var(--offline); }
-
     .status-text.online  { color: var(--online); }
     .status-text.offline { color: var(--text-dim); }
-
-    /* ─── Rank group header ─── */
     .rank-header td {
       background: var(--bg2);
       border-top: 1px solid var(--border-gold);
       border-bottom: 1px solid var(--border-gold);
       font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold-dim);
-      padding: 7px 16px;
+      padding: 6px 14px;
     }
+    .empty { text-align: center; padding: 40px; color: var(--text-dim); font-style: italic; }
 
-    /* ─── Empty state ─── */
-    .empty {
-      text-align: center;
-      padding: 48px;
+    /* ═══════════════════════════════════════
+       PAGE TITLES
+    ═══════════════════════════════════════ */
+    .page-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+    .page-desc {
+      font-size: 0.9rem;
       color: var(--text-dim);
-      font-style: italic;
+      margin-bottom: 32px;
+    }
+    .page-divider {
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+      margin-bottom: 32px;
     }
 
-    /* ─── Footer ─── */
-    footer {
+    /* ═══════════════════════════════════════
+       CALCULADORA — compartilhado
+    ═══════════════════════════════════════ */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 700px) { .calc-grid { grid-template-columns: 1fr; } }
+
+    .calc-panel {
+      background: var(--bg3);
+      border: 1px solid var(--border-gold);
+      padding: 24px;
+    }
+    .calc-panel h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .field-row { margin-bottom: 16px; }
+    .field-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .field-input, .field-select {
+      width: 100%;
+      background: var(--bg2);
+      border: 1px solid var(--border-gold);
+      color: var(--text);
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem;
+      padding: 8px 12px;
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .field-input:focus, .field-select:focus { border-color: var(--gold-dim); }
+    .field-select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a6330' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+
+    .result-box {
+      background: var(--bg2);
+      border: 1px solid var(--border-gold);
+      padding: 20px 24px;
+    }
+    .result-box h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 16px;
+    }
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .result-row:last-child { border-bottom: none; }
+    .result-key { color: var(--text-dim); font-size: 0.82rem; }
+    .result-val {
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+    .result-val.big {
+      font-size: 1.3rem;
+      color: var(--gold-light);
+    }
+    .result-val.warn { color: var(--red); }
+    .result-val.ok   { color: var(--online); }
+
+    .rarity-badge {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border: 1px solid;
+      margin-bottom: 16px;
+    }
+    .rarity-common    { color: #a0a0a0; border-color: #404040; }
+    .rarity-uncommon  { color: #6ec96e; border-color: #2d5a2d; }
+    .rarity-rare      { color: #5ab0e8; border-color: #1e4a70; }
+    .rarity-epic      { color: #b06fe8; border-color: #4a2070; }
+    .rarity-legendary { color: #e8a030; border-color: #704010; }
+    .rarity-mythical  { color: #e84040; border-color: #701010; }
+
+    /* ascension bars */
+    .asc-category { margin-bottom: 20px; }
+    .asc-cat-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .asc-attr-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .asc-attr-name {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      width: 120px;
+      flex-shrink: 0;
+    }
+    .asc-attr-input {
+      width: 60px;
+      flex-shrink: 0;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      padding: 4px 8px;
       text-align: center;
-      margin-top: 48px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      font-size: 0.82rem;
+      outline: none;
+    }
+    .asc-attr-input:focus { border-color: var(--gold-dim); }
+    .asc-bar-wrap {
+      flex: 1;
+      height: 6px;
+      background: var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .asc-bar {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 3px;
+      transition: width 0.3s;
+    }
+    .asc-pts-used {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      text-align: right;
+    }
+    .pts-display {
+      text-align: center;
+      padding: 14px;
+      background: var(--bg2);
+      border: 1px solid var(--border-gold);
+      margin-bottom: 20px;
+    }
+    .pts-num {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      display: block;
+    }
+    .pts-num.over { color: var(--red); }
+    .pts-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
       color: var(--text-dim);
     }
-    footer span { color: var(--gold-dim); }
 
-    /* ─── Loading ─── */
+    /* upgrade chance bar */
+    .chance-bar-wrap {
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 6px 0 2px;
+    }
+    .chance-bar {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s, background 0.3s;
+    }
+
+    /* info callout */
+    .info-callout {
+      background: rgba(201,168,76,0.06);
+      border: 1px solid var(--border-gold);
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+    .info-callout strong { color: var(--gold-light); font-weight: 600; }
+
+    /* loading / error */
     #loading {
       text-align: center;
-      padding: 80px 24px;
+      padding: 60px 24px;
       font-family: 'Cinzel', serif;
       letter-spacing: 0.2em;
       color: var(--gold-dim);
       font-size: 0.8rem;
     }
-
     #error-msg {
       display: none;
-      background: rgba(201, 80, 80, 0.1);
+      background: rgba(201,80,80,0.1);
       border: 1px solid #5a2020;
       color: var(--red);
-      padding: 16px 20px;
-      margin: 24px 0;
+      padding: 14px 18px;
+      margin: 20px 0;
       font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       letter-spacing: 0.1em;
     }
 
-    @media (max-width: 600px) {
-      .stats { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-      .stat-num { font-size: 1.6rem; }
-      td, th { padding: 9px 10px; }
-      .controls { flex-direction: column; }
-      .search-box { width: 100%; }
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+    footer span { color: var(--gold-dim); }
+
+    @media (max-width: 700px) {
+      :root { --sidebar-w: 240px; }
+      #sidebar { transform: translateX(calc(-1 * var(--sidebar-w))); }
+      #sidebar.open { transform: translateX(0); }
+      #sidebar.collapsed { transform: translateX(calc(-1 * var(--sidebar-w))); }
+      #main { margin-left: 0 !important; }
+      #toggle-btn { left: 12px !important; }
+      #overlay { display: block; opacity: 0; pointer-events: none; transition: opacity 0.28s; }
+      #overlay.visible { opacity: 1; pointer-events: auto; }
+      .stats { grid-template-columns: repeat(3,1fr); gap: 8px; }
+      .stat-num { font-size: 1.4rem; }
+      td, th { padding: 8px 10px; }
+      .content-wrap { padding: 56px 16px 60px; }
     }
   </style>
 </head>
 <body>
-<div class="wrap">
 
-  <!-- HEADER -->
-  <header>
-    <svg class="guild-emblem" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- ═══ SIDEBAR ═══ -->
+<aside id="sidebar">
+  <div class="sidebar-logo">
+    <svg width="30" height="30" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M32 4 L38 24 L58 24 L42 36 L48 56 L32 44 L16 56 L22 36 L6 24 L26 24 Z" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
       <circle cx="32" cy="32" r="8" fill="none" stroke="#c9a84c" stroke-width="1"/>
       <circle cx="32" cy="32" r="2" fill="#c9a84c"/>
     </svg>
-    <h1>Lowly People</h1>
-    <div class="divider">✦</div>
-    <p class="subtitle">AmonOT &mdash; Painel da Guild</p>
-
-    <div class="meta-bar" id="meta-bar">
-      <div class="meta-item">
-        <span class="meta-label">Líder</span>
-        <span class="meta-value" id="meta-owner">—</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Fundada em</span>
-        <span class="meta-value" id="meta-founded">—</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Atualizado em</span>
-        <span class="meta-value" id="meta-updated">—</span>
-      </div>
-    </div>
-  </header>
-
-  <div id="error-msg">⚠ Não foi possível carregar os dados da guild. Verifique se o guild_data.json foi gerado pelo scraper.</div>
-
-  <!-- STATS -->
-  <div class="stats" id="stats" style="display:none">
-    <div class="stat-card">
-      <span class="stat-num" id="stat-total">0</span>
-      <span class="stat-label">Total de Membros</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-num green" id="stat-online">0</span>
-      <span class="stat-label">Online Agora</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-num dim" id="stat-offline">0</span>
-      <span class="stat-label">Offline</span>
+    <div class="sidebar-logo-text">
+      <div class="sidebar-logo-name">Lowly People</div>
+      <div class="sidebar-logo-sub">AmonOT · Baiak</div>
     </div>
   </div>
 
-  <!-- CONTROLS -->
-  <div class="controls" id="controls" style="display:none">
-    <input class="search-box" type="text" id="search" placeholder="Buscar membro..." oninput="renderTable()" />
-    <div class="filter-btns">
-      <button class="btn active" onclick="setFilter('all', this)">Todos</button>
-      <button class="btn" onclick="setFilter('online', this)">Online</button>
-      <button class="btn" onclick="setFilter('offline', this)">Offline</button>
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">Guild</div>
+    <button class="nav-item active" onclick="navigate('guild')" id="nav-guild">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+      Lista de Membros
+    </button>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-title">Calculadoras</div>
+    <button class="nav-item" onclick="navigate('ascension')" id="nav-ascension">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+      Ascensão
+    </button>
+    <button class="nav-item" onclick="navigate('reroll')" id="nav-reroll">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+      </svg>
+      Reroll de Atributos
+    </button>
+    <button class="nav-item" onclick="navigate('upgrade')" id="nav-upgrade">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"/>
+      </svg>
+      Upgrade de Item
+    </button>
+  </div>
+
+  <div class="sidebar-footer">
+    Dados via <a href="https://amonot.online/guilds?name=Lowly+People" target="_blank">amonot.online</a>
+  </div>
+</aside>
+
+<!-- TOGGLE -->
+<button id="toggle-btn" onclick="toggleSidebar()" aria-label="Abrir/fechar menu">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+
+<!-- OVERLAY mobile -->
+<div id="overlay" onclick="closeSidebarMobile()"></div>
+
+<!-- ═══ MAIN ═══ -->
+<main id="main">
+
+  <!-- ── GUILD PAGE ── -->
+  <div class="page active" id="page-guild">
+    <div class="content-wrap">
+      <header>
+        <svg class="guild-emblem" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 4 L38 24 L58 24 L42 36 L48 56 L32 44 L16 56 L22 36 L6 24 L26 24 Z" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="32" cy="32" r="8" fill="none" stroke="#c9a84c" stroke-width="1"/>
+          <circle cx="32" cy="32" r="2" fill="#c9a84c"/>
+        </svg>
+        <h1>Lowly People</h1>
+        <div class="divider">✦</div>
+        <p class="subtitle">AmonOT &mdash; Painel da Guild</p>
+        <div class="meta-bar">
+          <div class="meta-item">
+            <span class="meta-label">Líder</span>
+            <span class="meta-value" id="meta-owner">—</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Fundada em</span>
+            <span class="meta-value" id="meta-founded">—</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Atualizado em</span>
+            <span class="meta-value" id="meta-updated">—</span>
+          </div>
+        </div>
+      </header>
+
+      <div id="error-msg">⚠ Não foi possível carregar os dados. Verifique se o guild_data.json foi gerado.</div>
+
+      <div class="stats" id="stats" style="display:none">
+        <div class="stat-card">
+          <span class="stat-num" id="stat-total">0</span>
+          <span class="stat-label">Total de Membros</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num green" id="stat-online">0</span>
+          <span class="stat-label">Online Agora</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num dim" id="stat-offline">0</span>
+          <span class="stat-label">Offline</span>
+        </div>
+      </div>
+
+      <div class="controls" id="controls" style="display:none">
+        <input class="search-box" type="text" id="search" placeholder="Buscar membro..." oninput="renderTable()" />
+        <div class="filter-btns">
+          <button class="btn active" onclick="setFilter('all', this)">Todos</button>
+          <button class="btn" onclick="setFilter('online', this)">Online</button>
+          <button class="btn" onclick="setFilter('offline', this)">Offline</button>
+        </div>
+      </div>
+
+      <div id="loading">Carregando dados da guild...</div>
+      <div class="table-wrap" id="table-wrap" style="display:none">
+        <table>
+          <thead>
+            <tr>
+              <th onclick="sortBy('rank')" id="th-rank">Cargo <span class="sort-icon">↕</span></th>
+              <th onclick="sortBy('name')" id="th-name">Nome <span class="sort-icon">↕</span></th>
+              <th onclick="sortBy('level')" id="th-level">Level <span class="sort-icon">↕</span></th>
+              <th onclick="sortBy('resets')" id="th-resets">Resets <span class="sort-icon">↕</span></th>
+              <th onclick="sortBy('vocation')" id="th-vocation">Vocação <span class="sort-icon">↕</span></th>
+              <th onclick="sortBy('status')" id="th-status">Status <span class="sort-icon">↕</span></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+
+      <footer>
+        Dados extraídos de <span>amonot.online</span> • Atualizado automaticamente a cada hora
+      </footer>
     </div>
   </div>
 
-  <!-- TABLE -->
-  <div id="loading">Carregando dados da guild...</div>
-  <div class="table-wrap" id="table-wrap" style="display:none">
-    <table>
-      <thead>
-        <tr>
-          <th onclick="sortBy('rank')" id="th-rank">Cargo <span class="sort-icon">↕</span></th>
-          <th onclick="sortBy('name')" id="th-name">Nome <span class="sort-icon">↕</span></th>
-          <th onclick="sortBy('level')" id="th-level">Level <span class="sort-icon">↕</span></th>
-          <th onclick="sortBy('resets')" id="th-resets">Resets <span class="sort-icon">↕</span></th>
-          <th onclick="sortBy('vocation')" id="th-vocation">Vocação <span class="sort-icon">↕</span></th>
-          <th onclick="sortBy('status')" id="th-status">Status <span class="sort-icon">↕</span></th>
-        </tr>
-      </thead>
-      <tbody id="tbody"></tbody>
-    </table>
+  <!-- ── ASCENSÃO ── -->
+  <div class="page" id="page-ascension">
+    <div class="content-wrap">
+      <div class="page-title">Calculadora de Ascensão</div>
+      <div class="page-desc">Distribua seus pontos de ascensão entre os atributos. Cada reset concede 25 pontos permanentes.</div>
+      <div class="page-divider"></div>
+
+      <div class="info-callout">
+        <strong>Como funciona:</strong> Informe seus resets e distribua os pontos pelas 4 categorias abaixo. Os pontos não se perdem no reset — ficam permanentemente disponíveis.
+      </div>
+
+      <div class="calc-grid" style="margin-bottom:20px">
+        <div class="calc-panel">
+          <h3>Pontos Disponíveis</h3>
+          <div class="field-row">
+            <label class="field-label">Número de Resets</label>
+            <input class="field-input" type="number" id="asc-resets" min="0" max="9999" value="0" oninput="ascUpdate()">
+          </div>
+          <div class="pts-display">
+            <span class="pts-num" id="asc-pts-avail">0</span>
+            <span class="pts-label">Pontos Disponíveis</span>
+          </div>
+          <div class="pts-display" style="border-color:var(--border)">
+            <span class="pts-num" id="asc-pts-remain" style="font-size:1.4rem">0</span>
+            <span class="pts-label">Pontos Restantes</span>
+          </div>
+        </div>
+        <div class="result-box" style="border-color:var(--border)">
+          <h3>Resumo dos Bônus</h3>
+          <div id="asc-summary"></div>
+        </div>
+      </div>
+
+      <div id="asc-categories"></div>
+    </div>
   </div>
 
-  <footer>
-    Dados extraídos de <span>amonot.online</span> • Atualizado automaticamente todo dia às 09h (Brasília)
-  </footer>
-</div>
+  <!-- ── REROLL ── -->
+  <div class="page" id="page-reroll">
+    <div class="content-wrap">
+      <div class="page-title">Calculadora de Reroll</div>
+      <div class="page-desc">Calcule o custo de rerollar os atributos de um item com base na raridade e nos slots travados.</div>
+      <div class="page-divider"></div>
+
+      <div class="calc-grid">
+        <div class="calc-panel">
+          <h3>Configuração do Item</h3>
+          <div class="field-row">
+            <label class="field-label">Raridade do Item</label>
+            <select class="field-select" id="rr-rarity" onchange="rerollUpdate()">
+              <option value="1">Uncommon — 1 atributo</option>
+              <option value="2">Rare — 2 atributos</option>
+              <option value="3" selected>Epic — 3 atributos</option>
+              <option value="4">Legendary — 4 atributos</option>
+              <option value="5">Mythical — 5 atributos</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label class="field-label">Slots Travados (lock)</label>
+            <select class="field-select" id="rr-locks" onchange="rerollUpdate()">
+              <option value="0">0 slots travados</option>
+              <option value="1">1 slot travado</option>
+              <option value="2">2 slots travados</option>
+              <option value="3">3 slots travados</option>
+              <option value="4">4 slots travados</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label class="field-label">Número de Tentativas</label>
+            <input class="field-input" type="number" id="rr-tries" min="1" max="9999" value="1" oninput="rerollUpdate()">
+          </div>
+        </div>
+
+        <div class="result-box">
+          <h3>Resultado</h3>
+          <div id="rr-rarity-badge"></div>
+          <div id="rr-results"></div>
+        </div>
+      </div>
+
+      <div class="info-callout" style="margin-top:20px">
+        <strong>Regra de custo:</strong> Cada slot travado custa <strong>10KK por tentativa</strong>. Atributos não travados são re-rolados aleatoriamente. A raridade do item é preservada no reroll.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── UPGRADE ── -->
+  <div class="page" id="page-upgrade">
+    <div class="content-wrap">
+      <div class="page-title">Calculadora de Upgrade</div>
+      <div class="page-desc">Veja o nível máximo por raridade e a dificuldade de cada upgrade.</div>
+      <div class="page-divider"></div>
+
+      <div class="calc-grid">
+        <div class="calc-panel">
+          <h3>Configuração</h3>
+          <div class="field-row">
+            <label class="field-label">Raridade do Item</label>
+            <select class="field-select" id="up-rarity" onchange="upgradeUpdate()">
+              <option value="0">Common — não upgrada</option>
+              <option value="4">Uncommon — máx +4</option>
+              <option value="6">Rare — máx +6</option>
+              <option value="8" selected>Epic — máx +8</option>
+              <option value="10">Legendary — máx +10</option>
+              <option value="12">Mythical — máx +12</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label class="field-label">Nível de Upgrade Atual</label>
+            <input class="field-input" type="number" id="up-current" min="0" max="12" value="0" oninput="upgradeUpdate()">
+          </div>
+        </div>
+
+        <div class="result-box">
+          <h3>Resultado</h3>
+          <div id="up-results"></div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px">
+        <div class="calc-panel">
+          <h3>Tabela de Chance por Nível</h3>
+          <div id="up-table"></div>
+        </div>
+      </div>
+
+      <div class="info-callout" style="margin-top:20px">
+        <strong>Dica:</strong> Upgrades até +4 têm chances razoáveis. Acima de +8 as chances caem drasticamente. Chegando ao nível máximo, a chance pode ser mínima — prepare recursos suficientes.
+      </div>
+    </div>
+  </div>
+
+</main>
 
 <script>
-  let allMembers = [];
-  let currentFilter = 'all';
-  let currentSort = { key: 'rank', dir: 'asc' };
+// ═══════════════════════════════════════
+// SIDEBAR
+// ═══════════════════════════════════════
+let sidebarOpen = true;
+const isMobile = () => window.innerWidth <= 700;
 
-  const rankOrder = { 'the leader': 0, 'leader': 0, 'vice-leader': 1, 'vice leader': 1, 'member': 2, '': 3 };
+function toggleSidebar() {
+  if (isMobile()) {
+    const open = document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('overlay').classList.toggle('visible', open);
+  } else {
+    sidebarOpen = !sidebarOpen;
+    document.getElementById('sidebar').classList.toggle('collapsed', !sidebarOpen);
+    document.getElementById('main').classList.toggle('full', !sidebarOpen);
+    document.getElementById('toggle-btn').classList.toggle('closed', !sidebarOpen);
+  }
+}
 
-  function getRankOrder(rank) {
-    return rankOrder[(rank || '').toLowerCase()] ?? 3;
+function closeSidebarMobile() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('visible');
+}
+
+function navigate(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.getElementById('nav-' + page).classList.add('active');
+  document.getElementById('main').scrollTop = 0;
+  if (isMobile()) closeSidebarMobile();
+}
+
+// ═══════════════════════════════════════
+// GUILD TABLE
+// ═══════════════════════════════════════
+let allMembers = [];
+let currentFilter = 'all';
+let currentSort = { key: 'rank', dir: 'asc' };
+const rankOrder = { 'the leader': 0, 'leader': 0, 'vice-leader': 1, 'vice leader': 1, 'member': 2, '': 3 };
+
+function getRankOrder(r) { return rankOrder[(r||'').toLowerCase()] ?? 3; }
+
+function setFilter(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btns .btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTable();
+}
+
+function sortBy(key) {
+  if (currentSort.key === key) {
+    currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+  } else {
+    currentSort.key = key;
+    currentSort.dir = key === 'level' || key === 'resets' ? 'desc' : 'asc';
+  }
+  document.querySelectorAll('th').forEach(t => t.classList.remove('sorted'));
+  const el = document.getElementById('th-' + key);
+  if (el) el.classList.add('sorted');
+  renderTable();
+}
+
+function badgeClass(rank) {
+  const r = (rank||'').toLowerCase();
+  if (r.includes('leader') && !r.includes('vice')) return 'leader';
+  if (r.includes('vice')) return 'vice';
+  return 'member';
+}
+
+function renderTable() {
+  const q = document.getElementById('search').value.toLowerCase();
+  let members = allMembers.filter(m => {
+    const ms = !q || m.name.toLowerCase().includes(q) || (m.vocation||'').toLowerCase().includes(q) || (m.rank||'').toLowerCase().includes(q);
+    const mf = currentFilter === 'all' || m.status === currentFilter;
+    return ms && mf;
+  });
+
+  members.sort((a, b) => {
+    let va, vb;
+    const k = currentSort.key;
+    if (k==='rank')    { va=getRankOrder(a.rank);      vb=getRankOrder(b.rank); }
+    else if(k==='name')    { va=a.name.toLowerCase();      vb=b.name.toLowerCase(); }
+    else if(k==='level')   { va=a.level;                   vb=b.level; }
+    else if(k==='resets')  { va=a.resets;                  vb=b.resets; }
+    else if(k==='vocation'){ va=(a.vocation||'').toLowerCase(); vb=(b.vocation||'').toLowerCase(); }
+    else if(k==='status')  { va=a.status;                  vb=b.status; }
+    const cmp = va<vb?-1:va>vb?1:0;
+    return currentSort.dir==='asc'?cmp:-cmp;
+  });
+
+  const tbody = document.getElementById('tbody');
+  if (!members.length) {
+    tbody.innerHTML = '<tr><td colspan="6" class="empty">Nenhum membro encontrado.</td></tr>';
+    return;
   }
 
-  function setFilter(f, btn) {
-    currentFilter = f;
-    document.querySelectorAll('.filter-btns .btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    renderTable();
-  }
-
-  function sortBy(key) {
-    if (currentSort.key === key) {
-      currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
-    } else {
-      currentSort.key = key;
-      currentSort.dir = key === 'level' || key === 'resets' ? 'desc' : 'asc';
+  let html = '', lastRank = null;
+  members.forEach(m => {
+    if (currentSort.key==='rank' && m.rank!==lastRank) {
+      html += `<tr class="rank-header"><td colspan="6">${m.rank||'Membro'}</td></tr>`;
+      lastRank = m.rank;
     }
-    document.querySelectorAll('th').forEach(th => th.classList.remove('sorted'));
-    const el = document.getElementById('th-' + key);
-    if (el) el.classList.add('sorted');
-    renderTable();
+    const url = `https://amonot.online/characters?name=${encodeURIComponent(m.name)}`;
+    html += `<tr>
+      <td><span class="badge-rank ${badgeClass(m.rank)}">${m.rank||'Member'}</span></td>
+      <td class="td-name"><a href="${url}" target="_blank" rel="noopener">${m.name}</a></td>
+      <td class="td-num">${m.level}</td>
+      <td class="td-num">${m.resets}</td>
+      <td class="td-voc">${m.vocation||'—'}</td>
+      <td><span class="dot ${m.status}"></span><span class="status-text ${m.status}">${m.status==='online'?'Online':'Offline'}</span></td>
+    </tr>`;
+  });
+  tbody.innerHTML = html;
+}
+
+async function loadData() {
+  try {
+    const resp = await fetch('guild_data.json?_=' + Date.now());
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    document.getElementById('meta-owner').textContent   = data.owner    || '—';
+    document.getElementById('meta-founded').textContent = data.founded  || '—';
+    document.getElementById('meta-updated').textContent = data.updated_at || '—';
+    document.getElementById('stat-total').textContent   = data.total_members  || 0;
+    document.getElementById('stat-online').textContent  = data.online_count   || 0;
+    document.getElementById('stat-offline').textContent = data.offline_count  || 0;
+    allMembers = data.members || [];
+    document.getElementById('loading').style.display    = 'none';
+    document.getElementById('stats').style.display      = 'grid';
+    document.getElementById('controls').style.display   = 'flex';
+    document.getElementById('table-wrap').style.display = 'block';
+    sortBy('rank');
+  } catch(e) {
+    document.getElementById('loading').style.display    = 'none';
+    document.getElementById('error-msg').style.display  = 'block';
+    console.error(e);
   }
+}
+loadData();
 
-  function badgeClass(rank) {
-    const r = (rank || '').toLowerCase();
-    if (r.includes('leader') && !r.includes('vice')) return 'leader';
-    if (r.includes('vice')) return 'vice';
-    return 'member';
+// ═══════════════════════════════════════
+// CALCULADORA — ASCENSÃO
+// ═══════════════════════════════════════
+const ASC_CATEGORIES = [
+  {
+    id: 'attack', name: 'Attack',
+    attrs: [
+      { id:'base_atk',  name: 'Base Attack' },
+      { id:'physical',  name: 'Physical' },
+      { id:'ice',       name: 'Ice' },
+      { id:'fire',      name: 'Fire' },
+      { id:'poison',    name: 'Poison' },
+      { id:'energy',    name: 'Energy' },
+      { id:'holy',      name: 'Holy' },
+      { id:'death',     name: 'Death' },
+      { id:'fatal',     name: 'Fatal' },
+      { id:'avatar',    name: 'Avatar' },
+    ]
+  },
+  {
+    id: 'defense', name: 'Defense',
+    attrs: [
+      { id:'base_def',  name: 'Base Defense' },
+      { id:'def_phys',  name: 'Physical' },
+      { id:'def_ice',   name: 'Ice' },
+      { id:'def_fire',  name: 'Fire' },
+      { id:'def_poison',name: 'Poison' },
+      { id:'def_energy',name: 'Energy' },
+      { id:'def_holy',  name: 'Holy' },
+      { id:'def_death', name: 'Death' },
+    ]
+  },
+  {
+    id: 'agility', name: 'Agility',
+    attrs: [
+      { id:'base_agi',  name: 'Base Agility' },
+      { id:'move_spd',  name: 'Move Speed' },
+      { id:'atk_spd',   name: 'Attack Speed' },
+      { id:'dodge',     name: 'Dodge' },
+    ]
+  },
+  {
+    id: 'mastery', name: 'Mastery',
+    attrs: [
+      { id:'momentum',  name: 'Momentum' },
+      { id:'stamina',   name: 'Stamina' },
+      { id:'exercise',  name: 'Exercise' },
+    ]
   }
+];
 
-  function renderTable() {
-    const q = document.getElementById('search').value.toLowerCase();
-    let members = allMembers.filter(m => {
-      const matchSearch = !q || m.name.toLowerCase().includes(q) || (m.vocation || '').toLowerCase().includes(q) || (m.rank || '').toLowerCase().includes(q);
-      const matchFilter = currentFilter === 'all' || m.status === currentFilter;
-      return matchSearch && matchFilter;
-    });
+function buildAscensionUI() {
+  const container = document.getElementById('asc-categories');
+  container.innerHTML = '';
 
-    members.sort((a, b) => {
-      let va, vb;
-      const k = currentSort.key;
-      if (k === 'rank')    { va = getRankOrder(a.rank);   vb = getRankOrder(b.rank); }
-      else if (k === 'name')    { va = a.name.toLowerCase();  vb = b.name.toLowerCase(); }
-      else if (k === 'level')   { va = a.level;               vb = b.level; }
-      else if (k === 'resets')  { va = a.resets;              vb = b.resets; }
-      else if (k === 'vocation'){ va = (a.vocation||'').toLowerCase(); vb = (b.vocation||'').toLowerCase(); }
-      else if (k === 'status')  { va = a.status;              vb = b.status; }
-      const cmp = va < vb ? -1 : va > vb ? 1 : 0;
-      return currentSort.dir === 'asc' ? cmp : -cmp;
-    });
+  ASC_CATEGORIES.forEach(cat => {
+    const div = document.createElement('div');
+    div.className = 'asc-category';
+    div.innerHTML = `<div class="asc-cat-title">${cat.name}</div>` +
+      cat.attrs.map(attr => `
+        <div class="asc-attr-row">
+          <span class="asc-attr-name">${attr.name}</span>
+          <input class="asc-attr-input" type="number" min="0" max="9999"
+            id="asc-${attr.id}" value="0" oninput="ascUpdate()">
+          <div class="asc-bar-wrap">
+            <div class="asc-bar" id="bar-${attr.id}" style="width:0%"></div>
+          </div>
+          <span class="asc-pts-used" id="pts-${attr.id}" style="min-width:32px;font-size:0.7rem">0</span>
+        </div>`).join('');
+    container.appendChild(div);
+  });
+}
 
-    const tbody = document.getElementById('tbody');
-    if (members.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="6" class="empty">Nenhum membro encontrado.</td></tr>';
-      return;
+function ascUpdate() {
+  const resets = parseInt(document.getElementById('asc-resets').value) || 0;
+  const total  = resets * 25;
+  document.getElementById('asc-pts-avail').textContent = total;
+
+  let used = 0;
+  const allAttrs = ASC_CATEGORIES.flatMap(c => c.attrs);
+  allAttrs.forEach(attr => {
+    const v = parseInt(document.getElementById('asc-'+attr.id)?.value) || 0;
+    used += v;
+    const pct = total > 0 ? Math.min(100, Math.round(v/total*100)) : 0;
+    const bar = document.getElementById('bar-'+attr.id);
+    if (bar) { bar.style.width = pct + '%'; bar.style.background = pct >= 90 ? '#c95050' : '#c9a84c'; }
+    const pts = document.getElementById('pts-'+attr.id);
+    if (pts) pts.textContent = v;
+  });
+
+  const remain = total - used;
+  const el = document.getElementById('asc-pts-remain');
+  el.textContent = remain;
+  el.className = 'pts-num' + (remain < 0 ? ' over' : '');
+
+  // summary
+  let summaryHtml = '';
+  ASC_CATEGORIES.forEach(cat => {
+    const catTotal = cat.attrs.reduce((s, a) => s + (parseInt(document.getElementById('asc-'+a.id)?.value)||0), 0);
+    if (catTotal > 0) {
+      summaryHtml += `<div class="result-row">
+        <span class="result-key">${cat.name}</span>
+        <span class="result-val">${catTotal} pts</span>
+      </div>`;
     }
+  });
+  if (!summaryHtml) summaryHtml = '<div class="result-row"><span class="result-key" style="font-style:italic">Distribua pontos para ver o resumo</span></div>';
+  summaryHtml += `<div class="result-row" style="margin-top:8px;border-top:1px solid var(--border-gold);padding-top:10px">
+    <span class="result-key">Total usado</span>
+    <span class="result-val ${used > total ? 'warn' : 'ok'}">${used} / ${total}</span>
+  </div>`;
+  document.getElementById('asc-summary').innerHTML = summaryHtml;
+}
 
-    let html = '';
-    let lastRank = null;
+buildAscensionUI();
+ascUpdate();
 
-    members.forEach(m => {
-      if (currentSort.key === 'rank' && m.rank !== lastRank) {
-        const label = m.rank || 'Membro';
-        html += `<tr class="rank-header"><td colspan="6">${label}</td></tr>`;
-        lastRank = m.rank;
-      }
-      const profileUrl = `https://amonot.online/characters?name=${encodeURIComponent(m.name)}`;
-      html += `
-        <tr>
-          <td><span class="badge-rank ${badgeClass(m.rank)}">${m.rank || 'Member'}</span></td>
-          <td class="td-name"><a href="${profileUrl}" target="_blank" rel="noopener">${m.name}</a></td>
-          <td class="td-num">${m.level}</td>
-          <td class="td-num">${m.resets}</td>
-          <td class="td-voc">${m.vocation || '—'}</td>
-          <td><span class="dot ${m.status}"></span><span class="status-text ${m.status}">${m.status === 'online' ? 'Online' : 'Offline'}</span></td>
-        </tr>`;
-    });
+// ═══════════════════════════════════════
+// CALCULADORA — REROLL
+// ═══════════════════════════════════════
+const RARITY_NAMES = { 1:'Uncommon', 2:'Rare', 3:'Epic', 4:'Legendary', 5:'Mythical' };
+const RARITY_CLASSES = { 1:'uncommon', 2:'rare', 3:'epic', 4:'legendary', 5:'mythical' };
 
-    tbody.innerHTML = html;
+function rerollUpdate() {
+  const rarity = parseInt(document.getElementById('rr-rarity').value);
+  const maxLock = rarity - 1;
+  const lockSel = document.getElementById('rr-locks');
+  // atualiza opções de lock
+  lockSel.innerHTML = '';
+  for (let i = 0; i <= maxLock; i++) {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = i === 0 ? '0 slots travados' : `${i} slot${i>1?'s':''} travado${i>1?'s':''}`;
+    lockSel.appendChild(opt);
   }
 
-  async function loadData() {
-    try {
-      const resp = await fetch('guild_data.json?_=' + Date.now());
-      if (!resp.ok) throw new Error('HTTP ' + resp.status);
-      const data = await resp.json();
+  const locks  = parseInt(lockSel.value) || 0;
+  const tries  = parseInt(document.getElementById('rr-tries').value) || 1;
+  const costPer = locks * 10;
+  const totalCost = costPer * tries;
+  const freeSlots = rarity - locks;
 
-      document.getElementById('meta-owner').textContent   = data.owner    || '—';
-      document.getElementById('meta-founded').textContent = data.founded  || '—';
-      document.getElementById('meta-updated').textContent = data.updated_at || '—';
+  document.getElementById('rr-rarity-badge').innerHTML =
+    `<span class="rarity-badge rarity-${RARITY_CLASSES[rarity]}">${RARITY_NAMES[rarity]}</span>`;
 
-      document.getElementById('stat-total').textContent   = data.total_members  || 0;
-      document.getElementById('stat-online').textContent  = data.online_count   || 0;
-      document.getElementById('stat-offline').textContent = data.offline_count  || 0;
+  document.getElementById('rr-results').innerHTML = `
+    <div class="result-row">
+      <span class="result-key">Atributos totais</span>
+      <span class="result-val">${rarity}</span>
+    </div>
+    <div class="result-row">
+      <span class="result-key">Slots travados</span>
+      <span class="result-val">${locks}</span>
+    </div>
+    <div class="result-row">
+      <span class="result-key">Slots re-rolados</span>
+      <span class="result-val">${freeSlots}</span>
+    </div>
+    <div class="result-row">
+      <span class="result-key">Custo por tentativa</span>
+      <span class="result-val big">${costPer}KK</span>
+    </div>
+    <div class="result-row">
+      <span class="result-key">Custo total (${tries} tentativa${tries>1?'s':''})</span>
+      <span class="result-val ${totalCost >= 100 ? 'warn' : ''}">${totalCost}KK</span>
+    </div>
+    <div class="result-row">
+      <span class="result-key">Equivale a</span>
+      <span class="result-val">${(totalCost/1000).toFixed(1)}KKK</span>
+    </div>
+  `;
+}
+rerollUpdate();
 
-      allMembers = data.members || [];
+// ═══════════════════════════════════════
+// CALCULADORA — UPGRADE
+// ═══════════════════════════════════════
+// chances aproximadas baseadas na wiki (decaem progressivamente)
+const UPGRADE_CHANCES = {
+  0: 100, 1: 95, 2: 88, 3: 80, 4: 70,
+  5: 58,  6: 46, 7: 35, 8: 24,
+  9: 16,  10: 10, 11: 5, 12: 2
+};
+const UP_RARITY_NAMES = { 0:'Common', 4:'Uncommon', 6:'Rare', 8:'Epic', 10:'Legendary', 12:'Mythical' };
+const UP_RARITY_KEY   = { 0:'common', 4:'uncommon', 6:'rare', 8:'epic', 10:'legendary', 12:'mythical' };
 
-      document.getElementById('loading').style.display    = 'none';
-      document.getElementById('stats').style.display      = 'grid';
-      document.getElementById('controls').style.display   = 'flex';
-      document.getElementById('table-wrap').style.display = 'block';
+function chanceColor(c) {
+  if (c >= 70) return '#5dbf6e';
+  if (c >= 40) return '#c9a84c';
+  if (c >= 15) return '#e87830';
+  return '#c95050';
+}
 
-      sortBy('rank');
-    } catch (e) {
-      document.getElementById('loading').style.display  = 'none';
-      document.getElementById('error-msg').style.display = 'block';
-      console.error(e);
-    }
+function upgradeUpdate() {
+  const maxLvl   = parseInt(document.getElementById('up-rarity').value);
+  const current  = Math.min(parseInt(document.getElementById('up-current').value)||0, maxLvl);
+  const rarName  = UP_RARITY_NAMES[maxLvl];
+  const rarKey   = UP_RARITY_KEY[maxLvl];
+
+  if (maxLvl === 0) {
+    document.getElementById('up-results').innerHTML = `
+      <span class="rarity-badge rarity-common">Common</span>
+      <div class="result-row"><span class="result-key">Itens Common não podem ser upgradados.</span></div>`;
+    document.getElementById('up-table').innerHTML = '';
+    return;
   }
 
-  loadData();
+  const nextLvl = current < maxLvl ? current + 1 : null;
+  const chance  = nextLvl !== null ? (UPGRADE_CHANCES[nextLvl] ?? 2) : 0;
+  const barColor = chanceColor(chance);
+
+  let status = nextLvl !== null
+    ? `<div class="result-row"><span class="result-key">Próximo upgrade</span><span class="result-val">+${current} → +${nextLvl}</span></div>
+       <div class="result-row">
+         <span class="result-key">Chance estimada</span>
+         <span class="result-val" style="color:${barColor}">${chance}%</span>
+       </div>
+       <div class="result-row" style="display:block;border:none;padding-top:0">
+         <div class="chance-bar-wrap"><div class="chance-bar" style="width:${chance}%;background:${barColor}"></div></div>
+         <div style="font-size:0.72rem;color:var(--text-dim);margin-top:4px">
+           ${chance>=70?'✓ Chance boa':''}${chance>=40&&chance<70?'⚠ Risco moderado':''}${chance<40?'✗ Alto risco — prepare recursos!':''}
+         </div>
+       </div>`
+    : `<div class="result-row"><span class="result-key" style="color:var(--online)">✓ Item no nível máximo!</span></div>`;
+
+  document.getElementById('up-results').innerHTML = `
+    <span class="rarity-badge rarity-${rarKey}">${rarName}</span>
+    <div class="result-row"><span class="result-key">Nível atual</span><span class="result-val">+${current}</span></div>
+    <div class="result-row"><span class="result-key">Nível máximo</span><span class="result-val">+${maxLvl}</span></div>
+    ${status}`;
+
+  // tabela completa
+  let tableHtml = '';
+  for (let lvl = 1; lvl <= maxLvl; lvl++) {
+    const c = UPGRADE_CHANCES[lvl] ?? 2;
+    const bc = chanceColor(c);
+    const isCurrent = lvl === nextLvl;
+    tableHtml += `
+      <div class="asc-attr-row" style="${isCurrent?'background:rgba(201,168,76,0.06);margin:0 -4px;padding:4px 4px;':''}">
+        <span class="asc-attr-name" style="width:80px;font-family:'Cinzel',serif;font-size:0.78rem;color:${isCurrent?'var(--gold-light)':'var(--text-dim)'}">${isCurrent?'▶ ':''} +${lvl-1}→+${lvl}</span>
+        <span style="width:44px;font-family:'Cinzel',serif;font-size:0.8rem;color:${bc};flex-shrink:0">${c}%</span>
+        <div class="asc-bar-wrap"><div class="asc-bar" style="width:${c}%;background:${bc}"></div></div>
+      </div>`;
+  }
+  document.getElementById('up-table').innerHTML = tableHtml;
+}
+upgradeUpdate();
 </script>
 </body>
 </html>
