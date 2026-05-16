@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lowly People — Guild</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold:        #c9a84c;
+      --gold-light:  #e8cb7a;
+      --gold-dim:    #7a6330;
+      --bg:          #0a0905;
+      --bg2:         #0f0d08;
+      --bg3:         #16130c;
+      --bg4:         #1e1a10;
+      --border:      #2e2815;
+      --border-gold: #3d3218;
+      --text:        #d4c9a8;
+      --text-dim:    #7a7060;
+      --online:      #5dbf6e;
+      --offline:     #5a5040;
+      --red:         #c95050;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* ─── Background texture ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,168,76,0.06) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ─── Header ─── */
+    header {
+      text-align: center;
+      padding: 56px 0 40px;
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .guild-emblem {
+      display: inline-block;
+      width: 64px;
+      height: 64px;
+      margin-bottom: 20px;
+      opacity: 0.85;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      text-shadow: 0 0 40px rgba(201,168,76,0.3), 0 2px 4px rgba(0,0,0,0.8);
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.25em;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px auto;
+      width: fit-content;
+      color: var(--gold-dim);
+      font-size: 0.7rem;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim));
+    }
+    .divider::after { transform: scaleX(-1); }
+
+    /* ─── Meta info ─── */
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      padding: 28px 0 0;
+    }
+
+    .meta-item {
+      text-align: center;
+    }
+    .meta-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .meta-value {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--gold-light);
+    }
+
+    /* ─── Stats cards ─── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 40px 0 32px;
+    }
+
+    .stat-card {
+      background: var(--bg3);
+      border: 1px solid var(--border-gold);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
+    }
+    .stat-num {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      display: block;
+    }
+    .stat-num.green { color: var(--online); }
+    .stat-num.dim   { color: var(--text-dim); }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+      font-family: 'Cinzel', serif;
+      text-transform: uppercase;
+      font-size: 0.62rem;
+    }
+
+    /* ─── Controls ─── */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+      align-items: center;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 200px;
+      background: var(--bg3);
+      border: 1px solid var(--border-gold);
+      color: var(--text);
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem;
+      padding: 9px 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-box::placeholder { color: var(--text-dim); }
+    .search-box:focus { border-color: var(--gold-dim); }
+
+    .filter-btns { display: flex; gap: 8px; }
+
+    .btn {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 9px 16px;
+      background: var(--bg3);
+      border: 1px solid var(--border-gold);
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn:hover, .btn.active {
+      background: var(--bg4);
+      border-color: var(--gold-dim);
+      color: var(--gold-light);
+    }
+
+    /* ─── Table ─── */
+    .table-wrap {
+      border: 1px solid var(--border-gold);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead tr {
+      background: var(--bg3);
+      border-bottom: 2px solid var(--border-gold);
+    }
+
+    th {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      padding: 13px 16px;
+      text-align: left;
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.2s;
+    }
+    th:hover { color: var(--gold-light); }
+    th .sort-icon { opacity: 0.4; margin-left: 4px; }
+    th.sorted .sort-icon { opacity: 1; color: var(--gold-light); }
+
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    tbody tr:hover { background: var(--bg3); }
+    tbody tr:last-child { border-bottom: none; }
+
+    td {
+      padding: 11px 16px;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .td-name a {
+      color: var(--gold-light);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+    .td-name a:hover { color: #fff; text-decoration: underline; }
+
+    .td-num {
+      font-family: 'Cinzel', serif;
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+
+    .td-voc {
+      color: var(--text-dim);
+      font-style: italic;
+      font-size: 0.88rem;
+    }
+
+    .badge-rank {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border: 1px solid;
+    }
+    .badge-rank.leader  { color: var(--gold-light); border-color: var(--gold-dim); background: rgba(201,168,76,0.08); }
+    .badge-rank.vice    { color: #c0a860; border-color: #5a4820; background: rgba(192,168,96,0.06); }
+    .badge-rank.member  { color: var(--text-dim); border-color: var(--border); background: transparent; }
+
+    .dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .dot.online  { background: var(--online); box-shadow: 0 0 6px var(--online); }
+    .dot.offline { background: var(--offline); }
+
+    .status-text.online  { color: var(--online); }
+    .status-text.offline { color: var(--text-dim); }
+
+    /* ─── Rank group header ─── */
+    .rank-header td {
+      background: var(--bg2);
+      border-top: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-gold);
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      padding: 7px 16px;
+    }
+
+    /* ─── Empty state ─── */
+    .empty {
+      text-align: center;
+      padding: 48px;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
+    footer span { color: var(--gold-dim); }
+
+    /* ─── Loading ─── */
+    #loading {
+      text-align: center;
+      padding: 80px 24px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+      font-size: 0.8rem;
+    }
+
+    #error-msg {
+      display: none;
+      background: rgba(201, 80, 80, 0.1);
+      border: 1px solid #5a2020;
+      color: var(--red);
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 600px) {
+      .stats { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .stat-num { font-size: 1.6rem; }
+      td, th { padding: 9px 10px; }
+      .controls { flex-direction: column; }
+      .search-box { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <svg class="guild-emblem" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 4 L38 24 L58 24 L42 36 L48 56 L32 44 L16 56 L22 36 L6 24 L26 24 Z" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
+      <circle cx="32" cy="32" r="8" fill="none" stroke="#c9a84c" stroke-width="1"/>
+      <circle cx="32" cy="32" r="2" fill="#c9a84c"/>
+    </svg>
+    <h1>Lowly People</h1>
+    <div class="divider">✦</div>
+    <p class="subtitle">AmonOT &mdash; Painel da Guild</p>
+
+    <div class="meta-bar" id="meta-bar">
+      <div class="meta-item">
+        <span class="meta-label">Líder</span>
+        <span class="meta-value" id="meta-owner">—</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Fundada em</span>
+        <span class="meta-value" id="meta-founded">—</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Atualizado em</span>
+        <span class="meta-value" id="meta-updated">—</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="error-msg">⚠ Não foi possível carregar os dados da guild. Verifique se o guild_data.json foi gerado pelo scraper.</div>
+
+  <!-- STATS -->
+  <div class="stats" id="stats" style="display:none">
+    <div class="stat-card">
+      <span class="stat-num" id="stat-total">0</span>
+      <span class="stat-label">Total de Membros</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num green" id="stat-online">0</span>
+      <span class="stat-label">Online Agora</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num dim" id="stat-offline">0</span>
+      <span class="stat-label">Offline</span>
+    </div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="controls" id="controls" style="display:none">
+    <input class="search-box" type="text" id="search" placeholder="Buscar membro..." oninput="renderTable()" />
+    <div class="filter-btns">
+      <button class="btn active" onclick="setFilter('all', this)">Todos</button>
+      <button class="btn" onclick="setFilter('online', this)">Online</button>
+      <button class="btn" onclick="setFilter('offline', this)">Offline</button>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div id="loading">Carregando dados da guild...</div>
+  <div class="table-wrap" id="table-wrap" style="display:none">
+    <table>
+      <thead>
+        <tr>
+          <th onclick="sortBy('rank')" id="th-rank">Cargo <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('name')" id="th-name">Nome <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('level')" id="th-level">Level <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('resets')" id="th-resets">Resets <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('vocation')" id="th-vocation">Vocação <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('status')" id="th-status">Status <span class="sort-icon">↕</span></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <footer>
+    Dados extraídos de <span>amonot.online</span> • Atualizado automaticamente todo dia às 09h (Brasília)
+  </footer>
+</div>
+
+<script>
+  let allMembers = [];
+  let currentFilter = 'all';
+  let currentSort = { key: 'rank', dir: 'asc' };
+
+  const rankOrder = { 'the leader': 0, 'leader': 0, 'vice-leader': 1, 'vice leader': 1, 'member': 2, '': 3 };
+
+  function getRankOrder(rank) {
+    return rankOrder[(rank || '').toLowerCase()] ?? 3;
+  }
+
+  function setFilter(f, btn) {
+    currentFilter = f;
+    document.querySelectorAll('.filter-btns .btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderTable();
+  }
+
+  function sortBy(key) {
+    if (currentSort.key === key) {
+      currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+    } else {
+      currentSort.key = key;
+      currentSort.dir = key === 'level' || key === 'resets' ? 'desc' : 'asc';
+    }
+    document.querySelectorAll('th').forEach(th => th.classList.remove('sorted'));
+    const el = document.getElementById('th-' + key);
+    if (el) el.classList.add('sorted');
+    renderTable();
+  }
+
+  function badgeClass(rank) {
+    const r = (rank || '').toLowerCase();
+    if (r.includes('leader') && !r.includes('vice')) return 'leader';
+    if (r.includes('vice')) return 'vice';
+    return 'member';
+  }
+
+  function renderTable() {
+    const q = document.getElementById('search').value.toLowerCase();
+    let members = allMembers.filter(m => {
+      const matchSearch = !q || m.name.toLowerCase().includes(q) || (m.vocation || '').toLowerCase().includes(q) || (m.rank || '').toLowerCase().includes(q);
+      const matchFilter = currentFilter === 'all' || m.status === currentFilter;
+      return matchSearch && matchFilter;
+    });
+
+    members.sort((a, b) => {
+      let va, vb;
+      const k = currentSort.key;
+      if (k === 'rank')    { va = getRankOrder(a.rank);   vb = getRankOrder(b.rank); }
+      else if (k === 'name')    { va = a.name.toLowerCase();  vb = b.name.toLowerCase(); }
+      else if (k === 'level')   { va = a.level;               vb = b.level; }
+      else if (k === 'resets')  { va = a.resets;              vb = b.resets; }
+      else if (k === 'vocation'){ va = (a.vocation||'').toLowerCase(); vb = (b.vocation||'').toLowerCase(); }
+      else if (k === 'status')  { va = a.status;              vb = b.status; }
+      const cmp = va < vb ? -1 : va > vb ? 1 : 0;
+      return currentSort.dir === 'asc' ? cmp : -cmp;
+    });
+
+    const tbody = document.getElementById('tbody');
+    if (members.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" class="empty">Nenhum membro encontrado.</td></tr>';
+      return;
+    }
+
+    let html = '';
+    let lastRank = null;
+
+    members.forEach(m => {
+      if (currentSort.key === 'rank' && m.rank !== lastRank) {
+        const label = m.rank || 'Membro';
+        html += `<tr class="rank-header"><td colspan="6">${label}</td></tr>`;
+        lastRank = m.rank;
+      }
+      const profileUrl = `https://amonot.online/characters?name=${encodeURIComponent(m.name)}`;
+      html += `
+        <tr>
+          <td><span class="badge-rank ${badgeClass(m.rank)}">${m.rank || 'Member'}</span></td>
+          <td class="td-name"><a href="${profileUrl}" target="_blank" rel="noopener">${m.name}</a></td>
+          <td class="td-num">${m.level}</td>
+          <td class="td-num">${m.resets}</td>
+          <td class="td-voc">${m.vocation || '—'}</td>
+          <td><span class="dot ${m.status}"></span><span class="status-text ${m.status}">${m.status === 'online' ? 'Online' : 'Offline'}</span></td>
+        </tr>`;
+    });
+
+    tbody.innerHTML = html;
+  }
+
+  async function loadData() {
+    try {
+      const resp = await fetch('guild_data.json?_=' + Date.now());
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      const data = await resp.json();
+
+      document.getElementById('meta-owner').textContent   = data.owner    || '—';
+      document.getElementById('meta-founded').textContent = data.founded  || '—';
+      document.getElementById('meta-updated').textContent = data.updated_at || '—';
+
+      document.getElementById('stat-total').textContent   = data.total_members  || 0;
+      document.getElementById('stat-online').textContent  = data.online_count   || 0;
+      document.getElementById('stat-offline').textContent = data.offline_count  || 0;
+
+      allMembers = data.members || [];
+
+      document.getElementById('loading').style.display    = 'none';
+      document.getElementById('stats').style.display      = 'grid';
+      document.getElementById('controls').style.display   = 'flex';
+      document.getElementById('table-wrap').style.display = 'block';
+
+      sortBy('rank');
+    } catch (e) {
+      document.getElementById('loading').style.display  = 'none';
+      document.getElementById('error-msg').style.display = 'block';
+      console.error(e);
+    }
+  }
+
+  loadData();
+</script>
+</body>
+</html>
