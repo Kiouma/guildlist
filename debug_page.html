@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowly People - Guildas - AmonOT</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="css/style.css?v=1776832632">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+    :root {
+        --radius-xs: 3px;
+        --radius-sm: 4px;
+        --radius-md: 7px;
+        --radius-lg: 8px;
+        --radius-pill: 13px;
+        --radius-circle: 50%;
+
+        /* site background */
+        --site-bg-color: #121212;
+
+        /* sidebar menu buttons (download/wiki) */
+        --smenu-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        --smenu-size: 13px;
+        --smenu-weight: 600;
+        --smenu-spacing: 1px;
+        --smenu-transform: uppercase;
+        --smenu-bg: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%), rgba(18, 18, 24, 0.9);
+        --smenu-bg-hover: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%), rgba(18, 18, 24, 0.9);
+        --smenu-text: #e5e5e5;
+        --smenu-text-hover: #ffffff;
+        --smenu-border: rgba(255, 255, 255, 0.1);
+        --smenu-border-hover: rgba(255, 255, 255, 0.2);
+
+        /* sidebar categories (accordions) + child links */
+        --scat-font: 'Cinzel', serif;
+        --scat-size: 13px;
+        --scat-weight: 700;
+        --scat-spacing: 1.5px;
+        --scat-transform: uppercase;
+        --scat-bg: linear-gradient(180deg, #141414 0%, #0a0a0a 100%);
+        --scat-bg-hover: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+        --scat-bg-active: linear-gradient(180deg, #181818 0%, #0d0d0d 100%);
+        --scat-text: #e5e5e5;
+        --scat-text-hover: #ffffff;
+        --scat-text-active: #e5e5e5;
+        --scat-border: rgba(255, 255, 255, 0.12);
+        --scat-border-hover: rgba(255, 255, 255, 0.25);
+        --scat-child-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        --scat-child-size: 13px;
+        --scat-child-weight: 500;
+        --scat-child-text: #a0a0a0;
+        --scat-child-text-hover: #e5e5e5;
+        --scat-child-bg-hover: rgba(255, 255, 255, 0.06);
+    }
+
+    /* ===== Site background (from config) ===== */
+    body {
+                background: var(--site-bg-color) url('../../images/background.png') no-repeat center top fixed !important;
+        background-size: cover !important;
+            }
+    
+    /* ===== Sidebar menu buttons (Download Client / Wikipedia) ===== */
+    .sidebar-left .download-btn,
+    .sidebar-left .wiki-btn {
+        font-family: var(--smenu-font) !important;
+        font-size: var(--smenu-size) !important;
+        font-weight: var(--smenu-weight) !important;
+        letter-spacing: var(--smenu-spacing) !important;
+        text-transform: var(--smenu-transform) !important;
+        background: var(--smenu-bg) !important;
+        color: var(--smenu-text) !important;
+        border: 1px solid var(--smenu-border) !important;
+    }
+    .sidebar-left .download-btn:hover,
+    .sidebar-left .wiki-btn:hover,
+    .sidebar-left .wiki-btn.active {
+        background: var(--smenu-bg-hover) !important;
+        color: var(--smenu-text-hover) !important;
+        border-color: var(--smenu-border-hover) !important;
+    }
+
+    /* ===== Sidebar categories (accordions) ===== */
+    .sidebar-left .accordion-header {
+        background: var(--scat-bg) !important;
+        border: 1px solid var(--scat-border) !important;
+    }
+    .sidebar-left .accordion-header h3 {
+        font-family: var(--scat-font) !important;
+        font-size: var(--scat-size) !important;
+        font-weight: var(--scat-weight) !important;
+        letter-spacing: var(--scat-spacing) !important;
+        text-transform: var(--scat-transform) !important;
+        color: var(--scat-text) !important;
+    }
+    .sidebar-left .accordion-header:hover {
+        background: var(--scat-bg-hover) !important;
+        border-color: var(--scat-border-hover) !important;
+    }
+    .sidebar-left .accordion-header:hover h3,
+    .sidebar-left .accordion-header:hover .accordion-arrow {
+        color: var(--scat-text-hover) !important;
+    }
+    .sidebar-left .accordion-item.open > .accordion-header {
+        background: var(--scat-bg-active) !important;
+        border-color: var(--scat-border-hover) !important;
+    }
+    .sidebar-left .accordion-item.open > .accordion-header h3,
+    .sidebar-left .accordion-item.open > .accordion-header .accordion-arrow {
+        color: var(--scat-text-active) !important;
+    }
+
+    /* ===== Sidebar categories - child page links ===== */
+    .sidebar-left .sidebar-menu a {
+        font-family: var(--scat-child-font) !important;
+        font-size: var(--scat-child-size) !important;
+        font-weight: var(--scat-child-weight) !important;
+        color: var(--scat-child-text) !important;
+    }
+    .sidebar-left .sidebar-menu a:hover,
+    .sidebar-left .sidebar-menu a.active {
+        background: var(--scat-child-bg-hover) !important;
+        color: var(--scat-child-text-hover) !important;
+    }
+
+        /* ===== Gradient text (from config) ===== */
+    .sidebar-left .download-btn span, .sidebar-left .wiki-btn span {
+    background: linear-gradient(180deg, #ffe6a3 0%, #d9a441 45%, #7a4e12 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+}
+    .sidebar-left .download-btn:hover span, .sidebar-left .wiki-btn:hover span, .sidebar-left .wiki-btn.active span {
+    background: linear-gradient(180deg, #fff1c2 0%, #eeb856 45%, #8e5a18 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+}
+    .sidebar-left .accordion-header h3 {
+    background: linear-gradient(180deg, #ffe6a3 0%, #d9a441 45%, #7a4e12 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+}
+    .sidebar-left .accordion-header:hover h3 {
+    background: linear-gradient(180deg, #fff1c2 0%, #eeb856 45%, #8e5a18 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+}
+    .sidebar-left .accordion-item.open > .accordion-header h3 {
+    background: linear-gradient(180deg, #ffe6a3 0%, #d9a441 45%, #7a4e12 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+}
+    .sidebar-left .sidebar-menu li a {
+    background: linear-gradient(180deg, #ffe6a3 0%, #d9a441 45%, #7a4e12 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+}
+    .sidebar-left .sidebar-menu li a:hover, .sidebar-left .sidebar-menu li a.active {
+    background: linear-gradient(180deg, #fff1c2 0%, #eeb856 45%, #8e5a18 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+}
+    </style>
+    <script>
+    window.__lang = 'pt';
+    window.__t = {"js.loading":"Carregando...","js.error":"Erro","js.connection_error":"Erro de conexão.","js.ss":"SS"};
+    function _t(key) { return (window.__t && window.__t[key]) || key; }
+    </script>
+</head>
+<body>
+<script>var BANNER_SRC = "..\/images\/world\/new\/banner_amonot_baiak.mp4"; var BANNER_ENABLED = false;</script>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="navbar-inner">
+        <div class="nav-left">
+            <button class="hamburger-btn" onclick="toggleSidebar()" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="/welcome" class="nav-logo">
+                <img src="../images/world/new/logo_A.png" alt="Logo" class="logo-icon-img">
+            </a>
+            <div class="nav-status">
+                                <a href="https://discord.gg/2fYycyTXsZ" target="_blank" rel="noopener" class="nav-social-link" title="Discord"><i class="fab fa-discord"></i> Discord</a>
+                                                <a href="https://www.instagram.com/amonotoficial" target="_blank" rel="noopener" class="nav-social-link" title="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                                <a href="#" onclick="openDownloadModal();return false;" class="nav-social-link" title="Download"><i class="fas fa-download"></i> Download</a>
+                <a href="/online" class="nav-social-link nav-online" title="Online">
+                    <i class="fas fa-users"></i> 647 Online                </a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <!-- Language Switcher -->
+            <div class="lang-switcher">
+                <a href="?name=Lowly+People&lang=pt"
+                   class="lang-flag active"
+                   data-lang-switch="pt" title="Português">
+                    <svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="24" height="16" rx="1" fill="#009739"/>
+                        <path d="M12 2 L22 8 L12 14 L2 8 Z" fill="#FEDD00"/>
+                        <circle cx="12" cy="8" r="3.5" fill="#012169"/>
+                        <path d="M9 7.5 Q12 6 15 8" stroke="#fff" stroke-width=".6" fill="none"/>
+                    </svg>
+                </a>
+                <a href="?name=Lowly+People&lang=en"
+                   class="lang-flag"
+                   data-lang-switch="en" title="English">
+                    <svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="24" height="16" rx="1" fill="#B22234"/>
+                        <rect y="1.23" width="24" height="1.23" fill="#fff"/><rect y="3.69" width="24" height="1.23" fill="#fff"/>
+                        <rect y="6.15" width="24" height="1.23" fill="#fff"/><rect y="8.62" width="24" height="1.23" fill="#fff"/>
+                        <rect y="11.08" width="24" height="1.23" fill="#fff"/><rect y="13.54" width="24" height="1.23" fill="#fff"/>
+                        <rect width="10" height="8.62" fill="#3C3B6E"/>
+                    </svg>
+                </a>
+            </div>
+                        <button onclick="openLoginModal()" class="btn btn-primary btn-sm"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+            <a href="/createaccount" class="nav-link nav-link-desktop">Criar Conta</a>
+            <a href="/lostaccount" class="nav-link nav-link-desktop">Conta Perdida</a>
+                    </div>
+    </div>
+</nav>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+<div class="mobile-menu">
+    <div class="mobile-menu-header">
+        <span class="mobile-menu-title">AmonOT</span>
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()"><i class="fas fa-times"></i></button>
+    </div>
+        <div class="mobile-menu-section">
+        <form method="post" action="/login" class="mobile-login-form">
+            <input type="email" name="account_login" placeholder="Email" maxlength="100" autocomplete="email" class="form-control-mobile" required>
+            <input type="password" name="password_login" placeholder="Senha" maxlength="30" class="form-control-mobile">
+            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        </form>
+        <div class="mobile-menu-links">
+            <a href="/createaccount"><i class="fas fa-user-plus"></i> Criar Conta</a>
+            <a href="/lostaccount"><i class="fas fa-key"></i> Conta Perdida</a>
+        </div>
+    </div>
+        <div class="mobile-menu-section">
+        <div class="mobile-menu-nav">
+                        <div class="mobile-accordion-item">
+                <div class="mobile-accordion-header" onclick="toggleMobileAccordion(this)">
+                    <span>Notícias</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="mobile-accordion-body">
+                                        <a href="/news"  >
+                        <i class="fas fa-angle-right"></i> Últimas Notícias                    </a>
+                                        <a href="/newsarchive"  >
+                        <i class="fas fa-archive"></i> Arquivo de Notícias                    </a>
+                                        <a href="/changelog"  >
+                        <i class="fas fa-code-branch"></i> Changelog                    </a>
+                                        <a href="/rules"  >
+                        <i class="fas fa-gavel"></i> Regras                    </a>
+                                        <a href="/eventcalendar"  >
+                        <i class="fas fa-calendar-alt"></i> Calendário                    </a>
+                                    </div>
+            </div>
+                        <div class="mobile-accordion-item">
+                <div class="mobile-accordion-header" onclick="toggleMobileAccordion(this)">
+                    <span>Biblioteca</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="mobile-accordion-body">
+                                        <a href="/serverinfo"  >
+                        <i class="fas fa-info-circle"></i> Info do Servidor                    </a>
+                                        <a href="/experiencetable"  >
+                        <i class="fas fa-table"></i> Tabela de Experiência                    </a>
+                                        <a href="/resetcalculator"  >
+                        <i class="fas fa-calculator"></i> Calculadora de Reset                    </a>
+                                        <a href="/vip"  >
+                        <i class="fas fa-gem"></i> Vip &amp; Fidelidade                    </a>
+                                        <a href="/addonbonus"  >
+                        <i class="fas fa-hat-wizard"></i> Bônus de Addon                    </a>
+                                        <a href="/tasks"  >
+                        <i class="fas fa-tasks"></i> Tasks                    </a>
+                                        <a href="/faq"  >
+                        <i class="fas fa-question-circle"></i> FAQ                    </a>
+                                    </div>
+            </div>
+                        <div class="mobile-accordion-item">
+                <div class="mobile-accordion-header" onclick="toggleMobileAccordion(this)">
+                    <span>Conta</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="mobile-accordion-body">
+                                        <a href="/account"  >
+                        <i class="fas fa-cog"></i> Gerenciar Conta                    </a>
+                                        <a href="/createaccount"  >
+                        <i class="fas fa-user-plus"></i> Criar Conta                    </a>
+                                        <a href="/lostaccount"  >
+                        <i class="fas fa-question-circle"></i> Conta Perdida?                    </a>
+                                        <a href="/rules"  >
+                        <i class="fas fa-scroll"></i> Regras do Servidor                    </a>
+                                        <a href="#" onclick="openDownloadModal();return false;" >
+                        <i class="fas fa-download"></i> Downloads                    </a>
+                                        <a href="/tickets"  >
+                        <i class="fas fa-bug"></i> Reportar Bug                    </a>
+                                    </div>
+            </div>
+                        <div class="mobile-accordion-item">
+                <div class="mobile-accordion-header" onclick="toggleMobileAccordion(this)">
+                    <span>Comunidade</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="mobile-accordion-body">
+                                        <a href="/characters"  >
+                        <i class="fas fa-search"></i> Personagens                    </a>
+                                        <a href="/online"  >
+                        <i class="fas fa-signal"></i> Quem está Online?                    </a>
+                                        <a href="/highscores"  >
+                        <i class="fas fa-trophy"></i> Ranking                    </a>
+                                        <a href="/lastkills"  >
+                        <i class="fas fa-skull-crossbones"></i> Últimas Mortes                    </a>
+                                        <a href="/houses"  >
+                        <i class="fas fa-home"></i> Casas                    </a>
+                                        <a href="/guilds"  >
+                        <i class="fas fa-shield-alt"></i> Guildas                    </a>
+                                        <a href="/guildwars"  >
+                        <i class="fas fa-crossed-swords"></i> Guerras de Guildas                    </a>
+                                        <a href="/market"  >
+                        <i class="fas fa-store"></i> Market                    </a>
+                                        <a href="/bans"  >
+                        <i class="fas fa-ban"></i> Banimentos                    </a>
+                                        <a href="/support"  >
+                        <i class="fas fa-headset"></i> Lista de Suporte                    </a>
+                                    </div>
+            </div>
+                        <div class="mobile-accordion-item">
+                <div class="mobile-accordion-header" onclick="toggleMobileAccordion(this)">
+                    <span>Bazaar de Chars</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="mobile-accordion-body">
+                                        <a href="/bazaar_explain"  >
+                        <i class="fas fa-info-circle"></i> Como Funciona                    </a>
+                                        <a href="/bazaar_market"  >
+                        <i class="fas fa-shopping-cart"></i> Mercado                    </a>
+                                        <a href="/bazaar_create"  >
+                        <i class="fas fa-plus-circle"></i> Criar Leilão                    </a>
+                                        <a href="/bazaar_history"  >
+                        <i class="fas fa-history"></i> Histórico                    </a>
+                                        <a href="/bazaar_bids"  >
+                        <i class="fas fa-hand-paper"></i> Meus Lances                    </a>
+                                        <a href="/bazaar_auctions"  >
+                        <i class="fas fa-gavel"></i> Meus Leilões                    </a>
+                                    </div>
+            </div>
+                        <div class="mobile-accordion-item">
+                <div class="mobile-accordion-header" onclick="toggleMobileAccordion(this)">
+                    <span>Loja</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="mobile-accordion-body">
+                                        <a href="/donate"  >
+                        <i class="fas fa-heart"></i> Doar                    </a>
+                                        <a href="/donate_history"  >
+                        <i class="fas fa-receipt"></i> Histórico de Doações                    </a>
+                                        <a href="/shop"  >
+                        <i class="fas fa-shopping-bag"></i> Loja Online                    </a>
+                                    </div>
+            </div>
+                    </div>
+    </div>
+    <div class="mobile-menu-section mobile-menu-social">
+                <a href="https://discord.gg/2fYycyTXsZ" target="_blank" rel="noopener"><i class="fab fa-discord"></i> Discord</a>
+                <a href="/downloads"><i class="fas fa-download"></i> Download</a>
+        <a href="/online" class="nav-online"><i class="fas fa-users"></i> 647 Online</a>
+    </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="main-container">
+
+    <!-- SIDEBAR OVERLAY (for tablet/responsive) -->
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar sidebar-left">
+        <div class="sidebar-logo">
+            <a href="index.php"><img src="../images/world/new/amonot.png" alt="AmonOT" class="sidebar-logo-img"></a>
+        </div>
+
+        
+        <a href="#" onclick="openDownloadModal();return false;" class="download-btn">
+            <i class="fas fa-download"></i>
+            <span>Download Client</span>
+        </a>
+
+        <a href="/wiki" target="_blank" rel="noopener noreferrer" class="wiki-btn">
+            <i class="fas fa-book-open"></i>
+            <span>Wikipedia</span>
+        </a>
+                        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-header-left">
+                    <h3>Notícias</h3>
+                </div>
+                <i class="fas fa-chevron-down accordion-arrow"></i>
+            </div>
+            <div class="accordion-body">
+                <ul class="sidebar-menu">
+                                        <li>
+                                                <a href="/news"
+                                                                                                            >
+                            <i class="fas fa-angle-right"></i>
+                            Últimas Notícias                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/newsarchive"
+                                                                                                            >
+                            <i class="fas fa-archive"></i>
+                            Arquivo de Notícias                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/changelog"
+                                                                                                            >
+                            <i class="fas fa-code-branch"></i>
+                            Changelog                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/rules"
+                           class="highlight"                                                                                 >
+                            <i class="fas fa-gavel"></i>
+                            Regras                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/eventcalendar"
+                                                                                                            >
+                            <i class="fas fa-calendar-alt"></i>
+                            Calendário                        </a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+                <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-header-left">
+                    <h3>Biblioteca</h3>
+                </div>
+                <i class="fas fa-chevron-down accordion-arrow"></i>
+            </div>
+            <div class="accordion-body">
+                <ul class="sidebar-menu">
+                                        <li>
+                                                <a href="/serverinfo"
+                                                                                                            >
+                            <i class="fas fa-info-circle"></i>
+                            Info do Servidor                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/experiencetable"
+                                                                                                            >
+                            <i class="fas fa-table"></i>
+                            Tabela de Experiência                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/resetcalculator"
+                                                                                                            >
+                            <i class="fas fa-calculator"></i>
+                            Calculadora de Reset                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/vip"
+                                                                                                            >
+                            <i class="fas fa-gem"></i>
+                            Vip &amp; Fidelidade                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/addonbonus"
+                           class="highlight"                                                                                 >
+                            <i class="fas fa-hat-wizard"></i>
+                            Bônus de Addon                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/tasks"
+                           class="highlight"                                                                                 >
+                            <i class="fas fa-tasks"></i>
+                            Tasks                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/faq"
+                                                                                                            >
+                            <i class="fas fa-question-circle"></i>
+                            FAQ                        </a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+                <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-header-left">
+                    <h3>Conta</h3>
+                </div>
+                <i class="fas fa-chevron-down accordion-arrow"></i>
+            </div>
+            <div class="accordion-body">
+                <ul class="sidebar-menu">
+                                        <li>
+                                                <a href="/account"
+                                                                                                            >
+                            <i class="fas fa-cog"></i>
+                            Gerenciar Conta                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/createaccount"
+                                                                                                            >
+                            <i class="fas fa-user-plus"></i>
+                            Criar Conta                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/lostaccount"
+                                                                                                            >
+                            <i class="fas fa-question-circle"></i>
+                            Conta Perdida?                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/rules"
+                                                                                                            >
+                            <i class="fas fa-scroll"></i>
+                            Regras do Servidor                        </a>
+                    </li>
+                                        <li>
+                                                <a href="#"
+                                                      onclick="openDownloadModal();return false;"                                                      >
+                            <i class="fas fa-download"></i>
+                            Downloads                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/tickets"
+                                                                                                            >
+                            <i class="fas fa-bug"></i>
+                            Reportar Bug                        </a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+                <div class="accordion-item open">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-header-left">
+                    <h3>Comunidade</h3>
+                </div>
+                <i class="fas fa-chevron-down accordion-arrow"></i>
+            </div>
+            <div class="accordion-body">
+                <ul class="sidebar-menu">
+                                        <li>
+                                                <a href="/characters"
+                                                                                                            >
+                            <i class="fas fa-search"></i>
+                            Personagens                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/online"
+                                                                                                            >
+                            <i class="fas fa-signal"></i>
+                            Quem está Online?                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/highscores"
+                                                                                                            >
+                            <i class="fas fa-trophy"></i>
+                            Ranking                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/lastkills"
+                                                                                                            >
+                            <i class="fas fa-skull-crossbones"></i>
+                            Últimas Mortes                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/houses"
+                                                                                                            >
+                            <i class="fas fa-home"></i>
+                            Casas                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/guilds"
+                           class="active"                                                                                 >
+                            <i class="fas fa-shield-alt"></i>
+                            Guildas                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/guildwars"
+                           class="highlight"                                                                                 >
+                            <i class="fas fa-crossed-swords"></i>
+                            Guerras de Guildas                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/market"
+                                                                                                            >
+                            <i class="fas fa-store"></i>
+                            Market                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/bans"
+                                                                                                            >
+                            <i class="fas fa-ban"></i>
+                            Banimentos                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/support"
+                                                                                                            >
+                            <i class="fas fa-headset"></i>
+                            Lista de Suporte                        </a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+                <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-header-left">
+                    <h3>Bazaar de Chars</h3>
+                </div>
+                <i class="fas fa-chevron-down accordion-arrow"></i>
+            </div>
+            <div class="accordion-body">
+                <ul class="sidebar-menu">
+                                        <li>
+                                                <a href="/bazaar_explain"
+                           class="highlight"                                                                                 >
+                            <i class="fas fa-info-circle"></i>
+                            Como Funciona                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/bazaar_market"
+                                                                                                            >
+                            <i class="fas fa-shopping-cart"></i>
+                            Mercado                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/bazaar_create"
+                           class="highlight"                                                                                 >
+                            <i class="fas fa-plus-circle"></i>
+                            Criar Leilão                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/bazaar_history"
+                                                                                                            >
+                            <i class="fas fa-history"></i>
+                            Histórico                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/bazaar_bids"
+                                                                                                            >
+                            <i class="fas fa-hand-paper"></i>
+                            Meus Lances                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/bazaar_auctions"
+                                                                                                            >
+                            <i class="fas fa-gavel"></i>
+                            Meus Leilões                        </a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+                <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-header-left">
+                    <h3>Loja</h3>
+                </div>
+                <i class="fas fa-chevron-down accordion-arrow"></i>
+            </div>
+            <div class="accordion-body">
+                <ul class="sidebar-menu">
+                                        <li>
+                                                <a href="/donate"
+                           class="highlight"                                                                                 >
+                            <i class="fas fa-heart"></i>
+                            Doar                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/donate_history"
+                                                                                                            >
+                            <i class="fas fa-receipt"></i>
+                            Histórico de Doações                        </a>
+                    </li>
+                                        <li>
+                                                <a href="/shop"
+                           class="highlight"                                                                                 >
+                            <i class="fas fa-shopping-bag"></i>
+                            Loja Online                        </a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+            </aside>
+
+    <!-- CENTER CONTENT -->
+            <main class="content-center no-banner">
+
+                <div class="content-body">
+
+    <div class="page-card">
+        <div class="page-card-header">
+            <i class="fas fa-shield-alt"></i>
+            <h2>Lowly People</h2>
+        </div>
+        <div class="page-card-body">
+
+            <!-- Guild Info -->
+            <div class="account-info-grid">
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-user-crown"></i></div>
+                    <div class="info-card-content">
+                        <span class="info-label">Dono</span>
+                        <span class="info-value"><a href="/characters?name=Sallesbringer">Sallesbringer</a></span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="info-card-content">
+                        <span class="info-label">Fundada em</span>
+                        <span class="info-value">Apr 30, 2026</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-users"></i></div>
+                    <div class="info-card-content">
+                        <span class="info-label">Membros</span>
+                        <span class="info-value">62</span>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Members Filter -->
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin:20px 0 15px;">
+                <a href="/guilds?name=Lowly+People&status=all"
+                   class="btn btn-primary" style="font-size:0.85rem;padding:5px 14px;">
+                    <i class="fas fa-users"></i> Todos (62)
+                </a>
+                <a href="/guilds?name=Lowly+People&status=online"
+                   class="btn btn-secondary" style="font-size:0.85rem;padding:5px 14px;">
+                    <i class="fas fa-circle" style="font-size:8px;color:#2ecc71;margin-right:4px;"></i> Online (45)
+                </a>
+                <a href="/guilds?name=Lowly+People&status=offline"
+                   class="btn btn-secondary" style="font-size:0.85rem;padding:5px 14px;">
+                    <i class="fas fa-circle" style="font-size:8px;color:#95a5a6;margin-right:4px;"></i> Offline (17)
+                </a>
+            </div>
+
+            <!-- Members by Rank -->
+                                            <div class="characters-section" style="margin-top: 20px;">
+                    <div class="form-section-title">The Leader (1)</div>
+                                        <div class="characters-table">
+                        <div class="char-table-header" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span>Nome</span>
+                            <span>Level</span>
+                            <span>Resets</span>                            <span>Vocação</span>
+                            <span>Nick</span>
+                            <span>Status</span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Sallesbringer">Sallesbringer</a></span>
+                            <span data-label="Level" class="char-level">1275</span>
+                            <span data-label="Resets" class="char-level">47</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                            </div>
+                </div>
+                                <div class="characters-section" style="margin-top: 20px;">
+                    <div class="form-section-title">Vice-Leader (4)</div>
+                                        <div class="characters-table">
+                        <div class="char-table-header" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span>Nome</span>
+                            <span>Level</span>
+                            <span>Resets</span>                            <span>Vocação</span>
+                            <span>Nick</span>
+                            <span>Status</span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Boingbringer">Boingbringer</a></span>
+                            <span data-label="Level" class="char-level">739</span>
+                            <span data-label="Resets" class="char-level">22</span>                            <span data-label="Vocação" class="char-vocation">Master Sorcerer</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Brunaobringer">Brunaobringer</a></span>
+                            <span data-label="Level" class="char-level">994</span>
+                            <span data-label="Resets" class="char-level">43</span>                            <span data-label="Vocação" class="char-vocation">Elder Druid</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Jotabringer">Jotabringer</a></span>
+                            <span data-label="Level" class="char-level">1075</span>
+                            <span data-label="Resets" class="char-level">34</span>                            <span data-label="Vocação" class="char-vocation">Exalted Monk</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Wrathbringer">Wrathbringer</a></span>
+                            <span data-label="Level" class="char-level">1140</span>
+                            <span data-label="Resets" class="char-level">45</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                            </div>
+                </div>
+                                <div class="characters-section" style="margin-top: 20px;">
+                    <div class="form-section-title">Member (57)</div>
+                                        <div class="characters-table">
+                        <div class="char-table-header" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span>Nome</span>
+                            <span>Level</span>
+                            <span>Resets</span>                            <span>Vocação</span>
+                            <span>Nick</span>
+                            <span>Status</span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Aeros">Aeros</a></span>
+                            <span data-label="Level" class="char-level">835</span>
+                            <span data-label="Resets" class="char-level">3</span>                            <span data-label="Vocação" class="char-vocation">Master Sorcerer</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Aerosz">Aerosz</a></span>
+                            <span data-label="Level" class="char-level">801</span>
+                            <span data-label="Resets" class="char-level">7</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Apreciador+De+Casadas">Apreciador De Casadas</a></span>
+                            <span data-label="Level" class="char-level">1453</span>
+                            <span data-label="Resets" class="char-level">20</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Baduff">Baduff</a></span>
+                            <span data-label="Level" class="char-level">943</span>
+                            <span data-label="Resets" class="char-level">10</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Brunao+Cansado">Brunao Cansado</a></span>
+                            <span data-label="Level" class="char-level">854</span>
+                            <span data-label="Resets" class="char-level">1</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Brunao+Rei+Denovo">Brunao Rei Denovo</a></span>
+                            <span data-label="Level" class="char-level">1042</span>
+                            <span data-label="Resets" class="char-level">23</span>                            <span data-label="Vocação" class="char-vocation">Master Sorcerer</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Campin">Campin</a></span>
+                            <span data-label="Level" class="char-level">888</span>
+                            <span data-label="Resets" class="char-level">7</span>                            <span data-label="Vocação" class="char-vocation">Master Sorcerer</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Charles">Charles</a></span>
+                            <span data-label="Level" class="char-level">716</span>
+                            <span data-label="Resets" class="char-level">10</span>                            <span data-label="Vocação" class="char-vocation">Exalted Monk</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Deca+com+Testo">Deca com Testo</a></span>
+                            <span data-label="Level" class="char-level">847</span>
+                            <span data-label="Resets" class="char-level">11</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Deus">Deus</a></span>
+                            <span data-label="Level" class="char-level">895</span>
+                            <span data-label="Resets" class="char-level">21</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Diegao+Barba">Diegao Barba</a></span>
+                            <span data-label="Level" class="char-level">779</span>
+                            <span data-label="Resets" class="char-level">14</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Dorfeus">Dorfeus</a></span>
+                            <span data-label="Level" class="char-level">836</span>
+                            <span data-label="Resets" class="char-level">5</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Drizinha">Drizinha</a></span>
+                            <span data-label="Level" class="char-level">853</span>
+                            <span data-label="Resets" class="char-level">0</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Ed+farm">Ed farm</a></span>
+                            <span data-label="Level" class="char-level">711</span>
+                            <span data-label="Resets" class="char-level">14</span>                            <span data-label="Vocação" class="char-vocation">Elder Druid</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Elder+Luthons">Elder Luthons</a></span>
+                            <span data-label="Level" class="char-level">940</span>
+                            <span data-label="Resets" class="char-level">5</span>                            <span data-label="Vocação" class="char-vocation">Elder Druid</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=End+Zeus">End Zeus</a></span>
+                            <span data-label="Level" class="char-level">851</span>
+                            <span data-label="Resets" class="char-level">14</span>                            <span data-label="Vocação" class="char-vocation">Master Sorcerer</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Gizao">Gizao</a></span>
+                            <span data-label="Level" class="char-level">549</span>
+                            <span data-label="Resets" class="char-level">12</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Gokuu">Gokuu</a></span>
+                            <span data-label="Level" class="char-level">664</span>
+                            <span data-label="Resets" class="char-level">10</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Haony">Haony</a></span>
+                            <span data-label="Level" class="char-level">719</span>
+                            <span data-label="Resets" class="char-level">14</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Heroes+Baiak">Heroes Baiak</a></span>
+                            <span data-label="Level" class="char-level">821</span>
+                            <span data-label="Resets" class="char-level">12</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Hozuk">Hozuk</a></span>
+                            <span data-label="Level" class="char-level">980</span>
+                            <span data-label="Resets" class="char-level">22</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Imperador">Imperador</a></span>
+                            <span data-label="Level" class="char-level">936</span>
+                            <span data-label="Resets" class="char-level">16</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Judas">Judas</a></span>
+                            <span data-label="Level" class="char-level">820</span>
+                            <span data-label="Resets" class="char-level">21</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Juri+Han">Juri Han</a></span>
+                            <span data-label="Level" class="char-level">779</span>
+                            <span data-label="Resets" class="char-level">8</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Kaus+Magj">Kaus Magj</a></span>
+                            <span data-label="Level" class="char-level">822</span>
+                            <span data-label="Resets" class="char-level">5</span>                            <span data-label="Vocação" class="char-vocation">Elder Druid</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Letty+Sane">Letty Sane</a></span>
+                            <span data-label="Level" class="char-level">957</span>
+                            <span data-label="Resets" class="char-level">13</span>                            <span data-label="Vocação" class="char-vocation">Elder Druid</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Lipe+Knight">Lipe Knight</a></span>
+                            <span data-label="Level" class="char-level">909</span>
+                            <span data-label="Resets" class="char-level">21</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Lotus+Lothbrook">Lotus Lothbrook</a></span>
+                            <span data-label="Level" class="char-level">846</span>
+                            <span data-label="Resets" class="char-level">8</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Lukitas+Brokenzada">Lukitas Brokenzada</a></span>
+                            <span data-label="Level" class="char-level">834</span>
+                            <span data-label="Resets" class="char-level">14</span>                            <span data-label="Vocação" class="char-vocation">Elder Druid</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Magabela">Magabela</a></span>
+                            <span data-label="Level" class="char-level">839</span>
+                            <span data-label="Resets" class="char-level">15</span>                            <span data-label="Vocação" class="char-vocation">Master Sorcerer</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Makasco+Ms">Makasco Ms</a></span>
+                            <span data-label="Level" class="char-level">700</span>
+                            <span data-label="Resets" class="char-level">2</span>                            <span data-label="Vocação" class="char-vocation">Master Sorcerer</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Moskito">Moskito</a></span>
+                            <span data-label="Level" class="char-level">8</span>
+                            <span data-label="Resets" class="char-level">11</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Niju">Niju</a></span>
+                            <span data-label="Level" class="char-level">954</span>
+                            <span data-label="Resets" class="char-level">8</span>                            <span data-label="Vocação" class="char-vocation">Elder Druid</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Ninogro">Ninogro</a></span>
+                            <span data-label="Level" class="char-level">828</span>
+                            <span data-label="Resets" class="char-level">23</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Ortega">Ortega</a></span>
+                            <span data-label="Level" class="char-level">1040</span>
+                            <span data-label="Resets" class="char-level">8</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Pestinha">Pestinha</a></span>
+                            <span data-label="Level" class="char-level">856</span>
+                            <span data-label="Resets" class="char-level">8</span>                            <span data-label="Vocação" class="char-vocation">Master Sorcerer</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Primobolan+e+Trembo">Primobolan e Trembo</a></span>
+                            <span data-label="Level" class="char-level">1036</span>
+                            <span data-label="Resets" class="char-level">5</span>                            <span data-label="Vocação" class="char-vocation">Elder Druid</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Raimunda+On+Amonot">Raimunda On Amonot</a></span>
+                            <span data-label="Level" class="char-level">1467</span>
+                            <span data-label="Resets" class="char-level">21</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=RBenz">RBenz</a></span>
+                            <span data-label="Level" class="char-level">992</span>
+                            <span data-label="Resets" class="char-level">11</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Ritoff+Elite">Ritoff Elite</a></span>
+                            <span data-label="Level" class="char-level">830</span>
+                            <span data-label="Resets" class="char-level">16</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Royal+Luthons">Royal Luthons</a></span>
+                            <span data-label="Level" class="char-level">657</span>
+                            <span data-label="Resets" class="char-level">12</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Rp+Surge">Rp Surge</a></span>
+                            <span data-label="Level" class="char-level">800</span>
+                            <span data-label="Resets" class="char-level">16</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Sabour+Ms">Sabour Ms</a></span>
+                            <span data-label="Level" class="char-level">8</span>
+                            <span data-label="Resets" class="char-level">6</span>                            <span data-label="Vocação" class="char-vocation">Master Sorcerer</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Salles">Salles</a></span>
+                            <span data-label="Level" class="char-level">1060</span>
+                            <span data-label="Resets" class="char-level">12</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Sereno+Taca+Flecha">Sereno Taca Flecha</a></span>
+                            <span data-label="Level" class="char-level">991</span>
+                            <span data-label="Resets" class="char-level">11</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Solarica">Solarica</a></span>
+                            <span data-label="Level" class="char-level">1019</span>
+                            <span data-label="Resets" class="char-level">2</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Sonzacrazy">Sonzacrazy</a></span>
+                            <span data-label="Level" class="char-level">967</span>
+                            <span data-label="Resets" class="char-level">7</span>                            <span data-label="Vocação" class="char-vocation">Elder Druid</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Taka+e+Cura">Taka e Cura</a></span>
+                            <span data-label="Level" class="char-level">823</span>
+                            <span data-label="Resets" class="char-level">8</span>                            <span data-label="Vocação" class="char-vocation">Elder Druid</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Timeless">Timeless</a></span>
+                            <span data-label="Level" class="char-level">827</span>
+                            <span data-label="Resets" class="char-level">2</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Tio+Bringer">Tio Bringer</a></span>
+                            <span data-label="Level" class="char-level">949</span>
+                            <span data-label="Resets" class="char-level">10</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Titi+Hattrick">Titi Hattrick</a></span>
+                            <span data-label="Level" class="char-level">627</span>
+                            <span data-label="Resets" class="char-level">1</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Tsuru">Tsuru</a></span>
+                            <span data-label="Level" class="char-level">244</span>
+                            <span data-label="Resets" class="char-level">12</span>                            <span data-label="Vocação" class="char-vocation">Master Sorcerer</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Valdim">Valdim</a></span>
+                            <span data-label="Level" class="char-level">944</span>
+                            <span data-label="Resets" class="char-level">12</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Vitinho+Rei+Delas">Vitinho Rei Delas</a></span>
+                            <span data-label="Level" class="char-level">929</span>
+                            <span data-label="Resets" class="char-level">10</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=VukVuk">VukVuk</a></span>
+                            <span data-label="Level" class="char-level">714</span>
+                            <span data-label="Resets" class="char-level">20</span>                            <span data-label="Vocação" class="char-vocation">Elder Druid</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge badge-success">Online</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Zannk">Zannk</a></span>
+                            <span data-label="Level" class="char-level">902</span>
+                            <span data-label="Resets" class="char-level">10</span>                            <span data-label="Vocação" class="char-vocation">Royal Paladin</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                                <div class="char-table-row" style="grid-template-columns: 2fr 0.7fr 0.7fr 1fr 1fr 1fr;">
+                            <span data-label="Nome" class="char-name"><a href="/characters?name=Zenith">Zenith</a></span>
+                            <span data-label="Level" class="char-level">825</span>
+                            <span data-label="Resets" class="char-level">11</span>                            <span data-label="Vocação" class="char-vocation">Elite Knight</span>
+                            <span data-label="Nick"></span>
+                            <span data-label="Status">
+                                                                    <span class="badge">Offline</span>
+                                                            </span>
+                        </div>
+                                            </div>
+                </div>
+                            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="/guilds" class="action-btn"><i class="fas fa-arrow-left"></i> Voltar para Lista de Guildas</a>
+            </div>
+
+        </div>
+    </div>
+
+            </div><!-- /.content-body -->
+    </main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="sidebar sidebar-right">
+        <div class="widget-fixed widget-new-world">
+    <div class="widget-fixed-header">
+        <i class="fas fa-globe-americas" style="color:#4fc3f7;"></i>
+        <h3>Novo Mundo</h3>
+    </div>
+    <div class="widget-fixed-body" style="text-align:center;padding:16px 14px;">
+        <div class="nw-world-name">Baiak</div>
+        <div class="nw-date-info">
+            <i class="far fa-calendar-alt"></i> 21/04/2026 &mdash; 19:00h
+        </div>
+        <div class="nw-countdown" id="nwCountdown" data-target="2026-04-21T19:00:00">
+            <div class="nw-cd-item">
+                <span class="nw-cd-value" id="nwDays">--</span>
+                <span class="nw-cd-label">Dias</span>
+            </div>
+            <div class="nw-cd-item">
+                <span class="nw-cd-value" id="nwHours">--</span>
+                <span class="nw-cd-label">Horas</span>
+            </div>
+            <div class="nw-cd-item">
+                <span class="nw-cd-value" id="nwMinutes">--</span>
+                <span class="nw-cd-label">Min</span>
+            </div>
+            <div class="nw-cd-item">
+                <span class="nw-cd-value" id="nwSeconds">--</span>
+                <span class="nw-cd-label">Seg</span>
+            </div>
+        </div>
+        <div class="nw-launched" id="nwLaunched" style="display:none;">
+            <i class="fas fa-check-circle" style="color:#4caf50;font-size:1.2rem;"></i>
+            <span>Mundo está ABERTO!</span>
+        </div>
+    </div>
+</div>
+<script>
+(function(){
+    var el = document.getElementById('nwCountdown');
+    if (!el) return;
+    var target = new Date(el.dataset.target).getTime();
+    var launched = document.getElementById('nwLaunched');
+    function update() {
+        var now = Date.now();
+        var diff = target - now;
+        if (diff <= 0) {
+            el.style.display = 'none';
+            launched.style.display = 'flex';
+            return;
+        }
+        var d = Math.floor(diff / 86400000);
+        var h = Math.floor((diff % 86400000) / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('nwDays').textContent = d < 10 ? '0' + d : d;
+        document.getElementById('nwHours').textContent = h < 10 ? '0' + h : h;
+        document.getElementById('nwMinutes').textContent = m < 10 ? '0' + m : m;
+        document.getElementById('nwSeconds').textContent = s < 10 ? '0' + s : s;
+        requestAnimationFrame(function(){ setTimeout(update, 1000); });
+    }
+    update();
+})();
+</script>
+<div class="widget-fixed">
+    <div class="widget-fixed-header">
+        <i class="fas fa-bolt" style="color:#f4d03f;"></i>
+        <h3>Boosted</h3>
+    </div>
+    <div class="widget-fixed-body">
+        <div class="boosted-grid">
+                        <div class="boosted-card">
+                <div class="boosted-label">Boss</div>
+                <div class="boosted-img">
+                    <img src="../images/animated-outfits/animoutfit.php?id=842&addons=2&head=0&body=21&legs=19&feet=3&mount=0" alt="Tarbaz">                </div>
+                <div class="boosted-name">Tarbaz</div>
+            </div>
+            
+                        <div class="boosted-card">
+                <div class="boosted-label">Criatura</div>
+                <div class="boosted-img">
+                    <img src="../images/animated-outfits/animoutfit.php?id=1702&addons=0&head=0&body=0&legs=0&feet=0&mount=0" alt="Iks Yapunac">                </div>
+                <div class="boosted-name">Iks Yapunac</div>
+            </div>
+                    </div>
+    </div>
+</div>
+<a href="/donate" class="widget-webshop" data-spa>
+    <div class="widget-webshop-inner">
+        <div class="widget-webshop-arrows">&#9660; WEBSHOP &#9660;</div>
+        <div class="widget-webshop-icon"><i class="fas fa-gem"></i></div>
+        <div class="widget-webshop-subtitle">Apoie o Servidor e Potencialize sua Aventura</div>
+        <div class="widget-webshop-btn">
+            <i class="fas fa-coins"></i> OBTER TIBIA COINS        </div>
+    </div>
+</a>
+<div class="widget-fixed">
+    <div class="widget-fixed-header">
+        <i class="fas fa-search" style="color: #aaa;"></i>
+        <h3>Buscar Personagem</h3>
+    </div>
+    <div class="widget-fixed-body">
+        <form method="get" action="index.php" style="display:flex;gap:6px;overflow:hidden;">
+            <input type="hidden" name="page" value="characters">
+            <div style="flex:1;min-width:0;position:relative;">
+                <i class="fas fa-user" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:0.8rem;"></i>
+                <input type="text" name="name" placeholder="Nome do personagem..." required
+                       style="width:100%;padding:8px 10px 8px 30px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:var(--text-primary);font-size:0.85rem;box-sizing:border-box;">
+            </div>
+            <button type="submit" class="btn btn-primary" style="padding:8px 12px;font-size:0.8rem;flex-shrink:0;">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </div>
+</div>
+    </aside>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <h3 class="footer-logo">AmonOT</h3>
+            <p>&copy; 2025 AmonOT. Todos os direitos reservados.</p>
+        </div>
+        <div class="footer-links">
+                        <a href="https://discord.gg/2fYycyTXsZ" target="_blank" rel="noopener" title="Discord"><i class="fab fa-discord"></i></a>
+                                    <a href="https://www.instagram.com/amonotoficial" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+    </div>
+</footer>
+
+<script src="js/main.js?v=1777076799"></script>
+
+<!-- Login Modal -->
+<div class="login-modal-overlay" id="loginModal" onclick="if(event.target===this)closeLoginModal()">
+    <div class="login-modal">
+        <div class="login-modal-header">
+            <div class="login-modal-title"><i class="fas fa-sign-in-alt"></i> Entrar</div>
+            <button class="login-modal-close" onclick="closeLoginModal()">&times;</button>
+        </div>
+        <div class="login-modal-body">
+            <div class="login-modal-error" id="loginModalError" style="display:none;"></div>
+            <form method="post" action="/login" class="form-modern" id="loginModalForm" autocomplete="off">
+                <div class="form-group">
+                    <label for="modal_account">Email</label>
+                    <div class="input-icon-wrap">
+                        <i class="fas fa-user"></i>
+                        <input type="email" id="modal_account" name="account_login" placeholder="Digite seu email" maxlength="100" autocomplete="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="modal_password">Senha</label>
+                    <div class="input-icon-wrap">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="modal_password" name="password_login" placeholder="Digite sua senha" maxlength="30" required>
+                    </div>
+                </div>
+                <div class="form-group form-check">
+                    <label>
+                        <input type="checkbox" name="remember_me" value="1">
+                        <span>Lembrar por 30 dias</span>
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-sign-in-alt"></i> Entrar                    </button>
+                </div>
+                                <div class="form-divider"><span>ou</span></div>
+                <div class="form-actions">
+                                        <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=927813501642-oj5kgcqkccubues4cq8s7ihgtgkipjba.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Famonot.online%2Fgoogle_callback.php&response_type=code&scope=openid+email+profile&state=f8cac8e8bacab240f17de8ae36c7e097&access_type=online&prompt=select_account" class="btn btn-block" style="background:#fff;color:#333;border:1px solid #ddd;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        Login com Google                    </a>
+                </div>
+                                <div class="form-divider"><span>ou</span></div>
+                <div class="form-actions">
+                    <a href="/createaccount" class="btn btn-secondary btn-block" data-spa onclick="closeLoginModal()">
+                        <i class="fas fa-user-plus"></i> Criar Conta                    </a>
+                </div>
+                <div style="text-align:center;margin-top:12px;">
+                    <a href="/lostaccount" style="font-size:12px;color:var(--text-muted);" data-spa onclick="closeLoginModal()">
+                        <i class="fas fa-question-circle"></i> Perdeu sua conta?                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+function openLoginModal(){
+    document.getElementById('loginModal').classList.add('active');
+    document.body.style.overflow='hidden';
+    setTimeout(function(){ document.getElementById('modal_account').focus(); },100);
+}
+function closeLoginModal(){
+    document.getElementById('loginModal').classList.remove('active');
+    document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){var m=document.getElementById('loginModal');if(m&&m.classList.contains('active'))closeLoginModal();}
+});
+document.addEventListener('click',function(e){
+    var link = e.target.closest('a[data-requires-login]');
+    if(link){ e.preventDefault(); e.stopPropagation(); openLoginModal(); }
+},true);
+</script>
+
+<!-- Download Modal -->
+<div class="download-modal-overlay" id="downloadModal" onclick="if(event.target===this)closeDownloadModal()">
+    <div class="download-modal">
+        <div class="download-modal-header">
+            <div class="download-modal-title"><i class="fas fa-download"></i> Downloads</div>
+            <button class="login-modal-close" onclick="closeDownloadModal()">&times;</button>
+        </div>
+        <div class="download-modal-body">
+            <p style="color:var(--text-secondary);font-size:0.85rem;margin:0 0 20px 0;text-align:center;">Baixe o client para começar a jogar</p>
+            <div style="display:grid;grid-template-columns:1fr;gap:16px;">
+                                <div class="download-modal-item">
+                                        <span class="download-modal-badge">Novo</span>
+                                        <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+                        <i class="fas fa-rocket" style="font-size:24px;color:var(--accent-gold);"></i>
+                    </div>
+                    <h3 style="margin:0 0 6px 0;font-size:1rem;">AmonOT Launcher</h3>
+                    <p style="color:var(--text-secondary);font-size:0.8rem;margin:0 0 16px 0;flex:1;">
+                        Launcher oficial com auto-update. Instale e jogue sem complicação.                    </p>
+                    <a href="/download?file=launcher" class="btn btn-primary" style="width:100%;padding:10px;" target="_blank" rel="noopener">
+                        <i class="fas fa-download"></i> Download                    </a>
+                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+<script>
+function openDownloadModal(){
+    document.getElementById('downloadModal').classList.add('active');
+    document.body.style.overflow='hidden';
+}
+function closeDownloadModal(){
+    document.getElementById('downloadModal').classList.remove('active');
+    document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){var m=document.getElementById('downloadModal');if(m&&m.classList.contains('active'))closeDownloadModal();}
+});
+</script>
+
+
+<!-- Support Widget Button -->
+<div id="supportWidget" class="sw-container" data-logged="0">
+    <button id="swToggle" class="sw-toggle" onclick="swTogglePanel()" title="Support">
+        <i class="fas fa-headset"></i>
+                <span class="sw-badge" id="swBadge" style="display:none;">0</span>
+            </button>
+
+    <!-- Panel -->
+    <div id="swPanel" class="sw-panel">
+        <div class="sw-panel-header">
+            <div class="sw-panel-title">
+                <i class="fas fa-headset"></i> Support
+            </div>
+            <button class="sw-panel-close" onclick="swTogglePanel()">&times;</button>
+        </div>
+        <div class="sw-panel-body" id="swPanelBody">
+            <div class="sw-loading" id="swLoading">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function(){
+    var container = document.getElementById('supportWidget');
+    var panel = document.getElementById('swPanel');
+    var body = document.getElementById('swPanelBody');
+    var badge = document.getElementById('swBadge');
+    var isLogged = container.dataset.logged === '1';
+    var isOpen = false;
+    var currentView = 'list'; // list, view, create
+    var currentTicketId = null;
+    var pollInterval = null;
+    var lastReplyId = 0;
+
+    // Attachment config (mirrored from PHP)
+    var SW_ATTACH_ACCEPT  = ".png,.jpg,.jpeg,.gif,.webp,.mp4,.webm,.mov,.json";
+    var SW_ATTACH_DELAY   = 30;
+    var SW_ATTACH_MAXMB   = 50;
+    var SW_IS_ADMIN       = false;
+    var SW_DOWNLOAD_ONLY  = ["json"];
+    // Public bucket URL for R2-backed attachments. Empty string when R2 isn't
+    // configured — JS falls back to the legacy '../uploads/...' path.
+    var SW_R2_PUBLIC_URL  = "https:\/\/pub-342ec1e756c348c89a105b228a02735c.r2.dev";
+    var SW_LAST_ATTACH_KEY = 'sw_last_attach_at';
+
+    function swCooldownLeft(){
+        if (SW_IS_ADMIN || SW_ATTACH_DELAY <= 0) return 0;
+        var last = 0;
+        try { last = parseInt(localStorage.getItem(SW_LAST_ATTACH_KEY) || '0', 10) || 0; } catch(e){}
+        if (!last) return 0;
+        var elapsed = Math.floor((Date.now() - last) / 1000);
+        var left = SW_ATTACH_DELAY - elapsed;
+        return left > 0 ? left : 0;
+    }
+    function swMarkAttachSent(){
+        try { localStorage.setItem(SW_LAST_ATTACH_KEY, String(Date.now())); } catch(e){}
+    }
+
+    // Persist state across page navigations
+    function swSaveState(){
+        try {
+            localStorage.setItem('sw_state', JSON.stringify({open: isOpen, view: currentView, ticketId: currentTicketId}));
+        } catch(e){}
+    }
+    function swLoadState(){
+        try {
+            var s = JSON.parse(localStorage.getItem('sw_state'));
+            return s || null;
+        } catch(e){ return null; }
+    }
+
+    window.swTogglePanel = function(){
+        isOpen = !isOpen;
+        panel.classList.toggle('active', isOpen);
+        if(isOpen){
+            if(!isLogged){
+                swShowLogin();
+            } else {
+                swLoadList();
+                startPoll();
+            }
+        } else {
+            stopPoll();
+            currentView = 'list';
+            currentTicketId = null;
+        }
+        swSaveState();
+    };
+
+    function swShowLogin(){
+        body.innerHTML = '<div class="sw-login-prompt">' +
+            '<i class="fas fa-lock" style="font-size:2rem;color:var(--text-muted);margin-bottom:12px;"></i>' +
+            '<p style="font-size:.9rem;font-weight:600;color:var(--text-primary);margin-bottom:6px;">Login Required</p>' +
+            '<p style="font-size:.8rem;color:var(--text-secondary);margin-bottom:16px;">You need to be logged in to access support tickets.</p>' +
+            '<button class="sw-btn sw-btn-primary" onclick="closeLoginModal&&closeLoginModal();swTogglePanel();openLoginModal()"><i class="fas fa-sign-in-alt"></i> Login</button>' +
+            '<a href="/createaccount" class="sw-btn sw-btn-secondary" data-spa style="margin-top:6px;" onclick="swTogglePanel()"><i class="fas fa-user-plus"></i> Create Account</a>' +
+        '</div>';
+    }
+
+    // Close on Escape
+    document.addEventListener('keydown', function(e){
+        if(e.key==='Escape' && isOpen) swTogglePanel();
+    });
+
+    function startPoll(){
+        stopPoll();
+        pollInterval = setInterval(function(){
+            if(currentView === 'view' && currentTicketId){
+                swPollReplies();
+            } else {
+                swPollUnread();
+            }
+        }, 10000);
+    }
+    function stopPoll(){ if(pollInterval){ clearInterval(pollInterval); pollInterval=null; } }
+
+    function swFetch(url){
+        return fetch(url, {headers:{'X-Requested-With':'XMLHttpRequest'}}).then(function(r){return r.json();});
+    }
+    function swPost(url,fd){
+        return fetch(url, {method:'POST',body:fd}).then(function(r){return r.json();});
+    }
+
+    // Pending files from paste or file picker
+    var swPendingFiles = [];
+
+    function swPollUnread(){
+        swFetch('/tickets?ajax=widget_data').then(function(d){
+            if(d.unread !== undefined){
+                var n = parseInt(d.unread);
+                badge.textContent = n;
+                badge.style.display = n > 0 ? '' : 'none';
+            }
+        }).catch(function(){});
+    }
+
+    // ===== LIST VIEW =====
+    window.swLoadList = function(){
+        currentView = 'list';
+        currentTicketId = null;
+        swSaveState();
+        body.innerHTML = '<div class="sw-loading"><i class="fas fa-spinner fa-spin"></i></div>';
+
+        swFetch('/tickets?ajax=widget_data').then(function(d){
+            if(!d.success){ body.innerHTML='<div class="sw-empty"><i class="fas fa-exclamation-triangle"></i><p>Error loading tickets.</p></div>'; return; }
+
+            badge.textContent = d.unread;
+            badge.style.display = d.unread > 0 ? '' : 'none';
+
+            var html = '<div class="sw-actions">' +
+                '<button class="sw-btn sw-btn-primary" onclick="swShowCreate()"><i class="fas fa-plus"></i> New Ticket</button>' +
+                '<a href="/tickets" class="sw-btn sw-btn-secondary"><i class="fas fa-external-link-alt"></i> Full Page</a></div>';
+
+            if(!d.tickets || d.tickets.length === 0){
+                html += '<div class="sw-empty"><i class="fas fa-inbox"></i><p>No tickets yet.</p></div>';
+            } else {
+                html += '<div class="sw-ticket-list">';
+                d.tickets.forEach(function(t){
+                    var statusColor = t.status_color || '#666';
+                    var unreadDot = t.has_unread ? '<span class="sw-unread-dot"></span>' : '';
+                    html += '<div class="sw-ticket-item' + (t.has_unread ? ' sw-ticket-unread' : '') + '" onclick="swViewTicket('+t.id+')">' +
+                        '<div class="sw-ticket-item-top">' +
+                            '<span class="sw-ticket-status" style="background:'+statusColor+';">'+t.status_label+'</span>' +
+                            unreadDot +
+                            '<span class="sw-ticket-date">'+t.date+'</span>' +
+                        '</div>' +
+                        '<div class="sw-ticket-subject">'+t.subject+'</div>' +
+                        '<div class="sw-ticket-meta">'+t.ticket_number+' &middot; '+t.replies+' replies</div>' +
+                    '</div>';
+                });
+                html += '</div>';
+            }
+            body.innerHTML = html;
+        }).catch(function(){
+            body.innerHTML='<div class="sw-empty"><i class="fas fa-wifi"></i><p>Connection error.</p></div>';
+        });
+    };
+
+    // ===== VIEW TICKET =====
+    window.swViewTicket = function(id){
+        currentView = 'view';
+        currentTicketId = id;
+        lastReplyId = 0;
+        swSaveState();
+        body.innerHTML = '<div class="sw-loading"><i class="fas fa-spinner fa-spin"></i></div>';
+
+        swFetch('/tickets?ajax=widget_ticket&ticket_id='+id).then(function(d){
+            if(!d.success){ body.innerHTML='<div class="sw-empty"><p>Error loading ticket.</p></div>'; return; }
+
+            var t = d.ticket;
+            var statusColors = {'open':'#27ae60','assigned':'#3498db','in_progress':'#f39c12','waiting_reply':'#e67e22','resolved':'#2ecc71','closed':'#95a5a6'};
+
+            var html = '<div class="sw-back" onclick="swLoadList()"><i class="fas fa-arrow-left"></i> Back</div>';
+            html += '<div class="sw-ticket-header">' +
+                '<div class="sw-ticket-subject" style="font-size:.9rem;font-weight:700;">'+t.subject+'</div>' +
+                '<div style="display:flex;gap:6px;margin-top:6px;align-items:center;">' +
+                    '<span class="sw-ticket-status" style="background:'+(statusColors[t.status]||'#666')+';">'+t.status_label+'</span>' +
+                    '<span class="sw-ticket-meta">'+t.ticket_number+'</span>' +
+                '</div></div>';
+
+            // Messages
+            html += '<div class="sw-messages" id="swMessages">';
+            // Original message
+            html += swRenderMsg(t.author, t.message, t.date, false, t.author_initial, t.attachments);
+
+            if(d.replies){
+                d.replies.forEach(function(r){
+                    html += swRenderMsg(r.author, r.message, r.date, r.is_staff, r.author_initial, r.attachments);
+                    lastReplyId = Math.max(lastReplyId, r.id);
+                });
+            }
+            html += '</div>';
+
+            // Reply form — Enter sends, no button needed
+            if(t.status !== 'closed'){
+                html += '<div class="sw-reply-form">' +
+                    '<div class="sw-reply-input-wrap">' +
+                        '<textarea id="swReplyMsg" class="sw-textarea" placeholder="Type your reply... (Enter to send)" rows="2"></textarea>' +
+                        '<label class="sw-attach-inline" title="Attach file"><i class="fas fa-paperclip"></i><input type="file" id="swReplyFile" accept="'+SW_ATTACH_ACCEPT+'" multiple style="display:none;"></label>' +
+                    '</div>' +
+                    '<div id="swPendingPreview" class="sw-pending-preview"></div>' +
+                '</div>';
+            } else {
+                html += '<div class="sw-closed-notice"><i class="fas fa-lock"></i> This ticket is closed.</div>';
+            }
+
+            body.innerHTML = html;
+            var msgs = document.getElementById('swMessages');
+            if(msgs) msgs.scrollTop = msgs.scrollHeight;
+            swPendingFiles = [];
+            var ta = document.getElementById('swReplyMsg');
+            var fi = document.getElementById('swReplyFile');
+            if(ta){
+                // Enter to send, Shift+Enter / Ctrl+Enter for newline
+                ta.addEventListener('keydown', function(e){
+                    if(e.key === 'Enter' && !e.shiftKey && !e.ctrlKey){
+                        e.preventDefault();
+                        swSendReply(id);
+                    }
+                });
+                // Ctrl+V paste images
+                ta.addEventListener('paste', function(e){
+                    var items = (e.clipboardData || e.originalEvent.clipboardData || {}).items;
+                    if(!items) return;
+                    for(var i=0;i<items.length;i++){
+                        if(items[i].kind === 'file'){
+                            var f = items[i].getAsFile();
+                            if(f) { swPendingFiles.push(f); }
+                        }
+                    }
+                    if(swPendingFiles.length > 0) swRenderPendingPreview();
+                });
+            }
+            if(fi){
+                fi.addEventListener('change', function(){
+                    for(var i=0;i<fi.files.length;i++) swPendingFiles.push(fi.files[i]);
+                    fi.value = '';
+                    swRenderPendingPreview();
+                });
+            }
+
+        }).catch(function(){
+            body.innerHTML='<div class="sw-empty"><p>Connection error.</p></div>';
+        });
+    };
+
+    function swRenderMsg(author, message, date, isStaff, initial, attachments){
+        var cls = isStaff ? 'sw-msg sw-msg-staff' : 'sw-msg sw-msg-player';
+        var avatarBg = isStaff ? '#3498db' : 'var(--accent-gold,#f4d03f)';
+        var avatarColor = isStaff ? '#fff' : '#000';
+        var staffBadge = isStaff ? ' <span class="sw-staff-badge">STAFF</span>' : '';
+        var escaped = (message||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        var attHtml = '';
+        if(attachments && attachments.length > 0){
+            attachments.forEach(function(a){
+                var fn = a.file_path || ('uploads/tickets/' + (a.filename || ''));
+                // R2-backed: use the public bucket URL directly. Legacy local
+                // files keep the '../' relative path so old tickets still work.
+                var url;
+                if (a.storage === 'r2' && SW_R2_PUBLIC_URL) {
+                    url = SW_R2_PUBLIC_URL + '/' + fn.replace(/^\/+/, '');
+                } else {
+                    url = '../' + fn;
+                }
+                var ext = url.split('.').pop().toLowerCase();
+                var isDlOnly = SW_DOWNLOAD_ONLY.indexOf(ext) !== -1;
+                if(!isDlOnly && ['png','jpg','jpeg','gif'].indexOf(ext) !== -1){
+                    attHtml += '<img src="'+url+'" class="sw-att-img" onclick="swLightbox(this.src)" onerror="this.outerHTML=\'<span class=sw-att-file>Image unavailable</span>\'">';
+                } else if(!isDlOnly && ext === 'mp4'){
+                    attHtml += '<video controls class="sw-att-video"><source src="'+url+'" type="video/mp4"></video>';
+                } else {
+                    var origName = a.original_filename||a.filename||'File';
+                    var icon = isDlOnly ? 'fa-download' : 'fa-paperclip';
+                    var dlAttr = isDlOnly ? ' download="'+origName.replace(/"/g,'&quot;')+'"' : ' target="_blank"';
+                    attHtml += '<a href="'+url+'"'+dlAttr+' class="sw-att-file"><i class="fas '+icon+'"></i> '+origName+'</a>';
+                }
+            });
+        }
+        return '<div class="'+cls+'">' +
+            '<div class="sw-msg-header">' +
+                '<span class="sw-msg-avatar" style="background:'+avatarBg+';color:'+avatarColor+';">'+(initial||'?')+'</span>' +
+                '<span class="sw-msg-author">'+(author||'')+ staffBadge+'</span>' +
+                '<span class="sw-msg-date">'+date+'</span>' +
+            '</div>' +
+            '<div class="sw-msg-body">'+escaped+'</div>' +
+            (attHtml ? '<div class="sw-msg-attachments">'+attHtml+'</div>' : '') +
+        '</div>';
+    }
+
+    function swRenderPendingPreview(){
+        var el = document.getElementById('swPendingPreview');
+        if(!el) return;
+        if(swPendingFiles.length === 0){ el.innerHTML = ''; return; }
+        var html = '';
+        for(var i=0;i<swPendingFiles.length;i++){
+            var f = swPendingFiles[i];
+            var isImg = /^image\/(png|jpe?g|gif)$/i.test(f.type);
+            if(isImg){
+                html += '<div class="sw-pending-item" data-idx="'+i+'"><img src="'+URL.createObjectURL(f)+'" class="sw-pending-thumb"><span class="sw-pending-rm" onclick="swRemovePending('+i+')">&times;</span></div>';
+            } else {
+                html += '<div class="sw-pending-item" data-idx="'+i+'"><span class="sw-pending-name"><i class="fas fa-file"></i> '+f.name+'</span><span class="sw-pending-rm" onclick="swRemovePending('+i+')">&times;</span></div>';
+            }
+        }
+        el.innerHTML = html;
+    }
+    window.swRemovePending = function(idx){
+        swPendingFiles.splice(idx, 1);
+        swRenderPendingPreview();
+    };
+
+    // ===== SEND REPLY =====
+    window.swSendReply = function(id){
+        var msg = document.getElementById('swReplyMsg');
+        var hasFiles = swPendingFiles.length > 0;
+        if(!msg || (!msg.value.trim() && !hasFiles)) return;
+
+        // Cooldown check (non-admin only)
+        if (hasFiles) {
+            var left = swCooldownLeft();
+            if (left > 0) {
+                alert('Aguarde ' + left + 's antes de enviar outro arquivo.');
+                return;
+            }
+        }
+
+        // Disable textarea while sending
+        msg.disabled = true;
+        msg.placeholder = 'Sending...';
+
+        var fd = new FormData();
+        fd.append('action','widget_reply');
+        fd.append('ticket_id', id);
+        fd.append('message', msg.value.trim());
+        for(var i=0;i<swPendingFiles.length;i++){
+            fd.append('attachments[]', swPendingFiles[i]);
+        }
+
+        swPost('/tickets', fd).then(function(d){
+            if(d.success){
+                if (hasFiles) swMarkAttachSent();
+                var msgs = document.getElementById('swMessages');
+                if(msgs){
+                    var div = document.createElement('div');
+                    div.innerHTML = swRenderMsg(d.author, d.message, d.date, false, d.author_initial, d.attachments);
+                    msgs.appendChild(div.firstChild);
+                    msgs.scrollTop = msgs.scrollHeight;
+                    if(d.reply_id) lastReplyId = Math.max(lastReplyId, d.reply_id);
+                }
+                if (d.upload_warning) alert(d.upload_warning);
+                msg.value = '';
+                swPendingFiles = [];
+                swRenderPendingPreview();
+            } else {
+                if (d.cooldown) swMarkAttachSent();
+                alert(d.errors ? d.errors.join('\n') : 'Error sending reply.');
+            }
+            msg.disabled = false;
+            msg.placeholder = 'Type your reply... (Enter to send)';
+            msg.focus();
+        }).catch(function(){
+            alert('Connection error.');
+            msg.disabled = false;
+            msg.placeholder = 'Type your reply... (Enter to send)';
+        });
+    };
+
+    // ===== POLL NEW REPLIES =====
+    function swPollReplies(){
+        if(!currentTicketId) return;
+        swFetch('/tickets?ajax=get_replies&ticket_id='+currentTicketId+'&last_reply_id='+lastReplyId).then(function(d){
+            if(d.success && d.replies && d.replies.length > 0){
+                var msgs = document.getElementById('swMessages');
+                if(!msgs) return;
+                d.replies.forEach(function(r){
+                    var div = document.createElement('div');
+                    div.innerHTML = swRenderMsg(r.author_name, r.message, r.created_at_formatted, r.is_staff, (r.author_name||'U').charAt(0).toUpperCase(), r.attachments);
+                    msgs.appendChild(div.firstChild);
+                    lastReplyId = Math.max(lastReplyId, r.id);
+                });
+                msgs.scrollTop = msgs.scrollHeight;
+            }
+        }).catch(function(){});
+    }
+
+    // ===== CREATE TICKET =====
+    window.swShowCreate = function(){
+        currentView = 'create';
+        swSaveState();
+        body.innerHTML = '<div class="sw-loading"><i class="fas fa-spinner fa-spin"></i></div>';
+
+        swFetch('/tickets?ajax=widget_create_data').then(function(d){
+            if(!d.success){ body.innerHTML='<div class="sw-empty"><p>Error loading form.</p></div>'; return; }
+
+            var html = '<div class="sw-back" onclick="swLoadList()"><i class="fas fa-arrow-left"></i> Back</div>';
+            html += '<div class="sw-create-title"><i class="fas fa-plus-circle"></i> New Ticket</div>';
+            html += '<div class="sw-form">';
+
+            // Category
+            html += '<div class="sw-form-group"><label>Category</label><select id="swCatId" class="sw-select" required>';
+            html += '<option value="">Select...</option>';
+            if(d.categories) d.categories.forEach(function(c){
+                html += '<option value="'+c.id+'">'+c.name+'</option>';
+            });
+            html += '</select></div>';
+
+            // Character
+            if(d.characters && d.characters.length > 0){
+                html += '<div class="sw-form-group"><label>Character <small>(optional)</small></label><select id="swCharName" class="sw-select">';
+                html += '<option value="">None</option>';
+                d.characters.forEach(function(p){
+                    html += '<option value="'+p.name+'">'+p.name+' (Lv '+p.level+')</option>';
+                });
+                html += '</select></div>';
+            }
+
+            // Subject
+            html += '<div class="sw-form-group"><label>Subject</label><input type="text" id="swSubject" class="sw-input" placeholder="Brief summary..." maxlength="200" required></div>';
+
+            // Message
+            html += '<div class="sw-form-group"><label>Message <small>(min. 10 chars)</small></label><textarea id="swCreateMsg" class="sw-textarea" rows="4" placeholder="Describe your issue..." required></textarea></div>';
+
+            html += '<button id="swCreateBtn" class="sw-btn sw-btn-primary sw-btn-block" onclick="swSubmitCreate()"><i class="fas fa-paper-plane"></i> Submit Ticket</button>';
+            html += '</div>';
+
+            body.innerHTML = html;
+        }).catch(function(){
+            body.innerHTML='<div class="sw-empty"><p>Connection error.</p></div>';
+        });
+    };
+
+    window.swSubmitCreate = function(){
+        var cat = document.getElementById('swCatId');
+        var subj = document.getElementById('swSubject');
+        var msg = document.getElementById('swCreateMsg');
+        var charEl = document.getElementById('swCharName');
+        var btn = document.getElementById('swCreateBtn');
+
+        if(!cat.value || !subj.value.trim() || !msg.value.trim() || msg.value.trim().length < 10){
+            alert('Please fill all required fields (message min. 10 characters).');
+            return;
+        }
+
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+        var fd = new FormData();
+        fd.append('action','widget_create');
+        fd.append('category_id', cat.value);
+        fd.append('subject', subj.value.trim());
+        fd.append('message', msg.value.trim());
+        if(charEl) fd.append('character_name', charEl.value);
+
+        swPost('/tickets', fd).then(function(d){
+            if(d.success){
+                swViewTicket(d.ticket_id);
+            } else {
+                alert(d.errors ? d.errors.join('\n') : 'Error creating ticket.');
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Ticket';
+            }
+        }).catch(function(){
+            alert('Connection error.');
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Ticket';
+        });
+    };
+
+    // ===== LIGHTBOX =====
+    window.swLightbox = function(src){
+        var lb = document.getElementById('swLightbox');
+        if(!lb){
+            lb = document.createElement('div');
+            lb.id = 'swLightbox';
+            lb.className = 'sw-lightbox';
+            lb.innerHTML = '<div class="sw-lightbox-close" id="swLbClose">&times;</div><img id="swLbImg" class="sw-lightbox-img">';
+            document.body.appendChild(lb);
+            lb.addEventListener('click', function(e){
+                if(e.target === lb || e.target.id === 'swLbClose') swCloseLightbox();
+            });
+        }
+        document.getElementById('swLbImg').src = src;
+        lb.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+    window.swCloseLightbox = function(){
+        var lb = document.getElementById('swLightbox');
+        if(lb){ lb.classList.remove('active'); }
+        document.body.style.overflow = '';
+    };
+    document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape'){
+            var lb = document.getElementById('swLightbox');
+            if(lb && lb.classList.contains('active')) swCloseLightbox();
+        }
+    });
+
+    // Initial unread poll (even when closed) — only if logged in
+    if(isLogged){
+        setInterval(function(){
+            if(!isOpen) swPollUnread();
+        }, 30000);
+    }
+
+    // Restore state from previous page
+    var saved = swLoadState();
+    if(saved && saved.open){
+        isOpen = true;
+        panel.classList.add('active');
+        if(!isLogged){
+            swShowLogin();
+        } else {
+            startPoll();
+            if(saved.view === 'view' && saved.ticketId){
+                swViewTicket(saved.ticketId);
+            } else if(saved.view === 'create'){
+                swShowCreate();
+            } else {
+                swLoadList();
+            }
+        }
+    }
+})();
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fcd7714a8e115ac',t:'MTc3ODk2NjgzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
