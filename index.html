@@ -1,1377 +1,872 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lowly People — Guild</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --gold:        #c9a84c;
-      --gold-light:  #e8cb7a;
-      --gold-dim:    #7a6330;
-      --bg:          #0a0905;
-      --bg2:         #0f0d08;
-      --bg3:         #16130c;
-      --bg4:         #1e1a10;
-      --bg5:         #100e08;
-      --border:      #2e2815;
-      --border-gold: #3d3218;
-      --text:        #d4c9a8;
-      --text-dim:    #7a7060;
-      --online:      #5dbf6e;
-      --offline:     #5a5040;
-      --red:         #c95050;
-      --sidebar-w:   260px;
+    :root{
+      --gold:#c9a84c;--gold-light:#e8cb7a;--gold-dim:#7a6330;
+      --bg:#0a0905;--bg2:#0f0d08;--bg3:#16130c;--bg4:#1e1a10;
+      --border:#2e2815;--border-gold:#3d3218;
+      --text:#d4c9a8;--text-dim:#7a7060;
+      --online:#5dbf6e;--offline:#5a5040;--red:#c95050;
+      --sidebar-w:260px;
     }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:17px;line-height:1.5;display:flex;overflow:hidden;height:100vh}
+    body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,168,76,.05) 0%,transparent 60%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* SIDEBAR */
+    #sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sidebar-w);background:var(--bg2);border-right:1px solid var(--border-gold);display:flex;flex-direction:column;z-index:100;transform:translateX(0);transition:transform .28s cubic-bezier(.4,0,.2,1)}
+    #sidebar.collapsed{transform:translateX(calc(-1 * var(--sidebar-w)))}
+    .sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:11px;flex-shrink:0}
+    .sb-logo svg{flex-shrink:0;opacity:.85}
+    .sb-logo-name{font-family:'Cinzel',serif;font-size:.82rem;font-weight:700;color:var(--gold-light);letter-spacing:.05em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sb-logo-sub{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.2em;color:var(--gold-dim);text-transform:uppercase}
+    .sb-section{padding:12px 10px 4px;flex-shrink:0}
+    .sb-section-title{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dim);padding:0 8px;margin-bottom:4px}
+    .nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:5px;cursor:pointer;transition:background .15s,color .15s;color:var(--text-dim);font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.06em;border:none;background:none;width:100%;text-align:left;text-decoration:none;user-select:none}
+    .nav-item:hover{background:var(--bg4);color:var(--text)}
+    .nav-item.active{background:var(--bg4);color:var(--gold-light);border:1px solid var(--border-gold)}
+    .nav-icon{width:17px;height:17px;flex-shrink:0;opacity:.7}
+    .nav-item.active .nav-icon{opacity:1}
+    .sb-divider{height:1px;background:var(--border);margin:6px 10px}
+    .sb-footer{padding:14px 10px;border-top:1px solid var(--border);margin-top:auto;font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.12em;color:var(--gold-dim);text-align:center}
+    .sb-footer a{color:var(--gold-dim);text-decoration:none}
+    .sb-footer a:hover{color:var(--gold-light)}
 
-    html, body { height: 100%; }
+    /* TOGGLE */
+    #toggle-btn{position:fixed;top:14px;left:calc(var(--sidebar-w) + 10px);z-index:200;width:34px;height:34px;background:var(--bg3);border:1px solid var(--border-gold);color:var(--gold-dim);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:left .28s cubic-bezier(.4,0,.2,1),color .15s,background .15s;border-radius:4px}
+    #toggle-btn:hover{background:var(--bg4);color:var(--gold-light)}
+    #toggle-btn.closed{left:10px}
+    #toggle-btn svg{width:17px;height:17px}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 17px;
-      line-height: 1.5;
-      display: flex;
-      overflow: hidden;
-      height: 100vh;
-    }
+    /* OVERLAY */
+    #overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:90}
 
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,168,76,0.05) 0%, transparent 60%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-    }
+    /* MAIN */
+    #main{flex:1;margin-left:var(--sidebar-w);overflow-y:auto;overflow-x:hidden;transition:margin-left .28s cubic-bezier(.4,0,.2,1);position:relative;z-index:1;height:100vh}
+    #main.full{margin-left:0}
+    .page{display:none}
+    .page.active{display:block}
+    .cwrap{max-width:1040px;margin:0 auto;padding:60px 28px 80px}
 
-    /* ═══════════════════════════════════════
-       SIDEBAR
-    ═══════════════════════════════════════ */
-    #sidebar {
-      position: fixed;
-      top: 0; left: 0; bottom: 0;
-      width: var(--sidebar-w);
-      background: var(--bg2);
-      border-right: 1px solid var(--border-gold);
-      display: flex;
-      flex-direction: column;
-      z-index: 100;
-      transform: translateX(0);
-      transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
-    }
-    #sidebar.collapsed { transform: translateX(calc(-1 * var(--sidebar-w))); }
+    /* HEADER */
+    header{text-align:center;padding:36px 0 32px;border-bottom:1px solid var(--border-gold)}
+    .guild-emblem{display:inline-block;width:52px;height:52px;margin-bottom:14px;opacity:.85}
+    h1{font-family:'Cinzel',serif;font-size:clamp(1.7rem,4vw,2.8rem);font-weight:900;letter-spacing:.08em;color:var(--gold-light);text-shadow:0 0 40px rgba(201,168,76,.25),0 2px 4px rgba(0,0,0,.8);line-height:1.1}
+    .subtitle{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.25em;color:var(--gold-dim);text-transform:uppercase;margin-top:7px}
+    .divider{display:flex;align-items:center;gap:12px;margin:14px auto;width:fit-content;color:var(--gold-dim)}
+    .divider::before,.divider::after{content:'';display:block;width:55px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim))}
+    .divider::after{transform:scaleX(-1)}
+    .meta-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:26px;padding:22px 0 0}
+    .meta-item{text-align:center}
+    .meta-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;color:var(--gold-dim);text-transform:uppercase;display:block;margin-bottom:3px}
+    .meta-value{font-family:'Cinzel',serif;font-size:.9rem;font-weight:600;color:var(--gold-light)}
 
-    .sidebar-logo {
-      padding: 22px 20px 18px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-    .sidebar-logo svg { flex-shrink: 0; opacity: 0.85; }
-    .sidebar-logo-text { flex: 1; min-width: 0; }
-    .sidebar-logo-name {
-      font-family: 'Cinzel', serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .sidebar-logo-sub {
-      font-family: 'Cinzel', serif;
-      font-size: 0.55rem;
-      letter-spacing: 0.2em;
-      color: var(--gold-dim);
-      text-transform: uppercase;
-    }
+    /* STATS */
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:32px 0 24px}
+    .stat-card{background:var(--bg3);border:1px solid var(--border-gold);padding:16px;text-align:center;position:relative;overflow:hidden}
+    .stat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.04) 0%,transparent 60%)}
+    .stat-num{font-family:'Cinzel',serif;font-size:1.9rem;font-weight:700;color:var(--gold-light);display:block}
+    .stat-num.green{color:var(--online)}
+    .stat-num.dim{color:var(--text-dim)}
+    .stat-label{font-family:'Cinzel',serif;text-transform:uppercase;font-size:.56rem;letter-spacing:.12em;color:var(--text-dim)}
 
-    .sidebar-section {
-      padding: 14px 12px 6px;
-      flex-shrink: 0;
-    }
-    .sidebar-section-title {
-      font-family: 'Cinzel', serif;
-      font-size: 0.55rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      padding: 0 8px;
-      margin-bottom: 4px;
-    }
+    /* CONTROLS */
+    .controls{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:18px;align-items:center}
+    .search-box{flex:1;min-width:170px;background:var(--bg3);border:1px solid var(--border-gold);color:var(--text);font-family:'Crimson Pro',serif;font-size:1rem;padding:8px 12px;outline:none;transition:border-color .2s}
+    .search-box::placeholder{color:var(--text-dim)}
+    .search-box:focus{border-color:var(--gold-dim)}
+    .filter-btns{display:flex;gap:6px}
+    .btn{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:8px 13px;background:var(--bg3);border:1px solid var(--border-gold);color:var(--text-dim);cursor:pointer;transition:all .2s}
+    .btn:hover,.btn.active{background:var(--bg4);border-color:var(--gold-dim);color:var(--gold-light)}
+    .table-wrap{border:1px solid var(--border-gold);overflow-x:auto}
+    table{width:100%;border-collapse:collapse}
+    thead tr{background:var(--bg3);border-bottom:2px solid var(--border-gold)}
+    th{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);padding:11px 13px;text-align:left;white-space:nowrap;cursor:pointer;user-select:none;transition:color .2s}
+    th:hover{color:var(--gold-light)}
+    th .sort-icon{opacity:.4;margin-left:4px}
+    th.sorted .sort-icon{opacity:1;color:var(--gold-light)}
+    tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+    tbody tr:hover{background:var(--bg3)}
+    tbody tr:last-child{border-bottom:none}
+    td{padding:9px 13px;font-size:.9rem;white-space:nowrap}
+    .td-name a{color:var(--gold-light);text-decoration:none;font-weight:600;transition:color .15s}
+    .td-name a:hover{color:#fff;text-decoration:underline}
+    .td-num{font-family:'Cinzel',serif;font-size:.83rem;color:var(--text)}
+    .td-voc{color:var(--text-dim);font-style:italic;font-size:.83rem}
+    .badge-rank{display:inline-block;font-family:'Cinzel',serif;font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border:1px solid}
+    .badge-rank.leader{color:var(--gold-light);border-color:var(--gold-dim);background:rgba(201,168,76,.08)}
+    .badge-rank.vice{color:#c0a860;border-color:#5a4820;background:rgba(192,168,96,.06)}
+    .badge-rank.member{color:var(--text-dim);border-color:var(--border);background:transparent}
+    .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:middle}
+    .dot.online{background:var(--online);box-shadow:0 0 6px var(--online)}
+    .dot.offline{background:var(--offline)}
+    .status-text.online{color:var(--online)}
+    .status-text.offline{color:var(--text-dim)}
+    .rank-header td{background:var(--bg2);border-top:1px solid var(--border-gold);border-bottom:1px solid var(--border-gold);font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);padding:5px 13px}
+    .empty{text-align:center;padding:36px;color:var(--text-dim);font-style:italic}
 
-    .nav-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.15s, color 0.15s;
-      color: var(--text-dim);
-      font-family: 'Cinzel', serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      border: none;
-      background: none;
-      width: 100%;
-      text-align: left;
-      text-decoration: none;
-      user-select: none;
-    }
-    .nav-item:hover { background: var(--bg4); color: var(--text); }
-    .nav-item.active { background: var(--bg4); color: var(--gold-light); border: 1px solid var(--border-gold); }
-    .nav-item .nav-icon {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      opacity: 0.7;
-    }
-    .nav-item.active .nav-icon { opacity: 1; }
+    /* PAGE CHROME */
+    .page-title{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;color:var(--gold-light);letter-spacing:.06em;margin-bottom:5px}
+    .page-desc{font-size:.88rem;color:var(--text-dim);margin-bottom:28px}
+    .page-divider{height:1px;background:linear-gradient(90deg,var(--border-gold),transparent);margin-bottom:28px}
+    .info-callout{background:rgba(201,168,76,.06);border:1px solid var(--border-gold);padding:13px 15px;margin-bottom:18px;font-size:.84rem;color:var(--text-dim);line-height:1.6}
+    .info-callout strong{color:var(--gold-light);font-weight:600}
 
-    .sidebar-divider {
-      height: 1px;
-      background: var(--border);
-      margin: 8px 12px;
-    }
+    /* CALC SHARED */
+    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+    .calc-panel{background:var(--bg3);border:1px solid var(--border-gold);padding:22px}
+    .calc-panel h3{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:16px;padding-bottom:9px;border-bottom:1px solid var(--border)}
+    .field-row{margin-bottom:14px}
+    .field-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);display:block;margin-bottom:5px}
+    .field-input,.field-select{width:100%;background:var(--bg2);border:1px solid var(--border-gold);color:var(--text);font-family:'Crimson Pro',serif;font-size:1rem;padding:7px 11px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+    .field-input:focus,.field-select:focus{border-color:var(--gold-dim)}
+    .field-select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a6330' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;padding-right:30px}
+    .result-box{background:var(--bg2);border:1px solid var(--border-gold);padding:18px 22px}
+    .result-box h3{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:14px}
+    .result-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);font-size:.86rem}
+    .result-row:last-child{border-bottom:none}
+    .result-key{color:var(--text-dim);font-size:.8rem}
+    .result-val{font-family:'Cinzel',serif;font-size:.88rem;color:var(--gold-light);font-weight:600}
+    .result-val.big{font-size:1.25rem}
+    .result-val.warn{color:var(--red)}
+    .result-val.ok{color:var(--online)}
+    .rarity-badge{display:inline-block;font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border:1px solid;margin-bottom:14px}
+    .rarity-common{color:#a0a0a0;border-color:#404040}
+    .rarity-uncommon{color:#6ec96e;border-color:#2d5a2d}
+    .rarity-rare{color:#5ab0e8;border-color:#1e4a70}
+    .rarity-epic{color:#b06fe8;border-color:#4a2070}
+    .rarity-legendary{color:#e8a030;border-color:#704010}
+    .rarity-mythical{color:#e84040;border-color:#701010}
+    footer{text-align:center;margin-top:48px;padding-top:18px;border-top:1px solid var(--border);font-size:.78rem;color:var(--text-dim)}
+    footer span{color:var(--gold-dim)}
+    #loading{text-align:center;padding:56px 24px;font-family:'Cinzel',serif;letter-spacing:.2em;color:var(--gold-dim);font-size:.78rem}
+    #error-msg{display:none;background:rgba(201,80,80,.1);border:1px solid #5a2020;color:var(--red);padding:13px 17px;margin:18px 0;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.1em}
 
-    .sidebar-footer {
-      padding: 16px 12px;
-      border-top: 1px solid var(--border);
-      margin-top: auto;
-      font-family: 'Cinzel', serif;
-      font-size: 0.55rem;
-      letter-spacing: 0.12em;
-      color: var(--gold-dim);
-      text-align: center;
-    }
-    .sidebar-footer a { color: var(--gold-dim); text-decoration: none; }
-    .sidebar-footer a:hover { color: var(--gold-light); }
+    /* ── ASCENSION ── */
+    .pts-display{text-align:center;padding:13px;background:var(--bg2);border:1px solid var(--border-gold);margin-bottom:14px}
+    .pts-num{font-family:'Cinzel',serif;font-size:1.7rem;font-weight:700;color:var(--gold-light);display:block}
+    .pts-num.over{color:var(--red)}
+    .pts-label{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim)}
+    .asc-category{margin-bottom:22px}
+    .asc-cat-title{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:9px;padding-bottom:5px;border-bottom:1px solid var(--border)}
+    .asc-row{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+    .asc-attr-name{font-size:.78rem;color:var(--text-dim);width:115px;flex-shrink:0}
+    .asc-num-input{width:56px;flex-shrink:0;background:var(--bg2);border:1px solid var(--border);color:var(--text);font-family:'Cinzel',serif;font-size:.75rem;padding:4px 7px;text-align:center;outline:none;transition:border-color .2s}
+    .asc-num-input:focus{border-color:var(--gold-dim)}
+    .asc-slider-wrap{flex:1;position:relative;height:22px;display:flex;align-items:center;cursor:ew-resize;user-select:none}
+    .asc-slider-track{position:absolute;left:0;right:0;height:6px;background:var(--border);border-radius:3px}
+    .asc-slider-fill{position:absolute;left:0;height:6px;background:var(--gold);border-radius:3px;transition:width .15s}
+    .asc-slider-thumb{position:absolute;width:14px;height:14px;background:var(--gold-light);border:2px solid var(--bg2);border-radius:50%;top:50%;transform:translate(-50%,-50%);transition:left .15s;box-shadow:0 0 6px rgba(201,168,76,.4)}
+    .asc-pts-label{font-family:'Cinzel',serif;font-size:.68rem;color:var(--text-dim);min-width:28px;text-align:right}
 
-    /* ═══════════════════════════════════════
-       TOGGLE BUTTON
-    ═══════════════════════════════════════ */
-    #toggle-btn {
-      position: fixed;
-      top: 16px;
-      left: calc(var(--sidebar-w) + 12px);
-      z-index: 200;
-      width: 36px;
-      height: 36px;
-      background: var(--bg3);
-      border: 1px solid var(--border-gold);
-      color: var(--gold-dim);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: left 0.28s cubic-bezier(0.4,0,0.2,1), color 0.15s, background 0.15s;
-      border-radius: 4px;
-    }
-    #toggle-btn:hover { background: var(--bg4); color: var(--gold-light); }
-    #toggle-btn.closed { left: 12px; }
-    #toggle-btn svg { width: 18px; height: 18px; transition: transform 0.28s; }
+    /* ── REROLL ATTRIBUTES ── */
+    .attr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:7px;margin-bottom:14px}
+    .attr-card{background:var(--bg2);border:1px solid var(--border);padding:9px 11px;cursor:pointer;transition:all .18s;position:relative;border-radius:3px}
+    .attr-card:hover{border-color:var(--gold-dim);background:var(--bg3)}
+    .attr-card.selected{border-color:var(--gold);background:rgba(201,168,76,.1);box-shadow:0 0 8px rgba(201,168,76,.15)}
+    .attr-card.disabled{opacity:.35;cursor:not-allowed;pointer-events:none}
+    .attr-name{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.05em;color:var(--gold-light);display:block;margin-bottom:3px}
+    .attr-desc{font-size:.72rem;color:var(--text-dim);line-height:1.4}
+    .attr-tooltip{position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--bg4);border:1px solid var(--border-gold);padding:8px 12px;font-size:.75rem;color:var(--text);white-space:nowrap;z-index:50;pointer-events:none;opacity:0;transition:opacity .15s;border-radius:3px}
+    .attr-card:hover .attr-tooltip{opacity:1}
+    .chance-bar-wrap{height:7px;background:var(--border);border-radius:3px;overflow:hidden;margin:5px 0 2px}
+    .chance-bar{height:100%;border-radius:3px;transition:width .3s,background .3s}
 
-    /* ═══════════════════════════════════════
-       OVERLAY (mobile)
-    ═══════════════════════════════════════ */
-    #overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 90;
-    }
+    /* ── UPGRADE TABLE ── */
+    .up-row{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+    .up-row-label{font-family:'Cinzel',serif;font-size:.72rem;color:var(--text-dim);width:80px;flex-shrink:0}
+    .up-pct{font-family:'Cinzel',serif;font-size:.75rem;min-width:36px;text-align:right}
 
-    /* ═══════════════════════════════════════
-       MAIN CONTENT
-    ═══════════════════════════════════════ */
-    #main {
-      flex: 1;
-      margin-left: var(--sidebar-w);
-      overflow-y: auto;
-      overflow-x: hidden;
-      transition: margin-left 0.28s cubic-bezier(0.4,0,0.2,1);
-      position: relative;
-      z-index: 1;
-      height: 100vh;
-    }
-    #main.full { margin-left: 0; }
-
-    .page { display: none; }
-    .page.active { display: block; }
-
-    .content-wrap {
-      max-width: 1060px;
-      margin: 0 auto;
-      padding: 64px 32px 80px;
-    }
-
-    /* ═══════════════════════════════════════
-       HEADER (guild page)
-    ═══════════════════════════════════════ */
-    header {
-      text-align: center;
-      padding: 40px 0 36px;
-      border-bottom: 1px solid var(--border-gold);
-      margin-bottom: 0;
-    }
-    .guild-emblem { display: inline-block; width: 56px; height: 56px; margin-bottom: 16px; opacity: 0.85; }
-    h1 {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      color: var(--gold-light);
-      text-shadow: 0 0 40px rgba(201,168,76,0.25), 0 2px 4px rgba(0,0,0,0.8);
-      line-height: 1.1;
-    }
-    .subtitle {
-      font-family: 'Cinzel', serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.25em;
-      color: var(--gold-dim);
-      text-transform: uppercase;
-      margin-top: 8px;
-    }
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 16px auto;
-      width: fit-content;
-      color: var(--gold-dim);
-    }
-    .divider::before, .divider::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold-dim));
-    }
-    .divider::after { transform: scaleX(-1); }
-
-    .meta-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 28px;
-      padding: 24px 0 0;
-    }
-    .meta-item { text-align: center; }
-    .meta-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      color: var(--gold-dim);
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 3px;
-    }
-    .meta-value {
-      font-family: 'Cinzel', serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--gold-light);
-    }
-
-    /* ═══════════════════════════════════════
-       STATS
-    ═══════════════════════════════════════ */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin: 36px 0 28px;
-    }
-    .stat-card {
-      background: var(--bg3);
-      border: 1px solid var(--border-gold);
-      padding: 18px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
-    }
-    .stat-num {
-      font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      display: block;
-    }
-    .stat-num.green { color: var(--online); }
-    .stat-num.dim   { color: var(--text-dim); }
-    .stat-label {
-      font-family: 'Cinzel', serif;
-      text-transform: uppercase;
-      font-size: 0.58rem;
-      letter-spacing: 0.12em;
-      color: var(--text-dim);
-    }
-
-    /* ═══════════════════════════════════════
-       CONTROLS + TABLE
-    ═══════════════════════════════════════ */
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-      align-items: center;
-    }
-    .search-box {
-      flex: 1;
-      min-width: 180px;
-      background: var(--bg3);
-      border: 1px solid var(--border-gold);
-      color: var(--text);
-      font-family: 'Crimson Pro', serif;
-      font-size: 1rem;
-      padding: 8px 13px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .search-box::placeholder { color: var(--text-dim); }
-    .search-box:focus { border-color: var(--gold-dim); }
-    .filter-btns { display: flex; gap: 7px; }
-    .btn {
-      font-family: 'Cinzel', serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 8px 14px;
-      background: var(--bg3);
-      border: 1px solid var(--border-gold);
-      color: var(--text-dim);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .btn:hover, .btn.active {
-      background: var(--bg4);
-      border-color: var(--gold-dim);
-      color: var(--gold-light);
-    }
-    .table-wrap { border: 1px solid var(--border-gold); overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; }
-    thead tr { background: var(--bg3); border-bottom: 2px solid var(--border-gold); }
-    th {
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      padding: 12px 14px;
-      text-align: left;
-      white-space: nowrap;
-      cursor: pointer;
-      user-select: none;
-      transition: color 0.2s;
-    }
-    th:hover { color: var(--gold-light); }
-    th .sort-icon { opacity: 0.4; margin-left: 4px; }
-    th.sorted .sort-icon { opacity: 1; color: var(--gold-light); }
-    tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
-    tbody tr:hover { background: var(--bg3); }
-    tbody tr:last-child { border-bottom: none; }
-    td { padding: 10px 14px; font-size: 0.92rem; white-space: nowrap; }
-    .td-name a { color: var(--gold-light); text-decoration: none; font-weight: 600; transition: color 0.15s; }
-    .td-name a:hover { color: #fff; text-decoration: underline; }
-    .td-num { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--text); }
-    .td-voc { color: var(--text-dim); font-style: italic; font-size: 0.85rem; }
-    .badge-rank {
-      display: inline-block;
-      font-family: 'Cinzel', serif;
-      font-size: 0.56rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 2px 7px;
-      border: 1px solid;
-    }
-    .badge-rank.leader  { color: var(--gold-light); border-color: var(--gold-dim); background: rgba(201,168,76,0.08); }
-    .badge-rank.vice    { color: #c0a860; border-color: #5a4820; background: rgba(192,168,96,0.06); }
-    .badge-rank.member  { color: var(--text-dim); border-color: var(--border); background: transparent; }
-    .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
-    .dot.online  { background: var(--online); box-shadow: 0 0 6px var(--online); }
-    .dot.offline { background: var(--offline); }
-    .status-text.online  { color: var(--online); }
-    .status-text.offline { color: var(--text-dim); }
-    .rank-header td {
-      background: var(--bg2);
-      border-top: 1px solid var(--border-gold);
-      border-bottom: 1px solid var(--border-gold);
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      padding: 6px 14px;
-    }
-    .empty { text-align: center; padding: 40px; color: var(--text-dim); font-style: italic; }
-
-    /* ═══════════════════════════════════════
-       PAGE TITLES
-    ═══════════════════════════════════════ */
-    .page-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      letter-spacing: 0.06em;
-      margin-bottom: 6px;
-    }
-    .page-desc {
-      font-size: 0.9rem;
-      color: var(--text-dim);
-      margin-bottom: 32px;
-    }
-    .page-divider {
-      height: 1px;
-      background: linear-gradient(90deg, var(--border-gold), transparent);
-      margin-bottom: 32px;
-    }
-
-    /* ═══════════════════════════════════════
-       CALCULADORA — compartilhado
-    ═══════════════════════════════════════ */
-    .calc-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      align-items: start;
-    }
-    @media (max-width: 700px) { .calc-grid { grid-template-columns: 1fr; } }
-
-    .calc-panel {
-      background: var(--bg3);
-      border: 1px solid var(--border-gold);
-      padding: 24px;
-    }
-    .calc-panel h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      margin-bottom: 18px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-    .field-row { margin-bottom: 16px; }
-    .field-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      display: block;
-      margin-bottom: 6px;
-    }
-    .field-input, .field-select {
-      width: 100%;
-      background: var(--bg2);
-      border: 1px solid var(--border-gold);
-      color: var(--text);
-      font-family: 'Crimson Pro', serif;
-      font-size: 1rem;
-      padding: 8px 12px;
-      outline: none;
-      transition: border-color 0.2s;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-    .field-input:focus, .field-select:focus { border-color: var(--gold-dim); }
-    .field-select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a6330' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
-
-    .result-box {
-      background: var(--bg2);
-      border: 1px solid var(--border-gold);
-      padding: 20px 24px;
-    }
-    .result-box h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      margin-bottom: 16px;
-    }
-    .result-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 7px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.88rem;
-    }
-    .result-row:last-child { border-bottom: none; }
-    .result-key { color: var(--text-dim); font-size: 0.82rem; }
-    .result-val {
-      font-family: 'Cinzel', serif;
-      font-size: 0.9rem;
-      color: var(--gold-light);
-      font-weight: 600;
-    }
-    .result-val.big {
-      font-size: 1.3rem;
-      color: var(--gold-light);
-    }
-    .result-val.warn { color: var(--red); }
-    .result-val.ok   { color: var(--online); }
-
-    .rarity-badge {
-      display: inline-block;
-      font-family: 'Cinzel', serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border: 1px solid;
-      margin-bottom: 16px;
-    }
-    .rarity-common    { color: #a0a0a0; border-color: #404040; }
-    .rarity-uncommon  { color: #6ec96e; border-color: #2d5a2d; }
-    .rarity-rare      { color: #5ab0e8; border-color: #1e4a70; }
-    .rarity-epic      { color: #b06fe8; border-color: #4a2070; }
-    .rarity-legendary { color: #e8a030; border-color: #704010; }
-    .rarity-mythical  { color: #e84040; border-color: #701010; }
-
-    /* ascension bars */
-    .asc-category { margin-bottom: 20px; }
-    .asc-cat-title {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      margin-bottom: 10px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
-    }
-    .asc-attr-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-    .asc-attr-name {
-      font-size: 0.8rem;
-      color: var(--text-dim);
-      width: 120px;
-      flex-shrink: 0;
-    }
-    .asc-attr-input {
-      width: 60px;
-      flex-shrink: 0;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-family: 'Cinzel', serif;
-      font-size: 0.78rem;
-      padding: 4px 8px;
-      text-align: center;
-      outline: none;
-    }
-    .asc-attr-input:focus { border-color: var(--gold-dim); }
-    .asc-bar-wrap {
-      flex: 1;
-      height: 6px;
-      background: var(--border);
-      border-radius: 3px;
-      overflow: hidden;
-    }
-    .asc-bar {
-      height: 100%;
-      background: var(--gold);
-      border-radius: 3px;
-      transition: width 0.3s;
-    }
-    .asc-pts-used {
-      font-family: 'Cinzel', serif;
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      text-align: right;
-    }
-    .pts-display {
-      text-align: center;
-      padding: 14px;
-      background: var(--bg2);
-      border: 1px solid var(--border-gold);
-      margin-bottom: 20px;
-    }
-    .pts-num {
-      font-family: 'Cinzel', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      display: block;
-    }
-    .pts-num.over { color: var(--red); }
-    .pts-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.58rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-    }
-
-    /* upgrade chance bar */
-    .chance-bar-wrap {
-      height: 8px;
-      background: var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-      margin: 6px 0 2px;
-    }
-    .chance-bar {
-      height: 100%;
-      border-radius: 4px;
-      transition: width 0.3s, background 0.3s;
-    }
-
-    /* info callout */
-    .info-callout {
-      background: rgba(201,168,76,0.06);
-      border: 1px solid var(--border-gold);
-      padding: 14px 16px;
-      margin-bottom: 20px;
-      font-size: 0.85rem;
-      color: var(--text-dim);
-      line-height: 1.6;
-    }
-    .info-callout strong { color: var(--gold-light); font-weight: 600; }
-
-    /* loading / error */
-    #loading {
-      text-align: center;
-      padding: 60px 24px;
-      font-family: 'Cinzel', serif;
-      letter-spacing: 0.2em;
-      color: var(--gold-dim);
-      font-size: 0.8rem;
-    }
-    #error-msg {
-      display: none;
-      background: rgba(201,80,80,0.1);
-      border: 1px solid #5a2020;
-      color: var(--red);
-      padding: 14px 18px;
-      margin: 20px 0;
-      font-family: 'Cinzel', serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 48px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--text-dim);
-    }
-    footer span { color: var(--gold-dim); }
-
-    @media (max-width: 700px) {
-      :root { --sidebar-w: 240px; }
-      #sidebar { transform: translateX(calc(-1 * var(--sidebar-w))); }
-      #sidebar.open { transform: translateX(0); }
-      #sidebar.collapsed { transform: translateX(calc(-1 * var(--sidebar-w))); }
-      #main { margin-left: 0 !important; }
-      #toggle-btn { left: 12px !important; }
-      #overlay { display: block; opacity: 0; pointer-events: none; transition: opacity 0.28s; }
-      #overlay.visible { opacity: 1; pointer-events: auto; }
-      .stats { grid-template-columns: repeat(3,1fr); gap: 8px; }
-      .stat-num { font-size: 1.4rem; }
-      td, th { padding: 8px 10px; }
-      .content-wrap { padding: 56px 16px 60px; }
+    @media(max-width:700px){
+      :root{--sidebar-w:240px}
+      #sidebar{transform:translateX(calc(-1 * var(--sidebar-w)))}
+      #sidebar.open{transform:translateX(0)}
+      #main{margin-left:0!important}
+      #toggle-btn{left:10px!important}
+      #overlay{display:block;opacity:0;pointer-events:none;transition:opacity .28s}
+      #overlay.visible{opacity:1;pointer-events:auto}
+      .calc-grid{grid-template-columns:1fr}
+      .stats{gap:8px}
+      .stat-num{font-size:1.4rem}
+      td,th{padding:8px 9px}
+      .cwrap{padding:52px 14px 56px}
     }
   </style>
 </head>
 <body>
 
-<!-- ═══ SIDEBAR ═══ -->
+<!-- SIDEBAR -->
 <aside id="sidebar">
-  <div class="sidebar-logo">
-    <svg width="30" height="30" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M32 4 L38 24 L58 24 L42 36 L48 56 L32 44 L16 56 L22 36 L6 24 L26 24 Z" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
+  <div class="sb-logo">
+    <svg width="28" height="28" viewBox="0 0 64 64" fill="none">
+      <path d="M32 4L38 24L58 24L42 36L48 56L32 44L16 56L22 36L6 24L26 24Z" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
       <circle cx="32" cy="32" r="8" fill="none" stroke="#c9a84c" stroke-width="1"/>
       <circle cx="32" cy="32" r="2" fill="#c9a84c"/>
     </svg>
-    <div class="sidebar-logo-text">
-      <div class="sidebar-logo-name">Lowly People</div>
-      <div class="sidebar-logo-sub">AmonOT · Baiak</div>
+    <div>
+      <div class="sb-logo-name">Lowly People</div>
+      <div class="sb-logo-sub">AmonOT · Baiak</div>
     </div>
   </div>
 
-  <div class="sidebar-section">
-    <div class="sidebar-section-title">Guild</div>
+  <div class="sb-section">
+    <div class="sb-section-title">Guild</div>
     <button class="nav-item active" onclick="navigate('guild')" id="nav-guild">
-      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-      </svg>
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       Lista de Membros
     </button>
   </div>
 
-  <div class="sidebar-divider"></div>
+  <div class="sb-divider"></div>
 
-  <div class="sidebar-section">
-    <div class="sidebar-section-title">Calculadoras</div>
+  <div class="sb-section">
+    <div class="sb-section-title">Calculadoras</div>
     <button class="nav-item" onclick="navigate('ascension')" id="nav-ascension">
-      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-      </svg>
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
       Ascensão
     </button>
     <button class="nav-item" onclick="navigate('reroll')" id="nav-reroll">
-      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
-        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
-      </svg>
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
       Reroll de Atributos
     </button>
     <button class="nav-item" onclick="navigate('upgrade')" id="nav-upgrade">
-      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="18 15 12 9 6 15"/>
-      </svg>
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
       Upgrade de Item
     </button>
   </div>
 
-  <div class="sidebar-footer">
-    Dados via <a href="https://amonot.online/guilds?name=Lowly+People" target="_blank">amonot.online</a>
-  </div>
+  <div class="sb-footer">Dados via <a href="https://amonot.online/guilds?name=Lowly+People" target="_blank">amonot.online</a></div>
 </aside>
 
-<!-- TOGGLE -->
-<button id="toggle-btn" onclick="toggleSidebar()" aria-label="Abrir/fechar menu">
+<button id="toggle-btn" onclick="toggleSidebar()" aria-label="Menu">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
     <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
   </svg>
 </button>
-
-<!-- OVERLAY mobile -->
 <div id="overlay" onclick="closeSidebarMobile()"></div>
 
-<!-- ═══ MAIN ═══ -->
 <main id="main">
 
-  <!-- ── GUILD PAGE ── -->
-  <div class="page active" id="page-guild">
-    <div class="content-wrap">
-      <header>
-        <svg class="guild-emblem" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M32 4 L38 24 L58 24 L42 36 L48 56 L32 44 L16 56 L22 36 L6 24 L26 24 Z" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
-          <circle cx="32" cy="32" r="8" fill="none" stroke="#c9a84c" stroke-width="1"/>
-          <circle cx="32" cy="32" r="2" fill="#c9a84c"/>
-        </svg>
-        <h1>Lowly People</h1>
-        <div class="divider">✦</div>
-        <p class="subtitle">AmonOT &mdash; Painel da Guild</p>
-        <div class="meta-bar">
-          <div class="meta-item">
-            <span class="meta-label">Líder</span>
-            <span class="meta-value" id="meta-owner">—</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Fundada em</span>
-            <span class="meta-value" id="meta-founded">—</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Atualizado em</span>
-            <span class="meta-value" id="meta-updated">—</span>
-          </div>
-        </div>
-      </header>
-
-      <div id="error-msg">⚠ Não foi possível carregar os dados. Verifique se o guild_data.json foi gerado.</div>
-
-      <div class="stats" id="stats" style="display:none">
-        <div class="stat-card">
-          <span class="stat-num" id="stat-total">0</span>
-          <span class="stat-label">Total de Membros</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num green" id="stat-online">0</span>
-          <span class="stat-label">Online Agora</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num dim" id="stat-offline">0</span>
-          <span class="stat-label">Offline</span>
-        </div>
+<!-- ══ GUILD ══ -->
+<div class="page active" id="page-guild">
+  <div class="cwrap">
+    <header>
+      <svg class="guild-emblem" viewBox="0 0 64 64" fill="none">
+        <path d="M32 4L38 24L58 24L42 36L48 56L32 44L16 56L22 36L6 24L26 24Z" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="32" cy="32" r="8" fill="none" stroke="#c9a84c" stroke-width="1"/>
+        <circle cx="32" cy="32" r="2" fill="#c9a84c"/>
+      </svg>
+      <h1>Lowly People</h1>
+      <div class="divider">✦</div>
+      <p class="subtitle">AmonOT &mdash; Painel da Guild</p>
+      <div class="meta-bar">
+        <div class="meta-item"><span class="meta-label">Líder</span><span class="meta-value" id="meta-owner">—</span></div>
+        <div class="meta-item"><span class="meta-label">Fundada em</span><span class="meta-value" id="meta-founded">—</span></div>
+        <div class="meta-item"><span class="meta-label">Atualizado em</span><span class="meta-value" id="meta-updated">—</span></div>
       </div>
-
-      <div class="controls" id="controls" style="display:none">
-        <input class="search-box" type="text" id="search" placeholder="Buscar membro..." oninput="renderTable()" />
-        <div class="filter-btns">
-          <button class="btn active" onclick="setFilter('all', this)">Todos</button>
-          <button class="btn" onclick="setFilter('online', this)">Online</button>
-          <button class="btn" onclick="setFilter('offline', this)">Offline</button>
-        </div>
-      </div>
-
-      <div id="loading">Carregando dados da guild...</div>
-      <div class="table-wrap" id="table-wrap" style="display:none">
-        <table>
-          <thead>
-            <tr>
-              <th onclick="sortBy('rank')" id="th-rank">Cargo <span class="sort-icon">↕</span></th>
-              <th onclick="sortBy('name')" id="th-name">Nome <span class="sort-icon">↕</span></th>
-              <th onclick="sortBy('level')" id="th-level">Level <span class="sort-icon">↕</span></th>
-              <th onclick="sortBy('resets')" id="th-resets">Resets <span class="sort-icon">↕</span></th>
-              <th onclick="sortBy('vocation')" id="th-vocation">Vocação <span class="sort-icon">↕</span></th>
-              <th onclick="sortBy('status')" id="th-status">Status <span class="sort-icon">↕</span></th>
-            </tr>
-          </thead>
-          <tbody id="tbody"></tbody>
-        </table>
-      </div>
-
-      <footer>
-        Dados extraídos de <span>amonot.online</span> • Atualizado automaticamente a cada hora
-      </footer>
+    </header>
+    <div id="error-msg">⚠ Não foi possível carregar os dados. Verifique se o guild_data.json foi gerado.</div>
+    <div class="stats" id="stats" style="display:none">
+      <div class="stat-card"><span class="stat-num" id="stat-total">0</span><span class="stat-label">Total de Membros</span></div>
+      <div class="stat-card"><span class="stat-num green" id="stat-online">0</span><span class="stat-label">Online Agora</span></div>
+      <div class="stat-card"><span class="stat-num dim" id="stat-offline">0</span><span class="stat-label">Offline</span></div>
     </div>
-  </div>
-
-  <!-- ── ASCENSÃO ── -->
-  <div class="page" id="page-ascension">
-    <div class="content-wrap">
-      <div class="page-title">Calculadora de Ascensão</div>
-      <div class="page-desc">Distribua seus pontos de ascensão entre os atributos. Cada reset concede 25 pontos permanentes.</div>
-      <div class="page-divider"></div>
-
-      <div class="info-callout">
-        <strong>Como funciona:</strong> Informe seus resets e distribua os pontos pelas 4 categorias abaixo. Os pontos não se perdem no reset — ficam permanentemente disponíveis.
-      </div>
-
-      <div class="calc-grid" style="margin-bottom:20px">
-        <div class="calc-panel">
-          <h3>Pontos Disponíveis</h3>
-          <div class="field-row">
-            <label class="field-label">Número de Resets</label>
-            <input class="field-input" type="number" id="asc-resets" min="0" max="9999" value="0" oninput="ascUpdate()">
-          </div>
-          <div class="pts-display">
-            <span class="pts-num" id="asc-pts-avail">0</span>
-            <span class="pts-label">Pontos Disponíveis</span>
-          </div>
-          <div class="pts-display" style="border-color:var(--border)">
-            <span class="pts-num" id="asc-pts-remain" style="font-size:1.4rem">0</span>
-            <span class="pts-label">Pontos Restantes</span>
-          </div>
-        </div>
-        <div class="result-box" style="border-color:var(--border)">
-          <h3>Resumo dos Bônus</h3>
-          <div id="asc-summary"></div>
-        </div>
-      </div>
-
-      <div id="asc-categories"></div>
-    </div>
-  </div>
-
-  <!-- ── REROLL ── -->
-  <div class="page" id="page-reroll">
-    <div class="content-wrap">
-      <div class="page-title">Calculadora de Reroll</div>
-      <div class="page-desc">Calcule o custo de rerollar os atributos de um item com base na raridade e nos slots travados.</div>
-      <div class="page-divider"></div>
-
-      <div class="calc-grid">
-        <div class="calc-panel">
-          <h3>Configuração do Item</h3>
-          <div class="field-row">
-            <label class="field-label">Raridade do Item</label>
-            <select class="field-select" id="rr-rarity" onchange="rerollUpdate()">
-              <option value="1">Uncommon — 1 atributo</option>
-              <option value="2">Rare — 2 atributos</option>
-              <option value="3" selected>Epic — 3 atributos</option>
-              <option value="4">Legendary — 4 atributos</option>
-              <option value="5">Mythical — 5 atributos</option>
-            </select>
-          </div>
-          <div class="field-row">
-            <label class="field-label">Slots Travados (lock)</label>
-            <select class="field-select" id="rr-locks" onchange="rerollUpdate()">
-              <option value="0">0 slots travados</option>
-              <option value="1">1 slot travado</option>
-              <option value="2">2 slots travados</option>
-              <option value="3">3 slots travados</option>
-              <option value="4">4 slots travados</option>
-            </select>
-          </div>
-          <div class="field-row">
-            <label class="field-label">Número de Tentativas</label>
-            <input class="field-input" type="number" id="rr-tries" min="1" max="9999" value="1" oninput="rerollUpdate()">
-          </div>
-        </div>
-
-        <div class="result-box">
-          <h3>Resultado</h3>
-          <div id="rr-rarity-badge"></div>
-          <div id="rr-results"></div>
-        </div>
-      </div>
-
-      <div class="info-callout" style="margin-top:20px">
-        <strong>Regra de custo:</strong> Cada slot travado custa <strong>10KK por tentativa</strong>. Atributos não travados são re-rolados aleatoriamente. A raridade do item é preservada no reroll.
+    <div class="controls" id="controls" style="display:none">
+      <input class="search-box" type="text" id="search" placeholder="Buscar membro..." oninput="renderTable()"/>
+      <div class="filter-btns">
+        <button class="btn active" onclick="setFilter('all',this)">Todos</button>
+        <button class="btn" onclick="setFilter('online',this)">Online</button>
+        <button class="btn" onclick="setFilter('offline',this)">Offline</button>
       </div>
     </div>
+    <div id="loading">Carregando dados da guild...</div>
+    <div class="table-wrap" id="table-wrap" style="display:none">
+      <table>
+        <thead><tr>
+          <th onclick="sortBy('rank')" id="th-rank">Cargo <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('name')" id="th-name">Nome <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('level')" id="th-level">Level <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('resets')" id="th-resets">Resets <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('vocation')" id="th-vocation">Vocação <span class="sort-icon">↕</span></th>
+          <th onclick="sortBy('status')" id="th-status">Status <span class="sort-icon">↕</span></th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <footer>Dados extraídos de <span>amonot.online</span> • Atualizado automaticamente a cada hora</footer>
   </div>
+</div>
 
-  <!-- ── UPGRADE ── -->
-  <div class="page" id="page-upgrade">
-    <div class="content-wrap">
-      <div class="page-title">Calculadora de Upgrade</div>
-      <div class="page-desc">Veja o nível máximo por raridade e a dificuldade de cada upgrade.</div>
-      <div class="page-divider"></div>
-
-      <div class="calc-grid">
-        <div class="calc-panel">
-          <h3>Configuração</h3>
-          <div class="field-row">
-            <label class="field-label">Raridade do Item</label>
-            <select class="field-select" id="up-rarity" onchange="upgradeUpdate()">
-              <option value="0">Common — não upgrada</option>
-              <option value="4">Uncommon — máx +4</option>
-              <option value="6">Rare — máx +6</option>
-              <option value="8" selected>Epic — máx +8</option>
-              <option value="10">Legendary — máx +10</option>
-              <option value="12">Mythical — máx +12</option>
-            </select>
-          </div>
-          <div class="field-row">
-            <label class="field-label">Nível de Upgrade Atual</label>
-            <input class="field-input" type="number" id="up-current" min="0" max="12" value="0" oninput="upgradeUpdate()">
-          </div>
+<!-- ══ ASCENSÃO ══ -->
+<div class="page" id="page-ascension">
+  <div class="cwrap">
+    <div class="page-title">Calculadora de Ascensão</div>
+    <div class="page-desc">Distribua seus pontos de ascensão. Cada reset concede 25 pontos permanentes. Limite: 500 pts por atributo.</div>
+    <div class="page-divider"></div>
+    <div class="calc-grid" style="margin-bottom:18px">
+      <div class="calc-panel">
+        <h3>Pontos Disponíveis</h3>
+        <div class="field-row">
+          <label class="field-label">Número de Resets</label>
+          <input class="field-input" type="number" id="asc-resets" min="0" max="9999" value="0" oninput="ascUpdate()">
         </div>
-
-        <div class="result-box">
-          <h3>Resultado</h3>
-          <div id="up-results"></div>
+        <div class="pts-display">
+          <span class="pts-num" id="asc-pts-avail">0</span>
+          <span class="pts-label">Pontos Disponíveis</span>
+        </div>
+        <div class="pts-display" style="border-color:var(--border)">
+          <span class="pts-num" id="asc-pts-remain" style="font-size:1.3rem">0</span>
+          <span class="pts-label">Pontos Restantes</span>
         </div>
       </div>
-
-      <div style="margin-top:20px">
-        <div class="calc-panel">
-          <h3>Tabela de Chance por Nível</h3>
-          <div id="up-table"></div>
-        </div>
-      </div>
-
-      <div class="info-callout" style="margin-top:20px">
-        <strong>Dica:</strong> Upgrades até +4 têm chances razoáveis. Acima de +8 as chances caem drasticamente. Chegando ao nível máximo, a chance pode ser mínima — prepare recursos suficientes.
+      <div class="result-box">
+        <h3>Resumo por Categoria</h3>
+        <div id="asc-summary"></div>
       </div>
     </div>
+    <div id="asc-categories"></div>
   </div>
+</div>
+
+<!-- ══ REROLL ══ -->
+<div class="page" id="page-reroll">
+  <div class="cwrap">
+    <div class="page-title">Calculadora de Reroll</div>
+    <div class="page-desc">Selecione a raridade, trave slots e escolha os atributos desejados. Custo: 100 Boss Tokens por tentativa.</div>
+    <div class="page-divider"></div>
+    <div class="calc-grid" style="margin-bottom:18px">
+      <div class="calc-panel">
+        <h3>Configuração</h3>
+        <div class="field-row">
+          <label class="field-label">Raridade do Item</label>
+          <select class="field-select" id="rr-rarity" onchange="rrUpdate()">
+            <option value="1">Uncommon — 1 atributo</option>
+            <option value="2">Rare — 2 atributos</option>
+            <option value="3" selected>Epic — 3 atributos</option>
+            <option value="4">Legendary — 4 atributos</option>
+            <option value="5">Mythical — 5 atributos</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <label class="field-label">Slots Travados (lock)</label>
+          <select class="field-select" id="rr-locks" onchange="rrUpdate()">
+            <option value="0">0 slots travados</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <label class="field-label">Valor do Token (Boss ou Task) — em KK</label>
+          <input class="field-input" type="number" id="rr-token-val" min="0" step="0.1" value="0" placeholder="Ex: 0.5 = 500k" oninput="rrUpdate()">
+        </div>
+        <div class="field-row">
+          <label class="field-label">Número de Tentativas (simulação)</label>
+          <input class="field-input" type="number" id="rr-tries" min="1" max="99999" value="10" oninput="rrUpdate()">
+        </div>
+      </div>
+      <div class="result-box">
+        <h3>Resultado</h3>
+        <div id="rr-rarity-badge"></div>
+        <div id="rr-results"></div>
+      </div>
+    </div>
+    <div class="calc-panel" style="margin-bottom:18px">
+      <h3>Atributos Possíveis — clique para selecionar os desejados</h3>
+      <div style="font-size:.8rem;color:var(--text-dim);margin-bottom:12px">Selecione até <span id="rr-max-sel">3</span> atributos (= slots rerolados). Hover para ver detalhes.</div>
+      <div class="attr-grid" id="rr-attr-grid"></div>
+    </div>
+    <div class="info-callout">
+      <strong>Custo:</strong> 100 Boss Tokens por tentativa. Cada slot travado custa 10KK/tentativa. A raridade é preservada. Atributos não travados são rerolados com chance igual entre todos os possíveis.
+    </div>
+  </div>
+</div>
+
+<!-- ══ UPGRADE ══ -->
+<div class="page" id="page-upgrade">
+  <div class="cwrap">
+    <div class="page-title">Calculadora de Upgrade</div>
+    <div class="page-desc">Veja o nível máximo por raridade, chances estimadas e custo médio para atingir o nível desejado.</div>
+    <div class="page-divider"></div>
+    <div class="calc-grid" style="margin-bottom:18px">
+      <div class="calc-panel">
+        <h3>Configuração</h3>
+        <div class="field-row">
+          <label class="field-label">Raridade do Item</label>
+          <select class="field-select" id="up-rarity" onchange="upUpdate()">
+            <option value="0">Common — não upgrada</option>
+            <option value="4">Uncommon — máx +4</option>
+            <option value="6">Rare — máx +6</option>
+            <option value="8" selected>Epic — máx +8</option>
+            <option value="10">Legendary — máx +10</option>
+            <option value="12">Mythical — máx +12</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <label class="field-label">Nível Atual</label>
+          <input class="field-input" type="number" id="up-current" min="0" max="12" value="0" oninput="upUpdate()">
+        </div>
+        <div class="field-row">
+          <label class="field-label">Nível Desejado</label>
+          <input class="field-input" type="number" id="up-target" min="0" max="12" value="8" oninput="upUpdate()">
+        </div>
+        <div class="field-row">
+          <label class="field-label">Valor do Token (Boss ou Task) — em KK</label>
+          <input class="field-input" type="number" id="up-token-val" min="0" step="0.1" value="0" placeholder="Ex: 0.5 = 500k" oninput="upUpdate()">
+        </div>
+      </div>
+      <div class="result-box">
+        <h3>Resultado</h3>
+        <div id="up-results"></div>
+      </div>
+    </div>
+    <div class="calc-panel">
+      <h3>Tabela de Chances por Nível</h3>
+      <div id="up-table"></div>
+    </div>
+    <div class="info-callout" style="margin-top:18px">
+      <strong>Custo por tentativa:</strong> 40 Boss Tokens. Upgrades acima de +6 ficam cada vez mais difíceis — acima de +10, a chance é mínima. Prepare tokens suficientes antes de tentar.
+    </div>
+  </div>
+</div>
 
 </main>
 
 <script>
-// ═══════════════════════════════════════
-// SIDEBAR
-// ═══════════════════════════════════════
-let sidebarOpen = true;
-const isMobile = () => window.innerWidth <= 700;
-
-function toggleSidebar() {
-  if (isMobile()) {
-    const open = document.getElementById('sidebar').classList.toggle('open');
-    document.getElementById('overlay').classList.toggle('visible', open);
+// ─── SIDEBAR ───────────────────────────────────────────
+var sbOpen = true;
+function isMob(){return window.innerWidth<=700}
+function toggleSidebar(){
+  if(isMob()){
+    var open=document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('overlay').classList.toggle('visible',open);
   } else {
-    sidebarOpen = !sidebarOpen;
-    document.getElementById('sidebar').classList.toggle('collapsed', !sidebarOpen);
-    document.getElementById('main').classList.toggle('full', !sidebarOpen);
-    document.getElementById('toggle-btn').classList.toggle('closed', !sidebarOpen);
+    sbOpen=!sbOpen;
+    document.getElementById('sidebar').classList.toggle('collapsed',!sbOpen);
+    document.getElementById('main').classList.toggle('full',!sbOpen);
+    document.getElementById('toggle-btn').classList.toggle('closed',!sbOpen);
   }
 }
-
-function closeSidebarMobile() {
+function closeSidebarMobile(){
   document.getElementById('sidebar').classList.remove('open');
   document.getElementById('overlay').classList.remove('visible');
 }
-
-function navigate(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.getElementById('page-' + page).classList.add('active');
-  document.getElementById('nav-' + page).classList.add('active');
-  document.getElementById('main').scrollTop = 0;
-  if (isMobile()) closeSidebarMobile();
+function navigate(page){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active')});
+  document.getElementById('page-'+page).classList.add('active');
+  document.getElementById('nav-'+page).classList.add('active');
+  document.getElementById('main').scrollTop=0;
+  if(isMob())closeSidebarMobile();
 }
 
-// ═══════════════════════════════════════
-// GUILD TABLE
-// ═══════════════════════════════════════
-let allMembers = [];
-let currentFilter = 'all';
-let currentSort = { key: 'rank', dir: 'asc' };
-const rankOrder = { 'the leader': 0, 'leader': 0, 'vice-leader': 1, 'vice leader': 1, 'member': 2, '': 3 };
-
-function getRankOrder(r) { return rankOrder[(r||'').toLowerCase()] ?? 3; }
-
-function setFilter(f, btn) {
-  currentFilter = f;
-  document.querySelectorAll('.filter-btns .btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+// ─── GUILD TABLE ───────────────────────────────────────
+var allMembers=[],currentFilter='all',currentSort={key:'rank',dir:'asc'};
+var rankOrder={'the leader':0,'leader':0,'vice-leader':1,'vice leader':1,'member':2,'':3};
+function getRankOrder(r){return rankOrder[(r||'').toLowerCase()]??3}
+function setFilter(f,btn){currentFilter=f;document.querySelectorAll('.filter-btns .btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');renderTable()}
+function sortBy(key){
+  if(currentSort.key===key)currentSort.dir=currentSort.dir==='asc'?'desc':'asc';
+  else{currentSort.key=key;currentSort.dir=(key==='level'||key==='resets')?'desc':'asc'}
+  document.querySelectorAll('th').forEach(function(t){t.classList.remove('sorted')});
+  var el=document.getElementById('th-'+key);if(el)el.classList.add('sorted');
   renderTable();
 }
-
-function sortBy(key) {
-  if (currentSort.key === key) {
-    currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
-  } else {
-    currentSort.key = key;
-    currentSort.dir = key === 'level' || key === 'resets' ? 'desc' : 'asc';
-  }
-  document.querySelectorAll('th').forEach(t => t.classList.remove('sorted'));
-  const el = document.getElementById('th-' + key);
-  if (el) el.classList.add('sorted');
-  renderTable();
-}
-
-function badgeClass(rank) {
-  const r = (rank||'').toLowerCase();
-  if (r.includes('leader') && !r.includes('vice')) return 'leader';
-  if (r.includes('vice')) return 'vice';
-  return 'member';
-}
-
-function renderTable() {
-  const q = document.getElementById('search').value.toLowerCase();
-  let members = allMembers.filter(m => {
-    const ms = !q || m.name.toLowerCase().includes(q) || (m.vocation||'').toLowerCase().includes(q) || (m.rank||'').toLowerCase().includes(q);
-    const mf = currentFilter === 'all' || m.status === currentFilter;
-    return ms && mf;
+function badgeClass(rank){var r=(rank||'').toLowerCase();if(r.includes('leader')&&!r.includes('vice'))return'leader';if(r.includes('vice'))return'vice';return'member'}
+function renderTable(){
+  var q=document.getElementById('search').value.toLowerCase();
+  var members=allMembers.filter(function(m){
+    var ms=!q||m.name.toLowerCase().includes(q)||(m.vocation||'').toLowerCase().includes(q)||(m.rank||'').toLowerCase().includes(q);
+    return ms&&(currentFilter==='all'||m.status===currentFilter);
   });
-
-  members.sort((a, b) => {
-    let va, vb;
-    const k = currentSort.key;
-    if (k==='rank')    { va=getRankOrder(a.rank);      vb=getRankOrder(b.rank); }
-    else if(k==='name')    { va=a.name.toLowerCase();      vb=b.name.toLowerCase(); }
-    else if(k==='level')   { va=a.level;                   vb=b.level; }
-    else if(k==='resets')  { va=a.resets;                  vb=b.resets; }
-    else if(k==='vocation'){ va=(a.vocation||'').toLowerCase(); vb=(b.vocation||'').toLowerCase(); }
-    else if(k==='status')  { va=a.status;                  vb=b.status; }
-    const cmp = va<vb?-1:va>vb?1:0;
-    return currentSort.dir==='asc'?cmp:-cmp;
+  members.sort(function(a,b){
+    var va,vb,k=currentSort.key;
+    if(k==='rank'){va=getRankOrder(a.rank);vb=getRankOrder(b.rank)}
+    else if(k==='name'){va=a.name.toLowerCase();vb=b.name.toLowerCase()}
+    else if(k==='level'){va=a.level;vb=b.level}
+    else if(k==='resets'){va=a.resets;vb=b.resets}
+    else if(k==='vocation'){va=(a.vocation||'').toLowerCase();vb=(b.vocation||'').toLowerCase()}
+    else if(k==='status'){va=a.status;vb=b.status}
+    var c=va<vb?-1:va>vb?1:0;return currentSort.dir==='asc'?c:-c;
   });
-
-  const tbody = document.getElementById('tbody');
-  if (!members.length) {
-    tbody.innerHTML = '<tr><td colspan="6" class="empty">Nenhum membro encontrado.</td></tr>';
-    return;
-  }
-
-  let html = '', lastRank = null;
-  members.forEach(m => {
-    if (currentSort.key==='rank' && m.rank!==lastRank) {
-      html += `<tr class="rank-header"><td colspan="6">${m.rank||'Membro'}</td></tr>`;
-      lastRank = m.rank;
-    }
-    const url = `https://amonot.online/characters?name=${encodeURIComponent(m.name)}`;
-    html += `<tr>
-      <td><span class="badge-rank ${badgeClass(m.rank)}">${m.rank||'Member'}</span></td>
-      <td class="td-name"><a href="${url}" target="_blank" rel="noopener">${m.name}</a></td>
-      <td class="td-num">${m.level}</td>
-      <td class="td-num">${m.resets}</td>
-      <td class="td-voc">${m.vocation||'—'}</td>
-      <td><span class="dot ${m.status}"></span><span class="status-text ${m.status}">${m.status==='online'?'Online':'Offline'}</span></td>
-    </tr>`;
+  var tbody=document.getElementById('tbody');
+  if(!members.length){tbody.innerHTML='<tr><td colspan="6" class="empty">Nenhum membro encontrado.</td></tr>';return}
+  var html='',lastRank=null;
+  members.forEach(function(m){
+    if(currentSort.key==='rank'&&m.rank!==lastRank){html+='<tr class="rank-header"><td colspan="6">'+(m.rank||'Membro')+'</td></tr>';lastRank=m.rank}
+    var url='https://amonot.online/characters?name='+encodeURIComponent(m.name);
+    html+='<tr><td><span class="badge-rank '+badgeClass(m.rank)+'">'+(m.rank||'Member')+'</span></td><td class="td-name"><a href="'+url+'" target="_blank" rel="noopener">'+m.name+'</a></td><td class="td-num">'+m.level+'</td><td class="td-num">'+m.resets+'</td><td class="td-voc">'+(m.vocation||'—')+'</td><td><span class="dot '+m.status+'"></span><span class="status-text '+m.status+'">'+(m.status==='online'?'Online':'Offline')+'</span></td></tr>';
   });
-  tbody.innerHTML = html;
+  tbody.innerHTML=html;
 }
-
-async function loadData() {
-  try {
-    const resp = await fetch('guild_data.json?_=' + Date.now());
-    if (!resp.ok) throw new Error('HTTP ' + resp.status);
-    const data = await resp.json();
-    document.getElementById('meta-owner').textContent   = data.owner    || '—';
-    document.getElementById('meta-founded').textContent = data.founded  || '—';
-    document.getElementById('meta-updated').textContent = data.updated_at || '—';
-    document.getElementById('stat-total').textContent   = data.total_members  || 0;
-    document.getElementById('stat-online').textContent  = data.online_count   || 0;
-    document.getElementById('stat-offline').textContent = data.offline_count  || 0;
-    allMembers = data.members || [];
-    document.getElementById('loading').style.display    = 'none';
-    document.getElementById('stats').style.display      = 'grid';
-    document.getElementById('controls').style.display   = 'flex';
-    document.getElementById('table-wrap').style.display = 'block';
+async function loadData(){
+  try{
+    var resp=await fetch('guild_data.json?_='+Date.now());
+    if(!resp.ok)throw new Error('HTTP '+resp.status);
+    var data=await resp.json();
+    document.getElementById('meta-owner').textContent=data.owner||'—';
+    document.getElementById('meta-founded').textContent=data.founded||'—';
+    document.getElementById('meta-updated').textContent=data.updated_at||'—';
+    document.getElementById('stat-total').textContent=data.total_members||0;
+    document.getElementById('stat-online').textContent=data.online_count||0;
+    document.getElementById('stat-offline').textContent=data.offline_count||0;
+    allMembers=data.members||[];
+    document.getElementById('loading').style.display='none';
+    document.getElementById('stats').style.display='grid';
+    document.getElementById('controls').style.display='flex';
+    document.getElementById('table-wrap').style.display='block';
     sortBy('rank');
-  } catch(e) {
-    document.getElementById('loading').style.display    = 'none';
-    document.getElementById('error-msg').style.display  = 'block';
-    console.error(e);
-  }
+  }catch(e){document.getElementById('loading').style.display='none';document.getElementById('error-msg').style.display='block';console.error(e)}
 }
 loadData();
 
-// ═══════════════════════════════════════
-// CALCULADORA — ASCENSÃO
-// ═══════════════════════════════════════
-const ASC_CATEGORIES = [
-  {
-    id: 'attack', name: 'Attack',
-    attrs: [
-      { id:'base_atk',  name: 'Base Attack' },
-      { id:'physical',  name: 'Physical' },
-      { id:'ice',       name: 'Ice' },
-      { id:'fire',      name: 'Fire' },
-      { id:'poison',    name: 'Poison' },
-      { id:'energy',    name: 'Energy' },
-      { id:'holy',      name: 'Holy' },
-      { id:'death',     name: 'Death' },
-      { id:'fatal',     name: 'Fatal' },
-      { id:'avatar',    name: 'Avatar' },
-    ]
-  },
-  {
-    id: 'defense', name: 'Defense',
-    attrs: [
-      { id:'base_def',  name: 'Base Defense' },
-      { id:'def_phys',  name: 'Physical' },
-      { id:'def_ice',   name: 'Ice' },
-      { id:'def_fire',  name: 'Fire' },
-      { id:'def_poison',name: 'Poison' },
-      { id:'def_energy',name: 'Energy' },
-      { id:'def_holy',  name: 'Holy' },
-      { id:'def_death', name: 'Death' },
-    ]
-  },
-  {
-    id: 'agility', name: 'Agility',
-    attrs: [
-      { id:'base_agi',  name: 'Base Agility' },
-      { id:'move_spd',  name: 'Move Speed' },
-      { id:'atk_spd',   name: 'Attack Speed' },
-      { id:'dodge',     name: 'Dodge' },
-    ]
-  },
-  {
-    id: 'mastery', name: 'Mastery',
-    attrs: [
-      { id:'momentum',  name: 'Momentum' },
-      { id:'stamina',   name: 'Stamina' },
-      { id:'exercise',  name: 'Exercise' },
-    ]
-  }
+// ─── ASCENSÃO ──────────────────────────────────────────
+var ASC_CAP=500;
+var ASC_CATS=[
+  {id:'atk',name:'Attack',attrs:[
+    {id:'base_atk',name:'Base Attack'},{id:'physical',name:'Physical'},
+    {id:'ice',name:'Ice'},{id:'fire',name:'Fire'},{id:'poison',name:'Poison'},
+    {id:'energy',name:'Energy'},{id:'holy',name:'Holy'},{id:'death',name:'Death'},
+    {id:'fatal',name:'Fatal'},{id:'avatar',name:'Avatar'}
+  ]},
+  {id:'def',name:'Defense',attrs:[
+    {id:'base_def',name:'Base Defense'},{id:'def_phys',name:'Physical'},
+    {id:'def_ice',name:'Ice'},{id:'def_fire',name:'Fire'},
+    {id:'def_poison',name:'Poison'},{id:'def_energy',name:'Energy'},
+    {id:'def_holy',name:'Holy'},{id:'def_death',name:'Death'}
+  ]},
+  {id:'agi',name:'Agility',attrs:[
+    {id:'base_agi',name:'Base Agility'},{id:'move_spd',name:'Move Speed'},
+    {id:'atk_spd',name:'Attack Speed'},{id:'dodge',name:'Dodge'}
+  ]},
+  {id:'mas',name:'Mastery',attrs:[
+    {id:'momentum',name:'Momentum'},{id:'stamina',name:'Stamina'},{id:'exercise',name:'Exercise'}
+  ]}
 ];
+var ascVals={};
+ASC_CATS.forEach(function(c){c.attrs.forEach(function(a){ascVals[a.id]=0})});
 
-function buildAscensionUI() {
-  const container = document.getElementById('asc-categories');
-  container.innerHTML = '';
-
-  ASC_CATEGORIES.forEach(cat => {
-    const div = document.createElement('div');
-    div.className = 'asc-category';
-    div.innerHTML = `<div class="asc-cat-title">${cat.name}</div>` +
-      cat.attrs.map(attr => `
-        <div class="asc-attr-row">
-          <span class="asc-attr-name">${attr.name}</span>
-          <input class="asc-attr-input" type="number" min="0" max="9999"
-            id="asc-${attr.id}" value="0" oninput="ascUpdate()">
-          <div class="asc-bar-wrap">
-            <div class="asc-bar" id="bar-${attr.id}" style="width:0%"></div>
-          </div>
-          <span class="asc-pts-used" id="pts-${attr.id}" style="min-width:32px;font-size:0.7rem">0</span>
-        </div>`).join('');
-    container.appendChild(div);
+function buildAscUI(){
+  var con=document.getElementById('asc-categories');con.innerHTML='';
+  ASC_CATS.forEach(function(cat){
+    var div=document.createElement('div');div.className='asc-category';
+    var html='<div class="asc-cat-title">'+cat.name+'</div>';
+    cat.attrs.forEach(function(attr){
+      html+='<div class="asc-row" id="asc-row-'+attr.id+'">'
+        +'<span class="asc-attr-name">'+attr.name+'</span>'
+        +'<input class="asc-num-input" type="number" id="asc-n-'+attr.id+'" min="0" max="'+ASC_CAP+'" value="0" oninput="ascNumInput(\''+attr.id+'\')">'
+        +'<div class="asc-slider-wrap" id="asc-sw-'+attr.id+'">'
+          +'<div class="asc-slider-track"></div>'
+          +'<div class="asc-slider-fill" id="asc-sf-'+attr.id+'" style="width:0%"></div>'
+          +'<div class="asc-slider-thumb" id="asc-st-'+attr.id+'" style="left:0%"></div>'
+        +'</div>'
+        +'<span class="asc-pts-label" id="asc-pl-'+attr.id+'">0</span>'
+      +'</div>';
+    });
+    div.innerHTML=html;con.appendChild(div);
+  });
+  // bind drag
+  ASC_CATS.forEach(function(cat){
+    cat.attrs.forEach(function(attr){
+      bindSlider(attr.id);
+    });
   });
 }
 
-function ascUpdate() {
-  const resets = parseInt(document.getElementById('asc-resets').value) || 0;
-  const total  = resets * 25;
-  document.getElementById('asc-pts-avail').textContent = total;
+function bindSlider(id){
+  var wrap=document.getElementById('asc-sw-'+id);
+  if(!wrap)return;
+  var dragging=false;
+  function getVal(clientX){
+    var rect=wrap.getBoundingClientRect();
+    var pct=Math.max(0,Math.min(1,(clientX-rect.left)/rect.width));
+    var total=getAscTotal();
+    var remain=total-getTotalUsed()+ascVals[id];
+    var maxV=Math.min(ASC_CAP,remain);
+    var raw=Math.round(pct*ASC_CAP/5)*5;
+    return Math.max(0,Math.min(maxV,raw));
+  }
+  function apply(clientX){
+    var v=getVal(clientX);
+    ascVals[id]=v;
+    document.getElementById('asc-n-'+id).value=v;
+    ascRender();
+  }
+  wrap.addEventListener('mousedown',function(e){dragging=true;apply(e.clientX);e.preventDefault()});
+  wrap.addEventListener('touchstart',function(e){dragging=true;apply(e.touches[0].clientX);e.preventDefault()},{passive:false});
+  document.addEventListener('mousemove',function(e){if(dragging)apply(e.clientX)});
+  document.addEventListener('touchmove',function(e){if(dragging)apply(e.touches[0].clientX)},{passive:true});
+  document.addEventListener('mouseup',function(){dragging=false});
+  document.addEventListener('touchend',function(){dragging=false});
+}
 
-  let used = 0;
-  const allAttrs = ASC_CATEGORIES.flatMap(c => c.attrs);
-  allAttrs.forEach(attr => {
-    const v = parseInt(document.getElementById('asc-'+attr.id)?.value) || 0;
-    used += v;
-    const pct = total > 0 ? Math.min(100, Math.round(v/total*100)) : 0;
-    const bar = document.getElementById('bar-'+attr.id);
-    if (bar) { bar.style.width = pct + '%'; bar.style.background = pct >= 90 ? '#c95050' : '#c9a84c'; }
-    const pts = document.getElementById('pts-'+attr.id);
-    if (pts) pts.textContent = v;
+function ascNumInput(id){
+  var total=getAscTotal();
+  var v=parseInt(document.getElementById('asc-n-'+id).value)||0;
+  var remain=total-getTotalUsed()+ascVals[id];
+  v=Math.max(0,Math.min(ASC_CAP,Math.min(remain,v)));
+  v=Math.round(v/5)*5;
+  ascVals[id]=v;
+  document.getElementById('asc-n-'+id).value=v;
+  ascRender();
+}
+
+function getAscTotal(){return (parseInt(document.getElementById('asc-resets').value)||0)*25}
+function getTotalUsed(){var s=0;Object.keys(ascVals).forEach(function(k){s+=ascVals[k]});return s}
+
+function ascUpdate(){ascRender()}
+
+function ascRender(){
+  var total=getAscTotal();
+  var used=getTotalUsed();
+  var remain=total-used;
+  document.getElementById('asc-pts-avail').textContent=total;
+  var rel=document.getElementById('asc-pts-remain');
+  rel.textContent=remain;
+  rel.className='pts-num'+(remain<0?' over':'');
+
+  ASC_CATS.forEach(function(cat){
+    cat.attrs.forEach(function(attr){
+      var v=ascVals[attr.id];
+      var pct=ASC_CAP>0?Math.min(100,Math.round(v/ASC_CAP*100)):0;
+      var sf=document.getElementById('asc-sf-'+attr.id);
+      var st=document.getElementById('asc-st-'+attr.id);
+      var pl=document.getElementById('asc-pl-'+attr.id);
+      var ni=document.getElementById('asc-n-'+attr.id);
+      if(sf)sf.style.width=pct+'%';
+      if(st)st.style.left=pct+'%';
+      if(pl)pl.textContent=v;
+      if(ni&&parseInt(ni.value)!==v)ni.value=v;
+      if(sf)sf.style.background=v>=ASC_CAP?'#c95050':v>400?'#e87830':'#c9a84c';
+    });
   });
-
-  const remain = total - used;
-  const el = document.getElementById('asc-pts-remain');
-  el.textContent = remain;
-  el.className = 'pts-num' + (remain < 0 ? ' over' : '');
 
   // summary
-  let summaryHtml = '';
-  ASC_CATEGORIES.forEach(cat => {
-    const catTotal = cat.attrs.reduce((s, a) => s + (parseInt(document.getElementById('asc-'+a.id)?.value)||0), 0);
-    if (catTotal > 0) {
-      summaryHtml += `<div class="result-row">
-        <span class="result-key">${cat.name}</span>
-        <span class="result-val">${catTotal} pts</span>
-      </div>`;
-    }
+  var html='';
+  ASC_CATS.forEach(function(cat){
+    var ct=cat.attrs.reduce(function(s,a){return s+ascVals[a.id]},0);
+    if(ct>0)html+='<div class="result-row"><span class="result-key">'+cat.name+'</span><span class="result-val">'+ct+' pts</span></div>';
   });
-  if (!summaryHtml) summaryHtml = '<div class="result-row"><span class="result-key" style="font-style:italic">Distribua pontos para ver o resumo</span></div>';
-  summaryHtml += `<div class="result-row" style="margin-top:8px;border-top:1px solid var(--border-gold);padding-top:10px">
-    <span class="result-key">Total usado</span>
-    <span class="result-val ${used > total ? 'warn' : 'ok'}">${used} / ${total}</span>
-  </div>`;
-  document.getElementById('asc-summary').innerHTML = summaryHtml;
+  if(!html)html='<div class="result-row"><span class="result-key" style="font-style:italic">Distribua pontos para ver o resumo</span></div>';
+  html+='<div class="result-row" style="margin-top:7px;border-top:1px solid var(--border-gold);padding-top:9px"><span class="result-key">Total usado</span><span class="result-val '+(used>total?'warn':'ok')+'">'+used+' / '+total+'</span></div>';
+  document.getElementById('asc-summary').innerHTML=html;
+}
+buildAscUI();ascRender();
+
+// ─── REROLL ────────────────────────────────────────────
+var RR_ATTRS=[
+  {id:'watk',    name:'Weapon Attack',   desc:'Aumenta o dano da arma (+1% por nível)'},
+  {id:'defense', name:'Defense',         desc:'Reduz o dano recebido (+2 por nível)'},
+  {id:'armor',   name:'Armor',           desc:'Diminui dano físico recebido (+1 por nível)'},
+  {id:'onslaught',name:'Onslaught',      desc:'Chance de causar dano extra nos ataques'},
+  {id:'critc',   name:'Crit Chance',     desc:'Chance de golpe crítico (+0.35% por nível)'},
+  {id:'critd',   name:'Crit Damage',     desc:'Dano em críticos (+1.5% por nível)'},
+  {id:'lleech',  name:'Life Leech',      desc:'Converte dano em HP (+0.2% por nível)'},
+  {id:'mleech',  name:'Mana Leech',      desc:'Converte dano em MP (+0.2% por nível)'},
+  {id:'loot',    name:'Loot',            desc:'Chance de obter itens (+1% por nível)'},
+  {id:'exp',     name:'Exp',             desc:'Experiência ganha (+1% por nível)'},
+  {id:'protall', name:'Protect All',     desc:'Reduz todo tipo de dano (+0.17% por nível)'},
+  {id:'protele', name:'Protect (Elem.)', desc:'Reduz dano de elementos específicos (+0.5%/nível)'},
+  {id:'aspd',    name:'Attack Speed',    desc:'Velocidade de ataque (+0.35% por nível)'},
+  {id:'spelldmg',name:'Spell Damage',    desc:'Dano de magias (+0.5% por nível)'},
+  {id:'spellheal',name:'Spell Healing',  desc:'Cura de magias (+0.5% por nível)'},
+  {id:'maxhp',   name:'Max HP',          desc:'Vida máxima (+0.5% por nível)'},
+  {id:'maxmp',   name:'Max Mana',        desc:'Mana máxima (+0.5% por nível)'},
+  {id:'hpregen', name:'HP Regen',        desc:'Regeneração de vida ao longo do tempo'},
+  {id:'mpregen', name:'MP Regen',        desc:'Regeneração de mana ao longo do tempo'},
+  {id:'execute', name:'Execute',         desc:'Elimina inimigos com <10% de vida (+0.25%/nível)'},
+  {id:'frenzy',  name:'Frenzy',          desc:'Bônus temporário ao derrotar inimigos (+0.25%/nível)'}
+];
+var rrSelected=[];
+
+function buildRRAttrs(){
+  var grid=document.getElementById('rr-attr-grid');
+  grid.innerHTML='';
+  RR_ATTRS.forEach(function(attr){
+    var card=document.createElement('div');
+    card.className='attr-card';
+    card.id='rr-card-'+attr.id;
+    card.innerHTML='<span class="attr-name">'+attr.name+'</span><span class="attr-desc">'+attr.desc+'</span><div class="attr-tooltip">'+attr.desc+'</div>';
+    card.onclick=function(){rrToggleAttr(attr.id)};
+    grid.appendChild(card);
+  });
 }
 
-buildAscensionUI();
-ascUpdate();
+function rrToggleAttr(id){
+  var rarity=parseInt(document.getElementById('rr-rarity').value);
+  var locks=parseInt(document.getElementById('rr-locks').value)||0;
+  var maxSel=rarity-locks;
+  var idx=rrSelected.indexOf(id);
+  if(idx>=0){
+    rrSelected.splice(idx,1);
+  } else {
+    if(rrSelected.length>=maxSel)return;
+    rrSelected.push(id);
+  }
+  rrRefreshCards();
+  rrUpdate();
+}
 
-// ═══════════════════════════════════════
-// CALCULADORA — REROLL
-// ═══════════════════════════════════════
-const RARITY_NAMES = { 1:'Uncommon', 2:'Rare', 3:'Epic', 4:'Legendary', 5:'Mythical' };
-const RARITY_CLASSES = { 1:'uncommon', 2:'rare', 3:'epic', 4:'legendary', 5:'mythical' };
+function rrRefreshCards(){
+  var rarity=parseInt(document.getElementById('rr-rarity').value);
+  var locks=parseInt(document.getElementById('rr-locks').value)||0;
+  var maxSel=rarity-locks;
+  RR_ATTRS.forEach(function(attr){
+    var card=document.getElementById('rr-card-'+attr.id);
+    if(!card)return;
+    var sel=rrSelected.includes(attr.id);
+    card.classList.toggle('selected',sel);
+    card.classList.toggle('disabled',!sel&&rrSelected.length>=maxSel);
+  });
+}
 
-function rerollUpdate() {
-  const rarity = parseInt(document.getElementById('rr-rarity').value);
-  const maxLock = rarity - 1;
-  const lockSel = document.getElementById('rr-locks');
-  // atualiza opções de lock
-  lockSel.innerHTML = '';
-  for (let i = 0; i <= maxLock; i++) {
-    const opt = document.createElement('option');
-    opt.value = i;
-    opt.textContent = i === 0 ? '0 slots travados' : `${i} slot${i>1?'s':''} travado${i>1?'s':''}`;
+function rrUpdate(){
+  var rarity=parseInt(document.getElementById('rr-rarity').value);
+  var tries=parseInt(document.getElementById('rr-tries').value)||1;
+  var tokenVal=parseFloat(document.getElementById('rr-token-val').value)||0;
+
+  // rebuild locks select
+  var lockSel=document.getElementById('rr-locks');
+  var curLock=parseInt(lockSel.value)||0;
+  lockSel.innerHTML='';
+  for(var i=0;i<rarity;i++){
+    var opt=document.createElement('option');
+    opt.value=i;
+    opt.textContent=i===0?'0 slots travados':i+' slot'+(i>1?'s':'')+' travado'+(i>1?'s':'');
+    if(i===curLock)opt.selected=true;
     lockSel.appendChild(opt);
   }
+  var locks=parseInt(lockSel.value)||0;
+  var freeSlots=rarity-locks;
+  var maxSel=freeSlots;
 
-  const locks  = parseInt(lockSel.value) || 0;
-  const tries  = parseInt(document.getElementById('rr-tries').value) || 1;
-  const costPer = locks * 10;
-  const totalCost = costPer * tries;
-  const freeSlots = rarity - locks;
+  // clamp selected
+  while(rrSelected.length>maxSel)rrSelected.pop();
+  rrRefreshCards();
 
-  document.getElementById('rr-rarity-badge').innerHTML =
-    `<span class="rarity-badge rarity-${RARITY_CLASSES[rarity]}">${RARITY_NAMES[rarity]}</span>`;
+  document.getElementById('rr-max-sel').textContent=maxSel;
 
-  document.getElementById('rr-results').innerHTML = `
-    <div class="result-row">
-      <span class="result-key">Atributos totais</span>
-      <span class="result-val">${rarity}</span>
-    </div>
-    <div class="result-row">
-      <span class="result-key">Slots travados</span>
-      <span class="result-val">${locks}</span>
-    </div>
-    <div class="result-row">
-      <span class="result-key">Slots re-rolados</span>
-      <span class="result-val">${freeSlots}</span>
-    </div>
-    <div class="result-row">
-      <span class="result-key">Custo por tentativa</span>
-      <span class="result-val big">${costPer}KK</span>
-    </div>
-    <div class="result-row">
-      <span class="result-key">Custo total (${tries} tentativa${tries>1?'s':''})</span>
-      <span class="result-val ${totalCost >= 100 ? 'warn' : ''}">${totalCost}KK</span>
-    </div>
-    <div class="result-row">
-      <span class="result-key">Equivale a</span>
-      <span class="result-val">${(totalCost/1000).toFixed(1)}KKK</span>
-    </div>
-  `;
-}
-rerollUpdate();
+  var RARITY_NAMES={1:'Uncommon',2:'Rare',3:'Epic',4:'Legendary',5:'Mythical'};
+  var RARITY_KEYS={1:'uncommon',2:'rare',3:'epic',4:'legendary',5:'mythical'};
+  document.getElementById('rr-rarity-badge').innerHTML='<span class="rarity-badge rarity-'+RARITY_KEYS[rarity]+'">'+RARITY_NAMES[rarity]+'</span>';
 
-// ═══════════════════════════════════════
-// CALCULADORA — UPGRADE
-// ═══════════════════════════════════════
-// chances aproximadas baseadas na wiki (decaem progressivamente)
-const UPGRADE_CHANCES = {
-  0: 100, 1: 95, 2: 88, 3: 80, 4: 70,
-  5: 58,  6: 46, 7: 35, 8: 24,
-  9: 16,  10: 10, 11: 5, 12: 2
-};
-const UP_RARITY_NAMES = { 0:'Common', 4:'Uncommon', 6:'Rare', 8:'Epic', 10:'Legendary', 12:'Mythical' };
-const UP_RARITY_KEY   = { 0:'common', 4:'uncommon', 6:'rare', 8:'epic', 10:'legendary', 12:'mythical' };
+  var costKKperTry=locks*10;
+  var totalKK=costKKperTry*tries;
+  var totalTokens=100*tries;
+  var totalTokenCost=tokenVal*totalTokens;
 
-function chanceColor(c) {
-  if (c >= 70) return '#5dbf6e';
-  if (c >= 40) return '#c9a84c';
-  if (c >= 15) return '#e87830';
-  return '#c95050';
+  // probability calc
+  var totalAttrs=RR_ATTRS.length; // pool total
+  var pHit=0;
+  var probInfo='';
+  if(rrSelected.length>0&&rrSelected.length===maxSel&&maxSel>0){
+    // chance de todos os selecionados saírem em uma tentativa
+    // cada slot rerolado escolhe 1 de totalAttrs atributos, sem repetição
+    // P = (n_sel / N) * ((n_sel-1)/(N-1)) * ... para n_sel slots
+    var n=totalAttrs,k=rrSelected.length;
+    var num=1,den=1;
+    for(var j=0;j<k;j++){num*=(k-j);den*=(n-j)}
+    pHit=num/den; // chance por tentativa (ordem não importa, combinar)
+    var pHitPct=(pHit*100).toFixed(4);
+    var expectedTries=Math.round(1/pHit);
+    var avgTokens=expectedTries*100;
+    var avgKK=expectedTries*costKKperTry;
+    var avgTokenCost=tokenVal*avgTokens;
+    probInfo='<div class="result-row"><span class="result-key">Atributos desejados</span><span class="result-val">'+rrSelected.length+' / '+maxSel+'</span></div>'
+      +'<div class="result-row"><span class="result-key">Chance por tentativa</span><span class="result-val '+(pHit>=0.1?'ok':pHit>=0.01?'':'warn')+'">'+pHitPct+'%</span></div>'
+      +'<div class="chance-bar-wrap"><div class="chance-bar" style="width:'+Math.min(100,pHit*100*10)+'%;background:'+chanceColor(pHit*100*5)+'"></div></div>'
+      +'<div class="result-row"><span class="result-key">Tentativas médias esperadas</span><span class="result-val">~'+expectedTries.toLocaleString('pt-BR')+'</span></div>'
+      +'<div class="result-row"><span class="result-key">Tokens médios (100/tentativa)</span><span class="result-val">~'+avgTokens.toLocaleString('pt-BR')+' tokens</span></div>'
+      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio em KK (tokens)</span><span class="result-val warn">~'+fmtKK(avgTokenCost)+'</span></div>':'')
+      +(avgKK>0?'<div class="result-row"><span class="result-key">Custo médio em KK (locks)</span><span class="result-val warn">~'+fmtKK(avgKK)+'</span></div>':'');
+  } else if(maxSel>0&&rrSelected.length<maxSel){
+    probInfo='<div class="result-row"><span class="result-key" style="font-style:italic;color:var(--gold-dim)">Selecione '+maxSel+' atributo'+(maxSel>1?'s':'')+' desejado'+(maxSel>1?'s':'')+' abaixo</span></div>';
+  }
+
+  document.getElementById('rr-results').innerHTML=probInfo
+    +'<div class="result-row" style="margin-top:8px;border-top:1px solid var(--border-gold);padding-top:9px"><span class="result-key">Custo KK por tentativa (locks)</span><span class="result-val big">'+costKKperTry+'KK</span></div>'
+    +'<div class="result-row"><span class="result-key">Tokens por tentativa</span><span class="result-val">100 tokens</span></div>'
+    +'<div class="result-row"><span class="result-key">Total KK ('+tries+' tent.)</span><span class="result-val '+(totalKK>=100?'warn':'')+'">'+fmtKK(totalKK)+'</span></div>'
+    +'<div class="result-row"><span class="result-key">Total tokens ('+tries+' tent.)</span><span class="result-val">'+totalTokens.toLocaleString('pt-BR')+' tokens</span></div>'
+    +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo tokens em KK</span><span class="result-val warn">'+fmtKK(totalTokenCost)+'</span></div>':'');
 }
 
-function upgradeUpdate() {
-  const maxLvl   = parseInt(document.getElementById('up-rarity').value);
-  const current  = Math.min(parseInt(document.getElementById('up-current').value)||0, maxLvl);
-  const rarName  = UP_RARITY_NAMES[maxLvl];
-  const rarKey   = UP_RARITY_KEY[maxLvl];
+buildRRAttrs();rrUpdate();
 
-  if (maxLvl === 0) {
-    document.getElementById('up-results').innerHTML = `
-      <span class="rarity-badge rarity-common">Common</span>
-      <div class="result-row"><span class="result-key">Itens Common não podem ser upgradados.</span></div>`;
-    document.getElementById('up-table').innerHTML = '';
+// ─── UPGRADE ───────────────────────────────────────────
+var UP_CHANCES={0:100,1:95,2:88,3:80,4:70,5:58,6:46,7:35,8:24,9:16,10:10,11:5,12:2};
+var UP_RARITY_NAMES={0:'Common',4:'Uncommon',6:'Rare',8:'Epic',10:'Legendary',12:'Mythical'};
+var UP_RARITY_KEYS={0:'common',4:'uncommon',6:'rare',8:'epic',10:'legendary',12:'mythical'};
+
+function upUpdate(){
+  var maxLvl=parseInt(document.getElementById('up-rarity').value);
+  var current=Math.min(parseInt(document.getElementById('up-current').value)||0,maxLvl);
+  var target=Math.min(parseInt(document.getElementById('up-target').value)||0,maxLvl);
+  var tokenVal=parseFloat(document.getElementById('up-token-val').value)||0;
+  var rarName=UP_RARITY_NAMES[maxLvl];
+  var rarKey=UP_RARITY_KEYS[maxLvl];
+
+  if(maxLvl===0){
+    document.getElementById('up-results').innerHTML='<span class="rarity-badge rarity-common">Common</span><div class="result-row"><span class="result-key">Itens Common não podem ser upgradados.</span></div>';
+    document.getElementById('up-table').innerHTML='';
     return;
   }
 
-  const nextLvl = current < maxLvl ? current + 1 : null;
-  const chance  = nextLvl !== null ? (UPGRADE_CHANCES[nextLvl] ?? 2) : 0;
-  const barColor = chanceColor(chance);
+  if(target<=current){
+    document.getElementById('up-results').innerHTML='<span class="rarity-badge rarity-'+rarKey+'">'+rarName+'</span><div class="result-row"><span class="result-key" style="color:var(--online)">✓ Nível desejado já atingido!</span></div>';
+  } else {
+    // expected tries from current to target
+    var expTries=0;
+    for(var lvl=current+1;lvl<=target;lvl++){
+      var c=UP_CHANCES[lvl]??2;
+      expTries+=100/c; // expected tries per level = 1/p
+    }
+    expTries=Math.round(expTries);
+    var expTokens=expTries*40;
+    var expTokenCost=tokenVal*expTokens;
+    var nextChance=UP_CHANCES[current+1]??2;
 
-  let status = nextLvl !== null
-    ? `<div class="result-row"><span class="result-key">Próximo upgrade</span><span class="result-val">+${current} → +${nextLvl}</span></div>
-       <div class="result-row">
-         <span class="result-key">Chance estimada</span>
-         <span class="result-val" style="color:${barColor}">${chance}%</span>
-       </div>
-       <div class="result-row" style="display:block;border:none;padding-top:0">
-         <div class="chance-bar-wrap"><div class="chance-bar" style="width:${chance}%;background:${barColor}"></div></div>
-         <div style="font-size:0.72rem;color:var(--text-dim);margin-top:4px">
-           ${chance>=70?'✓ Chance boa':''}${chance>=40&&chance<70?'⚠ Risco moderado':''}${chance<40?'✗ Alto risco — prepare recursos!':''}
-         </div>
-       </div>`
-    : `<div class="result-row"><span class="result-key" style="color:var(--online)">✓ Item no nível máximo!</span></div>`;
-
-  document.getElementById('up-results').innerHTML = `
-    <span class="rarity-badge rarity-${rarKey}">${rarName}</span>
-    <div class="result-row"><span class="result-key">Nível atual</span><span class="result-val">+${current}</span></div>
-    <div class="result-row"><span class="result-key">Nível máximo</span><span class="result-val">+${maxLvl}</span></div>
-    ${status}`;
-
-  // tabela completa
-  let tableHtml = '';
-  for (let lvl = 1; lvl <= maxLvl; lvl++) {
-    const c = UPGRADE_CHANCES[lvl] ?? 2;
-    const bc = chanceColor(c);
-    const isCurrent = lvl === nextLvl;
-    tableHtml += `
-      <div class="asc-attr-row" style="${isCurrent?'background:rgba(201,168,76,0.06);margin:0 -4px;padding:4px 4px;':''}">
-        <span class="asc-attr-name" style="width:80px;font-family:'Cinzel',serif;font-size:0.78rem;color:${isCurrent?'var(--gold-light)':'var(--text-dim)'}">${isCurrent?'▶ ':''} +${lvl-1}→+${lvl}</span>
-        <span style="width:44px;font-family:'Cinzel',serif;font-size:0.8rem;color:${bc};flex-shrink:0">${c}%</span>
-        <div class="asc-bar-wrap"><div class="asc-bar" style="width:${c}%;background:${bc}"></div></div>
-      </div>`;
+    document.getElementById('up-results').innerHTML=
+      '<span class="rarity-badge rarity-'+rarKey+'">'+rarName+'</span>'
+      +'<div class="result-row"><span class="result-key">Nível atual</span><span class="result-val">+'+current+'</span></div>'
+      +'<div class="result-row"><span class="result-key">Nível desejado</span><span class="result-val">+'+target+'</span></div>'
+      +'<div class="result-row"><span class="result-key">Nível máximo</span><span class="result-val">+'+maxLvl+'</span></div>'
+      +'<div class="result-row"><span class="result-key">Próximo upgrade ('+current+'→'+(current+1)+')</span><span class="result-val" style="color:'+chanceColor(nextChance)+'">'+nextChance+'%</span></div>'
+      +'<div class="result-row"><span class="result-key">Tentativas médias esperadas</span><span class="result-val">~'+expTries.toLocaleString('pt-BR')+'</span></div>'
+      +'<div class="result-row"><span class="result-key">Tokens médios (40/tentativa)</span><span class="result-val">~'+expTokens.toLocaleString('pt-BR')+' tokens</span></div>'
+      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio em KK</span><span class="result-val warn">~'+fmtKK(expTokenCost)+'</span></div>':'');
   }
-  document.getElementById('up-table').innerHTML = tableHtml;
+
+  // table
+  var html='';
+  for(var lvl=1;lvl<=maxLvl;lvl++){
+    var c=UP_CHANCES[lvl]??2;
+    var bc=chanceColor(c);
+    var isNext=(lvl===current+1);
+    var isInRange=(lvl>current&&lvl<=target);
+    html+='<div class="up-row" style="'+(isNext?'background:rgba(201,168,76,.07);margin:0 -4px;padding:2px 4px;':'')+(isInRange&&!isNext?'opacity:.9;':'opacity:.55;')+'">'
+      +'<span class="up-row-label" style="color:'+(isNext?'var(--gold-light)':'var(--text-dim)')+'">'+(isNext?'▶ ':'')+'+'+(lvl-1)+'→+'+lvl+'</span>'
+      +'<span class="up-pct" style="color:'+bc+'">'+c+'%</span>'
+      +'<div style="flex:1"><div class="chance-bar-wrap"><div class="chance-bar" style="width:'+c+'%;background:'+bc+'"></div></div></div>'
+      +'<span style="font-size:.7rem;color:var(--text-dim);min-width:80px;text-align:right">~'+Math.round(100/c)+' tent.</span>'
+    +'</div>';
+  }
+  document.getElementById('up-table').innerHTML=html;
 }
-upgradeUpdate();
+upUpdate();
+
+// ─── HELPERS ───────────────────────────────────────────
+function chanceColor(c){if(c>=70)return'#5dbf6e';if(c>=40)return'#c9a84c';if(c>=15)return'#e87830';return'#c95050'}
+function fmtKK(v){
+  if(v===0)return'0KK';
+  if(v>=1000)return(v/1000).toFixed(2)+'KKK';
+  if(v>=1)return v.toFixed(1)+'KK';
+  return(v*1000).toFixed(0)+'K';
+}
 </script>
 </body>
 </html>
