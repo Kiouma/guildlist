@@ -1,136 +1,94 @@
 import requests
 from bs4 import BeautifulSoup
-import json
+import json, re
 from datetime import datetime, timezone, timedelta
 
-# Horário de Brasília (UTC-3)
-BRASILIA = timezone(timedelta(hours=-3))
-
+BRASILIA   = timezone(timedelta(hours=-3))
 GUILD_NAME = "Lowly People"
-BASE_URL   = "https://amonot.online"
-GUILD_URL  = f"{BASE_URL}/guilds?name=Lowly+People"
+GUILD_URL  = "https://amonot.online/guilds?name=Lowly+People&status=all"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                   "Chrome/124.0.0.0 Safari/537.36",
-    "Accept": "application/json, text/html, */*",
-    "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8",
-    "Referer": BASE_URL,
+    "Accept-Language": "pt-BR,pt;q=0.9",
 }
 
-# ── Tentativa 1: API JSON ──────────────────────────────────────────────────
-def try_api():
-    candidates = [
-        f"{BASE_URL}/api/guilds?name=Lowly+People",
-        f"{BASE_URL}/api/guild?name=Lowly+People",
-        f"{BASE_URL}/api/guilds/Lowly+People",
-    ]
-    for url in candidates:
-        try:
-            r = requests.get(url, headers=HEADERS, timeout=10)
-            if r.status_code == 200 and "json" in r.headers.get("Content-Type", ""):
-                data = r.json()
-                print(f"✅ API encontrada: {url}")
-                return data
-        except Exception:
-            pass
-    return None
+def scrape_guild():
+    now = datetime.now(BRASILIA).strftime("%d/%m/%Y às %H:%M (Brasília)")
 
-# ── Tentativa 2: Scraping HTML ─────────────────────────────────────────────
-def try_html_scraping():
     r = requests.get(GUILD_URL, headers=HEADERS, timeout=15)
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
 
+    # ── Metadados ────────────────────────────────────────────────────────────
+    owner, founded = "", ""
+
+    for card in soup.select(".info-card"):
+        label = card.select_one(".info-label")
+        value = card.select_one(".info-value")
+        if not label or not value:
+            continue
+        l = label.get_text(strip=True)
+        v = value.get_text(strip=True)
+        if "Dono" in l or "Owner" in l:
+            owner = v
+        elif "Fundada" in l or "Founded" in l:
+            founded = v
+
+    # ── Membros ───────────────────────────────────────────────────────────────
+    # O site organiza: div.characters-section > div.form-section-title (cargo)
+    #                                          > div.characters-table > div.char-table-row
     members = []
-    current_rank = ""
 
-    for row in soup.find_all("tr"):
-        cells = row.find_all("td")
+    for section in soup.select(".characters-section"):
+        # Título do cargo ex: "The Leader (1)", "Vice-Leader (4)", "Member (57)"
+        title_el = section.select_one(".form-section-title")
+        rank = ""
+        if title_el:
+            raw = title_el.get_text(strip=True)
+            rank = re.sub(r'\s*\(\d+\)\s*$', '', raw).strip()  # remove "(57)"
 
-        if len(cells) == 1 and cells[0].get("colspan"):
-            current_rank = cells[0].get_text(strip=True)
-            continue
+        for row in section.select(".char-table-row"):
+            def span(label):
+                el = row.select_one(f'span[data-label="{label}"]')
+                return el.get_text(strip=True) if el else ""
 
-        if not cells:
-            continue
-
-        if len(cells) >= 4:
-            name_tag = cells[0].find("a")
-            name = name_tag.get_text(strip=True) if name_tag else cells[0].get_text(strip=True)
-
-            if not name or name in ("Nome", "Name", ""):
-                continue
-
-            try:    level  = int(cells[1].get_text(strip=True))
-            except: level  = 0
-            try:    resets = int(cells[2].get_text(strip=True))
-            except: resets = 0
-
-            vocation   = cells[3].get_text(strip=True) if len(cells) > 3 else ""
-            nick       = cells[4].get_text(strip=True) if len(cells) > 4 else ""
-            status_raw = cells[5].get_text(strip=True) if len(cells) > 5 else ""
-            status     = "online" if "online" in status_raw.lower() else "offline"
-
-            members.append({
-                "name": name, "level": level, "resets": resets,
-                "vocation": vocation, "nick": nick, "status": status, "rank": current_rank,
-            })
-
-    # Fallback por links
-    if not members:
-        print("⚠ Tabela padrão não encontrada, tentando fallback por links...")
-        for link in soup.select("a[href*='characters']"):
-            row = link.find_parent("tr")
-            if not row:
-                continue
-            cells = row.find_all("td")
-            if len(cells) < 4:
-                continue
-            name = link.get_text(strip=True)
+            name = span("Nome")
             if not name:
                 continue
-            try:    level  = int(cells[1].get_text(strip=True))
+
+            try:    level  = int(span("Level"))
             except: level  = 0
-            try:    resets = int(cells[2].get_text(strip=True))
+            try:    resets = int(span("Resets"))
             except: resets = 0
-            vocation   = cells[3].get_text(strip=True) if len(cells) > 3 else ""
-            nick       = cells[4].get_text(strip=True) if len(cells) > 4 else ""
-            status_raw = cells[5].get_text(strip=True) if len(cells) > 5 else ""
-            status     = "online" if "online" in status_raw.lower() else "offline"
+
+            vocation = span("Vocação") or span("Vocation")
+            nick     = span("Nick")
+
+            status_el = row.select_one('span[data-label="Status"] .badge')
+            if status_el:
+                status = "online" if "badge-success" in status_el.get("class", []) else "offline"
+            else:
+                status = "offline"
+
             members.append({
-                "name": name, "level": level, "resets": resets,
-                "vocation": vocation, "nick": nick, "status": status, "rank": "",
+                "name":     name,
+                "level":    level,
+                "resets":   resets,
+                "vocation": vocation,
+                "nick":     nick,
+                "status":   status,
+                "rank":     rank,
             })
 
-    # Metadados
-    owner, founded = "", ""
-    lines = [l.strip() for l in soup.get_text("\n").splitlines() if l.strip()]
-    for i, line in enumerate(lines):
-        if line in ("Dono", "Owner", "Leader") and i + 1 < len(lines):
-            owner = lines[i + 1]
-        if "Fundada em" in line or "Founded" in line:
-            founded = line.split("em")[-1].strip() if "em" in line else line
-
-    print(f"📄 HTML scraping: {len(members)} membros encontrados")
-    return {"owner": owner, "founded": founded, "members": members}
-
-# ── Montagem final ─────────────────────────────────────────────────────────
-def scrape_guild():
-    now_brasilia = datetime.now(BRASILIA).strftime("%d/%m/%Y às %H:%M (Brasília)")
-    raw = try_api() or try_html_scraping()
-    members = raw.get("members", [])
-    if not isinstance(members, list):
-        members = []
-
-    online_count  = sum(1 for m in members if str(m.get("status", "")).lower() == "online")
+    online_count  = sum(1 for m in members if m["status"] == "online")
     offline_count = len(members) - online_count
 
     return {
         "name":          GUILD_NAME,
-        "updated_at":    now_brasilia,
-        "owner":         raw.get("owner", ""),
-        "founded":       raw.get("founded", ""),
+        "updated_at":    now,
+        "owner":         owner,
+        "founded":       founded,
         "total_members": len(members),
         "online_count":  online_count,
         "offline_count": offline_count,
@@ -139,28 +97,24 @@ def scrape_guild():
 
 
 if __name__ == "__main__":
-    print("🔄 Iniciando coleta de dados...")
+    print("🔄 Coletando dados da guild...")
     data = scrape_guild()
 
     with open("guild_data.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ guild_data.json salvo!")
+    print(f"✅ Salvo com sucesso!")
+    print(f"   👑 Dono: {data['owner']}")
+    print(f"   📅 Fundada: {data['founded']}")
     print(f"   👥 Total: {data['total_members']} membros")
     print(f"   🟢 Online: {data['online_count']}")
     print(f"   ⚫ Offline: {data['offline_count']}")
     print(f"   🕐 Atualizado: {data['updated_at']}")
 
     if data["members"]:
-        print("\n📋 Primeiros membros:")
+        print("\n📋 Primeiros 5 membros:")
         for m in data["members"][:5]:
-            print(f"   - {m['name']} | Level {m['level']} | {m['vocation']} | {m['status']}")
+            status_icon = "🟢" if m["status"] == "online" else "⚫"
+            print(f"   {status_icon} {m['name']} [{m['rank']}] | Lv {m['level']} | {m['resets']} resets | {m['vocation']}")
     else:
-        print("\n⚠ ATENÇÃO: Nenhum membro encontrado! Salvando debug_page.html...")
-        try:
-            r = requests.get(GUILD_URL, headers=HEADERS, timeout=15)
-            with open("debug_page.html", "w", encoding="utf-8") as f:
-                f.write(r.text)
-            print("   📄 debug_page.html salvo. Verifique o HTML recebido.")
-        except Exception as e:
-            print(f"   Erro ao salvar debug: {e}")
+        print("\n⚠ Nenhum membro encontrado.")
