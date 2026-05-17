@@ -17,7 +17,7 @@
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
-    body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:17px;line-height:1.5;display:flex;overflow:hidden;height:100vh}
+    body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:19px;line-height:1.5;display:flex;overflow:hidden;height:100vh}
     body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,168,76,.05) 0%,transparent 60%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
 
     /* SIDEBAR */
@@ -65,8 +65,8 @@
     .divider::after{transform:scaleX(-1)}
     .meta-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:26px;padding:22px 0 0}
     .meta-item{text-align:center}
-    .meta-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;color:var(--gold-dim);text-transform:uppercase;display:block;margin-bottom:3px}
-    .meta-value{font-family:'Cinzel',serif;font-size:.9rem;font-weight:600;color:var(--gold-light)}
+    .meta-label{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;color:var(--gold-dim);text-transform:uppercase;display:block;margin-bottom:3px}
+    .meta-value{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:var(--gold-light)}
 
     /* STATS */
     .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:32px 0 24px}
@@ -75,7 +75,7 @@
     .stat-num{font-family:'Cinzel',serif;font-size:1.9rem;font-weight:700;color:var(--gold-light);display:block}
     .stat-num.green{color:var(--online)}
     .stat-num.dim{color:var(--text-dim)}
-    .stat-label{font-family:'Cinzel',serif;text-transform:uppercase;font-size:.56rem;letter-spacing:.12em;color:var(--text-dim)}
+    .stat-label{font-family:'Cinzel',serif;text-transform:uppercase;font-size:.62rem;letter-spacing:.12em;color:var(--text-dim)}
 
     /* CONTROLS */
     .controls{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:18px;align-items:center}
@@ -95,11 +95,11 @@
     tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
     tbody tr:hover{background:var(--bg3)}
     tbody tr:last-child{border-bottom:none}
-    td{padding:9px 13px;font-size:.9rem;white-space:nowrap}
+    td{padding:9px 13px;font-size:1rem;white-space:nowrap}
     .td-name a{color:var(--gold-light);text-decoration:none;font-weight:600;transition:color .15s}
     .td-name a:hover{color:#fff;text-decoration:underline}
-    .td-num{font-family:'Cinzel',serif;font-size:.83rem;color:var(--text)}
-    .td-voc{color:var(--text-dim);font-style:italic;font-size:.83rem}
+    .td-num{font-family:'Cinzel',serif;font-size:.92rem;color:var(--text)}
+    .td-voc{color:var(--text-dim);font-style:italic;font-size:.92rem}
     .badge-rank{display:inline-block;font-family:'Cinzel',serif;font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border:1px solid}
     .badge-rank.leader{color:var(--gold-light);border-color:var(--gold-dim);background:rgba(201,168,76,.08)}
     .badge-rank.vice{color:#c0a860;border-color:#5a4820;background:rgba(192,168,96,.06)}
@@ -114,9 +114,9 @@
 
     /* PAGE CHROME */
     .page-title{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;color:var(--gold-light);letter-spacing:.06em;margin-bottom:5px}
-    .page-desc{font-size:.88rem;color:var(--text-dim);margin-bottom:28px}
+    .page-desc{font-size:.95rem;color:var(--text-dim);margin-bottom:28px}
     .page-divider{height:1px;background:linear-gradient(90deg,var(--border-gold),transparent);margin-bottom:28px}
-    .info-callout{background:rgba(201,168,76,.06);border:1px solid var(--border-gold);padding:13px 15px;margin-bottom:18px;font-size:.84rem;color:var(--text-dim);line-height:1.6}
+    .info-callout{background:rgba(201,168,76,.06);border:1px solid var(--border-gold);padding:13px 15px;margin-bottom:18px;font-size:.9rem;color:var(--text-dim);line-height:1.6}
     .info-callout strong{color:var(--gold-light);font-weight:600}
 
     /* CALC SHARED */
@@ -124,7 +124,7 @@
     .calc-panel{background:var(--bg3);border:1px solid var(--border-gold);padding:22px}
     .calc-panel h3{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:16px;padding-bottom:9px;border-bottom:1px solid var(--border)}
     .field-row{margin-bottom:14px}
-    .field-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);display:block;margin-bottom:5px}
+    .field-label{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);display:block;margin-bottom:5px}
     .field-input,.field-select{width:100%;background:var(--bg2);border:1px solid var(--border-gold);color:var(--text);font-family:'Crimson Pro',serif;font-size:1rem;padding:7px 11px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
     .field-input:focus,.field-select:focus{border-color:var(--gold-dim)}
     .field-select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a6330' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;padding-right:30px}
@@ -132,8 +132,8 @@
     .result-box h3{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:14px}
     .result-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);font-size:.86rem}
     .result-row:last-child{border-bottom:none}
-    .result-key{color:var(--text-dim);font-size:.8rem}
-    .result-val{font-family:'Cinzel',serif;font-size:.88rem;color:var(--gold-light);font-weight:600}
+    .result-key{color:var(--text-dim);font-size:.88rem}
+    .result-val{font-family:'Cinzel',serif;font-size:.95rem;color:var(--gold-light);font-weight:600}
     .result-val.big{font-size:1.25rem}
     .result-val.warn{color:var(--red)}
     .result-val.ok{color:var(--online)}
@@ -157,7 +157,7 @@
     .asc-category{margin-bottom:22px}
     .asc-cat-title{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:9px;padding-bottom:5px;border-bottom:1px solid var(--border)}
     .asc-row{display:flex;align-items:center;gap:9px;margin-bottom:9px}
-    .asc-attr-name{font-size:.78rem;color:var(--text-dim);width:115px;flex-shrink:0}
+    .asc-attr-name{font-size:.85rem;color:var(--text-dim);width:115px;flex-shrink:0}
     .asc-num-input{width:56px;flex-shrink:0;background:var(--bg2);border:1px solid var(--border);color:var(--text);font-family:'Cinzel',serif;font-size:.75rem;padding:4px 7px;text-align:center;outline:none;transition:border-color .2s}
     .asc-num-input:focus{border-color:var(--gold-dim)}
     .asc-slider-wrap{flex:1;position:relative;height:22px;display:flex;align-items:center;cursor:ew-resize;user-select:none}
@@ -172,8 +172,8 @@
     .attr-card:hover{border-color:var(--gold-dim);background:var(--bg3)}
     .attr-card.selected{border-color:var(--gold);background:rgba(201,168,76,.1);box-shadow:0 0 8px rgba(201,168,76,.15)}
     .attr-card.disabled{opacity:.35;cursor:not-allowed;pointer-events:none}
-    .attr-name{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.05em;color:var(--gold-light);display:block;margin-bottom:3px}
-    .attr-desc{font-size:.72rem;color:var(--text-dim);line-height:1.4}
+    .attr-name{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.05em;color:var(--gold-light);display:block;margin-bottom:3px}
+    .attr-desc{font-size:.8rem;color:var(--text-dim);line-height:1.4}
     .attr-tooltip{position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--bg4);border:1px solid var(--border-gold);padding:8px 12px;font-size:.75rem;color:var(--text);white-space:nowrap;z-index:50;pointer-events:none;opacity:0;transition:opacity .15s;border-radius:3px}
     .attr-card:hover .attr-tooltip{opacity:1}
     .chance-bar-wrap{height:7px;background:var(--border);border-radius:3px;overflow:hidden;margin:5px 0 2px}
@@ -528,23 +528,37 @@ loadData();
 var ASC_CAP=500;
 var ASC_CATS=[
   {id:'atk',name:'Attack',attrs:[
-    {id:'base_atk',name:'Base Attack'},{id:'physical',name:'Physical'},
-    {id:'ice',name:'Ice'},{id:'fire',name:'Fire'},{id:'poison',name:'Poison'},
-    {id:'energy',name:'Energy'},{id:'holy',name:'Holy'},{id:'death',name:'Death'},
-    {id:'fatal',name:'Fatal'},{id:'avatar',name:'Avatar'}
+    {id:'base_atk', name:'Base Attack',    bonus:0.15, unit:'%'},
+    {id:'physical', name:'Physical',       bonus:0.20, unit:'%'},
+    {id:'ice',      name:'Ice',            bonus:0.20, unit:'%'},
+    {id:'fire',     name:'Fire',           bonus:0.20, unit:'%'},
+    {id:'poison',   name:'Poison',         bonus:0.20, unit:'%'},
+    {id:'energy',   name:'Energy',         bonus:0.20, unit:'%'},
+    {id:'holy',     name:'Holy',           bonus:0.20, unit:'%'},
+    {id:'death',    name:'Death',          bonus:0.20, unit:'%'},
+    {id:'fatal',    name:'Fatal',          bonus:0.04, unit:'%'},
+    {id:'avatar',   name:'Avatar',         bonus:0.04, unit:'%'}
   ]},
   {id:'def',name:'Defense',attrs:[
-    {id:'base_def',name:'Base Defense'},{id:'def_phys',name:'Physical'},
-    {id:'def_ice',name:'Ice'},{id:'def_fire',name:'Fire'},
-    {id:'def_poison',name:'Poison'},{id:'def_energy',name:'Energy'},
-    {id:'def_holy',name:'Holy'},{id:'def_death',name:'Death'}
+    {id:'base_def',   name:'Base Defense', bonus:0.05, unit:'%'},
+    {id:'def_phys',   name:'Physical',     bonus:0.05, unit:'%'},
+    {id:'def_ice',    name:'Ice',          bonus:0.05, unit:'%'},
+    {id:'def_fire',   name:'Fire',         bonus:0.05, unit:'%'},
+    {id:'def_poison', name:'Poison',       bonus:0.05, unit:'%'},
+    {id:'def_energy', name:'Energy',       bonus:0.05, unit:'%'},
+    {id:'def_holy',   name:'Holy',         bonus:0.05, unit:'%'},
+    {id:'def_death',  name:'Death',        bonus:0.05, unit:'%'}
   ]},
   {id:'agi',name:'Agility',attrs:[
-    {id:'base_agi',name:'Base Agility'},{id:'move_spd',name:'Move Speed'},
-    {id:'atk_spd',name:'Attack Speed'},{id:'dodge',name:'Dodge'}
+    {id:'base_agi', name:'Base Agility',   bonus:null, unit:'', note:'Concede +0.05% Mov, +0.04% Atk Spd, +0.01% Dodge por ponto'},
+    {id:'move_spd', name:'Move Speed',     bonus:0.15, unit:'%'},
+    {id:'atk_spd',  name:'Attack Speed',   bonus:0.12, unit:'%'},
+    {id:'dodge',    name:'Dodge',          bonus:0.03, unit:'%'}
   ]},
   {id:'mas',name:'Mastery',attrs:[
-    {id:'momentum',name:'Momentum'},{id:'stamina',name:'Stamina'},{id:'exercise',name:'Exercise'}
+    {id:'momentum', name:'Momentum',       bonus:0.05, unit:'%'},
+    {id:'stamina',  name:'Stamina',        bonus:0.25, unit:'%'},
+    {id:'exercise', name:'Exercise',       bonus:1.00, unit:'%'}
   ]}
 ];
 var ascVals={};
@@ -637,13 +651,77 @@ function ascRender(){
       var st=document.getElementById('asc-st-'+attr.id);
       var pl=document.getElementById('asc-pl-'+attr.id);
       var ni=document.getElementById('asc-n-'+attr.id);
+      var bv=document.getElementById('asc-bv-'+attr.id);
       if(sf)sf.style.width=pct+'%';
       if(st)st.style.left=pct+'%';
       if(pl)pl.textContent=v;
       if(ni&&parseInt(ni.value)!==v)ni.value=v;
       if(sf)sf.style.background=v>=ASC_CAP?'#c95050':v>400?'#e87830':'#c9a84c';
+      if(bv&&attr.bonus){
+        var bval=attr.bonus*v;
+        // base_agi special: distribute to sub-attrs display
+        bv.textContent=(bval%1===0?bval.toFixed(0):bval.toFixed(2))+attr.unit;
+      }
     });
   });
+
+  // reset cost calc
+  var resets=parseInt(document.getElementById('asc-resets').value)||0;
+  var resetCostHtml='';
+  if(resets>0){
+    var totalCostGold=0;
+    for(var ri=1;ri<=resets;ri++){
+      var c=0;
+      if(ri<=10){c=25000000+(ri-1)*10000000;}
+      else if(ri<=20){c=150000000+(ri-11)*20000000;}
+      else{
+        var inc=40000000;
+        var tier=Math.floor((ri-21)/10);
+        for(var t=0;t<tier;t++)inc*=2;
+        var base=0;
+        var acc=0;
+        for(var tr=21;tr<=ri;tr++){
+          var incT=40000000;
+          var tierT=Math.floor((tr-21)/10);
+          for(var tt=0;tt<tierT;tt++)incT*=2;
+          acc+=incT;
+        }
+        c=acc;
+        // simpler: accumulate
+        c=0;
+        var inc2=40000000;
+        for(var tr2=21;tr2<=ri;tr2++){
+          var tierX=Math.floor((tr2-21)/10);
+          var incX=40000000;
+          for(var tx=0;tx<tierX;tx++)incX*=2;
+          c+=incX;
+        }
+        // add T2 total
+        c+=150000000+9*20000000;// up to reset 20 = 330kk
+        // add T1 total
+        c+=25000000*10+10000000*(0+1+2+3+4+5+6+7+8+9);// 250+450=700M for 10 resets
+        // ok this is getting complex, let's just precompute
+        c=0;
+      }
+    }
+    // proper precompute
+    var costs=[];
+    totalCostGold=0;
+    for(var ri2=1;ri2<=resets;ri2++){
+      var cost=resetCostForReset(ri2);
+      costs.push(cost);
+      totalCostGold+=cost;
+    }
+    var lastCost=costs[costs.length-1];
+    resetCostHtml='<div class="result-row" style="margin-top:7px;border-top:1px solid var(--border-gold);padding-top:9px">'
+      +'<span class="result-key">Custo do reset '+resets+'</span>'
+      +'<span class="result-val" style="font-size:.85rem">'+fmtGold(lastCost)+'</span>'
+      +'</div>'
+      +'<div class="result-row">'
+      +'<span class="result-key">Custo total acumulado (1→'+resets+')</span>'
+      +'<span class="result-val warn" style="font-size:.85rem">'+fmtGold(totalCostGold)+'</span>'
+      +'</div>';
+  }
 
   // summary
   var html='';
@@ -653,6 +731,7 @@ function ascRender(){
   });
   if(!html)html='<div class="result-row"><span class="result-key" style="font-style:italic">Distribua pontos para ver o resumo</span></div>';
   html+='<div class="result-row" style="margin-top:7px;border-top:1px solid var(--border-gold);padding-top:9px"><span class="result-key">Total usado</span><span class="result-val '+(used>total?'warn':'ok')+'">'+used+' / '+total+'</span></div>';
+  html+=resetCostHtml;
   document.getElementById('asc-summary').innerHTML=html;
 }
 buildAscUI();ascRender();
@@ -781,18 +860,18 @@ function rrUpdate(){
       +'<div class="chance-bar-wrap"><div class="chance-bar" style="width:'+Math.min(100,pHit*100*10)+'%;background:'+chanceColor(pHit*100*5)+'"></div></div>'
       +'<div class="result-row"><span class="result-key">Tentativas médias esperadas</span><span class="result-val">~'+expectedTries.toLocaleString('pt-BR')+'</span></div>'
       +'<div class="result-row"><span class="result-key">Tokens médios (100/tentativa)</span><span class="result-val">~'+avgTokens.toLocaleString('pt-BR')+' tokens</span></div>'
-      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio em KK (tokens)</span><span class="result-val warn">~'+fmtKK(avgTokenCost)+'</span></div>':'')
-      +(avgKK>0?'<div class="result-row"><span class="result-key">Custo médio em KK (locks)</span><span class="result-val warn">~'+fmtKK(avgKK)+'</span></div>':'');
+      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio (tokens)</span><span class="result-val warn">~'+fmtGold(avgTokenCost*1000000)+'</span></div>':'')
+      +(avgKK>0?'<div class="result-row"><span class="result-key">Custo médio (locks)</span><span class="result-val warn">~'+fmtGold(avgKK*1000000)+'</span></div>':'');
   } else if(maxSel>0&&rrSelected.length<maxSel){
     probInfo='<div class="result-row"><span class="result-key" style="font-style:italic;color:var(--gold-dim)">Selecione '+maxSel+' atributo'+(maxSel>1?'s':'')+' desejado'+(maxSel>1?'s':'')+' abaixo</span></div>';
   }
 
   document.getElementById('rr-results').innerHTML=probInfo
-    +'<div class="result-row" style="margin-top:8px;border-top:1px solid var(--border-gold);padding-top:9px"><span class="result-key">Custo KK por tentativa (locks)</span><span class="result-val big">'+costKKperTry+'KK</span></div>'
+    +'<div class="result-row" style="margin-top:8px;border-top:1px solid var(--border-gold);padding-top:9px"><span class="result-key">Custo por tentativa (locks)</span><span class="result-val big">'+fmtGold(costKKperTry*1000000)+'</span></div>'
     +'<div class="result-row"><span class="result-key">Tokens por tentativa</span><span class="result-val">100 tokens</span></div>'
-    +'<div class="result-row"><span class="result-key">Total KK ('+tries+' tent.)</span><span class="result-val '+(totalKK>=100?'warn':'')+'">'+fmtKK(totalKK)+'</span></div>'
+    +'<div class="result-row"><span class="result-key">Total KK ('+tries+' tent.)</span><span class="result-val '+(totalKK>=100?'warn':'')+'">'+fmtGold((totalKK)*1000000)+'</span></div>'
     +'<div class="result-row"><span class="result-key">Total tokens ('+tries+' tent.)</span><span class="result-val">'+totalTokens.toLocaleString('pt-BR')+' tokens</span></div>'
-    +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo tokens em KK</span><span class="result-val warn">'+fmtKK(totalTokenCost)+'</span></div>':'');
+    +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo tokens</span><span class="result-val warn">'+fmtGold(totalTokenCost*1000000)+'</span></div>':'');
 }
 
 buildRRAttrs();rrUpdate();
@@ -829,16 +908,20 @@ function upUpdate(){
     var expTokens=expTries*40;
     var expTokenCost=tokenVal*expTokens;
     var nextChance=UP_CHANCES[current+1]??2;
+    var sumC=0,cntC=0;
+    for(var lc=current+1;lc<=target;lc++){sumC+=(UP_CHANCES[lc]??2);cntC++;}
+    var avgChance=cntC>0?(sumC/cntC).toFixed(1):'0';
 
     document.getElementById('up-results').innerHTML=
       '<span class="rarity-badge rarity-'+rarKey+'">'+rarName+'</span>'
       +'<div class="result-row"><span class="result-key">Nível atual</span><span class="result-val">+'+current+'</span></div>'
       +'<div class="result-row"><span class="result-key">Nível desejado</span><span class="result-val">+'+target+'</span></div>'
       +'<div class="result-row"><span class="result-key">Nível máximo</span><span class="result-val">+'+maxLvl+'</span></div>'
-      +'<div class="result-row"><span class="result-key">Próximo upgrade ('+current+'→'+(current+1)+')</span><span class="result-val" style="color:'+chanceColor(nextChance)+'">'+nextChance+'%</span></div>'
+      +'<div class="result-row"><span class="result-key">Chance atual (próx. upgrade)</span><span class="result-val" style="color:'+chanceColor(nextChance)+'">'+nextChance+'%</span></div>'
+      +'<div class="result-row"><span class="result-key">Chance média ('+current+'→'+target+')</span><span class="result-val" style="color:'+chanceColor(parseFloat(avgChance))+'">'+avgChance+'%</span></div>'
       +'<div class="result-row"><span class="result-key">Tentativas médias esperadas</span><span class="result-val">~'+expTries.toLocaleString('pt-BR')+'</span></div>'
       +'<div class="result-row"><span class="result-key">Tokens médios (40/tentativa)</span><span class="result-val">~'+expTokens.toLocaleString('pt-BR')+' tokens</span></div>'
-      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio em KK</span><span class="result-val warn">~'+fmtKK(expTokenCost)+'</span></div>':'');
+      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio</span><span class="result-val warn">~'+fmtGold(expTokenCost*1000000)+'</span></div>':'');
   }
 
   // table
@@ -861,11 +944,22 @@ upUpdate();
 
 // ─── HELPERS ───────────────────────────────────────────
 function chanceColor(c){if(c>=70)return'#5dbf6e';if(c>=40)return'#c9a84c';if(c>=15)return'#e87830';return'#c95050'}
-function fmtKK(v){
-  if(v===0)return'0KK';
-  if(v>=1000)return(v/1000).toFixed(2)+'KKK';
-  if(v>=1)return v.toFixed(1)+'KK';
-  return(v*1000).toFixed(0)+'K';
+// fmtGold: receives value in gold (absolute), outputs formatted string
+function fmtGold(v){
+  if(!v||v===0)return'0';
+  v=Math.round(v);
+  return v.toLocaleString('pt-BR');
+}
+// fmtGoldKK: receives value in KK, formats as gold
+function fmtGoldKK(kk){return fmtGold(kk*1000000)}
+// reset cost: receives 1-indexed reset number, returns cost in gold for that reset
+function resetCostForReset(ri){
+  if(ri<=10)return 25000000+(ri-1)*10000000;
+  if(ri<=20)return 150000000+(ri-11)*20000000;
+  var tierR=Math.floor((ri-21)/10);
+  var incR=40000000;
+  for(var t=0;t<tierR;t++)incR*=2;
+  return incR;
 }
 </script>
 </body>
