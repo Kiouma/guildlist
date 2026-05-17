@@ -957,14 +957,26 @@ function fmtGold(v){
 }
 // fmtGoldKK: receives value in KK, formats as gold
 function fmtGoldKK(kk){return fmtGold(kk*1000000)}
-// reset cost: receives 1-indexed reset number, returns cost in gold for that reset
+// reset cost: individual cost of reset N (1-indexed)
+// T1(1-10): base 25M + (N-1)*10M
+// T2(11-20): base 150M + (N-11)*20M
+// T3+(21+): increment doubles every 10 resets (40M, 80M, 160M...)
+//   value = last reset of previous tier + pos_in_tier * increment
 function resetCostForReset(ri){
   if(ri<=10)return 25000000+(ri-1)*10000000;
   if(ri<=20)return 150000000+(ri-11)*20000000;
-  var tierR=Math.floor((ri-21)/10);
-  var incR=40000000;
-  for(var t=0;t<tierR;t++)incR*=2;
-  return incR;
+  var tierIdx=Math.floor((ri-21)/10);
+  var inc=40000000;
+  for(var t=0;t<tierIdx;t++)inc*=2;
+  // base = value of last reset in previous tier
+  var base=330000000; // reset 20
+  for(var t2=0;t2<tierIdx;t2++){
+    var incT=40000000;
+    for(var tt=0;tt<t2;tt++)incT*=2;
+    base+=10*incT;
+  }
+  var posInTier=(ri-21)%10+1; // 1-indexed position within tier
+  return base+posInTier*inc;
 }
 </script>
 </body>
