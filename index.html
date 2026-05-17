@@ -377,7 +377,7 @@
     </div>
     <div class="calc-panel" style="margin-bottom:18px">
       <h3>Atributos Possíveis — clique para selecionar os desejados</h3>
-      <div style="font-size:.8rem;color:var(--text-dim);margin-bottom:12px">Selecione até <span id="rr-max-sel">3</span> atributos (= slots rerolados). Hover para ver detalhes.</div>
+      <div style="font-size:.8rem;color:var(--text-dim);margin-bottom:12px">Selecione os atributos que você quer que saiam. Máx: <span id="rr-max-sel">3</span> (= slots rerolados). Hover para ver detalhes.</div>
       <div class="attr-grid" id="rr-attr-grid"></div>
     </div>
     <div class="info-callout">
@@ -670,64 +670,52 @@ function ascRender(){
   var resetCostHtml='';
   if(resets>0){
     var totalCostGold=0;
-    for(var ri=1;ri<=resets;ri++){
-      var c=0;
-      if(ri<=10){c=25000000+(ri-1)*10000000;}
-      else if(ri<=20){c=150000000+(ri-11)*20000000;}
-      else{
-        var inc=40000000;
-        var tier=Math.floor((ri-21)/10);
-        for(var t=0;t<tier;t++)inc*=2;
-        var base=0;
-        var acc=0;
-        for(var tr=21;tr<=ri;tr++){
-          var incT=40000000;
-          var tierT=Math.floor((tr-21)/10);
-          for(var tt=0;tt<tierT;tt++)incT*=2;
-          acc+=incT;
-        }
-        c=acc;
-        // simpler: accumulate
-        c=0;
-        var inc2=40000000;
-        for(var tr2=21;tr2<=ri;tr2++){
-          var tierX=Math.floor((tr2-21)/10);
-          var incX=40000000;
-          for(var tx=0;tx<tierX;tx++)incX*=2;
-          c+=incX;
-        }
-        // add T2 total
-        c+=150000000+9*20000000;// up to reset 20 = 330kk
-        // add T1 total
-        c+=25000000*10+10000000*(0+1+2+3+4+5+6+7+8+9);// 250+450=700M for 10 resets
-        // ok this is getting complex, let's just precompute
-        c=0;
-      }
-    }
-    // proper precompute
-    var costs=[];
-    totalCostGold=0;
     for(var ri2=1;ri2<=resets;ri2++){
-      var cost=resetCostForReset(ri2);
-      costs.push(cost);
-      totalCostGold+=cost;
+      totalCostGold+=resetCostForReset(ri2);
     }
-    var lastCost=costs[costs.length-1];
+    var lastCost=resetCostForReset(resets);
     resetCostHtml='<div class="result-row" style="margin-top:7px;border-top:1px solid var(--border-gold);padding-top:9px">'
       +'<span class="result-key">Custo do reset '+resets+'</span>'
       +'<span class="result-val" style="font-size:.85rem">'+fmtGold(lastCost)+'</span>'
       +'</div>'
       +'<div class="result-row">'
-      +'<span class="result-key">Custo total acumulado (1→'+resets+')</span>'
+      +'<span class="result-key">Custo acumulado (1→'+resets+')</span>'
       +'<span class="result-val warn" style="font-size:.85rem">'+fmtGold(totalCostGold)+'</span>'
       +'</div>';
   }
 
-  // summary
+  // summary — show pts + total % bonus per category
   var html='';
   ASC_CATS.forEach(function(cat){
     var ct=cat.attrs.reduce(function(s,a){return s+ascVals[a.id]},0);
-    if(ct>0)html+='<div class="result-row"><span class="result-key">'+cat.name+'</span><span class="result-val">'+ct+' pts</span></div>';
+    if(ct>0){
+      // sum bonus for all attrs in this category
+      var totalBonus=0;
+      var bonusLines='';
+      cat.attrs.forEach(function(attr){
+        var v=ascVals[attr.id];
+        if(v>0&&attr.bonus){
+          var bval=attr.bonus*v;
+          totalBonus+=bval;
+          bonusLines+='<div style="display:flex;justify-content:space-between;padding:2px 0 2px 10px;font-size:.75rem">'
+            +'<span style="color:var(--text-dim)">'+attr.name+'</span>'
+            +'<span style="font-family:'Cinzel',serif;color:var(--gold)">'+(bval%1===0?bval.toFixed(0):bval.toFixed(2))+attr.unit+'</span>'
+            +'</div>';
+        } else if(v>0&&attr.note){
+          bonusLines+='<div style="display:flex;justify-content:space-between;padding:2px 0 2px 10px;font-size:.75rem">'
+            +'<span style="color:var(--text-dim)">'+attr.name+'</span>'
+            +'<span style="font-family:'Cinzel',serif;color:var(--gold-dim)">'+v+' pts</span>'
+            +'</div>';
+        }
+      });
+      html+='<div class="result-row" style="flex-direction:column;align-items:flex-start;padding-bottom:6px">'
+        +'<div style="display:flex;justify-content:space-between;width:100%">'
+        +'<span class="result-key" style="font-weight:600;color:var(--text)">'+cat.name+'</span>'
+        +'<span class="result-val">'+ct+' pts'+(totalBonus>0?' · '+(totalBonus%1===0?totalBonus.toFixed(0):totalBonus.toFixed(2))+'%':'')+'</span>'
+        +'</div>'
+        +bonusLines
+        +'</div>';
+    }
   });
   if(!html)html='<div class="result-row"><span class="result-key" style="font-style:italic">Distribua pontos para ver o resumo</span></div>';
   html+='<div class="result-row" style="margin-top:7px;border-top:1px solid var(--border-gold);padding-top:9px"><span class="result-key">Total usado</span><span class="result-val '+(used>total?'warn':'ok')+'">'+used+' / '+total+'</span></div>';
@@ -778,12 +766,13 @@ function buildRRAttrs(){
 function rrToggleAttr(id){
   var rarity=parseInt(document.getElementById('rr-rarity').value);
   var locks=parseInt(document.getElementById('rr-locks').value)||0;
-  var maxSel=rarity-locks;
+  var freeSlots=rarity-locks;
   var idx=rrSelected.indexOf(id);
   if(idx>=0){
     rrSelected.splice(idx,1);
   } else {
-    if(rrSelected.length>=maxSel)return;
+    // allow selecting up to freeSlots attrs (the ones you want to appear)
+    if(rrSelected.length>=freeSlots)return;
     rrSelected.push(id);
   }
   rrRefreshCards();
@@ -793,13 +782,13 @@ function rrToggleAttr(id){
 function rrRefreshCards(){
   var rarity=parseInt(document.getElementById('rr-rarity').value);
   var locks=parseInt(document.getElementById('rr-locks').value)||0;
-  var maxSel=rarity-locks;
+  var freeSlots=rarity-locks;
   RR_ATTRS.forEach(function(attr){
     var card=document.getElementById('rr-card-'+attr.id);
     if(!card)return;
     var sel=rrSelected.includes(attr.id);
     card.classList.toggle('selected',sel);
-    card.classList.toggle('disabled',!sel&&rrSelected.length>=maxSel);
+    card.classList.toggle('disabled',!sel&&rrSelected.length>=freeSlots);
   });
 }
 
@@ -827,7 +816,7 @@ function rrUpdate(){
   while(rrSelected.length>maxSel)rrSelected.pop();
   rrRefreshCards();
 
-  document.getElementById('rr-max-sel').textContent=maxSel;
+  document.getElementById('rr-max-sel').textContent=freeSlots;
 
   var RARITY_NAMES={1:'Uncommon',2:'Rare',3:'Epic',4:'Legendary',5:'Mythical'};
   var RARITY_KEYS={1:'uncommon',2:'rare',3:'epic',4:'legendary',5:'mythical'};
@@ -838,40 +827,54 @@ function rrUpdate(){
   var totalTokens=100*tries;
   var totalTokenCost=tokenVal*totalTokens;
 
-  // probability calc
-  var totalAttrs=RR_ATTRS.length; // pool total
+  // probability calc — hypergeometric model
+  // Pool P=21 attrs, drawing freeSlots without replacement, want M specific ones to appear
+  var P=RR_ATTRS.length; // 21
   var pHit=0;
   var probInfo='';
-  if(rrSelected.length>0&&rrSelected.length===maxSel&&maxSel>0){
-    // chance de todos os selecionados saírem em uma tentativa
-    // cada slot rerolado escolhe 1 de totalAttrs atributos, sem repetição
-    // P = (n_sel / N) * ((n_sel-1)/(N-1)) * ... para n_sel slots
-    var n=totalAttrs,k=rrSelected.length;
-    var num=1,den=1;
-    for(var j=0;j<k;j++){num*=(k-j);den*=(n-j)}
-    pHit=num/den; // chance por tentativa (ordem não importa, combinar)
-    var pHitPct=(pHit*100).toFixed(4);
+  var M=rrSelected.length;
+  if(M>0&&freeSlots>0){
+    // P(all M appear in freeSlots drawn from P without replacement)
+    // = C(P-M, freeSlots-M) / C(P, freeSlots)   [hypergeometric, exactly M successes]
+    function comb(n,k){
+      if(k<0||k>n)return 0;
+      if(k===0||k===n)return 1;
+      k=Math.min(k,n-k);
+      var r=1;
+      for(var ii=0;ii<k;ii++){r=r*(n-ii)/(ii+1);}
+      return r;
+    }
+    if(M<=freeSlots){
+      pHit=comb(P-M,freeSlots-M)/comb(P,freeSlots);
+    } else {
+      pHit=0; // impossible: wanting more specific attrs than slots
+    }
+    var pHitPct=pHit>=0.01?(pHit*100).toFixed(2):(pHit*100).toFixed(4);
     var expectedTries=Math.round(1/pHit);
     var avgTokens=expectedTries*100;
-    var avgKK=expectedTries*costKKperTry;
-    var avgTokenCost=tokenVal*avgTokens;
-    probInfo='<div class="result-row"><span class="result-key">Atributos desejados</span><span class="result-val">'+rrSelected.length+' / '+maxSel+'</span></div>'
-      +'<div class="result-row"><span class="result-key">Chance por tentativa</span><span class="result-val '+(pHit>=0.1?'ok':pHit>=0.01?'':'warn')+'">'+pHitPct+'%</span></div>'
-      +'<div class="chance-bar-wrap"><div class="chance-bar" style="width:'+Math.min(100,pHit*100*10)+'%;background:'+chanceColor(pHit*100*5)+'"></div></div>'
+    var avgLockCost=expectedTries*costKKperTry; // in KK
+    var avgTokenCost=tokenVal*avgTokens; // in raw token-value units
+    var selNames=rrSelected.map(function(id){var a=RR_ATTRS.find(function(x){return x.id===id});return a?a.name:id});
+    probInfo='<div class="result-row"><span class="result-key">Atributos desejados</span><span class="result-val">'+M+' de '+freeSlots+' slot'+(freeSlots>1?'s':'')+' rerolados</span></div>'
+      +'<div style="font-size:.75rem;color:var(--gold-dim);margin-bottom:8px;line-height:1.4">'+selNames.join(', ')+'</div>'
+      +'<div class="result-row"><span class="result-key">Chance por tentativa</span><span class="result-val '+(pHit>=0.05?'ok':pHit>=0.01?'':'warn')+'">'+pHitPct+'%</span></div>'
+      +'<div class="chance-bar-wrap"><div class="chance-bar" style="width:'+Math.min(100,pHit*100*2)+'%;background:'+chanceColor(pHit*100*2)+'"></div></div>'
       +'<div class="result-row"><span class="result-key">Tentativas médias esperadas</span><span class="result-val">~'+expectedTries.toLocaleString('pt-BR')+'</span></div>'
-      +'<div class="result-row"><span class="result-key">Tokens médios (100/tentativa)</span><span class="result-val">~'+avgTokens.toLocaleString('pt-BR')+' tokens</span></div>'
-      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio (tokens)</span><span class="result-val warn">~'+fmtGold(avgTokenCost*1000000)+'</span></div>':'')
-      +(avgKK>0?'<div class="result-row"><span class="result-key">Custo médio (locks)</span><span class="result-val warn">~'+fmtGold(avgKK*1000000)+'</span></div>':'');
-  } else if(maxSel>0&&rrSelected.length<maxSel){
-    probInfo='<div class="result-row"><span class="result-key" style="font-style:italic;color:var(--gold-dim)">Selecione '+maxSel+' atributo'+(maxSel>1?'s':'')+' desejado'+(maxSel>1?'s':'')+' abaixo</span></div>';
+      +'<div class="result-row"><span class="result-key">Tokens médios (100/tent.)</span><span class="result-val">~'+avgTokens.toLocaleString('pt-BR')+' tokens</span></div>'
+      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio em tokens</span><span class="result-val warn">~'+fmtGold(avgTokenCost)+'</span></div>':'')
+      +(avgLockCost>0?'<div class="result-row"><span class="result-key">Custo médio locks</span><span class="result-val warn">~'+fmtGold(avgLockCost*1000000)+'</span></div>':'');
+  } else if(freeSlots>0&&M===0){
+    probInfo='<div class="result-row"><span class="result-key" style="font-style:italic;color:var(--gold-dim)">Selecione atributos desejados abaixo (pode escolher 1 ou mais)</span></div>';
   }
 
+  // costKKperTry is in KK → multiply by 1M for gold display
+  // tokenVal is the value per token in KK → tokenCost = tokenVal * qty tokens (in KK) → *1M for gold
   document.getElementById('rr-results').innerHTML=probInfo
     +'<div class="result-row" style="margin-top:8px;border-top:1px solid var(--border-gold);padding-top:9px"><span class="result-key">Custo por tentativa (locks)</span><span class="result-val big">'+fmtGold(costKKperTry*1000000)+'</span></div>'
-    +'<div class="result-row"><span class="result-key">Tokens por tentativa</span><span class="result-val">100 tokens</span></div>'
-    +'<div class="result-row"><span class="result-key">Total KK ('+tries+' tent.)</span><span class="result-val '+(totalKK>=100?'warn':'')+'">'+fmtGold((totalKK)*1000000)+'</span></div>'
+    +'<div class="result-row"><span class="result-key">Tokens por tentativa</span><span class="result-val">100 tokens'+(tokenVal>0?' ('+fmtGold(tokenVal*100)+' / tent.)':'')+'</span></div>'
+    +'<div class="result-row"><span class="result-key">Total locks ('+tries+' tent.)</span><span class="result-val '+(totalKK>=100?'warn':'')+'">'+fmtGold(totalKK*1000000)+'</span></div>'
     +'<div class="result-row"><span class="result-key">Total tokens ('+tries+' tent.)</span><span class="result-val">'+totalTokens.toLocaleString('pt-BR')+' tokens</span></div>'
-    +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo tokens</span><span class="result-val warn">'+fmtGold(totalTokenCost*1000000)+'</span></div>':'');
+    +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo tokens em gold</span><span class="result-val warn">'+fmtGold(totalTokenCost)+'</span></div>':'');
 }
 
 buildRRAttrs();rrUpdate();
@@ -905,7 +908,8 @@ function upUpdate(){
       expTries+=100/c; // expected tries per level = 1/p
     }
     expTries=Math.round(expTries);
-    var expTokens=expTries*40;
+    var tokensPerTry=40;
+    var expTokens=expTries*tokensPerTry;
     var expTokenCost=tokenVal*expTokens;
     var nextChance=UP_CHANCES[current+1]??2;
     var sumC=0,cntC=0;
@@ -920,8 +924,9 @@ function upUpdate(){
       +'<div class="result-row"><span class="result-key">Chance atual (próx. upgrade)</span><span class="result-val" style="color:'+chanceColor(nextChance)+'">'+nextChance+'%</span></div>'
       +'<div class="result-row"><span class="result-key">Chance média ('+current+'→'+target+')</span><span class="result-val" style="color:'+chanceColor(parseFloat(avgChance))+'">'+avgChance+'%</span></div>'
       +'<div class="result-row"><span class="result-key">Tentativas médias esperadas</span><span class="result-val">~'+expTries.toLocaleString('pt-BR')+'</span></div>'
-      +'<div class="result-row"><span class="result-key">Tokens médios (40/tentativa)</span><span class="result-val">~'+expTokens.toLocaleString('pt-BR')+' tokens</span></div>'
-      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio</span><span class="result-val warn">~'+fmtGold(expTokenCost*1000000)+'</span></div>':'');
+      +'<div class="result-row"><span class="result-key">Tokens médios (40/tent.)</span><span class="result-val">~'+expTokens.toLocaleString('pt-BR')+' tokens</span></div>'
+      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio (tokens)</span><span class="result-val warn">~'+fmtGold(expTokenCost)+'</span></div>':'')
+      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo por tentativa</span><span class="result-val">'+fmtGold(tokenVal*tokensPerTry)+'</span></div>':'');
   }
 
   // table
