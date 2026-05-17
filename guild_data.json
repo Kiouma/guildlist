@@ -1,15 +1,15 @@
 {
   "name": "Lowly People",
-  "updated_at": "16/05/2026 às 20:38 (Brasília)",
+  "updated_at": "16/05/2026 às 22:45 (Brasília)",
   "owner": "Sallesbringer",
   "founded": "Apr 30, 2026",
-  "total_members": 64,
-  "online_count": 48,
-  "offline_count": 16,
+  "total_members": 66,
+  "online_count": 45,
+  "offline_count": 21,
   "members": [
     {
       "name": "Sallesbringer",
-      "level": 1311,
+      "level": 1502,
       "resets": 47,
       "vocation": "Elite Knight",
       "nick": "",
@@ -18,7 +18,7 @@
     },
     {
       "name": "Boingbringer",
-      "level": 851,
+      "level": 889,
       "resets": 22,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -27,7 +27,7 @@
     },
     {
       "name": "Brunaobringer",
-      "level": 1068,
+      "level": 1100,
       "resets": 43,
       "vocation": "Elder Druid",
       "nick": "",
@@ -36,7 +36,7 @@
     },
     {
       "name": "Jotabringer",
-      "level": 1139,
+      "level": 1407,
       "resets": 34,
       "vocation": "Exalted Monk",
       "nick": "",
@@ -45,7 +45,7 @@
     },
     {
       "name": "Wrathbringer",
-      "level": 1166,
+      "level": 1378,
       "resets": 45,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -53,8 +53,17 @@
       "rank": "Vice-Leader"
     },
     {
+      "name": "Achilles",
+      "level": 1509,
+      "resets": 18,
+      "vocation": "Exalted Monk",
+      "nick": "",
+      "status": "online",
+      "rank": "Member"
+    },
+    {
       "name": "Aeros",
-      "level": 835,
+      "level": 845,
       "resets": 3,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -63,7 +72,7 @@
     },
     {
       "name": "Aerosz",
-      "level": 802,
+      "level": 815,
       "resets": 7,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -90,7 +99,7 @@
     },
     {
       "name": "Brunao Cansado",
-      "level": 866,
+      "level": 886,
       "resets": 1,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -99,7 +108,7 @@
     },
     {
       "name": "Brunao Rei Denovo",
-      "level": 1083,
+      "level": 1084,
       "resets": 23,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -126,7 +135,7 @@
     },
     {
       "name": "Deca com Testo",
-      "level": 862,
+      "level": 980,
       "resets": 11,
       "vocation": "Elite Knight",
       "nick": "",
@@ -135,8 +144,8 @@
     },
     {
       "name": "Deus",
-      "level": 914,
-      "resets": 21,
+      "level": 825,
+      "resets": 22,
       "vocation": "Elite Knight",
       "nick": "",
       "status": "online",
@@ -144,7 +153,7 @@
     },
     {
       "name": "Diegao Barba",
-      "level": 811,
+      "level": 905,
       "resets": 14,
       "vocation": "Elite Knight",
       "nick": "",
@@ -171,16 +180,16 @@
     },
     {
       "name": "Ed farm",
-      "level": 782,
+      "level": 796,
       "resets": 14,
       "vocation": "Elder Druid",
       "nick": "",
-      "status": "online",
+      "status": "offline",
       "rank": "Member"
     },
     {
       "name": "Elder Luthons",
-      "level": 970,
+      "level": 986,
       "resets": 5,
       "vocation": "Elder Druid",
       "nick": "",
@@ -189,8 +198,8 @@
     },
     {
       "name": "End Zeus",
-      "level": 875,
-      "resets": 14,
+      "level": 404,
+      "resets": 15,
       "vocation": "Master Sorcerer",
       "nick": "",
       "status": "online",
@@ -198,7 +207,7 @@
     },
     {
       "name": "Gizao",
-      "level": 646,
+      "level": 701,
       "resets": 12,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -207,7 +216,7 @@
     },
     {
       "name": "Gokuu",
-      "level": 683,
+      "level": 892,
       "resets": 10,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -216,7 +225,7 @@
     },
     {
       "name": "Haony",
-      "level": 784,
+      "level": 890,
       "resets": 14,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -225,16 +234,16 @@
     },
     {
       "name": "Heroes Baiak",
-      "level": 974,
+      "level": 1013,
       "resets": 12,
       "vocation": "Royal Paladin",
       "nick": "",
-      "status": "online",
+      "status": "offline",
       "rank": "Member"
     },
     {
       "name": "Hozuk",
-      "level": 8,
+      "level": 855,
       "resets": 23,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -243,7 +252,7 @@
     },
     {
       "name": "Imperador",
-      "level": 960,
+      "level": 1086,
       "resets": 16,
       "vocation": "Elite Knight",
       "nick": "",
@@ -252,11 +261,11 @@
     },
     {
       "name": "Judas",
-      "level": 825,
+      "level": 1013,
       "resets": 21,
       "vocation": "Royal Paladin",
       "nick": "",
-      "status": "offline",
+      "status": "online",
       "rank": "Member"
     },
     {
@@ -283,13 +292,13 @@
       "resets": 13,
       "vocation": "Elder Druid",
       "nick": "",
-      "status": "online",
+      "status": "offline",
       "rank": "Member"
     },
     {
       "name": "Lipe Knight",
-      "level": 926,
-      "resets": 21,
+      "level": 378,
+      "resets": 22,
       "vocation": "Elite Knight",
       "nick": "",
       "status": "online",
@@ -306,16 +315,16 @@
     },
     {
       "name": "Luana",
-      "level": 833,
+      "level": 940,
       "resets": 9,
       "vocation": "Elite Knight",
       "nick": "",
-      "status": "online",
+      "status": "offline",
       "rank": "Member"
     },
     {
       "name": "Lukitas Brokenzada",
-      "level": 847,
+      "level": 849,
       "resets": 14,
       "vocation": "Elder Druid",
       "nick": "",
@@ -324,7 +333,7 @@
     },
     {
       "name": "Magabela",
-      "level": 854,
+      "level": 910,
       "resets": 15,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -342,16 +351,16 @@
     },
     {
       "name": "Moskito",
-      "level": 889,
+      "level": 901,
       "resets": 11,
       "vocation": "Royal Paladin",
       "nick": "",
-      "status": "online",
+      "status": "offline",
       "rank": "Member"
     },
     {
       "name": "Niju",
-      "level": 955,
+      "level": 966,
       "resets": 8,
       "vocation": "Elder Druid",
       "nick": "",
@@ -360,8 +369,8 @@
     },
     {
       "name": "Ninogro",
-      "level": 939,
-      "resets": 23,
+      "level": 809,
+      "resets": 24,
       "vocation": "Royal Paladin",
       "nick": "",
       "status": "online",
@@ -369,7 +378,7 @@
     },
     {
       "name": "Ortega",
-      "level": 1130,
+      "level": 1137,
       "resets": 8,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -378,7 +387,7 @@
     },
     {
       "name": "Panuto",
-      "level": 996,
+      "level": 1035,
       "resets": 26,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -396,8 +405,8 @@
     },
     {
       "name": "Primobolan e Trembo",
-      "level": 1036,
-      "resets": 5,
+      "level": 725,
+      "resets": 6,
       "vocation": "Elder Druid",
       "nick": "",
       "status": "online",
@@ -405,7 +414,7 @@
     },
     {
       "name": "Raimunda On Amonot",
-      "level": 1470,
+      "level": 1490,
       "resets": 21,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -423,7 +432,7 @@
     },
     {
       "name": "Ritoff Elite",
-      "level": 900,
+      "level": 951,
       "resets": 16,
       "vocation": "Elite Knight",
       "nick": "",
@@ -432,7 +441,7 @@
     },
     {
       "name": "Royal Luthons",
-      "level": 807,
+      "level": 903,
       "resets": 12,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -441,7 +450,7 @@
     },
     {
       "name": "Rp Surge",
-      "level": 838,
+      "level": 855,
       "resets": 16,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -450,7 +459,7 @@
     },
     {
       "name": "Sabour Ms",
-      "level": 818,
+      "level": 968,
       "resets": 6,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -459,17 +468,17 @@
     },
     {
       "name": "Salles",
-      "level": 1060,
-      "resets": 12,
+      "level": 606,
+      "resets": 13,
       "vocation": "Elite Knight",
       "nick": "",
-      "status": "online",
+      "status": "offline",
       "rank": "Member"
     },
     {
       "name": "Sereno Taca Flecha",
-      "level": 999,
-      "resets": 11,
+      "level": 8,
+      "resets": 12,
       "vocation": "Royal Paladin",
       "nick": "",
       "status": "online",
@@ -513,7 +522,7 @@
     },
     {
       "name": "Tio Bringer",
-      "level": 969,
+      "level": 984,
       "resets": 10,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -531,8 +540,8 @@
     },
     {
       "name": "Tsuru",
-      "level": 891,
-      "resets": 12,
+      "level": 555,
+      "resets": 13,
       "vocation": "Master Sorcerer",
       "nick": "",
       "status": "online",
@@ -540,8 +549,8 @@
     },
     {
       "name": "Valdim",
-      "level": 1048,
-      "resets": 12,
+      "level": 421,
+      "resets": 13,
       "vocation": "Elite Knight",
       "nick": "",
       "status": "online",
@@ -549,7 +558,7 @@
     },
     {
       "name": "Vitinho Rei Delas",
-      "level": 929,
+      "level": 962,
       "resets": 10,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -558,8 +567,8 @@
     },
     {
       "name": "VukVuk",
-      "level": 889,
-      "resets": 20,
+      "level": 654,
+      "resets": 21,
       "vocation": "Elder Druid",
       "nick": "",
       "status": "online",
@@ -567,7 +576,7 @@
     },
     {
       "name": "Zannk",
-      "level": 902,
+      "level": 948,
       "resets": 10,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -581,6 +590,15 @@
       "vocation": "Elite Knight",
       "nick": "",
       "status": "offline",
+      "rank": "Member"
+    },
+    {
+      "name": "Zodiac",
+      "level": 944,
+      "resets": 12,
+      "vocation": "Elite Knight",
+      "nick": "",
+      "status": "online",
       "rank": "Member"
     }
   ]
