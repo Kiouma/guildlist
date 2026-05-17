@@ -184,6 +184,48 @@
     .up-row-label{font-family:'Cinzel',serif;font-size:.72rem;color:var(--text-dim);width:80px;flex-shrink:0}
     .up-pct{font-family:'Cinzel',serif;font-size:.75rem;min-width:36px;text-align:right}
 
+    /* ── EXPAND PANEL ── */
+    .expand-btn{background:none;border:1px solid var(--border);color:var(--text-dim);cursor:pointer;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;border-radius:3px;transition:all .18s;flex-shrink:0;font-size:.75rem;line-height:1}
+    .expand-btn:hover{border-color:var(--gold-dim);color:var(--gold-light);background:var(--bg4)}
+    .expand-btn.open{border-color:var(--gold);color:var(--gold-light);background:var(--bg4);transform:rotate(90deg)}
+    .member-detail-row{display:none}
+    .member-detail-row.open{display:table-row}
+    .member-detail-cell{padding:0!important;border-bottom:1px solid var(--border-gold)!important}
+    .member-detail-inner{padding:18px 20px 20px;background:var(--bg2);display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .detail-section h4{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+    .reset-entry{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border);font-size:.85rem}
+    .reset-entry:last-child{border-bottom:none}
+    .reset-num{font-family:'Cinzel',serif;font-size:.88rem;color:var(--gold-light);font-weight:600}
+    .reset-time{color:var(--text-dim);font-size:.8rem}
+    .death-entry{padding:6px 0;border-bottom:1px solid var(--border);font-size:.83rem;line-height:1.4}
+    .death-entry:last-child{border-bottom:none}
+    .death-time{color:var(--text-dim);font-size:.75rem;display:block;margin-bottom:2px}
+    .death-by{color:var(--text)}
+    .death-by.pvp{color:var(--red)}
+    .death-lv{font-family:'Cinzel',serif;font-size:.75rem;color:var(--gold-dim)}
+    .no-data{color:var(--text-dim);font-style:italic;font-size:.85rem;padding:8px 0}
+
+    /* ── EXPAND PANEL ── */
+    .expand-btn{background:none;border:1px solid var(--border);color:var(--text-dim);cursor:pointer;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;border-radius:3px;transition:all .18s;flex-shrink:0;font-size:.75rem;line-height:1}
+    .expand-btn:hover{border-color:var(--gold-dim);color:var(--gold-light);background:var(--bg4)}
+    .expand-btn.open{border-color:var(--gold);color:var(--gold-light);background:var(--bg4);transform:rotate(90deg)}
+    .member-detail-row{display:none}
+    .member-detail-row.open{display:table-row}
+    .member-detail-cell{padding:0!important;border-bottom:1px solid var(--border-gold)!important}
+    .member-detail-inner{padding:18px 20px 20px;background:var(--bg2);display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .detail-section h4{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+    .reset-entry{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border);font-size:.85rem}
+    .reset-entry:last-child{border-bottom:none}
+    .reset-num{font-family:'Cinzel',serif;font-size:.88rem;color:var(--gold-light);font-weight:600}
+    .reset-time{color:var(--text-dim);font-size:.8rem}
+    .death-entry{padding:6px 0;border-bottom:1px solid var(--border);font-size:.83rem;line-height:1.4}
+    .death-entry:last-child{border-bottom:none}
+    .death-time{color:var(--text-dim);font-size:.75rem;display:block;margin-bottom:2px}
+    .death-by{color:var(--text)}
+    .death-by.pvp{color:var(--red)}
+    .death-lv{font-family:'Cinzel',serif;font-size:.75rem;color:var(--gold-dim)}
+    .no-data{color:var(--text-dim);font-style:italic;font-size:.85rem;padding:8px 0}
+
     @media(max-width:700px){
       :root{--sidebar-w:240px}
       #sidebar{transform:translateX(calc(-1 * var(--sidebar-w)))}
@@ -494,15 +536,78 @@ function renderTable(){
     var c=va<vb?-1:va>vb?1:0;return currentSort.dir==='asc'?c:-c;
   });
   var tbody=document.getElementById('tbody');
-  if(!members.length){tbody.innerHTML='<tr><td colspan="6" class="empty">Nenhum membro encontrado.</td></tr>';return}
-  var html='',lastRank=null;
-  members.forEach(function(m){
-    if(currentSort.key==='rank'&&m.rank!==lastRank){html+='<tr class="rank-header"><td colspan="6">'+(m.rank||'Membro')+'</td></tr>';lastRank=m.rank}
+  if(!members.length){tbody.innerHTML='<tr><td colspan="7" class="empty">Nenhum membro encontrado.</td></tr>';return}
+  var rows=[];
+  var lastRank=null;
+  members.forEach(function(m,idx){
+    if(currentSort.key==='rank'&&m.rank!==lastRank){
+      rows.push('<tr class="rank-header"><td colspan="7">'+(m.rank||'Membro')+'</td></tr>');
+      lastRank=m.rank;
+    }
     var url='https://amonot.online/characters?name='+encodeURIComponent(m.name);
-    html+='<tr><td><span class="badge-rank '+badgeClass(m.rank)+'">'+(m.rank||'Member')+'</span></td><td class="td-name"><a href="'+url+'" target="_blank" rel="noopener">'+m.name+'</a></td><td class="td-num">'+m.level+'</td><td class="td-num">'+m.resets+'</td><td class="td-voc">'+(m.vocation||'—')+'</td><td><span class="dot '+m.status+'"></span><span class="status-text '+m.status+'">'+(m.status==='online'?'Online':'Offline')+'</span></td></tr>';
+    var rid='detail-'+idx;
+    // reset history
+    var resetHtml='';
+    var rh=m.reset_history||[];
+    if(rh.length===0){
+      resetHtml='<div class="no-data">Sem hist\u00f3rico ainda — registrado a partir desta execu\u00e7\u00e3o.</div>';
+    } else {
+      rh.forEach(function(r){
+        resetHtml+='<div class="reset-entry"><span class="reset-num">'+r.resets+' resets</span><span class="reset-time">'+r.time+'</span></div>';
+      });
+    }
+    // deaths
+    var deathHtml='';
+    var dh=m.deaths||[];
+    if(dh.length===0){
+      deathHtml='<div class="no-data">Nenhuma morte recente encontrada.</div>';
+    } else {
+      dh.forEach(function(d){
+        deathHtml+='<div class="death-entry"><span class="death-time">'+d.time+'</span><span class="death-by'+(d.is_pvp?' pvp':'')+'">'+d.by+'</span> <span class="death-lv">lv '+d.level+'</span></div>';
+      });
+    }
+    // build row - use data-rid, NO inline onclick
+    var tr = document.createElement ? null : null; // placeholder - we build HTML string
+    rows.push(
+      '<tr>'
+      +'<td style="padding:8px 6px;text-align:center"><button class="expand-btn" data-rid="'+rid+'" title="Ver detalhes">&#9658;</button></td>'
+      +'<td><span class="badge-rank '+badgeClass(m.rank)+'">'+(m.rank||'Member')+'</span></td>'
+      +'<td class="td-name"><a href="'+url+'" target="_blank" rel="noopener">'+m.name+'</a></td>'
+      +'<td class="td-num">'+m.level+'</td>'
+      +'<td class="td-num">'+m.resets+'</td>'
+      +'<td class="td-voc">'+(m.vocation||'—')+'</td>'
+      +'<td><span class="dot '+m.status+'"></span><span class="status-text '+m.status+'">'+(m.status==='online'?'Online':'Offline')+'</span></td>'
+      +'</tr>'
+      +'<tr class="member-detail-row" id="'+rid+'">'
+        +'<td class="member-detail-cell" colspan="7">'
+          +'<div class="member-detail-inner">'
+            +'<div class="detail-section">'
+              +'<h4>Histórico de Resets (últimos 7)</h4>'
+              +resetHtml
+            +'</div>'
+            +'<div class="detail-section">'
+              +'<h4>Mortes Recentes</h4>'
+              +deathHtml
+            +'</div>'
+          +'</div>'
+        +'</td>'
+      +'</tr>'
+    );
   });
-  tbody.innerHTML=html;
+  tbody.innerHTML=rows.join('');
+  tbody.onclick=function(e){
+    var btn=e.target.closest('.expand-btn');
+    if(btn&&btn.dataset.rid)toggleDetail(btn.dataset.rid);
+  };
 }
+function toggleDetail(rid){
+  var row=document.getElementById(rid);
+  var btn=document.querySelector('.expand-btn[data-rid="'+rid+'"]');
+  if(!row)return;
+  var isOpen=row.classList.toggle('open');
+  if(btn)btn.classList.toggle('open',isOpen);
+}
+
 async function loadData(){
   try{
     var resp=await fetch('guild_data.json?_='+Date.now());
