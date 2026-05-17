@@ -699,12 +699,12 @@ function ascRender(){
           totalBonus+=bval;
           bonusLines+='<div style="display:flex;justify-content:space-between;padding:2px 0 2px 10px;font-size:.75rem">'
             +'<span style="color:var(--text-dim)">'+attr.name+'</span>'
-            +'<span style="font-family:'Cinzel',serif;color:var(--gold)">'+(bval%1===0?bval.toFixed(0):bval.toFixed(2))+attr.unit+'</span>'
+            +'<span style="font-family:Cinzel,serif;color:var(--gold)">'+(bval%1===0?bval.toFixed(0):bval.toFixed(2))+attr.unit+'</span>'
             +'</div>';
         } else if(v>0&&attr.note){
           bonusLines+='<div style="display:flex;justify-content:space-between;padding:2px 0 2px 10px;font-size:.75rem">'
             +'<span style="color:var(--text-dim)">'+attr.name+'</span>'
-            +'<span style="font-family:'Cinzel',serif;color:var(--gold-dim)">'+v+' pts</span>'
+            +'<span style="font-family:Cinzel,serif;color:var(--gold-dim)">'+v+' pts</span>'
             +'</div>';
         }
       });
