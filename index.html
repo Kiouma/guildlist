@@ -735,18 +735,18 @@ function renderRanking(){
       contHtml += '<div class="no-data" style="padding:24px">Nenhum membro encontrado nesta categoria.</div>';
     } else {
       contHtml += '<div class="rank-table-wrap"><table class="rank-table"><thead><tr>'
-        +'<th>Rank Global</th><th>Rank Guild</th><th>Membro</th><th>Vocação</th><th>Level</th><th style="text-align:right">'+hs.val_label+'</th>'
+        +'<th>#</th><th>Membro</th><th>Vocação</th><th>Level</th><th style="text-align:right">'+hs.val_label+'</th>'
         +'</tr></thead><tbody>';
       entries.forEach(function(e){
         var url='https://amonot.online/characters?name='+encodeURIComponent(e.name);
         var rankCls = e.guild_rank===1?'gold':e.guild_rank===2?'silver':e.guild_rank===3?'bronze':'';
+        var valFmt = e.value_fmt || (e.value ? e.value.toLocaleString('pt-BR') : '—');
         contHtml += '<tr>'
-          +'<td class="rank-num">#'+e.rank+'</td>'
-          +'<td class="rank-guild"><span class="rank-num '+rankCls+'">#'+e.guild_rank+'</span></td>'
+          +'<td class="rank-num '+rankCls+'">#'+e.guild_rank+'</td>'
           +'<td class="rank-name"><a href="'+url+'" target="_blank" rel="noopener">'+e.name+'</a></td>'
           +'<td style="color:var(--text-dim);font-style:italic;font-size:.85rem">'+e.vocation+'</td>'
           +'<td class="rank-num" style="color:var(--text)">'+e.level+'</td>'
-          +'<td class="rank-val">'+e.value_fmt+'</td>'
+          +'<td class="rank-val">'+valFmt+'</td>'
           +'</tr>';
       });
       contHtml += '</tbody></table></div>';
