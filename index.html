@@ -226,6 +226,40 @@
     .death-lv{font-family:'Cinzel',serif;font-size:.75rem;color:var(--gold-dim)}
     .no-data{color:var(--text-dim);font-style:italic;font-size:.85rem;padding:8px 0}
 
+    /* ── RANKING / RESETS / PVP ── */
+    .rank-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+    .rank-tab{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;background:var(--bg3);border:1px solid var(--border-gold);color:var(--text-dim);cursor:pointer;transition:all .18s}
+    .rank-tab:hover{border-color:var(--gold-dim);color:var(--text)}
+    .rank-tab.active{background:var(--bg4);border-color:var(--gold);color:var(--gold-light)}
+    .rank-content{display:none}
+    .rank-content.active{display:block}
+    .rank-table-wrap{border:1px solid var(--border-gold);overflow-x:auto;margin-bottom:24px}
+    .rank-table{width:100%;border-collapse:collapse}
+    .rank-table thead tr{background:var(--bg3);border-bottom:2px solid var(--border-gold)}
+    .rank-table th{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dim);padding:10px 14px;text-align:left;white-space:nowrap}
+    .rank-table tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+    .rank-table tbody tr:hover{background:var(--bg3)}
+    .rank-table td{padding:9px 14px;font-size:.9rem}
+    .rank-num{font-family:'Cinzel',serif;font-size:.8rem;color:var(--text-dim);min-width:32px}
+    .rank-num.gold{color:#e8a030;font-weight:700}
+    .rank-num.silver{color:#b0b8c8;font-weight:700}
+    .rank-num.bronze{color:#c87840;font-weight:700}
+    .rank-name a{color:var(--gold-light);text-decoration:none;font-weight:600}
+    .rank-name a:hover{color:#fff;text-decoration:underline}
+    .rank-val{font-family:'Cinzel',serif;font-size:.85rem;color:var(--text);text-align:right}
+    .rank-guild{font-family:'Cinzel',serif;font-size:.72rem;color:var(--text-dim);text-align:center}
+    .reset-day-card{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:24px}
+    .reset-card{background:var(--bg3);border:1px solid var(--border-gold);padding:16px 18px;position:relative}
+    .reset-card-name{font-family:'Cinzel',serif;font-size:.88rem;font-weight:600;color:var(--gold-light);margin-bottom:4px}
+    .reset-card-num{font-family:'Cinzel',serif;font-size:1.5rem;font-weight:700;color:var(--gold)}
+    .reset-card-voc{font-size:.78rem;color:var(--text-dim);font-style:italic;margin-bottom:4px}
+    .reset-card-time{font-size:.78rem;color:var(--text-dim)}
+    .pvp-table-wrap{border:1px solid var(--border-gold);overflow-x:auto}
+    .pvp-badge{display:inline-block;font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.1em;padding:2px 8px;border:1px solid;border-radius:2px}
+    .pvp-badge.hot{color:#e84040;border-color:#701010;background:rgba(232,64,64,.08)}
+    .pvp-none{color:var(--text-dim)}
+    .day-info{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;color:var(--gold-dim);margin-bottom:20px;padding:10px 14px;border:1px solid var(--border);background:var(--bg2)}
+
     @media(max-width:700px){
       :root{--sidebar-w:240px}
       #sidebar{transform:translateX(calc(-1 * var(--sidebar-w)))}
@@ -268,8 +302,28 @@
 
   <div class="sb-divider"></div>
 
+  <div class="sb-divider"></div>
+
   <div class="sb-section">
-    <div class="sb-section-title">Calculadoras</div>
+    <div class="sb-section-title">Dados da Guild</div>
+    <button class="nav-item" onclick="navigate('ranking')" id="nav-ranking">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 20 18 10"/><polyline points="12 20 12 4"/><polyline points="6 20 6 14"/></svg>
+      Ranking
+    </button>
+    <button class="nav-item" onclick="navigate('resets_day')" id="nav-resets_day">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      Resets do Dia
+    </button>
+    <button class="nav-item" onclick="navigate('pvp')" id="nav-pvp">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 9H17v1.5c0 .83-.67 1.5-1.5 1.5"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8H3.5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 15H7v-1.5c0-.83.67-1.5 1.5-1.5"/></svg>
+      PvP
+    </button>
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-section">
+    <div class="sb-section-title">Ferramentas</div>
     <button class="nav-item" onclick="navigate('ascension')" id="nav-ascension">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
       Ascensão
@@ -476,6 +530,51 @@
   </div>
 </div>
 
+<!-- ══ RANKING ══ -->
+<div class="page" id="page-ranking">
+  <div class="cwrap">
+    <div class="page-title">Ranking da Guild</div>
+    <div class="page-desc">Posições dos membros no ranking global de Baiak, por categoria.</div>
+    <div class="page-divider"></div>
+    <div class="rank-tabs" id="rank-tabs"></div>
+    <div id="rank-contents"></div>
+  </div>
+</div>
+
+<!-- ══ RESETS DO DIA ══ -->
+<div class="page" id="page-resets_day">
+  <div class="cwrap">
+    <div class="page-title">Resets do Dia</div>
+    <div class="page-desc">Membros que fizeram reset neste período (05:00 de hoje até 05:00 de amanhã).</div>
+    <div class="page-divider"></div>
+    <div class="day-info" id="resets-day-info">Carregando...</div>
+    <div id="resets-day-content"><div style="color:var(--text-dim);font-style:italic">Carregando dados...</div></div>
+  </div>
+</div>
+
+<!-- ══ PVP ══ -->
+<div class="page" id="page-pvp">
+  <div class="cwrap">
+    <div class="page-title">PvP — Abates</div>
+    <div class="page-desc">Abates de cada membro detectados nas páginas de Últimas Mortes (PvP) de Baiak.</div>
+    <div class="page-divider"></div>
+    <div class="day-info" id="pvp-day-info">Carregando...</div>
+    <div class="pvp-table-wrap">
+      <table class="rank-table">
+        <thead><tr>
+          <th>#</th>
+          <th>Membro</th>
+          <th>Vocação</th>
+          <th style="text-align:right">Total</th>
+          <th style="text-align:right">Semana</th>
+          <th style="text-align:right">Hoje</th>
+        </tr></thead>
+        <tbody id="pvp-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 </main>
 
 <script>
@@ -608,6 +707,124 @@ function toggleDetail(rid){
   if(btn)btn.classList.toggle('open',isOpen);
 }
 
+// ─── RANKING ───────────────────────────────────────────
+var guildHighscores = {};
+var RANK_CAT_ORDER = ['experience','magic_level','fist','club','sword','axe','distance','shielding','fishing'];
+var RANK_CAT_LABEL = {
+  experience:'Experience', magic_level:'Magic Level', fist:'Fist', club:'Club',
+  sword:'Sword', axe:'Axe', distance:'Distance', shielding:'Shielding', fishing:'Fishing'
+};
+
+function renderRanking(){
+  var tabsEl = document.getElementById('rank-tabs');
+  var contEl = document.getElementById('rank-contents');
+  if(!tabsEl||!contEl) return;
+  if(!guildHighscores||!Object.keys(guildHighscores).length){
+    contEl.innerHTML='<div class="no-data" style="padding:32px">Dados de ranking ainda não disponíveis. Execute o scraper primeiro.</div>';
+    return;
+  }
+  var tabsHtml='', contHtml='';
+  RANK_CAT_ORDER.forEach(function(cat,i){
+    var hs = guildHighscores[cat];
+    if(!hs) return;
+    var active = i===0?'active':'';
+    tabsHtml += '<button class="rank-tab '+active+'" data-cat="'+cat+'">'+RANK_CAT_LABEL[cat]+'</button>';
+    contHtml += '<div class="rank-content '+active+'" id="rank-cat-'+cat+'">';
+    var entries = hs.entries||[];
+    if(!entries.length){
+      contHtml += '<div class="no-data" style="padding:24px">Nenhum membro encontrado nesta categoria.</div>';
+    } else {
+      contHtml += '<div class="rank-table-wrap"><table class="rank-table"><thead><tr>'
+        +'<th>Rank Global</th><th>Rank Guild</th><th>Membro</th><th>Vocação</th><th>Level</th><th style="text-align:right">'+hs.val_label+'</th>'
+        +'</tr></thead><tbody>';
+      entries.forEach(function(e){
+        var url='https://amonot.online/characters?name='+encodeURIComponent(e.name);
+        var rankCls = e.guild_rank===1?'gold':e.guild_rank===2?'silver':e.guild_rank===3?'bronze':'';
+        contHtml += '<tr>'
+          +'<td class="rank-num">#'+e.rank+'</td>'
+          +'<td class="rank-guild"><span class="rank-num '+rankCls+'">#'+e.guild_rank+'</span></td>'
+          +'<td class="rank-name"><a href="'+url+'" target="_blank" rel="noopener">'+e.name+'</a></td>'
+          +'<td style="color:var(--text-dim);font-style:italic;font-size:.85rem">'+e.vocation+'</td>'
+          +'<td class="rank-num" style="color:var(--text)">'+e.level+'</td>'
+          +'<td class="rank-val">'+e.value_fmt+'</td>'
+          +'</tr>';
+      });
+      contHtml += '</tbody></table></div>';
+    }
+    contHtml += '</div>';
+  });
+  tabsEl.innerHTML = tabsHtml;
+  contEl.innerHTML = contHtml;
+  tabsEl.onclick = function(e){
+    var btn = e.target.closest('.rank-tab');
+    if(!btn) return;
+    var cat = btn.dataset.cat;
+    document.querySelectorAll('.rank-tab').forEach(function(t){t.classList.remove('active')});
+    document.querySelectorAll('.rank-content').forEach(function(c){c.classList.remove('active')});
+    btn.classList.add('active');
+    var el = document.getElementById('rank-cat-'+cat);
+    if(el) el.classList.add('active');
+  };
+}
+
+// ─── RESETS DO DIA ─────────────────────────────────────
+var guildDayStart = '';
+var resetsToday = [];
+
+function renderResetsDay(){
+  var info = document.getElementById('resets-day-info');
+  var cont = document.getElementById('resets-day-content');
+  if(info) info.textContent = 'Período: ' + guildDayStart + ' → próximo dia às 05:00';
+  if(!cont) return;
+  if(!resetsToday.length){
+    cont.innerHTML='<div class="no-data" style="padding:32px 0">Nenhum reset registrado neste período ainda.</div>';
+    return;
+  }
+  var html = '<div class="reset-day-card">';
+  resetsToday.forEach(function(r){
+    html += '<div class="reset-card">'
+      +'<div class="reset-card-voc">'+r.vocation+'</div>'
+      +'<div class="reset-card-name">'+r.name+'</div>'
+      +'<div class="reset-card-num">'+r.resets+' <span style="font-size:.9rem;color:var(--gold-dim)">resets</span></div>'
+      +'<div class="reset-card-time">'+r.time+'</div>'
+      +'</div>';
+  });
+  html += '</div>';
+  cont.innerHTML = html;
+}
+
+// ─── PVP ───────────────────────────────────────────────
+function renderPvp(){
+  var info = document.getElementById('pvp-day-info');
+  var tbody = document.getElementById('pvp-tbody');
+  if(info) info.textContent = 'Contabilizado a partir das páginas de Últimas Mortes (PvP) de Baiak. Período do dia: ' + guildDayStart + '.';
+  if(!tbody) return;
+
+  var members = allMembers.slice();
+  members.sort(function(a,b){ return (b.pvp_kills_total||0)-(a.pvp_kills_total||0); });
+
+  var html = '';
+  var rank = 0;
+  members.forEach(function(m){
+    var total = m.pvp_kills_total||0;
+    var week  = m.pvp_kills_week||0;
+    var today = m.pvp_kills_today||0;
+    rank++;
+    var url = 'https://amonot.online/characters?name='+encodeURIComponent(m.name);
+    var rankCls = rank===1?'gold':rank===2?'silver':rank===3?'bronze':'';
+    var hotBadge = today>=3?'<span class="pvp-badge hot">+'+today+' hoje</span>':'';
+    html += '<tr>'
+      +'<td class="rank-num '+rankCls+'">#'+rank+'</td>'
+      +'<td class="rank-name"><a href="'+url+'" target="_blank" rel="noopener">'+m.name+'</a> '+hotBadge+'</td>'
+      +'<td style="color:var(--text-dim);font-style:italic;font-size:.85rem">'+( m.vocation||'—')+'</td>'
+      +'<td class="rank-val">'+(total>0?total:'<span class="pvp-none">—</span>')+'</td>'
+      +'<td class="rank-val">'+(week>0?week:'<span class="pvp-none">—</span>')+'</td>'
+      +'<td class="rank-val">'+(today>0?'<strong style="color:var(--online)">'+today+'</strong>':'<span class="pvp-none">—</span>')+'</td>'
+      +'</tr>';
+  });
+  tbody.innerHTML = html;
+}
+
 async function loadData(){
   try{
     var resp=await fetch('guild_data.json?_='+Date.now());
@@ -625,6 +842,12 @@ async function loadData(){
     document.getElementById('controls').style.display='flex';
     document.getElementById('table-wrap').style.display='block';
     sortBy('rank');
+    guildHighscores = data.highscores||{};
+    guildDayStart   = data.guild_day_start||'';
+    resetsToday     = data.resets_today||[];
+    renderRanking();
+    renderResetsDay();
+    renderPvp();
   }catch(e){document.getElementById('loading').style.display='none';document.getElementById('error-msg').style.display='block';console.error(e)}
 }
 loadData();
