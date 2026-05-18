@@ -1,37 +1,68 @@
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
-import json, re, time
+import json, re, time, random
 from datetime import datetime, timezone, timedelta
 
 BRASILIA          = timezone(timedelta(hours=-3))
 GUILD_NAME        = "Lowly People"
-GUILD_URL         = "https://amonot.online/guilds?name=Lowly+People&status=all"
+ENEMY_GUILD_NAME  = "MentaliTY"
+ENEMY_GUILD_URL   = "https://amonot.online/guilds?name=MentaliTY"
 KILLS_PVP_URL     = "https://amonot.online/index.php?page=lastkills&world=Baiak&type=pvp"
 KILLS_ALL_URL     = "https://amonot.online/index.php?page=lastkills&world=Baiak"
 CHAR_URL          = "https://amonot.online/characters?name={name}"
 MAX_RESET_HISTORY = 7
 MAX_DEATH_HISTORY = 30
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                  "Chrome/124.0.0.0 Safari/537.36",
-    "Accept-Language": "pt-BR,pt;q=0.9",
-}
-
-SKILL_KEYS = ["experience", "magic", "fist", "club", "sword", "axe", "distance", "shielding", "fishing"]
+SKILL_KEYS = ["experience","magic","fist","club","sword","axe","distance","shielding","fishing"]
 SKILL_LABELS = {
-    "resets":     "Resets",
-    "experience": "Experience",
-    "magic":      "Magic Level",
-    "fist":       "Fist",
-    "club":       "Club",
-    "sword":      "Sword",
-    "axe":        "Axe",
-    "distance":   "Distance",
-    "shielding":  "Shielding",
-    "fishing":    "Fishing",
+    "resets":"Resets","experience":"Experience","magic":"Magic Level",
+    "fist":"Fist","club":"Club","sword":"Sword","axe":"Axe",
+    "distance":"Distance","shielding":"Shielding","fishing":"Fishing",
 }
 
+# ── Session with retry + backoff ──────────────────────────────────────────────
+def make_session():
+    session = requests.Session()
+    retry = Retry(
+        total=4,
+        backoff_factor=2,          # 1s, 2s, 4s, 8s
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["GET"],
+        raise_on_status=False,
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount("https://", adapter)
+    session.mount("http://",  adapter)
+    session.headers.update({
+        "User-Agent":      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                           "Chrome/124.0.0.0 Safari/537.36",
+        "Accept":          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Connection":      "keep-alive",
+        "DNT":             "1",
+    })
+    return session
+
+SESSION = make_session()
+
+def safe_get(url, timeout=15, min_sleep=0.8, max_sleep=1.8):
+    """GET with jitter sleep before request to avoid detection."""
+    time.sleep(random.uniform(min_sleep, max_sleep))
+    try:
+        r = SESSION.get(url, timeout=timeout)
+        if r.status_code == 429:
+            print(f"    ⚠ Rate limited, aguardando 30s...")
+            time.sleep(30)
+            r = SESSION.get(url, timeout=timeout)
+        return r
+    except Exception as e:
+        print(f"    ⚠ Erro ao buscar {url}: {e}")
+        return None
+
+# ── Time helpers ──────────────────────────────────────────────────────────────
 def now_str():
     return datetime.now(BRASILIA).strftime("%d/%m/%Y %H:%M")
 
@@ -39,7 +70,6 @@ def brasilia_now():
     return datetime.now(BRASILIA)
 
 def guild_day_start():
-    """Day boundary is 22:00 Brasília. Returns start of current guild day."""
     now = brasilia_now()
     today_22 = now.replace(hour=22, minute=0, second=0, microsecond=0)
     if now < today_22:
@@ -51,13 +81,9 @@ def guild_week_start():
     return start - timedelta(days=start.weekday())
 
 def hour_key(dt=None):
-    """Hourly snapshot key: YYYY-MM-DD-HH (Brasília)."""
     if dt is None:
         dt = brasilia_now()
     return dt.strftime("%Y-%m-%d-%H")
-
-def hour_key_n_hours_ago(n):
-    return hour_key(brasilia_now() - timedelta(hours=n))
 
 def parse_death_time(time_str):
     try:
@@ -66,13 +92,8 @@ def parse_death_time(time_str):
     except Exception:
         return None
 
-# ── Guild members ─────────────────────────────────────────────────────────────
-def fetch_members_from_url(url, forced_status=None):
-    """Fetch members from a guild URL. If forced_status given, override all status values."""
-    r = requests.get(url, headers=HEADERS, timeout=15)
-    r.raise_for_status()
-    soup = BeautifulSoup(r.text, "html.parser")
-
+# ── Parse members from a guild page ──────────────────────────────────────────
+def parse_members_from_soup(soup, forced_status=None):
     owner, founded = "", ""
     for card in soup.select(".info-card"):
         label = card.select_one(".info-label")
@@ -91,34 +112,33 @@ def fetch_members_from_url(url, forced_status=None):
         title_el = section.select_one(".form-section-title")
         rank = ""
         if title_el:
-            raw = title_el.get_text(strip=True)
-            rank = re.sub(r'\s*\(\d+\)\s*$', '', raw).strip()
+            rank = re.sub(r'\s*\(\d+\)\s*$', '', title_el.get_text(strip=True)).strip()
 
         for row in section.select(".char-table-row"):
-            def span(lbl):
+            def sp(lbl):
                 el = row.select_one(f'span[data-label="{lbl}"]')
                 return el.get_text(strip=True) if el else ""
 
-            name = span("Nome")
+            name = sp("Nome")
             if not name:
                 continue
-            try:    level  = int(span("Level"))
+            try:    level  = int(sp("Level"))
             except: level  = 0
-            try:    resets = int(span("Resets"))
+            try:    resets = int(sp("Resets"))
             except: resets = 0
 
-            vocation = span("Vocação") or span("Vocation")
-            nick     = span("Nick")
+            vocation = sp("Vocação") or sp("Vocation")
+            nick     = sp("Nick")
 
             if forced_status:
                 status = forced_status
             else:
-                status_el = row.select_one('span[data-label="Status"] .badge')
-                if status_el:
-                    status = "online" if "badge-success" in status_el.get("class", []) else "offline"
+                badge = row.select_one('span[data-label="Status"] .badge')
+                if badge:
+                    status = "online" if "badge-success" in badge.get("class", []) else "offline"
                 else:
-                    status_span = row.select_one('span[data-label="Status"]')
-                    status = "online" if status_span and "online" in status_span.get_text(strip=True).lower() else "offline"
+                    ss = row.select_one('span[data-label="Status"]')
+                    status = "online" if ss and "online" in ss.get_text(strip=True).lower() else "offline"
 
             members.append({
                 "name": name, "level": level, "resets": resets,
@@ -127,71 +147,50 @@ def fetch_members_from_url(url, forced_status=None):
             })
     return members, owner, founded
 
-def scrape_guild_members():
-    """Fetch online and offline members separately to guarantee correct status."""
-    # Fetch online members
-    url_online  = "https://amonot.online/guilds?name=Lowly+People&status=online"
-    url_offline = "https://amonot.online/guilds?name=Lowly+People&status=offline"
-
-    online_members,  owner,   founded = fetch_members_from_url(url_online,  forced_status="online")
-    time.sleep(0.5)
-    offline_members, _, _ = fetch_members_from_url(url_offline, forced_status="offline")
-
-    # Merge: use name as key to avoid duplicates
+def fetch_guild_members(guild_name_encoded):
+    """Fetch online + offline separately for accurate status."""
+    base = f"https://amonot.online/guilds?name={guild_name_encoded}"
+    all_members = []
+    owner, founded = "", ""
     seen = set()
-    members = []
-    for m in online_members + offline_members:
-        if m["name"] not in seen:
-            seen.add(m["name"])
-            members.append(m)
 
-    online = sum(1 for m in members if m["status"] == "online")
-    print(f"    → {len(members)} membros: {online} online, {len(members)-online} offline")
-    return members, owner, founded
+    for status_filter, forced in [("online", "online"), ("offline", "offline")]:
+        url = f"{base}&status={status_filter}"
+        r = safe_get(url)
+        if not r or r.status_code != 200:
+            print(f"    ⚠ Falha ao buscar {guild_name_encoded} ({status_filter})")
+            continue
+        soup = BeautifulSoup(r.text, "html.parser")
+        members, o, f = parse_members_from_soup(soup, forced_status=forced)
+        if o: owner = o
+        if f: founded = f
+        for m in members:
+            if m["name"] not in seen:
+                seen.add(m["name"])
+                all_members.append(m)
 
-# ── Character profile → extract skills/exp ───────────────────────────────────
+    online = sum(1 for m in all_members if m["status"] == "online")
+    print(f"    → {guild_name_encoded}: {len(all_members)} membros ({online} online)")
+    return all_members, owner, founded
+
+# ── Character stats ───────────────────────────────────────────────────────────
 def scrape_char_stats(name):
-    """Fetch character page and extract experience + skills."""
     url = CHAR_URL.format(name=requests.utils.quote(name))
     stats = {k: 0 for k in SKILL_KEYS}
+    r = safe_get(url, timeout=12, min_sleep=1.0, max_sleep=2.0)
+    if not r or r.status_code != 200:
+        return stats
     try:
-        r = requests.get(url, headers=HEADERS, timeout=12)
-        if r.status_code != 200:
-            return stats
         soup = BeautifulSoup(r.text, "html.parser")
-        text = soup.get_text(separator="\n")
-        lines = [l.strip() for l in text.splitlines() if l.strip()]
-
-        # Pattern: label on one line, value on next (or nearby)
         skill_map = {
-            "Experience": "experience",
-            "Magic Level": "magic",
-            "Magic level": "magic",
-            "Fist Fighting": "fist",
-            "Fist fighting": "fist",
-            "Club Fighting": "club",
-            "Club fighting": "club",
-            "Sword Fighting": "sword",
-            "Sword fighting": "sword",
-            "Axe Fighting": "axe",
-            "Axe fighting": "axe",
-            "Distance Fighting": "distance",
-            "Distance fighting": "distance",
-            "Shielding": "shielding",
+            "Experience Points": "experience", "Experience": "experience",
+            "Magic Level": "magic", "Magic level": "magic",
+            "Fist Fighting": "fist",  "Club Fighting": "club",
+            "Sword Fighting": "sword", "Axe Fighting": "axe",
+            "Distance Fighting": "distance", "Shielding": "shielding",
             "Fishing": "fishing",
         }
-        for i, line in enumerate(lines):
-            for label, key in skill_map.items():
-                if line.strip() == label and i + 1 < len(lines):
-                    val_raw = re.sub(r'[^\d]', '', lines[i + 1])
-                    if val_raw:
-                        try:
-                            stats[key] = int(val_raw)
-                        except:
-                            pass
-                    break
-
-        # Also try table rows: <td>Experience Points</td><td>1,234,567</td>
+        # Try table rows
         for row in soup.select("tr"):
             cells = row.find_all("td")
             if len(cells) >= 2:
@@ -201,61 +200,54 @@ def scrape_char_stats(name):
                     if label.lower() in lbl.lower():
                         val_raw = re.sub(r'[^\d]', '', val)
                         if val_raw:
-                            try:
-                                stats[key] = int(val_raw)
-                            except:
-                                pass
-
-        # Try info-card / info-value pattern (same as guild page)
-        for card in soup.select(".info-card, .character-info, .stat-box, [class*='stat'], [class*='skill']"):
-            label_el = card.select_one(".info-label, .stat-label, .skill-name, th, label")
-            value_el = card.select_one(".info-value, .stat-value, .skill-value, td, span")
-            if label_el and value_el:
-                lbl = label_el.get_text(strip=True)
-                val = value_el.get_text(strip=True)
+                            try: stats[key] = int(val_raw)
+                            except: pass
+        # Try info-cards
+        for card in soup.select(".info-card"):
+            lbl_el = card.select_one(".info-label")
+            val_el = card.select_one(".info-value")
+            if lbl_el and val_el:
+                lbl = lbl_el.get_text(strip=True)
+                val = re.sub(r'[^\d]', '', val_el.get_text(strip=True))
                 for label, key in skill_map.items():
-                    if label.lower() in lbl.lower():
-                        val_raw = re.sub(r'[^\d]', '', val)
-                        if val_raw:
-                            try:
-                                stats[key] = int(val_raw)
-                            except:
-                                pass
-
+                    if label.lower() in lbl.lower() and val:
+                        try: stats[key] = int(val)
+                        except: pass
+        # Text fallback
+        lines = [l.strip() for l in soup.get_text("\n").splitlines() if l.strip()]
+        for i, line in enumerate(lines):
+            for label, key in skill_map.items():
+                if line == label and i + 1 < len(lines):
+                    val_raw = re.sub(r'[^\d]', '', lines[i+1])
+                    if val_raw:
+                        try: stats[key] = int(val_raw)
+                        except: pass
+                    break
     except Exception as e:
-        print(f"    ⚠ {name}: {e}")
+        print(f"    ⚠ stats {name}: {e}")
     return stats
 
 def scrape_all_char_stats(members):
-    """Fetch stats for all members and attach to each member dict."""
     total = len(members)
     for i, m in enumerate(members):
         print(f"    [{i+1}/{total}] {m['name']}...")
-        stats = scrape_char_stats(m["name"])
-        m["stats"] = stats
-        time.sleep(0.3)
+        m["stats"] = scrape_char_stats(m["name"])
     return members
 
 def build_rankings(members):
-    """Build guild-internal rankings for each stat category."""
     rankings = {}
-    all_cats = ["resets"] + SKILL_KEYS
-
-    for cat in all_cats:
+    for cat in ["resets"] + SKILL_KEYS:
         if cat == "resets":
-            entries = [{"name": m["name"], "value": m["resets"], "level": m["level"], "vocation": m["vocation"]} for m in members]
+            entries = [{"name": m["name"], "value": m["resets"],
+                        "level": m["level"], "vocation": m["vocation"]} for m in members]
         else:
-            entries = [{"name": m["name"], "value": m.get("stats", {}).get(cat, 0), "level": m["level"], "vocation": m["vocation"]} for m in members]
-
+            entries = [{"name": m["name"], "value": m.get("stats", {}).get(cat, 0),
+                        "level": m["level"], "vocation": m["vocation"]} for m in members]
         entries.sort(key=lambda x: x["value"], reverse=True)
         for i, e in enumerate(entries):
             e["guild_rank"] = i + 1
-
-        rankings[cat] = {
-            "name":      SKILL_LABELS.get(cat, cat),
-            "val_label": SKILL_LABELS.get(cat, cat),
-            "entries":   entries,
-        }
+        rankings[cat] = {"name": SKILL_LABELS.get(cat, cat),
+                         "val_label": SKILL_LABELS.get(cat, cat), "entries": entries}
     return rankings
 
 # ── Deaths ────────────────────────────────────────────────────────────────────
@@ -263,47 +255,119 @@ def scrape_deaths(member_names_lower, pages=6):
     deaths_by_member = {}
     for page in range(1, pages + 1):
         url = KILLS_ALL_URL + (f"&p={page}" if page > 1 else "")
-        try:
-            r = requests.get(url, headers=HEADERS, timeout=15)
-            r.raise_for_status()
-        except Exception as e:
-            print(f"  ⚠ Mortes pág {page}: {e}")
+        r = safe_get(url, min_sleep=0.5, max_sleep=1.2)
+        if not r or r.status_code != 200:
             break
-
         soup = BeautifulSoup(r.text, "html.parser")
         for row in soup.select("div.char-table-row"):
             def sp(lbl):
                 el = row.select_one(f'span[data-label="{lbl}"]')
                 return el.get_text(separator=" ", strip=True) if el else ""
-
             time_text   = sp("Hora")
-            player_name = sp("Jogador Morto")
-            # name may be inside an <a> tag
-            name_tag = row.select_one('span[data-label="Jogador Morto"] a')
-            if name_tag:
-                player_name = name_tag.get_text(strip=True)
+            name_tag    = row.select_one('span[data-label="Jogador Morto"] a')
+            player_name = name_tag.get_text(strip=True) if name_tag else sp("Jogador Morto")
             if not player_name or player_name.lower() not in member_names_lower:
                 continue
-            level_raw = sp("Level")
-            try:    dlevel = int(level_raw)
+            try:    dlevel = int(sp("Level"))
             except: dlevel = 0
             killed_by = sp("Morto Por")
-            is_pvp    = "(jogador)" in killed_by.lower() or "(monstro)" not in killed_by.lower()
+            is_pvp    = "(jogador)" in killed_by.lower()
             canonical = member_names_lower[player_name.lower()]
             deaths_by_member.setdefault(canonical, []).append({
                 "time": time_text, "level": dlevel,
                 "by": killed_by, "is_pvp": is_pvp,
             })
-        time.sleep(0.25)
-
     for name in deaths_by_member:
         deaths_by_member[name] = deaths_by_member[name][:MAX_DEATH_HISTORY]
     return deaths_by_member
 
-# ── PvP kills ─────────────────────────────────────────────────────────────────
-# Page uses div.char-table-row, each row has span[data-label] children:
-# "Hora", "Jogador Morto", "Level", "Morto Por", "Mundo"
-# Example row text: "May 17, 2026 21:59 Jotabringer 993 Sauron Knight (jogador) Maior dano: X Baiak"
+# ── War tracker ───────────────────────────────────────────────────────────────
+def scrape_war_kills(our_names_lower, enemy_names_lower, pages=10):
+    """
+    Track kills between Lowly People and MentaliTY on the PvP lastkills page.
+    Returns:
+      our_kills   = {lp_member: count}   (LP killed enemy)
+      enemy_kills = {enemy_member: count} (enemy killed LP)
+      war_log     = [{time, killer, victim, killer_guild, victim_guild}]
+    """
+    our_kills   = {}
+    enemy_kills = {}
+    war_log     = []
+    day_start   = guild_day_start()
+    week_start  = guild_week_start()
+
+    # per-member daily/weekly
+    our_kills_day  = {}
+    our_kills_week = {}
+    enemy_kills_day  = {}
+    enemy_kills_week = {}
+
+    for page in range(1, pages + 1):
+        url = KILLS_PVP_URL + (f"&p={page}" if page > 1 else "")
+        r = safe_get(url, min_sleep=0.5, max_sleep=1.2)
+        if not r or r.status_code != 200:
+            break
+
+        soup = BeautifulSoup(r.text, "html.parser")
+        rows = soup.select("div.char-table-row")
+        found_war = False
+
+        for row in rows:
+            def sp(lbl):
+                el = row.select_one(f'span[data-label="{lbl}"]')
+                return el.get_text(separator=" ", strip=True) if el else ""
+
+            time_text = sp("Hora")
+            victim_tag = row.select_one('span[data-label="Jogador Morto"] a')
+            victim = victim_tag.get_text(strip=True) if victim_tag else sp("Jogador Morto")
+            killed_by = sp("Morto Por")
+            if not killed_by or not victim:
+                continue
+
+            victim_lower   = victim.lower()
+            killedby_lower = killed_by.lower()
+
+            # Find killer name (LP member in "Morto Por" text)
+            killer_lp     = next((c for n, c in our_names_lower.items() if n in killedby_lower), None)
+            killer_enemy  = next((c for n, c in enemy_names_lower.items() if n in killedby_lower), None)
+            victim_is_lp  = victim_lower in our_names_lower
+            victim_is_enemy = victim_lower in enemy_names_lower
+
+            # LP killed enemy
+            if killer_lp and victim_is_enemy:
+                found_war = True
+                our_kills[killer_lp] = our_kills.get(killer_lp, 0) + 1
+                dt = parse_death_time(time_text)
+                if dt:
+                    if dt >= day_start:
+                        our_kills_day[killer_lp] = our_kills_day.get(killer_lp, 0) + 1
+                    if dt >= week_start:
+                        our_kills_week[killer_lp] = our_kills_week.get(killer_lp, 0) + 1
+                war_log.append({"time": time_text, "killer": killer_lp,
+                                "victim": victim, "killer_guild": "lp", "victim_guild": "enemy"})
+
+            # Enemy killed LP
+            elif killer_enemy and victim_is_lp:
+                found_war = True
+                enemy_kills[killer_enemy] = enemy_kills.get(killer_enemy, 0) + 1
+                dt = parse_death_time(time_text)
+                if dt:
+                    if dt >= day_start:
+                        enemy_kills_day[killer_enemy] = enemy_kills_day.get(killer_enemy, 0) + 1
+                    if dt >= week_start:
+                        enemy_kills_week[killer_enemy] = enemy_kills_week.get(killer_enemy, 0) + 1
+                war_log.append({"time": time_text, "killer": killer_enemy,
+                                "victim": victim, "killer_guild": "enemy", "victim_guild": "lp"})
+
+        if not found_war and page > 4:
+            break
+
+    war_log = war_log[:200]
+    return (our_kills, our_kills_day, our_kills_week,
+            enemy_kills, enemy_kills_day, enemy_kills_week,
+            war_log)
+
+# ── PvP kills (general) ───────────────────────────────────────────────────────
 def scrape_pvp_kills(member_names_lower, pages=6):
     kills_total = {}
     kills_today = {}
@@ -313,48 +377,23 @@ def scrape_pvp_kills(member_names_lower, pages=6):
 
     for page in range(1, pages + 1):
         url = KILLS_PVP_URL + (f"&p={page}" if page > 1 else "")
-        try:
-            r = requests.get(url, headers=HEADERS, timeout=15)
-            r.raise_for_status()
-        except Exception as e:
-            print(f"  ⚠ PvP pág {page}: {e}")
+        r = safe_get(url, min_sleep=0.5, max_sleep=1.2)
+        if not r or r.status_code != 200:
             break
 
         soup = BeautifulSoup(r.text, "html.parser")
-        rows = soup.select("div.char-table-row")
-        print(f"    pág {page}: {len(rows)} linhas encontradas")
         found_any = False
-
-        for row in rows:
+        for row in soup.select("div.char-table-row"):
             def sp(lbl):
                 el = row.select_one(f'span[data-label="{lbl}"]')
                 return el.get_text(separator=" ", strip=True) if el else ""
-
             time_text = sp("Hora")
             killed_by = sp("Morto Por")
-
-            if not killed_by:
-                # fallback: read all spans in order
-                spans = row.find_all("span")
-                texts = [s.get_text(strip=True) for s in spans if s.get_text(strip=True)]
-                # structure: hora, jogador, level, morto_por, mundo
-                if len(texts) >= 4:
-                    time_text = texts[0]
-                    killed_by = texts[3]
-
-            if not killed_by:
+            if not killed_by or "(monstro)" in killed_by.lower():
                 continue
-
-            # Find which guild member appears as killer
-            killed_by_lower = killed_by.lower()
-            killer = None
-            for lower_name, canonical in member_names_lower.items():
-                if lower_name in killed_by_lower:
-                    killer = canonical
-                    break
+            killer = next((c for n, c in member_names_lower.items() if n in killed_by.lower()), None)
             if not killer:
                 continue
-
             found_any = True
             kills_total[killer] = kills_total.get(killer, 0) + 1
             dt = parse_death_time(time_text)
@@ -364,7 +403,6 @@ def scrape_pvp_kills(member_names_lower, pages=6):
                 if dt >= week_start:
                     kills_week[killer] = kills_week.get(killer, 0) + 1
 
-        time.sleep(0.25)
         if not found_any and page > 2:
             break
 
@@ -377,30 +415,23 @@ def update_reset_history(members, previous_data):
         for m in previous_data.get("members", []):
             prev_map[m["name"].lower()] = m
 
-    now_key = hour_key()  # current hour key
-
+    now_key = hour_key()
     for m in members:
         key  = m["name"].lower()
         prev = prev_map.get(key, {})
         prev_resets  = prev.get("resets", None)
         prev_history = list(prev.get("reset_history", []))
 
-        # Record in event history whenever resets change
         if prev_resets is not None and m["resets"] != prev_resets:
             prev_history = [{"resets": m["resets"], "time": now_str()}] + prev_history
             prev_history = prev_history[:MAX_RESET_HISTORY]
         m["reset_history"] = prev_history
 
-        # Hourly snapshots: {hour_key: resets_value}
-        # Store every hour; keep 7*24+1 = 169 entries (7 days + buffer)
         hourly = dict(prev.get("hourly_snapshots", {}))
         hourly[now_key] = m["resets"]
-        # Prune entries older than 8 days
         cutoff = hour_key(brasilia_now() - timedelta(days=8))
-        hourly = {k: v for k, v in hourly.items() if k >= cutoff}
-        m["hourly_snapshots"] = hourly
+        m["hourly_snapshots"] = {k: v for k, v in hourly.items() if k >= cutoff}
 
-        # Preserve previous stats if we can't fetch them this run
         if "stats" not in m and "stats" in prev:
             m["stats"] = prev["stats"]
     return members
@@ -413,45 +444,23 @@ def load_previous(path="guild_data.json"):
         return None
 
 def resets_since(member, hours_ago):
-    """
-    How many resets did this member gain in the last N hours?
-    Uses hourly_snapshots: finds the oldest snapshot within [now-hours_ago, now]
-    and computes current - that value.
-    """
     hourly = member.get("hourly_snapshots", {})
     if not hourly:
         return 0
     cutoff_key = hour_key(brasilia_now() - timedelta(hours=hours_ago))
-    # Get snapshot at or just before the cutoff
-    past_keys = sorted(k for k in hourly if k <= cutoff_key)
-    if not past_keys:
-        # No snapshot that old — use oldest available
-        oldest_key = sorted(hourly.keys())[0]
-        baseline = hourly[oldest_key]
-    else:
-        baseline = hourly[past_keys[-1]]
+    past_keys  = sorted(k for k in hourly if k <= cutoff_key)
+    baseline   = hourly[past_keys[-1]] if past_keys else hourly[sorted(hourly.keys())[0]]
     return max(0, member["resets"] - baseline)
 
 def compute_resets_today(members):
-    """
-    Resets do dia = aumento de resets nas últimas 24h (período 22h→22h).
-    Verifica hourly_snapshots de hora em hora.
-    Também calcula resets dos últimos 7 dias.
-    """
     today = []
     for m in members:
-        gained_day  = resets_since(m, 24)   # últimas 24h
-        gained_week = resets_since(m, 24*7)  # últimos 7 dias
-
+        gained_day  = resets_since(m, 24)
+        gained_week = resets_since(m, 24*7)
         if gained_day > 0 or gained_week > 0:
-            today.append({
-                "name":           m["name"],
-                "resets":         m["resets"],
-                "resets_gained":  gained_day,
-                "resets_7d":      gained_week,
-                "vocation":       m.get("vocation", ""),
-            })
-
+            today.append({"name": m["name"], "resets": m["resets"],
+                          "resets_gained": gained_day, "resets_7d": gained_week,
+                          "vocation": m.get("vocation", "")})
     today.sort(key=lambda x: x["resets_gained"], reverse=True)
     return today
 
@@ -459,22 +468,31 @@ def compute_resets_today(members):
 def scrape_guild():
     timestamp = datetime.now(BRASILIA).strftime("%d/%m/%Y às %H:%M (Brasília)")
 
-    print("  → Membros da guild...")
-    members, owner, founded = scrape_guild_members()
+    print("  → Membros Lowly People...")
+    members, owner, founded = fetch_guild_members("Lowly+People")
     previous = load_previous()
     members  = update_reset_history(members, previous)
     member_names_lower = {m["name"].lower(): m["name"] for m in members}
 
-    print(f"  → {len(members)} membros. Buscando stats individuais (1 req/membro)...")
+    print("  → Membros MentaliTY...")
+    enemy_members, _, _ = fetch_guild_members("MentaliTY")
+    enemy_names_lower   = {m["name"].lower(): m["name"] for m in enemy_members}
+
+    print(f"  → Stats individuais ({len(members)} membros)...")
     members = scrape_all_char_stats(members)
 
     print("  → Mortes (lastkills)...")
     deaths_by_member = scrape_deaths(member_names_lower, pages=6)
 
-    print("  → Abates PvP...")
+    print("  → Abates PvP gerais...")
     kills_total, kills_today, kills_week = scrape_pvp_kills(member_names_lower, pages=6)
 
-    print("  → Construindo rankings internos...")
+    print("  → Guerra LP vs MentaliTY...")
+    (our_kills, our_kills_day, our_kills_week,
+     enemy_kills, enemy_kills_day, enemy_kills_week,
+     war_log) = scrape_war_kills(member_names_lower, enemy_names_lower, pages=10)
+
+    print("  → Rankings...")
     highscores = build_rankings(members)
 
     for m in members:
@@ -483,23 +501,73 @@ def scrape_guild():
         m["pvp_kills_total"] = kills_total.get(name, 0)
         m["pvp_kills_today"] = kills_today.get(name, 0)
         m["pvp_kills_week"]  = kills_week.get(name, 0)
+        m["war_kills"]       = our_kills.get(name, 0)
+        m["war_kills_day"]   = our_kills_day.get(name, 0)
+        m["war_kills_week"]  = our_kills_week.get(name, 0)
+
+    # Enemy members war stats
+    enemy_list = []
+    for m in enemy_members:
+        name = m["name"]
+        enemy_list.append({
+            "name":      name,
+            "level":     m["level"],
+            "vocation":  m["vocation"],
+            "resets":    m["resets"],
+            "status":    m["status"],
+            "war_kills": enemy_kills.get(name, 0),
+            "war_kills_day":  enemy_kills_day.get(name, 0),
+            "war_kills_week": enemy_kills_week.get(name, 0),
+        })
+
+    total_lp_kills    = sum(our_kills.values())
+    total_enemy_kills = sum(enemy_kills.values())
+    lp_deaths_in_war  = sum(1 for e in war_log if e["victim_guild"] == "lp")
+    enemy_deaths_war  = sum(1 for e in war_log if e["victim_guild"] == "enemy")
+
+    war_data = {
+        "enemy_guild":         ENEMY_GUILD_NAME,
+        "lp_kills_total":      total_lp_kills,
+        "enemy_kills_total":   total_enemy_kills,
+        "lp_deaths_war":       lp_deaths_in_war,
+        "enemy_deaths_war":    enemy_deaths_war,
+        "lp_kills_today":      sum(our_kills_day.values()),
+        "enemy_kills_today":   sum(enemy_kills_day.values()),
+        "lp_kills_week":       sum(our_kills_week.values()),
+        "enemy_kills_week":    sum(enemy_kills_week.values()),
+        "lp_top_killers":      sorted(
+            [{"name": n, "kills": k, "kills_day": our_kills_day.get(n,0),
+              "kills_week": our_kills_week.get(n,0)} for n, k in our_kills.items()],
+            key=lambda x: x["kills"], reverse=True
+        ),
+        "enemy_top_killers":   sorted(
+            [{"name": n, "kills": k, "kills_day": enemy_kills_day.get(n,0),
+              "kills_week": enemy_kills_week.get(n,0)} for n, k in enemy_kills.items()],
+            key=lambda x: x["kills"], reverse=True
+        ),
+        "war_log": war_log,
+        "enemy_members": enemy_list,
+    }
 
     resets_today  = compute_resets_today(members)
     online_count  = sum(1 for m in members if m["status"] == "online")
     offline_count = len(members) - online_count
 
+    print(f"\n  ⚔ Guerra: LP {total_lp_kills} kills / MentaliTY {total_enemy_kills} kills")
+
     return {
-        "name":             GUILD_NAME,
-        "updated_at":       timestamp,
-        "owner":            owner,
-        "founded":          founded,
-        "total_members":    len(members),
-        "online_count":     online_count,
-        "offline_count":    offline_count,
-        "guild_day_start":  guild_day_start().strftime("%d/%m/%Y às %H:%M (Brasília)"),
-        "members":          members,
-        "resets_today":     resets_today,
-        "highscores":       highscores,
+        "name":            GUILD_NAME,
+        "updated_at":      timestamp,
+        "owner":           owner,
+        "founded":         founded,
+        "total_members":   len(members),
+        "online_count":    online_count,
+        "offline_count":   offline_count,
+        "guild_day_start": guild_day_start().strftime("%d/%m/%Y às %H:%M (Brasília)"),
+        "members":         members,
+        "resets_today":    resets_today,
+        "highscores":      highscores,
+        "war":             war_data,
     }
 
 
@@ -510,17 +578,8 @@ if __name__ == "__main__":
         json.dump(data, f, ensure_ascii=False, indent=2)
 
     print(f"\n✅ Salvo!")
-    print(f"   👥 Membros:     {data['total_members']}")
-    print(f"   🟢 Online:      {data['online_count']}")
+    print(f"   👥 Membros:     {data['total_members']} ({data['online_count']} online)")
     print(f"   🔄 Resets hoje: {len(data['resets_today'])}")
+    print(f"   ⚔ Guerra LP:   {data['war']['lp_kills_total']} kills / {data['war']['lp_deaths_war']} mortes")
+    print(f"   ⚔ Guerra Enemy:{data['war']['enemy_kills_total']} kills / {data['war']['enemy_deaths_war']} mortes")
     print(f"   🕐 Em:          {data['updated_at']}")
-    for cat, hs in data["highscores"].items():
-        top = hs["entries"][0] if hs["entries"] else None
-        if top:
-            print(f"   🏆 {hs['name']}: #{1} = {top['name']} ({top['value']})")
-    if data["members"]:
-        print("\n📋 Amostra (3 primeiros):")
-        for m in data["members"][:3]:
-            icon = "🟢" if m["status"] == "online" else "⚫"
-            stats = m.get("stats", {})
-            print(f"   {icon} {m['name']} | {m['resets']}R | exp={stats.get('experience',0):,} | kills={m['pvp_kills_total']}")
