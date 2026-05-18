@@ -1,7 +1,3 @@
-"""
-Script de diagnóstico — rode uma vez para ver a estrutura da página PvP.
-Não substitua o scraper.py com isso, é só para debug.
-"""
 import requests
 from bs4 import BeautifulSoup
 
@@ -16,18 +12,28 @@ print(f"Status: {r.status_code}  |  Size: {len(r.text)} bytes")
 
 soup = BeautifulSoup(r.text, "html.parser")
 
-# Print all table rows raw
-rows = soup.select("table tr")
-print(f"\nRows encontradas na <table>: {len(rows)}")
-for i, row in enumerate(rows[:10]):
-    cells = row.find_all("td")
-    print(f"\n--- Row {i} ({len(cells)} cells) ---")
-    for j, cell in enumerate(cells):
-        print(f"  cell[{j}]: {cell.get_text(separator=' ', strip=True)[:120]}")
-        # Print links inside
-        for a in cell.find_all("a"):
-            print(f"    <a href={a.get('href','')}> {a.get_text(strip=True)}")
+# Find all divs with class containing "kill", "death", "last", "row"
+for cls in ["kill", "death", "last", "row", "char", "player"]:
+    found = soup.select(f'[class*="{cls}"]')
+    if found:
+        print(f"\n--- class*='{cls}' ({len(found)} elements) ---")
+        for el in found[:3]:
+            print(f"  tag={el.name} class={el.get('class')} text={el.get_text(separator=' ', strip=True)[:150]}")
 
-# Also try divs in case it's not a table
-print("\n\n--- Primeiros 3000 chars do HTML ---")
-print(r.text[:3000])
+# Print a large chunk of HTML around first death entry
+raw = r.text
+# find "Morto por" or "Killed by" or pvp indicators
+for kw in ["Morto por", "morto por", "Killed by", "killed by", "pvp", "data-label"]:
+    idx = raw.find(kw)
+    if idx > 0:
+        print(f"\n--- Found '{kw}' at pos {idx} ---")
+        print(raw[max(0,idx-200):idx+400])
+        break
+
+# Also print first 500 chars after <main or <section or <article
+for tag in ["<main", "<section", "<article", "<div id=\"content", "<div class=\"content"]:
+    idx = raw.find(tag)
+    if idx > 0:
+        print(f"\n--- {tag} at {idx} ---")
+        print(raw[idx:idx+800])
+        break
