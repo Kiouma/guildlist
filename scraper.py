@@ -230,21 +230,24 @@ def scrape_deaths(member_names_lower, pages=6):
             break
 
         soup = BeautifulSoup(r.text, "html.parser")
-        for row in soup.select("table tr"):
-            cells = row.find_all("td")
-            if len(cells) < 4:
+        for row in soup.select("div.char-table-row"):
+            def sp(lbl):
+                el = row.select_one(f'span[data-label="{lbl}"]')
+                return el.get_text(separator=" ", strip=True) if el else ""
+
+            time_text   = sp("Hora")
+            player_name = sp("Jogador Morto")
+            # name may be inside an <a> tag
+            name_tag = row.select_one('span[data-label="Jogador Morto"] a')
+            if name_tag:
+                player_name = name_tag.get_text(strip=True)
+            if not player_name or player_name.lower() not in member_names_lower:
                 continue
-            time_text   = cells[0].get_text(strip=True)
-            name_tag    = cells[1].find("a")
-            if not name_tag:
-                continue
-            player_name = name_tag.get_text(strip=True)
-            if player_name.lower() not in member_names_lower:
-                continue
-            try:    dlevel = int(cells[2].get_text(strip=True))
+            level_raw = sp("Level")
+            try:    dlevel = int(level_raw)
             except: dlevel = 0
-            killed_by = cells[3].get_text(strip=True)
-            is_pvp    = "(monstro)" not in killed_by.lower()
+            killed_by = sp("Morto Por")
+            is_pvp    = "(jogador)" in killed_by.lower() or "(monstro)" not in killed_by.lower()
             canonical = member_names_lower[player_name.lower()]
             deaths_by_member.setdefault(canonical, []).append({
                 "time": time_text, "level": dlevel,
@@ -257,6 +260,9 @@ def scrape_deaths(member_names_lower, pages=6):
     return deaths_by_member
 
 # ── PvP kills ─────────────────────────────────────────────────────────────────
+# Page uses div.char-table-row, each row has span[data-label] children:
+# "Hora", "Jogador Morto", "Level", "Morto Por", "Mundo"
+# Example row text: "May 17, 2026 21:59 Jotabringer 993 Sauron Knight (jogador) Maior dano: X Baiak"
 def scrape_pvp_kills(member_names_lower, pages=6):
     kills_total = {}
     kills_today = {}
@@ -274,19 +280,35 @@ def scrape_pvp_kills(member_names_lower, pages=6):
             break
 
         soup = BeautifulSoup(r.text, "html.parser")
+        rows = soup.select("div.char-table-row")
+        print(f"    pág {page}: {len(rows)} linhas encontradas")
         found_any = False
-        for row in soup.select("table tr"):
-            cells = row.find_all("td")
-            if len(cells) < 4:
-                continue
-            time_text = cells[0].get_text(strip=True)
-            killed_by = cells[3].get_text(separator=" ", strip=True)
-            if "(monstro)" in killed_by.lower():
+
+        for row in rows:
+            def sp(lbl):
+                el = row.select_one(f'span[data-label="{lbl}"]')
+                return el.get_text(separator=" ", strip=True) if el else ""
+
+            time_text = sp("Hora")
+            killed_by = sp("Morto Por")
+
+            if not killed_by:
+                # fallback: read all spans in order
+                spans = row.find_all("span")
+                texts = [s.get_text(strip=True) for s in spans if s.get_text(strip=True)]
+                # structure: hora, jogador, level, morto_por, mundo
+                if len(texts) >= 4:
+                    time_text = texts[0]
+                    killed_by = texts[3]
+
+            if not killed_by:
                 continue
 
+            # Find which guild member appears as killer
+            killed_by_lower = killed_by.lower()
             killer = None
             for lower_name, canonical in member_names_lower.items():
-                if lower_name in killed_by.lower():
+                if lower_name in killed_by_lower:
                     killer = canonical
                     break
             if not killer:
