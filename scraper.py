@@ -39,15 +39,25 @@ def brasilia_now():
     return datetime.now(BRASILIA)
 
 def guild_day_start():
+    """Day boundary is 22:00 Brasília. Returns start of current guild day."""
     now = brasilia_now()
-    today_5am = now.replace(hour=5, minute=0, second=0, microsecond=0)
-    if now < today_5am:
-        today_5am -= timedelta(days=1)
-    return today_5am
+    today_22 = now.replace(hour=22, minute=0, second=0, microsecond=0)
+    if now < today_22:
+        today_22 -= timedelta(days=1)
+    return today_22
 
 def guild_week_start():
     start = guild_day_start()
     return start - timedelta(days=start.weekday())
+
+def hour_key(dt=None):
+    """Hourly snapshot key: YYYY-MM-DD-HH (Brasília)."""
+    if dt is None:
+        dt = brasilia_now()
+    return dt.strftime("%Y-%m-%d-%H")
+
+def hour_key_n_hours_ago(n):
+    return hour_key(brasilia_now() - timedelta(hours=n))
 
 def parse_death_time(time_str):
     try:
@@ -99,7 +109,12 @@ def scrape_guild_members():
             vocation  = span("Vocação") or span("Vocation")
             nick      = span("Nick")
             status_el = row.select_one('span[data-label="Status"] .badge')
-            status    = "online" if status_el and "badge-success" in status_el.get("class", []) else "offline"
+            if status_el:
+                status = "online" if "badge-success" in status_el.get("class", []) or "online" in status_el.get_text(strip=True).lower() else "offline"
+            else:
+                # fallback: check full row text
+                row_text = row.get_text(separator=" ", strip=True).lower()
+                status = "online" if "online" in row_text and "offline" not in row_text else "offline"
 
             members.append({
                 "name": name, "level": level, "resets": resets,
@@ -336,15 +351,29 @@ def update_reset_history(members, previous_data):
         for m in previous_data.get("members", []):
             prev_map[m["name"].lower()] = m
 
+    now_key = hour_key()  # current hour key
+
     for m in members:
         key  = m["name"].lower()
         prev = prev_map.get(key, {})
         prev_resets  = prev.get("resets", None)
         prev_history = list(prev.get("reset_history", []))
+
+        # Record in event history whenever resets change
         if prev_resets is not None and m["resets"] != prev_resets:
             prev_history = [{"resets": m["resets"], "time": now_str()}] + prev_history
             prev_history = prev_history[:MAX_RESET_HISTORY]
         m["reset_history"] = prev_history
+
+        # Hourly snapshots: {hour_key: resets_value}
+        # Store every hour; keep 7*24+1 = 169 entries (7 days + buffer)
+        hourly = dict(prev.get("hourly_snapshots", {}))
+        hourly[now_key] = m["resets"]
+        # Prune entries older than 8 days
+        cutoff = hour_key(brasilia_now() - timedelta(days=8))
+        hourly = {k: v for k, v in hourly.items() if k >= cutoff}
+        m["hourly_snapshots"] = hourly
+
         # Preserve previous stats if we can't fetch them this run
         if "stats" not in m and "stats" in prev:
             m["stats"] = prev["stats"]
@@ -357,23 +386,47 @@ def load_previous(path="guild_data.json"):
     except Exception:
         return None
 
+def resets_since(member, hours_ago):
+    """
+    How many resets did this member gain in the last N hours?
+    Uses hourly_snapshots: finds the oldest snapshot within [now-hours_ago, now]
+    and computes current - that value.
+    """
+    hourly = member.get("hourly_snapshots", {})
+    if not hourly:
+        return 0
+    cutoff_key = hour_key(brasilia_now() - timedelta(hours=hours_ago))
+    # Get snapshot at or just before the cutoff
+    past_keys = sorted(k for k in hourly if k <= cutoff_key)
+    if not past_keys:
+        # No snapshot that old — use oldest available
+        oldest_key = sorted(hourly.keys())[0]
+        baseline = hourly[oldest_key]
+    else:
+        baseline = hourly[past_keys[-1]]
+    return max(0, member["resets"] - baseline)
+
 def compute_resets_today(members):
-    day_start = guild_day_start()
+    """
+    Resets do dia = aumento de resets nas últimas 24h (período 22h→22h).
+    Verifica hourly_snapshots de hora em hora.
+    Também calcula resets dos últimos 7 dias.
+    """
     today = []
     for m in members:
-        for entry in m.get("reset_history", []):
-            try:
-                dt = datetime.strptime(entry["time"], "%d/%m/%Y %H:%M").replace(tzinfo=BRASILIA)
-                if dt >= day_start:
-                    today.append({
-                        "name":     m["name"],
-                        "resets":   entry["resets"],
-                        "time":     entry["time"],
-                        "vocation": m.get("vocation", ""),
-                    })
-            except Exception:
-                pass
-    today.sort(key=lambda x: x["time"], reverse=True)
+        gained_day  = resets_since(m, 24)   # últimas 24h
+        gained_week = resets_since(m, 24*7)  # últimos 7 dias
+
+        if gained_day > 0 or gained_week > 0:
+            today.append({
+                "name":           m["name"],
+                "resets":         m["resets"],
+                "resets_gained":  gained_day,
+                "resets_7d":      gained_week,
+                "vocation":       m.get("vocation", ""),
+            })
+
+    today.sort(key=lambda x: x["resets_gained"], reverse=True)
     return today
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -417,7 +470,7 @@ def scrape_guild():
         "total_members":    len(members),
         "online_count":     online_count,
         "offline_count":    offline_count,
-        "guild_day_start":  guild_day_start().strftime("%d/%m/%Y %H:%M"),
+        "guild_day_start":  guild_day_start().strftime("%d/%m/%Y às %H:%M (Brasília)"),
         "members":          members,
         "resets_today":     resets_today,
         "highscores":       highscores,
