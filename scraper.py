@@ -67,8 +67,9 @@ def parse_death_time(time_str):
         return None
 
 # ── Guild members ─────────────────────────────────────────────────────────────
-def scrape_guild_members():
-    r = requests.get(GUILD_URL, headers=HEADERS, timeout=15)
+def fetch_members_from_url(url, forced_status=None):
+    """Fetch members from a guild URL. If forced_status given, override all status values."""
+    r = requests.get(url, headers=HEADERS, timeout=15)
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
 
@@ -106,25 +107,44 @@ def scrape_guild_members():
             try:    resets = int(span("Resets"))
             except: resets = 0
 
-            vocation  = span("Vocação") or span("Vocation")
-            nick      = span("Nick")
-            status_el = row.select_one('span[data-label="Status"] .badge')
-            if status_el:
-                classes = status_el.get("class", [])
-                status = "online" if "badge-success" in classes else "offline"
+            vocation = span("Vocação") or span("Vocation")
+            nick     = span("Nick")
+
+            if forced_status:
+                status = forced_status
             else:
-                # No badge found — check span text directly, never full row
-                status_span = row.select_one('span[data-label="Status"]')
-                if status_span:
-                    status = "online" if "online" in status_span.get_text(strip=True).lower() else "offline"
+                status_el = row.select_one('span[data-label="Status"] .badge')
+                if status_el:
+                    status = "online" if "badge-success" in status_el.get("class", []) else "offline"
                 else:
-                    status = "offline"
+                    status_span = row.select_one('span[data-label="Status"]')
+                    status = "online" if status_span and "online" in status_span.get_text(strip=True).lower() else "offline"
 
             members.append({
                 "name": name, "level": level, "resets": resets,
                 "vocation": vocation, "nick": nick,
                 "status": status, "rank": rank,
             })
+    return members, owner, founded
+
+def scrape_guild_members():
+    """Fetch online and offline members separately to guarantee correct status."""
+    # Fetch online members
+    url_online  = "https://amonot.online/guilds?name=Lowly+People&status=online"
+    url_offline = "https://amonot.online/guilds?name=Lowly+People&status=offline"
+
+    online_members,  owner,   founded = fetch_members_from_url(url_online,  forced_status="online")
+    time.sleep(0.5)
+    offline_members, _, _ = fetch_members_from_url(url_offline, forced_status="offline")
+
+    # Merge: use name as key to avoid duplicates
+    seen = set()
+    members = []
+    for m in online_members + offline_members:
+        if m["name"] not in seen:
+            seen.add(m["name"])
+            members.append(m)
+
     online = sum(1 for m in members if m["status"] == "online")
     print(f"    → {len(members)} membros: {online} online, {len(members)-online} offline")
     return members, owner, founded
