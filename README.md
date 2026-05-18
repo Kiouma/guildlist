@@ -2,7 +2,7 @@
 
 Painel web completo da guild **Lowly People** do servidor [AmonOT](https://amonot.online) (World: Baiak), com atualização automática horária de todos os dados.
 
-🌐 **Acesse o painel:** `https://seu-usuario.github.io/lowly-people-guild`
+🌐 **Acesse o painel:** `(https://lowly-people.vercel.app/)`
 
 ---
 
