@@ -254,6 +254,8 @@
     .reset-card-num{font-family:'Cinzel',serif;font-size:1.5rem;font-weight:700;color:var(--gold)}
     .reset-card-voc{font-size:.78rem;color:var(--text-dim);font-style:italic;margin-bottom:4px}
     .reset-card-time{font-size:.78rem;color:var(--text-dim)}
+    .reset-card-7d{font-family:'Cinzel',serif;font-size:.72rem;color:var(--gold-dim);position:absolute;top:14px;right:14px;text-align:right}
+    .reset-card-7d-num{font-size:1rem;color:var(--gold);display:block}
     .pvp-table-wrap{border:1px solid var(--border-gold);overflow-x:auto}
     .pvp-badge{display:inline-block;font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.1em;padding:2px 8px;border:1px solid;border-radius:2px}
     .pvp-badge.hot{color:#e84040;border-color:#701010;background:rgba(232,64,64,.08)}
@@ -774,19 +776,25 @@ var resetsToday = [];
 function renderResetsDay(){
   var info = document.getElementById('resets-day-info');
   var cont = document.getElementById('resets-day-content');
-  if(info) info.textContent = 'Período: ' + guildDayStart + ' → próximo dia às 05:00';
+  if(info) info.textContent = 'Período do dia: últimas 24h a partir das 22:00. Os cards mostram resets do dia (esq.) e dos últimos 7 dias (dir.).';
   if(!cont) return;
   if(!resetsToday.length){
-    cont.innerHTML='<div class="no-data" style="padding:32px 0">Nenhum reset registrado neste período ainda.</div>';
+    cont.innerHTML='<div class="no-data" style="padding:32px 0">Nenhum reset nas últimas 24h. Os dados acumulam a cada execução horária.</div>';
     return;
   }
   var html = '<div class="reset-day-card">';
   resetsToday.forEach(function(r){
+    var gained = r.resets_gained || 0;
+    var gained7 = r.resets_7d || 0;
     html += '<div class="reset-card">'
+      +'<div class="reset-card-7d">'
+        +'<span style="font-size:.62rem;letter-spacing:.1em;text-transform:uppercase">7 dias</span>'
+        +'<span class="reset-card-7d-num">+'+gained7+'</span>'
+      +'</div>'
       +'<div class="reset-card-voc">'+r.vocation+'</div>'
       +'<div class="reset-card-name">'+r.name+'</div>'
-      +'<div class="reset-card-num">'+r.resets+' <span style="font-size:.9rem;color:var(--gold-dim)">resets</span></div>'
-      +'<div class="reset-card-time">'+r.time+'</div>'
+      +'<div class="reset-card-num">+'+gained+' <span style="font-size:.9rem;color:var(--gold-dim)">reset'+(gained>1?'s':'')+' hoje</span></div>'
+      +'<div class="reset-card-time">Total: '+r.resets+' resets</div>'
       +'</div>';
   });
   html += '</div>';
