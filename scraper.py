@@ -110,17 +110,23 @@ def scrape_guild_members():
             nick      = span("Nick")
             status_el = row.select_one('span[data-label="Status"] .badge')
             if status_el:
-                status = "online" if "badge-success" in status_el.get("class", []) or "online" in status_el.get_text(strip=True).lower() else "offline"
+                classes = status_el.get("class", [])
+                status = "online" if "badge-success" in classes else "offline"
             else:
-                # fallback: check full row text
-                row_text = row.get_text(separator=" ", strip=True).lower()
-                status = "online" if "online" in row_text and "offline" not in row_text else "offline"
+                # No badge found — check span text directly, never full row
+                status_span = row.select_one('span[data-label="Status"]')
+                if status_span:
+                    status = "online" if "online" in status_span.get_text(strip=True).lower() else "offline"
+                else:
+                    status = "offline"
 
             members.append({
                 "name": name, "level": level, "resets": resets,
                 "vocation": vocation, "nick": nick,
                 "status": status, "rank": rank,
             })
+    online = sum(1 for m in members if m["status"] == "online")
+    print(f"    → {len(members)} membros: {online} online, {len(members)-online} offline")
     return members, owner, founded
 
 # ── Character profile → extract skills/exp ───────────────────────────────────
