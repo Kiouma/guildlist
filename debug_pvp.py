@@ -6,34 +6,41 @@ HEADERS = {
     "Accept-Language": "pt-BR,pt;q=0.9",
 }
 
-url = "https://amonot.online/index.php?page=lastkills&world=Baiak&type=pvp"
+url = "https://amonot.online/guilds?name=Lowly+People&status=all"
 r = requests.get(url, headers=HEADERS, timeout=15)
-print(f"Status: {r.status_code}  |  Size: {len(r.text)} bytes")
+print(f"Status HTTP: {r.status_code} | Size: {len(r.text)}")
 
 soup = BeautifulSoup(r.text, "html.parser")
+rows = soup.select(".char-table-row")
+print(f"Rows encontradas: {len(rows)}")
 
-# Find all divs with class containing "kill", "death", "last", "row"
-for cls in ["kill", "death", "last", "row", "char", "player"]:
-    found = soup.select(f'[class*="{cls}"]')
-    if found:
-        print(f"\n--- class*='{cls}' ({len(found)} elements) ---")
-        for el in found[:3]:
-            print(f"  tag={el.name} class={el.get('class')} text={el.get_text(separator=' ', strip=True)[:150]}")
+online_count = 0
+offline_count = 0
 
-# Print a large chunk of HTML around first death entry
-raw = r.text
-# find "Morto por" or "Killed by" or pvp indicators
-for kw in ["Morto por", "morto por", "Killed by", "killed by", "pvp", "data-label"]:
-    idx = raw.find(kw)
-    if idx > 0:
-        print(f"\n--- Found '{kw}' at pos {idx} ---")
-        print(raw[max(0,idx-200):idx+400])
-        break
+for i, row in enumerate(rows[:10]):
+    # nome
+    name_el = row.select_one('span[data-label="Nome"]')
+    name = name_el.get_text(strip=True) if name_el else "?"
 
-# Also print first 500 chars after <main or <section or <article
-for tag in ["<main", "<section", "<article", "<div id=\"content", "<div class=\"content"]:
-    idx = raw.find(tag)
-    if idx > 0:
-        print(f"\n--- {tag} at {idx} ---")
-        print(raw[idx:idx+800])
-        break
+    # status_el
+    status_el = row.select_one('span[data-label="Status"] .badge')
+    status_classes = status_el.get("class", []) if status_el else []
+    status_text = status_el.get_text(strip=True) if status_el else "NOT FOUND"
+
+    # raw status span
+    status_span = row.select_one('span[data-label="Status"]')
+    status_span_html = str(status_span)[:200] if status_span else "NOT FOUND"
+
+    is_online = "badge-success" in status_classes
+    if is_online:
+        online_count += 1
+    else:
+        offline_count += 1
+
+    print(f"\n[{i+1}] {name}")
+    print(f"  classes: {status_classes}")
+    print(f"  text: {status_text}")
+    print(f"  online: {is_online}")
+    print(f"  raw html: {status_span_html}")
+
+print(f"\nTotal amostra: {online_count} online, {offline_count} offline")
