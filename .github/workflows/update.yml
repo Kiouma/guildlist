@@ -36,7 +36,7 @@ jobs:
           head -n 100 debug_page.html
 
       - name: Rodar scraper
-        run: python debug_pvp.py
+        run: python scraper.py
 
       - name: Mostrar resultado do scraper
         run: |
