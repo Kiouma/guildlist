@@ -262,6 +262,45 @@
     .pvp-none{color:var(--text-dim)}
     .day-info{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;color:var(--gold-dim);margin-bottom:20px;padding:10px 14px;border:1px solid var(--border);background:var(--bg2)}
 
+    /* ── WAR ── */
+    .war-scoreboard{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin-bottom:28px;border:1px solid var(--border-gold);overflow:hidden}
+    .war-side{padding:24px 20px;text-align:center}
+    .war-side.lp{background:linear-gradient(135deg,rgba(93,191,110,.08) 0%,transparent 60%);border-right:1px solid var(--border-gold)}
+    .war-side.enemy{background:linear-gradient(135deg,rgba(201,80,80,.08) 0%,transparent 60%)}
+    .war-vs{display:flex;align-items:center;justify-content:center;background:var(--bg2);border-left:1px solid var(--border-gold);border-right:1px solid var(--border-gold);padding:0 16px;font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:var(--gold-dim)}
+    .war-guild-name{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px}
+    .war-guild-name.lp{color:var(--online)}
+    .war-guild-name.enemy{color:var(--red)}
+    .war-kills-big{font-family:'Cinzel',serif;font-size:3rem;font-weight:900;line-height:1}
+    .war-kills-big.lp{color:var(--online);text-shadow:0 0 20px rgba(93,191,110,.3)}
+    .war-kills-big.enemy{color:var(--red);text-shadow:0 0 20px rgba(201,80,80,.3)}
+    .war-sub{font-size:.78rem;color:var(--text-dim);margin-top:8px}
+    .war-sub span{font-family:'Cinzel',serif;color:var(--text)}
+    .war-leading{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;padding:4px 12px;border:1px solid;border-radius:2px;display:inline-block;margin-top:8px}
+    .war-leading.lp{color:var(--online);border-color:rgba(93,191,110,.4);background:rgba(93,191,110,.08)}
+    .war-leading.enemy{color:var(--red);border-color:rgba(201,80,80,.4);background:rgba(201,80,80,.08)}
+    .war-leading.tie{color:var(--gold-dim);border-color:var(--border-gold);background:transparent}
+    .war-tables{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+    .war-table-wrap{border:1px solid var(--border-gold);overflow-x:auto}
+    .war-table-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;padding:10px 14px;border-bottom:1px solid var(--border-gold)}
+    .war-table-title.lp{color:var(--online);background:rgba(93,191,110,.05)}
+    .war-table-title.enemy{color:var(--red);background:rgba(201,80,80,.05)}
+    .war-log-entry{display:flex;gap:12px;padding:8px 14px;border-bottom:1px solid var(--border);font-size:.82rem;align-items:center}
+    .war-log-entry:last-child{border-bottom:none}
+    .war-log-entry.lp-kill{border-left:3px solid var(--online)}
+    .war-log-entry.enemy-kill{border-left:3px solid var(--red)}
+    .war-log-time{color:var(--text-dim);font-size:.75rem;white-space:nowrap;flex-shrink:0}
+    .war-log-text{flex:1;line-height:1.4}
+    .war-log-killer.lp{color:var(--online);font-weight:600}
+    .war-log-killer.enemy{color:var(--red);font-weight:600}
+    .war-log-victim{color:var(--text-dim)}
+    @media(max-width:700px){
+      .war-scoreboard{grid-template-columns:1fr}
+      .war-side.lp{border-right:none;border-bottom:1px solid var(--border-gold)}
+      .war-vs{padding:12px;border:none;border-top:1px solid var(--border-gold);border-bottom:1px solid var(--border-gold)}
+      .war-tables{grid-template-columns:1fr}
+    }
+
     @media(max-width:700px){
       :root{--sidebar-w:240px}
       #sidebar{transform:translateX(calc(-1 * var(--sidebar-w)))}
@@ -319,6 +358,10 @@
     <button class="nav-item" onclick="navigate('pvp')" id="nav-pvp">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 9H17v1.5c0 .83-.67 1.5-1.5 1.5"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8H3.5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 15H7v-1.5c0-.83.67-1.5 1.5-1.5"/></svg>
       PvP
+    </button>
+    <button class="nav-item" onclick="navigate('war')" id="nav-war" style="color:#c95050;border-color:transparent">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="M13 19l2-2"/><path d="M16 13l2 2"/><path d="m6 6 4.5 4.5"/><path d="m10 10 4 4"/><path d="M21.5 21.5 18 18"/></svg>
+      ⚔ Guerra
     </button>
   </div>
 
@@ -573,6 +616,59 @@
         </tr></thead>
         <tbody id="pvp-tbody"></tbody>
       </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ GUERRA ══ -->
+<div class="page" id="page-war">
+  <div class="cwrap">
+    <div class="page-title" style="color:#c95050">⚔ Guerra — Lowly People vs MentaliTY</div>
+    <div class="page-desc">Kill/Death tracker atualizado a cada hora. Apenas abates entre membros das duas guilds.</div>
+    <div class="page-divider" style="background:linear-gradient(90deg,#c95050,transparent)"></div>
+
+    <!-- Scoreboard -->
+    <div class="war-scoreboard" id="war-scoreboard">
+      <div class="war-side lp">
+        <div class="war-guild-name lp">Lowly People</div>
+        <div class="war-kills-big lp" id="war-lp-kills">0</div>
+        <div class="war-sub">Abates <span id="war-lp-today">0</span> hoje · <span id="war-lp-week">0</span> semana</div>
+        <div class="war-sub" style="margin-top:4px">Mortes na guerra: <span id="war-lp-deaths">0</span></div>
+      </div>
+      <div class="war-vs">VS</div>
+      <div class="war-side enemy">
+        <div class="war-guild-name enemy">MentaliTY</div>
+        <div class="war-kills-big enemy" id="war-enemy-kills">0</div>
+        <div class="war-sub">Abates <span id="war-enemy-today">0</span> hoje · <span id="war-enemy-week">0</span> semana</div>
+        <div class="war-sub" style="margin-top:4px">Mortes na guerra: <span id="war-enemy-deaths">0</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-bottom:24px" id="war-leading-badge"></div>
+
+    <!-- Top killers -->
+    <div class="war-tables">
+      <div class="war-table-wrap">
+        <div class="war-table-title lp">🗡 Top Killers — Lowly People</div>
+        <table class="rank-table"><thead><tr>
+          <th>#</th><th>Membro</th><th style="text-align:right">Total</th>
+          <th style="text-align:right">Semana</th><th style="text-align:right">Hoje</th>
+        </tr></thead>
+        <tbody id="war-lp-table"></tbody></table>
+      </div>
+      <div class="war-table-wrap">
+        <div class="war-table-title enemy">💀 Top Killers — MentaliTY</div>
+        <table class="rank-table"><thead><tr>
+          <th>#</th><th>Membro</th><th style="text-align:right">Total</th>
+          <th style="text-align:right">Semana</th><th style="text-align:right">Hoje</th>
+        </tr></thead>
+        <tbody id="war-enemy-table"></tbody></table>
+      </div>
+    </div>
+
+    <!-- War log -->
+    <div class="calc-panel" style="margin-bottom:0">
+      <h3>Log de Combate (últimas entradas)</h3>
+      <div id="war-log"></div>
     </div>
   </div>
 </div>
@@ -833,6 +929,87 @@ function renderPvp(){
   tbody.innerHTML = html;
 }
 
+// ─── WAR ───────────────────────────────────────────────
+var warData = {};
+
+function renderWar(){
+  if(!warData||!warData.enemy_guild){return;}
+  var w=warData;
+
+  document.getElementById('war-lp-kills').textContent    = w.lp_kills_total||0;
+  document.getElementById('war-enemy-kills').textContent = w.enemy_kills_total||0;
+  document.getElementById('war-lp-today').textContent    = w.lp_kills_today||0;
+  document.getElementById('war-lp-week').textContent     = w.lp_kills_week||0;
+  document.getElementById('war-enemy-today').textContent = w.enemy_kills_today||0;
+  document.getElementById('war-enemy-week').textContent  = w.enemy_kills_week||0;
+  document.getElementById('war-lp-deaths').textContent   = w.lp_deaths_war||0;
+  document.getElementById('war-enemy-deaths').textContent= w.enemy_deaths_war||0;
+
+  var badge = document.getElementById('war-leading-badge');
+  var lk=w.lp_kills_total||0, ek=w.enemy_kills_total||0;
+  if(lk>ek)       badge.innerHTML='<span class="war-leading lp">Lowly People em vantagem</span>';
+  else if(ek>lk)  badge.innerHTML='<span class="war-leading enemy">MentaliTY em vantagem</span>';
+  else             badge.innerHTML='<span class="war-leading tie">Empate</span>';
+
+  // LP killers table
+  var lpTbody=document.getElementById('war-lp-table');
+  var lpKillers=w.lp_top_killers||[];
+  if(!lpKillers.length){
+    lpTbody.innerHTML='<tr><td colspan="5" class="empty">Nenhum abate registrado ainda.</td></tr>';
+  } else {
+    lpTbody.innerHTML=lpKillers.map(function(e,i){
+      var url='https://amonot.online/characters?name='+encodeURIComponent(e.name);
+      var rc=i===0?'gold':i===1?'silver':i===2?'bronze':'';
+      return '<tr>'
+        +'<td class="rank-num '+rc+'">#'+(i+1)+'</td>'
+        +'<td class="rank-name"><a href="'+url+'" target="_blank" rel="noopener" style="color:var(--online)">'+e.name+'</a></td>'
+        +'<td class="rank-val">'+e.kills+'</td>'
+        +'<td class="rank-val">'+(e.kills_week||0)+'</td>'
+        +'<td class="rank-val">'+(e.kills_day||0)+'</td>'
+        +'</tr>';
+    }).join('');
+  }
+
+  // Enemy killers table
+  var enTbody=document.getElementById('war-enemy-table');
+  var enKillers=w.enemy_top_killers||[];
+  if(!enKillers.length){
+    enTbody.innerHTML='<tr><td colspan="5" class="empty">Nenhum abate registrado ainda.</td></tr>';
+  } else {
+    enTbody.innerHTML=enKillers.map(function(e,i){
+      var url='https://amonot.online/characters?name='+encodeURIComponent(e.name);
+      var rc=i===0?'gold':i===1?'silver':i===2?'bronze':'';
+      return '<tr>'
+        +'<td class="rank-num '+rc+'">#'+(i+1)+'</td>'
+        +'<td class="rank-name"><a href="'+url+'" target="_blank" rel="noopener" style="color:var(--red)">'+e.name+'</a></td>'
+        +'<td class="rank-val">'+e.kills+'</td>'
+        +'<td class="rank-val">'+(e.kills_week||0)+'</td>'
+        +'<td class="rank-val">'+(e.kills_day||0)+'</td>'
+        +'</tr>';
+    }).join('');
+  }
+
+  // War log
+  var logEl=document.getElementById('war-log');
+  var log=w.war_log||[];
+  if(!log.length){
+    logEl.innerHTML='<div class="no-data" style="padding:20px">Nenhum combate registrado ainda.</div>';
+  } else {
+    logEl.innerHTML=log.slice(0,50).map(function(e){
+      var isLP=e.killer_guild==='lp';
+      var killerClass=isLP?'lp':'enemy';
+      return '<div class="war-log-entry '+(isLP?'lp-kill':'enemy-kill')+'">'
+        +'<span class="war-log-time">'+e.time+'</span>'
+        +'<span class="war-log-text">'
+          +'<span class="war-log-killer '+killerClass+'">'+e.killer+'</span>'
+          +' <span style="color:var(--text-dim)">eliminou</span> '
+          +'<span class="war-log-victim">'+e.victim+'</span>'
+        +'</span>'
+        +'</div>';
+    }).join('');
+  }
+}
+
 async function loadData(){
   try{
     var resp=await fetch('guild_data.json?_='+Date.now());
@@ -853,9 +1030,11 @@ async function loadData(){
     guildHighscores = data.highscores||{};
     guildDayStart   = data.guild_day_start||'';
     resetsToday     = data.resets_today||[];
+    warData=data.war||{};
     renderRanking();
     renderResetsDay();
     renderPvp();
+    renderWar();
   }catch(e){document.getElementById('loading').style.display='none';document.getElementById('error-msg').style.display='block';console.error(e)}
 }
 loadData();
