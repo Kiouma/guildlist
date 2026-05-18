@@ -7,14 +7,15 @@ BRASILIA          = timezone(timedelta(hours=-3))
 GUILD_NAME        = "Lowly People"
 GUILD_URL         = "https://amonot.online/guilds?name=Lowly+People&status=all"
 KILLS_ALL_URL     = "https://amonot.online/lastkills?world=Baiak"
-HIGHSCORES_BASE   = "https://amonot.online/highscores?world=Baiak&category={cat}"
+HIGHSCORES_BASE   = "https://amonot.online/index.php?page=highscores&skill={cat}&vocation=all&world=3"
 MAX_RESET_HISTORY = 7
 MAX_DEATH_HISTORY = 30
 
-# Apenas categorias padrão (sem Fame, Mounts, Addons, etc.)
+# Categorias padrão do highscore (skill= param na URL)
 HIGHSCORE_CATS = [
+    ("resets",      "Resets",      "Resets"),
     ("experience",  "Experience",  "Experience"),
-    ("magic_level", "Magic Level", "Skill"),
+    ("magic",       "Magic Level", "Skill"),
     ("fist",        "Fist",        "Skill"),
     ("club",        "Club",        "Skill"),
     ("sword",       "Sword",       "Skill"),
@@ -111,7 +112,7 @@ def scrape_highscore_category(cat_key, member_names_lower, pages=15):
     results = []
     seen = set()
     for page in range(1, pages + 1):
-        url = HIGHSCORES_BASE.format(cat=cat_key) + (f"&p={page}" if page > 1 else "")
+        url = HIGHSCORES_BASE.format(cat=cat_key) + (f"&p={page}" if page > 1 else "&p=1")
         try:
             r = requests.get(url, headers=HEADERS, timeout=15)
             r.raise_for_status()
