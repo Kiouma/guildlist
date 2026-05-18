@@ -1,15 +1,16 @@
 {
   "name": "Lowly People",
-  "updated_at": "17/05/2026 às 20:58 (Brasília)",
+  "updated_at": "17/05/2026 às 21:35 (Brasília)",
   "owner": "Salles On Amonot",
   "founded": "Apr 30, 2026",
   "total_members": 67,
-  "online_count": 49,
-  "offline_count": 18,
+  "online_count": 51,
+  "offline_count": 16,
+  "guild_day_start": "17/05/2026 05:00",
   "members": [
     {
       "name": "Salles On Amonot",
-      "level": 1024,
+      "level": 1033,
       "resets": 48,
       "vocation": "Elite Knight",
       "nick": "",
@@ -17,11 +18,13 @@
       "rank": "The Leader",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Boingbringer",
-      "level": 968,
+      "level": 980,
       "resets": 23,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -29,11 +32,13 @@
       "rank": "Vice-Leader",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Brunaobringer",
-      "level": 967,
+      "level": 979,
       "resets": 44,
       "vocation": "Elder Druid",
       "nick": "",
@@ -41,11 +46,13 @@
       "rank": "Vice-Leader",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Jotabringer",
-      "level": 989,
+      "level": 994,
       "resets": 36,
       "vocation": "Exalted Monk",
       "nick": "",
@@ -53,11 +60,13 @@
       "rank": "Vice-Leader",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Wrathbringer",
-      "level": 1742,
+      "level": 1748,
       "resets": 45,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -65,11 +74,13 @@
       "rank": "Vice-Leader",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Achilles",
-      "level": 1714,
+      "level": 1716,
       "resets": 18,
       "vocation": "Exalted Monk",
       "nick": "",
@@ -77,11 +88,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Aeros",
-      "level": 1047,
+      "level": 1051,
       "resets": 3,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -89,7 +102,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Aerosz",
@@ -101,11 +116,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Apreciador De Casadas",
-      "level": 1481,
+      "level": 1482,
       "resets": 20,
       "vocation": "Elite Knight",
       "nick": "",
@@ -113,7 +130,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Baduff",
@@ -125,7 +144,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Brunao Cansado",
@@ -137,11 +158,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Brunao Rei Denovo",
-      "level": 824,
+      "level": 907,
       "resets": 25,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -149,7 +172,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Campin",
@@ -161,23 +186,27 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Charles",
-      "level": 899,
+      "level": 903,
       "resets": 10,
       "vocation": "Exalted Monk",
       "nick": "",
-      "status": "offline",
+      "status": "online",
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Deca com Testo",
-      "level": 966,
+      "level": 975,
       "resets": 12,
       "vocation": "Elite Knight",
       "nick": "",
@@ -185,11 +214,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Deus",
-      "level": 637,
+      "level": 657,
       "resets": 24,
       "vocation": "Elite Knight",
       "nick": "",
@@ -197,11 +228,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Diegao Barba",
-      "level": 8,
+      "level": 641,
       "resets": 15,
       "vocation": "Elite Knight",
       "nick": "",
@@ -214,7 +247,9 @@
         }
       ],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Dorfeus",
@@ -226,7 +261,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Drizinha",
@@ -238,11 +275,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Ed farm",
-      "level": 980,
+      "level": 982,
       "resets": 14,
       "vocation": "Elder Druid",
       "nick": "",
@@ -250,11 +289,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Elder Luthons",
-      "level": 801,
+      "level": 811,
       "resets": 6,
       "vocation": "Elder Druid",
       "nick": "",
@@ -262,11 +303,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "End Zeus",
-      "level": 898,
+      "level": 904,
       "resets": 16,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -274,11 +317,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Gizao",
-      "level": 986,
+      "level": 1067,
       "resets": 12,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -286,7 +331,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Gokuu",
@@ -294,15 +341,17 @@
       "resets": 11,
       "vocation": "Royal Paladin",
       "nick": "",
-      "status": "offline",
+      "status": "online",
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Haony",
-      "level": 919,
+      "level": 999,
       "resets": 15,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -310,11 +359,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Heroes Baiak",
-      "level": 791,
+      "level": 807,
       "resets": 13,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -322,11 +373,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Hozuk",
-      "level": 997,
+      "level": 1067,
       "resets": 24,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -334,11 +387,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Imperador",
-      "level": 979,
+      "level": 983,
       "resets": 17,
       "vocation": "Elite Knight",
       "nick": "",
@@ -346,7 +401,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Judas",
@@ -358,11 +415,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Juri Han",
-      "level": 653,
+      "level": 674,
       "resets": 9,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -370,7 +429,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Kaus Magj",
@@ -382,11 +443,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Kev",
-      "level": 952,
+      "level": 953,
       "resets": 0,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -394,7 +457,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Letty Sane",
@@ -406,11 +471,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Lipe Knight",
-      "level": 814,
+      "level": 825,
       "resets": 24,
       "vocation": "Elite Knight",
       "nick": "",
@@ -418,11 +485,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Lotus Lothbrook",
-      "level": 793,
+      "level": 800,
       "resets": 9,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -430,11 +499,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Lukitas Brokenzada",
-      "level": 767,
+      "level": 778,
       "resets": 15,
       "vocation": "Elder Druid",
       "nick": "",
@@ -442,7 +513,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Magabela",
@@ -454,7 +527,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Makasco Ms",
@@ -466,11 +541,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Melbiss",
-      "level": 970,
+      "level": 980,
       "resets": 10,
       "vocation": "Elite Knight",
       "nick": "",
@@ -478,7 +555,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Moskito",
@@ -490,11 +569,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Niju",
-      "level": 1110,
+      "level": 1184,
       "resets": 8,
       "vocation": "Elder Druid",
       "nick": "",
@@ -502,11 +583,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Ninogro",
-      "level": 1018,
+      "level": 1025,
       "resets": 25,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -514,7 +597,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Ortega",
@@ -526,11 +611,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Panuto",
-      "level": 885,
+      "level": 899,
       "resets": 29,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -538,11 +625,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Pestinha",
-      "level": 617,
+      "level": 637,
       "resets": 9,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -550,11 +639,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Primobolan e Trembo",
-      "level": 826,
+      "level": 834,
       "resets": 7,
       "vocation": "Elder Druid",
       "nick": "",
@@ -562,19 +653,23 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Raimunda On Amonot",
-      "level": 901,
+      "level": 904,
       "resets": 22,
       "vocation": "Royal Paladin",
       "nick": "",
-      "status": "online",
+      "status": "offline",
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "RBenz",
@@ -586,7 +681,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Ritoff Elite",
@@ -598,11 +695,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Royal Luthons",
-      "level": 913,
+      "level": 923,
       "resets": 13,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -610,11 +709,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Rp Surge",
-      "level": 674,
+      "level": 704,
       "resets": 18,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -622,11 +723,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Sabour Ms",
-      "level": 975,
+      "level": 978,
       "resets": 7,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -634,11 +737,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Salles",
-      "level": 1030,
+      "level": 1116,
       "resets": 13,
       "vocation": "Elite Knight",
       "nick": "",
@@ -646,11 +751,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Sereno Taca Flecha",
-      "level": 862,
+      "level": 864,
       "resets": 12,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -658,7 +765,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Solarica",
@@ -670,7 +779,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Sonzacrazy",
@@ -682,7 +793,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Taka e Cura",
@@ -694,23 +807,27 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Timeless",
-      "level": 992,
+      "level": 994,
       "resets": 2,
       "vocation": "Royal Paladin",
       "nick": "",
-      "status": "offline",
+      "status": "online",
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Tio Bringer",
-      "level": 886,
+      "level": 965,
       "resets": 11,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -718,35 +835,51 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Titi Hattrick",
-      "level": 994,
-      "resets": 1,
+      "level": 99,
+      "resets": 2,
       "vocation": "Royal Paladin",
       "nick": "",
       "status": "online",
       "rank": "Member",
-      "reset_history": [],
+      "reset_history": [
+        {
+          "resets": 2,
+          "time": "17/05/2026 21:35"
+        }
+      ],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Tsuru",
-      "level": 1037,
-      "resets": 14,
+      "level": 678,
+      "resets": 15,
       "vocation": "Master Sorcerer",
       "nick": "",
       "status": "online",
       "rank": "Member",
-      "reset_history": [],
+      "reset_history": [
+        {
+          "resets": 15,
+          "time": "17/05/2026 21:35"
+        }
+      ],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Valdim",
-      "level": 749,
+      "level": 819,
       "resets": 15,
       "vocation": "Elite Knight",
       "nick": "",
@@ -754,11 +887,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Vitinho Rei Delas",
-      "level": 746,
+      "level": 748,
       "resets": 11,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -766,11 +901,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "VukVuk",
-      "level": 908,
+      "level": 915,
       "resets": 23,
       "vocation": "Elder Druid",
       "nick": "",
@@ -778,11 +915,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Zannk",
-      "level": 880,
+      "level": 909,
       "resets": 11,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -790,7 +929,9 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Zenith",
@@ -802,11 +943,13 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     },
     {
       "name": "Zodiac",
-      "level": 845,
+      "level": 849,
       "resets": 14,
       "vocation": "Elite Knight",
       "nick": "",
@@ -814,7 +957,76 @@
       "rank": "Member",
       "reset_history": [],
       "deaths": [],
-      "pvp_deaths_recent": 0
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0
     }
-  ]
+  ],
+  "resets_today": [
+    {
+      "name": "Titi Hattrick",
+      "resets": 2,
+      "time": "17/05/2026 21:35",
+      "vocation": "Royal Paladin"
+    },
+    {
+      "name": "Tsuru",
+      "resets": 15,
+      "time": "17/05/2026 21:35",
+      "vocation": "Master Sorcerer"
+    },
+    {
+      "name": "Diegao Barba",
+      "resets": 15,
+      "time": "17/05/2026 20:58",
+      "vocation": "Elite Knight"
+    }
+  ],
+  "highscores": {
+    "experience": {
+      "name": "Experience",
+      "val_label": "Experience",
+      "entries": []
+    },
+    "magic_level": {
+      "name": "Magic Level",
+      "val_label": "Skill",
+      "entries": []
+    },
+    "fist": {
+      "name": "Fist",
+      "val_label": "Skill",
+      "entries": []
+    },
+    "club": {
+      "name": "Club",
+      "val_label": "Skill",
+      "entries": []
+    },
+    "sword": {
+      "name": "Sword",
+      "val_label": "Skill",
+      "entries": []
+    },
+    "axe": {
+      "name": "Axe",
+      "val_label": "Skill",
+      "entries": []
+    },
+    "distance": {
+      "name": "Distance",
+      "val_label": "Skill",
+      "entries": []
+    },
+    "shielding": {
+      "name": "Shielding",
+      "val_label": "Skill",
+      "entries": []
+    },
+    "fishing": {
+      "name": "Fishing",
+      "val_label": "Skill",
+      "entries": []
+    }
+  }
 }
