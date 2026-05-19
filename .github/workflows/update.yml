@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4.2.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Instalar Python
         uses: actions/setup-python@v5
@@ -25,33 +27,35 @@ jobs:
           python-version: '3.11'
 
       - name: Instalar dependências
-        run: pip install requests beautifulsoup4
-
-      - name: Salvar HTML bruto do site (diagnóstico)
-        run: |
-          curl -s -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36" \
-            "https://amonot.online/guilds?name=Lowly+People" \
-            -o debug_page.html
-          echo "=== Primeiras 100 linhas do HTML recebido ==="
-          head -n 100 debug_page.html
+        run: pip install requests beautifulsoup4 urllib3
 
       - name: Rodar scraper
         run: python scraper.py
 
-      - name: Mostrar resultado do scraper
+      - name: Verificar guild_data.json
         run: |
+          echo "=== Resultado ==="
           python3 -c "
-          import json
-          d=json.load(open('guild_data.json'))
-          print(f'Total: {d[\"total_members\"]}')
-          print(f'Online: {d[\"online_count\"]}')
-          print(f'Atualizado: {d[\"updated_at\"]}')
+          import json, sys
+          try:
+            d = json.load(open('guild_data.json'))
+            print(f'Total: {d[\"total_members\"]}')
+            print(f'Online: {d[\"online_count\"]}')
+            print(f'Offline: {d[\"offline_count\"]}')
+            print(f'Atualizado: {d[\"updated_at\"]}')
+            print(f'War LP kills: {d.get(\"war\",{}).get(\"lp_kills_total\",0)}')
+            print(f'Resets hoje: {len(d.get(\"resets_today\",[]))}')
+          except Exception as e:
+            print(f'ERRO: {e}')
+            sys.exit(1)
           "
 
-      - name: Salvar arquivos no repositório
+      - name: Salvar no repositório
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add guild_data.json debug_page.html
-          git diff --staged --quiet || git commit -m "🔄 Guild atualizada - $(TZ='America/Sao_Paulo' date '+%d/%m/%Y %H:%M') (Brasília)"
-          git push
+          git add guild_data.json
+          git diff --staged --quiet && echo "Sem mudancas" || (
+            git commit -m "🔄 Guild atualizada - $(TZ='America/Sao_Paulo' date '+%d/%m/%Y %H:%M') (Brasília)" &&
+            git push
+          )
