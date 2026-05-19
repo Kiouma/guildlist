@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lowly People — Guild</title>
+  <title>Lowly People — Membros</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
   <style>
+
     :root{
       --gold:#c9a84c;--gold-light:#e8cb7a;--gold-dim:#7a6330;
       --bg:#0a0905;--bg2:#0f0d08;--bg3:#16130c;--bg4:#1e1a10;
@@ -308,11 +309,11 @@
       td,th{padding:8px 9px}
       .cwrap{padding:52px 14px 56px}
     }
+  
   </style>
 </head>
 <body>
 
-<!-- SIDEBAR -->
 <aside id="sidebar">
   <div class="sb-logo">
     <svg width="28" height="28" viewBox="0 0 64 64" fill="none">
@@ -328,7 +329,7 @@
 
   <div class="sb-section">
     <div class="sb-section-title">Guild</div>
-    <button class="nav-item active" onclick="navigate('guild')" id="nav-guild">
+    <button class="nav-item active" id="nav-guild">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       Lista de Membros
     </button>
@@ -336,44 +337,42 @@
 
   <div class="sb-divider"></div>
 
-  <div class="sb-divider"></div>
-
   <div class="sb-section">
     <div class="sb-section-title">Dados da Guild</div>
-    <button class="nav-item" onclick="navigate('ranking')" id="nav-ranking">
+    <a class="nav-item" href="app.html#ranking">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 20 18 10"/><polyline points="12 20 12 4"/><polyline points="6 20 6 14"/></svg>
       Ranking
-    </button>
-    <button class="nav-item" onclick="navigate('resets_day')" id="nav-resets_day">
+    </a>
+    <a class="nav-item" href="app.html#resets_day">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
       Resets do Dia
-    </button>
-    <button class="nav-item" onclick="navigate('pvp')" id="nav-pvp">
-      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 9H17v1.5c0 .83-.67 1.5-1.5 1.5"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8H3.5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 15H7v-1.5c0-.83.67-1.5 1.5-1.5"/></svg>
+    </a>
+    <a class="nav-item" href="app.html#pvp">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M8.5 15H7v-1.5c0-.83.67-1.5 1.5-1.5"/></svg>
       PvP
-    </button>
-    <button class="nav-item" onclick="navigate('war')" id="nav-war" style="color:#c95050;border-color:transparent">
+    </a>
+    <a class="nav-item" href="app.html#war" style="color:#c95050">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="M13 19l2-2"/><path d="M16 13l2 2"/><path d="m6 6 4.5 4.5"/><path d="m10 10 4 4"/><path d="M21.5 21.5 18 18"/></svg>
       ⚔ Guerra
-    </button>
+    </a>
   </div>
 
   <div class="sb-divider"></div>
 
   <div class="sb-section">
     <div class="sb-section-title">Ferramentas</div>
-    <button class="nav-item" onclick="navigate('ascension')" id="nav-ascension">
+    <a class="nav-item" href="app.html#ascension">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
       Ascensão
-    </button>
-    <button class="nav-item" onclick="navigate('reroll')" id="nav-reroll">
+    </a>
+    <a class="nav-item" href="app.html#reroll">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
       Reroll de Atributos
-    </button>
-    <button class="nav-item" onclick="navigate('upgrade')" id="nav-upgrade">
+    </a>
+    <a class="nav-item" href="app.html#upgrade">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
       Upgrade de Item
-    </button>
+    </a>
   </div>
 
   <div class="sb-footer">Dados via <a href="https://amonot.online/guilds?name=Lowly+People" target="_blank">amonot.online</a></div>
@@ -387,7 +386,6 @@
 <div id="overlay" onclick="closeSidebarMobile()"></div>
 
 <main id="main">
-
 <!-- ══ GUILD ══ -->
 <div class="page active" id="page-guild">
   <div class="cwrap">
@@ -439,237 +437,11 @@
   </div>
 </div>
 
-<!-- ══ ASCENSÃO ══ -->
-<div class="page" id="page-ascension">
-  <div class="cwrap">
-    <div class="page-title">Calculadora de Ascensão</div>
-    <div class="page-desc">Distribua seus pontos de ascensão. Cada reset concede 25 pontos permanentes. Limite: 500 pts por atributo.</div>
-    <div class="page-divider"></div>
-    <div class="calc-grid" style="margin-bottom:18px">
-      <div class="calc-panel">
-        <h3>Pontos Disponíveis</h3>
-        <div class="field-row">
-          <label class="field-label">Número de Resets</label>
-          <input class="field-input" type="number" id="asc-resets" min="0" max="9999" value="0" oninput="ascUpdate()">
-        </div>
-        <div class="pts-display">
-          <span class="pts-num" id="asc-pts-avail">0</span>
-          <span class="pts-label">Pontos Disponíveis</span>
-        </div>
-        <div class="pts-display" style="border-color:var(--border)">
-          <span class="pts-num" id="asc-pts-remain" style="font-size:1.3rem">0</span>
-          <span class="pts-label">Pontos Restantes</span>
-        </div>
-      </div>
-      <div class="result-box">
-        <h3>Resumo por Categoria</h3>
-        <div id="asc-summary"></div>
-      </div>
-    </div>
-    <div id="asc-categories"></div>
-  </div>
-</div>
-
-<!-- ══ REROLL ══ -->
-<div class="page" id="page-reroll">
-  <div class="cwrap">
-    <div class="page-title">Calculadora de Reroll</div>
-    <div class="page-desc">Selecione a raridade, trave slots e escolha os atributos desejados. Custo: 100 Boss Tokens por tentativa.</div>
-    <div class="page-divider"></div>
-    <div class="calc-grid" style="margin-bottom:18px">
-      <div class="calc-panel">
-        <h3>Configuração</h3>
-        <div class="field-row">
-          <label class="field-label">Raridade do Item</label>
-          <select class="field-select" id="rr-rarity" onchange="rrUpdate()">
-            <option value="1">Uncommon — 1 atributo</option>
-            <option value="2">Rare — 2 atributos</option>
-            <option value="3" selected>Epic — 3 atributos</option>
-            <option value="4">Legendary — 4 atributos</option>
-            <option value="5">Mythical — 5 atributos</option>
-          </select>
-        </div>
-        <div class="field-row">
-          <label class="field-label">Slots Travados (lock)</label>
-          <select class="field-select" id="rr-locks" onchange="rrUpdate()">
-            <option value="0">0 slots travados</option>
-          </select>
-        </div>
-        <div class="field-row">
-          <label class="field-label">Valor do Token (Boss ou Task) — em KK</label>
-          <input class="field-input" type="number" id="rr-token-val" min="0" step="0.1" value="0" placeholder="Ex: 0.5 = 500k" oninput="rrUpdate()">
-        </div>
-        <div class="field-row">
-          <label class="field-label">Número de Tentativas (simulação)</label>
-          <input class="field-input" type="number" id="rr-tries" min="1" max="99999" value="10" oninput="rrUpdate()">
-        </div>
-      </div>
-      <div class="result-box">
-        <h3>Resultado</h3>
-        <div id="rr-rarity-badge"></div>
-        <div id="rr-results"></div>
-      </div>
-    </div>
-    <div class="calc-panel" style="margin-bottom:18px">
-      <h3>Atributos Possíveis — clique para selecionar os desejados</h3>
-      <div style="font-size:.8rem;color:var(--text-dim);margin-bottom:12px">Selecione os atributos que você quer que saiam. Máx: <span id="rr-max-sel">3</span> (= slots rerolados). Hover para ver detalhes.</div>
-      <div class="attr-grid" id="rr-attr-grid"></div>
-    </div>
-    <div class="info-callout">
-      <strong>Custo:</strong> 100 Boss Tokens por tentativa. Cada slot travado custa 10KK/tentativa. A raridade é preservada. Atributos não travados são rerolados com chance igual entre todos os possíveis.
-    </div>
-  </div>
-</div>
-
-<!-- ══ UPGRADE ══ -->
-<div class="page" id="page-upgrade">
-  <div class="cwrap">
-    <div class="page-title">Calculadora de Upgrade</div>
-    <div class="page-desc">Veja o nível máximo por raridade, chances estimadas e custo médio para atingir o nível desejado.</div>
-    <div class="page-divider"></div>
-    <div class="calc-grid" style="margin-bottom:18px">
-      <div class="calc-panel">
-        <h3>Configuração</h3>
-        <div class="field-row">
-          <label class="field-label">Raridade do Item</label>
-          <select class="field-select" id="up-rarity" onchange="upUpdate()">
-            <option value="0">Common — não upgrada</option>
-            <option value="4">Uncommon — máx +4</option>
-            <option value="6">Rare — máx +6</option>
-            <option value="8" selected>Epic — máx +8</option>
-            <option value="10">Legendary — máx +10</option>
-            <option value="12">Mythical — máx +12</option>
-          </select>
-        </div>
-        <div class="field-row">
-          <label class="field-label">Nível Atual</label>
-          <input class="field-input" type="number" id="up-current" min="0" max="12" value="0" oninput="upUpdate()">
-        </div>
-        <div class="field-row">
-          <label class="field-label">Nível Desejado</label>
-          <input class="field-input" type="number" id="up-target" min="0" max="12" value="8" oninput="upUpdate()">
-        </div>
-        <div class="field-row">
-          <label class="field-label">Valor do Token (Boss ou Task) — em KK</label>
-          <input class="field-input" type="number" id="up-token-val" min="0" step="0.1" value="0" placeholder="Ex: 0.5 = 500k" oninput="upUpdate()">
-        </div>
-      </div>
-      <div class="result-box">
-        <h3>Resultado</h3>
-        <div id="up-results"></div>
-      </div>
-    </div>
-    <div class="calc-panel">
-      <h3>Tabela de Chances por Nível</h3>
-      <div id="up-table"></div>
-    </div>
-    <div class="info-callout" style="margin-top:18px">
-      <strong>Custo por tentativa:</strong> 40 Boss Tokens. Upgrades acima de +6 ficam cada vez mais difíceis — acima de +10, a chance é mínima. Prepare tokens suficientes antes de tentar.
-    </div>
-  </div>
-</div>
-
-<!-- ══ RANKING ══ -->
-<div class="page" id="page-ranking">
-  <div class="cwrap">
-    <div class="page-title">Ranking da Guild</div>
-    <div class="page-desc">Posições dos membros no ranking global de Baiak, por categoria.</div>
-    <div class="page-divider"></div>
-    <div class="rank-tabs" id="rank-tabs"></div>
-    <div id="rank-contents"></div>
-  </div>
-</div>
-
-<!-- ══ RESETS DO DIA ══ -->
-<div class="page" id="page-resets_day">
-  <div class="cwrap">
-    <div class="page-title">Resets do Dia</div>
-    <div class="page-desc">Membros que fizeram reset neste período (05:00 de hoje até 05:00 de amanhã).</div>
-    <div class="page-divider"></div>
-    <div class="day-info" id="resets-day-info">Carregando...</div>
-    <div id="resets-day-content"><div style="color:var(--text-dim);font-style:italic">Carregando dados...</div></div>
-  </div>
-</div>
-
-<!-- ══ PVP ══ -->
-<div class="page" id="page-pvp">
-  <div class="cwrap">
-    <div class="page-title">PvP — Abates</div>
-    <div class="page-desc">Abates de cada membro detectados nas páginas de Últimas Mortes (PvP) de Baiak.</div>
-    <div class="page-divider"></div>
-    <div class="day-info" id="pvp-day-info">Carregando...</div>
-    <div class="pvp-table-wrap">
-      <table class="rank-table">
-        <thead><tr>
-          <th>#</th>
-          <th>Membro</th>
-          <th>Vocação</th>
-          <th style="text-align:right">Total</th>
-          <th style="text-align:right">Semana</th>
-          <th style="text-align:right">Hoje</th>
-        </tr></thead>
-        <tbody id="pvp-tbody"></tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-<!-- ══ GUERRA ══ -->
-<div class="page" id="page-war">
-  <div class="cwrap">
-    <div class="page-title" style="color:#c95050">⚔ Guerra — Lowly People vs MentaliTY</div>
-    <div class="page-desc">Kill/Death tracker atualizado a cada hora. Apenas abates entre membros das duas guilds.</div>
-    <div class="page-divider" style="background:linear-gradient(90deg,#c95050,transparent)"></div>
-
-    <!-- Scoreboard -->
-    <div class="war-scoreboard" id="war-scoreboard">
-      <div class="war-side lp">
-        <div class="war-guild-name lp">Lowly People</div>
-        <div class="war-kills-big lp" id="war-lp-kills">0</div>
-        <div class="war-sub">Abates <span id="war-lp-today">0</span> hoje · <span id="war-lp-week">0</span> semana</div>
-        <div class="war-sub" style="margin-top:4px">Mortes na guerra: <span id="war-lp-deaths">0</span></div>
-      </div>
-      <div class="war-vs">VS</div>
-      <div class="war-side enemy">
-        <div class="war-guild-name enemy">MentaliTY</div>
-        <div class="war-kills-big enemy" id="war-enemy-kills">0</div>
-        <div class="war-sub">Abates <span id="war-enemy-today">0</span> hoje · <span id="war-enemy-week">0</span> semana</div>
-        <div class="war-sub" style="margin-top:4px">Mortes na guerra: <span id="war-enemy-deaths">0</span></div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-bottom:24px" id="war-leading-badge"></div>
-
-    <!-- Top killers -->
-    <div class="war-tables">
-      <div class="war-table-wrap">
-        <div class="war-table-title lp">🗡 Top Killers — Lowly People</div>
-        <table class="rank-table"><thead><tr>
-          <th>#</th><th>Membro</th><th style="text-align:right">Total</th>
-          <th style="text-align:right">Semana</th><th style="text-align:right">Hoje</th>
-        </tr></thead>
-        <tbody id="war-lp-table"></tbody></table>
-      </div>
-      <div class="war-table-wrap">
-        <div class="war-table-title enemy">💀 Top Killers — MentaliTY</div>
-        <table class="rank-table"><thead><tr>
-          <th>#</th><th>Membro</th><th style="text-align:right">Total</th>
-          <th style="text-align:right">Semana</th><th style="text-align:right">Hoje</th>
-        </tr></thead>
-        <tbody id="war-enemy-table"></tbody></table>
-      </div>
-    </div>
-
-    <!-- War log -->
-    <div class="calc-panel" style="margin-bottom:0">
-      <h3>Log de Combate (últimas entradas)</h3>
-      <div id="war-log"></div>
-    </div>
-  </div>
-</div>
 
 </main>
 
 <script>
+
 // ─── SIDEBAR ───────────────────────────────────────────
 var sbOpen = true;
 function isMob(){return window.innerWidth<=700}
@@ -799,211 +571,6 @@ function toggleDetail(rid){
   if(btn)btn.classList.toggle('open',isOpen);
 }
 
-// ─── RANKING ───────────────────────────────────────────
-var guildHighscores = {};
-var RANK_CAT_ORDER = ['resets','experience','magic','fist','club','sword','axe','distance','shielding','fishing'];
-var RANK_CAT_LABEL = {
-  resets:'Resets', experience:'Experience', magic:'Magic Level', fist:'Fist', club:'Club',
-  sword:'Sword', axe:'Axe', distance:'Distance', shielding:'Shielding', fishing:'Fishing'
-};
-
-function renderRanking(){
-  var tabsEl = document.getElementById('rank-tabs');
-  var contEl = document.getElementById('rank-contents');
-  if(!tabsEl||!contEl) return;
-  if(!guildHighscores||!Object.keys(guildHighscores).length){
-    contEl.innerHTML='<div class="no-data" style="padding:32px">Dados de ranking ainda não disponíveis. Execute o scraper primeiro.</div>';
-    return;
-  }
-  var tabsHtml='', contHtml='';
-  RANK_CAT_ORDER.forEach(function(cat,i){
-    var hs = guildHighscores[cat];
-    if(!hs) return;
-    var active = i===0?'active':'';
-    tabsHtml += '<button class="rank-tab '+active+'" data-cat="'+cat+'">'+RANK_CAT_LABEL[cat]+'</button>';
-    contHtml += '<div class="rank-content '+active+'" id="rank-cat-'+cat+'">';
-    var entries = hs.entries||[];
-    if(!entries.length){
-      contHtml += '<div class="no-data" style="padding:24px">Nenhum membro encontrado nesta categoria.</div>';
-    } else {
-      contHtml += '<div class="rank-table-wrap"><table class="rank-table"><thead><tr>'
-        +'<th>#</th><th>Membro</th><th>Vocação</th><th>Level</th><th style="text-align:right">'+hs.val_label+'</th>'
-        +'</tr></thead><tbody>';
-      entries.forEach(function(e){
-        var url='https://amonot.online/characters?name='+encodeURIComponent(e.name);
-        var rankCls = e.guild_rank===1?'gold':e.guild_rank===2?'silver':e.guild_rank===3?'bronze':'';
-        var valFmt = e.value_fmt || (e.value ? e.value.toLocaleString('pt-BR') : '—');
-        contHtml += '<tr>'
-          +'<td class="rank-num '+rankCls+'">#'+e.guild_rank+'</td>'
-          +'<td class="rank-name"><a href="'+url+'" target="_blank" rel="noopener">'+e.name+'</a></td>'
-          +'<td style="color:var(--text-dim);font-style:italic;font-size:.85rem">'+e.vocation+'</td>'
-          +'<td class="rank-num" style="color:var(--text)">'+e.level+'</td>'
-          +'<td class="rank-val">'+valFmt+'</td>'
-          +'</tr>';
-      });
-      contHtml += '</tbody></table></div>';
-    }
-    contHtml += '</div>';
-  });
-  tabsEl.innerHTML = tabsHtml;
-  contEl.innerHTML = contHtml;
-  tabsEl.onclick = function(e){
-    var btn = e.target.closest('.rank-tab');
-    if(!btn) return;
-    var cat = btn.dataset.cat;
-    document.querySelectorAll('.rank-tab').forEach(function(t){t.classList.remove('active')});
-    document.querySelectorAll('.rank-content').forEach(function(c){c.classList.remove('active')});
-    btn.classList.add('active');
-    var el = document.getElementById('rank-cat-'+cat);
-    if(el) el.classList.add('active');
-  };
-}
-
-// ─── RESETS DO DIA ─────────────────────────────────────
-var guildDayStart = '';
-var resetsToday = [];
-
-function renderResetsDay(){
-  var info = document.getElementById('resets-day-info');
-  var cont = document.getElementById('resets-day-content');
-  if(info) info.textContent = 'Período do dia: últimas 24h a partir das 22:00. Os cards mostram resets do dia (esq.) e dos últimos 7 dias (dir.).';
-  if(!cont) return;
-  if(!resetsToday.length){
-    cont.innerHTML='<div class="no-data" style="padding:32px 0">Nenhum reset nas últimas 24h. Os dados acumulam a cada execução horária.</div>';
-    return;
-  }
-  var html = '<div class="reset-day-card">';
-  resetsToday.forEach(function(r){
-    var gained = r.resets_gained || 0;
-    var gained7 = r.resets_7d || 0;
-    html += '<div class="reset-card">'
-      +'<div class="reset-card-7d">'
-        +'<span style="font-size:.62rem;letter-spacing:.1em;text-transform:uppercase">7 dias</span>'
-        +'<span class="reset-card-7d-num">+'+gained7+'</span>'
-      +'</div>'
-      +'<div class="reset-card-voc">'+r.vocation+'</div>'
-      +'<div class="reset-card-name">'+r.name+'</div>'
-      +'<div class="reset-card-num">+'+gained+' <span style="font-size:.9rem;color:var(--gold-dim)">reset'+(gained>1?'s':'')+' hoje</span></div>'
-      +'<div class="reset-card-time">Total: '+r.resets+' resets</div>'
-      +'</div>';
-  });
-  html += '</div>';
-  cont.innerHTML = html;
-}
-
-// ─── PVP ───────────────────────────────────────────────
-function renderPvp(){
-  var info = document.getElementById('pvp-day-info');
-  var tbody = document.getElementById('pvp-tbody');
-  if(info) info.textContent = 'Contabilizado a partir das páginas de Últimas Mortes (PvP) de Baiak. Período do dia: ' + guildDayStart + '.';
-  if(!tbody) return;
-
-  var members = allMembers.slice();
-  members.sort(function(a,b){ return (b.pvp_kills_total||0)-(a.pvp_kills_total||0); });
-
-  var html = '';
-  var rank = 0;
-  members.forEach(function(m){
-    var total = m.pvp_kills_total||0;
-    var week  = m.pvp_kills_week||0;
-    var today = m.pvp_kills_today||0;
-    rank++;
-    var url = 'https://amonot.online/characters?name='+encodeURIComponent(m.name);
-    var rankCls = rank===1?'gold':rank===2?'silver':rank===3?'bronze':'';
-    var hotBadge = today>=3?'<span class="pvp-badge hot">+'+today+' hoje</span>':'';
-    html += '<tr>'
-      +'<td class="rank-num '+rankCls+'">#'+rank+'</td>'
-      +'<td class="rank-name"><a href="'+url+'" target="_blank" rel="noopener">'+m.name+'</a> '+hotBadge+'</td>'
-      +'<td style="color:var(--text-dim);font-style:italic;font-size:.85rem">'+( m.vocation||'—')+'</td>'
-      +'<td class="rank-val">'+(total>0?total:'<span class="pvp-none">—</span>')+'</td>'
-      +'<td class="rank-val">'+(week>0?week:'<span class="pvp-none">—</span>')+'</td>'
-      +'<td class="rank-val">'+(today>0?'<strong style="color:var(--online)">'+today+'</strong>':'<span class="pvp-none">—</span>')+'</td>'
-      +'</tr>';
-  });
-  tbody.innerHTML = html;
-}
-
-// ─── WAR ───────────────────────────────────────────────
-var warData = {};
-
-function renderWar(){
-  if(!warData||!warData.enemy_guild){return;}
-  var w=warData;
-
-  document.getElementById('war-lp-kills').textContent    = w.lp_kills_total||0;
-  document.getElementById('war-enemy-kills').textContent = w.enemy_kills_total||0;
-  document.getElementById('war-lp-today').textContent    = w.lp_kills_today||0;
-  document.getElementById('war-lp-week').textContent     = w.lp_kills_week||0;
-  document.getElementById('war-enemy-today').textContent = w.enemy_kills_today||0;
-  document.getElementById('war-enemy-week').textContent  = w.enemy_kills_week||0;
-  document.getElementById('war-lp-deaths').textContent   = w.lp_deaths_war||0;
-  document.getElementById('war-enemy-deaths').textContent= w.enemy_deaths_war||0;
-
-  var badge = document.getElementById('war-leading-badge');
-  var lk=w.lp_kills_total||0, ek=w.enemy_kills_total||0;
-  if(lk>ek)       badge.innerHTML='<span class="war-leading lp">Lowly People em vantagem</span>';
-  else if(ek>lk)  badge.innerHTML='<span class="war-leading enemy">MentaliTY em vantagem</span>';
-  else             badge.innerHTML='<span class="war-leading tie">Empate</span>';
-
-  // LP killers table
-  var lpTbody=document.getElementById('war-lp-table');
-  var lpKillers=w.lp_top_killers||[];
-  if(!lpKillers.length){
-    lpTbody.innerHTML='<tr><td colspan="5" class="empty">Nenhum abate registrado ainda.</td></tr>';
-  } else {
-    lpTbody.innerHTML=lpKillers.map(function(e,i){
-      var url='https://amonot.online/characters?name='+encodeURIComponent(e.name);
-      var rc=i===0?'gold':i===1?'silver':i===2?'bronze':'';
-      return '<tr>'
-        +'<td class="rank-num '+rc+'">#'+(i+1)+'</td>'
-        +'<td class="rank-name"><a href="'+url+'" target="_blank" rel="noopener" style="color:var(--online)">'+e.name+'</a></td>'
-        +'<td class="rank-val">'+e.kills+'</td>'
-        +'<td class="rank-val">'+(e.kills_week||0)+'</td>'
-        +'<td class="rank-val">'+(e.kills_day||0)+'</td>'
-        +'</tr>';
-    }).join('');
-  }
-
-  // Enemy killers table
-  var enTbody=document.getElementById('war-enemy-table');
-  var enKillers=w.enemy_top_killers||[];
-  if(!enKillers.length){
-    enTbody.innerHTML='<tr><td colspan="5" class="empty">Nenhum abate registrado ainda.</td></tr>';
-  } else {
-    enTbody.innerHTML=enKillers.map(function(e,i){
-      var url='https://amonot.online/characters?name='+encodeURIComponent(e.name);
-      var rc=i===0?'gold':i===1?'silver':i===2?'bronze':'';
-      return '<tr>'
-        +'<td class="rank-num '+rc+'">#'+(i+1)+'</td>'
-        +'<td class="rank-name"><a href="'+url+'" target="_blank" rel="noopener" style="color:var(--red)">'+e.name+'</a></td>'
-        +'<td class="rank-val">'+e.kills+'</td>'
-        +'<td class="rank-val">'+(e.kills_week||0)+'</td>'
-        +'<td class="rank-val">'+(e.kills_day||0)+'</td>'
-        +'</tr>';
-    }).join('');
-  }
-
-  // War log
-  var logEl=document.getElementById('war-log');
-  var log=w.war_log||[];
-  if(!log.length){
-    logEl.innerHTML='<div class="no-data" style="padding:20px">Nenhum combate registrado ainda.</div>';
-  } else {
-    logEl.innerHTML=log.slice(0,50).map(function(e){
-      var isLP=e.killer_guild==='lp';
-      var killerClass=isLP?'lp':'enemy';
-      return '<div class="war-log-entry '+(isLP?'lp-kill':'enemy-kill')+'">'
-        +'<span class="war-log-time">'+e.time+'</span>'
-        +'<span class="war-log-text">'
-          +'<span class="war-log-killer '+killerClass+'">'+e.killer+'</span>'
-          +' <span style="color:var(--text-dim)">eliminou</span> '
-          +'<span class="war-log-victim">'+e.victim+'</span>'
-        +'</span>'
-        +'</div>';
-    }).join('');
-  }
-}
-
 async function loadData(){
   try{
     var resp=await fetch('guild_data.json?_='+Date.now());
@@ -1021,472 +588,13 @@ async function loadData(){
     document.getElementById('controls').style.display='flex';
     document.getElementById('table-wrap').style.display='block';
     sortBy('rank');
-    guildHighscores = data.highscores||{};
-    guildDayStart   = data.guild_day_start||'';
-    resetsToday     = data.resets_today||[];
-    warData=data.war||{};
-    renderRanking();
-    renderResetsDay();
-    renderPvp();
-    renderWar();
-  }catch(e){document.getElementById('loading').style.display='none';document.getElementById('error-msg').style.display='block';console.error(e)}
+  }catch(e){
+    document.getElementById('loading').style.display='none';
+    document.getElementById('error-msg').style.display='block';
+    console.error(e);
+  }
 }
 loadData();
-
-// ─── ASCENSÃO ──────────────────────────────────────────
-var ASC_CAP=500;
-var ASC_CATS=[
-  {id:'atk',name:'Attack',attrs:[
-    {id:'base_atk', name:'Base Attack',    bonus:0.15, unit:'%'},
-    {id:'physical', name:'Physical',       bonus:0.20, unit:'%'},
-    {id:'ice',      name:'Ice',            bonus:0.20, unit:'%'},
-    {id:'fire',     name:'Fire',           bonus:0.20, unit:'%'},
-    {id:'poison',   name:'Poison',         bonus:0.20, unit:'%'},
-    {id:'energy',   name:'Energy',         bonus:0.20, unit:'%'},
-    {id:'holy',     name:'Holy',           bonus:0.20, unit:'%'},
-    {id:'death',    name:'Death',          bonus:0.20, unit:'%'},
-    {id:'fatal',    name:'Fatal',          bonus:0.04, unit:'%'},
-    {id:'avatar',   name:'Avatar',         bonus:0.04, unit:'%'}
-  ]},
-  {id:'def',name:'Defense',attrs:[
-    {id:'base_def',   name:'Base Defense', bonus:0.05, unit:'%'},
-    {id:'def_phys',   name:'Physical',     bonus:0.05, unit:'%'},
-    {id:'def_ice',    name:'Ice',          bonus:0.05, unit:'%'},
-    {id:'def_fire',   name:'Fire',         bonus:0.05, unit:'%'},
-    {id:'def_poison', name:'Poison',       bonus:0.05, unit:'%'},
-    {id:'def_energy', name:'Energy',       bonus:0.05, unit:'%'},
-    {id:'def_holy',   name:'Holy',         bonus:0.05, unit:'%'},
-    {id:'def_death',  name:'Death',        bonus:0.05, unit:'%'}
-  ]},
-  {id:'agi',name:'Agility',attrs:[
-    {id:'base_agi', name:'Base Agility',   bonus:null, unit:'', note:'Concede +0.05% Mov, +0.04% Atk Spd, +0.01% Dodge por ponto'},
-    {id:'move_spd', name:'Move Speed',     bonus:0.15, unit:'%'},
-    {id:'atk_spd',  name:'Attack Speed',   bonus:0.12, unit:'%'},
-    {id:'dodge',    name:'Dodge',          bonus:0.03, unit:'%'}
-  ]},
-  {id:'mas',name:'Mastery',attrs:[
-    {id:'momentum', name:'Momentum',       bonus:0.05, unit:'%'},
-    {id:'stamina',  name:'Stamina',        bonus:0.25, unit:'%'},
-    {id:'exercise', name:'Exercise',       bonus:1.00, unit:'%'}
-  ]}
-];
-var ascVals={};
-ASC_CATS.forEach(function(c){c.attrs.forEach(function(a){ascVals[a.id]=0})});
-
-function buildAscUI(){
-  var con=document.getElementById('asc-categories');con.innerHTML='';
-  ASC_CATS.forEach(function(cat){
-    var div=document.createElement('div');div.className='asc-category';
-    var html='<div class="asc-cat-title">'+cat.name+'</div>';
-    cat.attrs.forEach(function(attr){
-      html+='<div class="asc-row" id="asc-row-'+attr.id+'">'
-        +'<span class="asc-attr-name">'+attr.name+'</span>'
-        +'<input class="asc-num-input" type="number" id="asc-n-'+attr.id+'" min="0" max="'+ASC_CAP+'" value="0" oninput="ascNumInput(\''+attr.id+'\')">'
-        +'<div class="asc-slider-wrap" id="asc-sw-'+attr.id+'">'
-          +'<div class="asc-slider-track"></div>'
-          +'<div class="asc-slider-fill" id="asc-sf-'+attr.id+'" style="width:0%"></div>'
-          +'<div class="asc-slider-thumb" id="asc-st-'+attr.id+'" style="left:0%"></div>'
-        +'</div>'
-        +'<span class="asc-pts-label" id="asc-pl-'+attr.id+'">0</span>'
-      +'</div>';
-    });
-    div.innerHTML=html;con.appendChild(div);
-  });
-  // bind drag
-  ASC_CATS.forEach(function(cat){
-    cat.attrs.forEach(function(attr){
-      bindSlider(attr.id);
-    });
-  });
-}
-
-function bindSlider(id){
-  var wrap=document.getElementById('asc-sw-'+id);
-  if(!wrap)return;
-  var dragging=false;
-  function getVal(clientX){
-    var rect=wrap.getBoundingClientRect();
-    var pct=Math.max(0,Math.min(1,(clientX-rect.left)/rect.width));
-    var total=getAscTotal();
-    var remain=total-getTotalUsed()+ascVals[id];
-    var maxV=Math.min(ASC_CAP,remain);
-    var raw=Math.round(pct*ASC_CAP/5)*5;
-    return Math.max(0,Math.min(maxV,raw));
-  }
-  function apply(clientX){
-    var v=getVal(clientX);
-    ascVals[id]=v;
-    document.getElementById('asc-n-'+id).value=v;
-    ascRender();
-  }
-  wrap.addEventListener('mousedown',function(e){dragging=true;apply(e.clientX);e.preventDefault()});
-  wrap.addEventListener('touchstart',function(e){dragging=true;apply(e.touches[0].clientX);e.preventDefault()},{passive:false});
-  document.addEventListener('mousemove',function(e){if(dragging)apply(e.clientX)});
-  document.addEventListener('touchmove',function(e){if(dragging)apply(e.touches[0].clientX)},{passive:true});
-  document.addEventListener('mouseup',function(){dragging=false});
-  document.addEventListener('touchend',function(){dragging=false});
-}
-
-function ascNumInput(id){
-  var total=getAscTotal();
-  var v=parseInt(document.getElementById('asc-n-'+id).value)||0;
-  var remain=total-getTotalUsed()+ascVals[id];
-  v=Math.max(0,Math.min(ASC_CAP,Math.min(remain,v)));
-  v=Math.round(v/5)*5;
-  ascVals[id]=v;
-  document.getElementById('asc-n-'+id).value=v;
-  ascRender();
-}
-
-function getAscTotal(){return (parseInt(document.getElementById('asc-resets').value)||0)*25}
-function getTotalUsed(){var s=0;Object.keys(ascVals).forEach(function(k){s+=ascVals[k]});return s}
-
-function ascUpdate(){ascRender()}
-
-function ascRender(){
-  var total=getAscTotal();
-  var used=getTotalUsed();
-  var remain=total-used;
-  document.getElementById('asc-pts-avail').textContent=total;
-  var rel=document.getElementById('asc-pts-remain');
-  rel.textContent=remain;
-  rel.className='pts-num'+(remain<0?' over':'');
-
-  ASC_CATS.forEach(function(cat){
-    cat.attrs.forEach(function(attr){
-      var v=ascVals[attr.id];
-      var pct=ASC_CAP>0?Math.min(100,Math.round(v/ASC_CAP*100)):0;
-      var sf=document.getElementById('asc-sf-'+attr.id);
-      var st=document.getElementById('asc-st-'+attr.id);
-      var pl=document.getElementById('asc-pl-'+attr.id);
-      var ni=document.getElementById('asc-n-'+attr.id);
-      var bv=document.getElementById('asc-bv-'+attr.id);
-      if(sf)sf.style.width=pct+'%';
-      if(st)st.style.left=pct+'%';
-      if(pl)pl.textContent=v;
-      if(ni&&parseInt(ni.value)!==v)ni.value=v;
-      if(sf)sf.style.background=v>=ASC_CAP?'#c95050':v>400?'#e87830':'#c9a84c';
-      if(bv&&attr.bonus){
-        var bval=attr.bonus*v;
-        // base_agi special: distribute to sub-attrs display
-        bv.textContent=(bval%1===0?bval.toFixed(0):bval.toFixed(2))+attr.unit;
-      }
-    });
-  });
-
-  // reset cost calc
-  var resets=parseInt(document.getElementById('asc-resets').value)||0;
-  var resetCostHtml='';
-  if(resets>0){
-    var totalCostGold=0;
-    for(var ri2=1;ri2<=resets;ri2++){
-      totalCostGold+=resetCostForReset(ri2);
-    }
-    var lastCost=resetCostForReset(resets);
-    resetCostHtml='<div class="result-row" style="margin-top:7px;border-top:1px solid var(--border-gold);padding-top:9px">'
-      +'<span class="result-key">Custo do reset '+resets+'</span>'
-      +'<span class="result-val" style="font-size:.85rem">'+fmtGold(lastCost)+'</span>'
-      +'</div>'
-      +'<div class="result-row">'
-      +'<span class="result-key">Custo acumulado (1→'+resets+')</span>'
-      +'<span class="result-val warn" style="font-size:.85rem">'+fmtGold(totalCostGold)+'</span>'
-      +'</div>';
-  }
-
-  // summary — show pts + total % bonus per category
-  var html='';
-  ASC_CATS.forEach(function(cat){
-    var ct=cat.attrs.reduce(function(s,a){return s+ascVals[a.id]},0);
-    if(ct>0){
-      // sum bonus for all attrs in this category
-      var totalBonus=0;
-      var bonusLines='';
-      cat.attrs.forEach(function(attr){
-        var v=ascVals[attr.id];
-        if(v>0&&attr.bonus){
-          var bval=attr.bonus*v;
-          totalBonus+=bval;
-          bonusLines+='<div style="display:flex;justify-content:space-between;padding:2px 0 2px 10px;font-size:.75rem">'
-            +'<span style="color:var(--text-dim)">'+attr.name+'</span>'
-            +'<span style="font-family:Cinzel,serif;color:var(--gold)">'+(bval%1===0?bval.toFixed(0):bval.toFixed(2))+attr.unit+'</span>'
-            +'</div>';
-        } else if(v>0&&attr.note){
-          bonusLines+='<div style="display:flex;justify-content:space-between;padding:2px 0 2px 10px;font-size:.75rem">'
-            +'<span style="color:var(--text-dim)">'+attr.name+'</span>'
-            +'<span style="font-family:Cinzel,serif;color:var(--gold-dim)">'+v+' pts</span>'
-            +'</div>';
-        }
-      });
-      html+='<div class="result-row" style="flex-direction:column;align-items:flex-start;padding-bottom:6px">'
-        +'<div style="display:flex;justify-content:space-between;width:100%">'
-        +'<span class="result-key" style="font-weight:600;color:var(--text)">'+cat.name+'</span>'
-        +'<span class="result-val">'+ct+' pts'+(totalBonus>0?' · '+(totalBonus%1===0?totalBonus.toFixed(0):totalBonus.toFixed(2))+'%':'')+'</span>'
-        +'</div>'
-        +bonusLines
-        +'</div>';
-    }
-  });
-  if(!html)html='<div class="result-row"><span class="result-key" style="font-style:italic">Distribua pontos para ver o resumo</span></div>';
-  html+='<div class="result-row" style="margin-top:7px;border-top:1px solid var(--border-gold);padding-top:9px"><span class="result-key">Total usado</span><span class="result-val '+(used>total?'warn':'ok')+'">'+used+' / '+total+'</span></div>';
-  html+=resetCostHtml;
-  document.getElementById('asc-summary').innerHTML=html;
-}
-buildAscUI();ascRender();
-
-// ─── REROLL ────────────────────────────────────────────
-var RR_ATTRS=[
-  {id:'watk',    name:'Weapon Attack',   desc:'Aumenta o dano da arma (+1% por nível)'},
-  {id:'defense', name:'Defense',         desc:'Reduz o dano recebido (+2 por nível)'},
-  {id:'armor',   name:'Armor',           desc:'Diminui dano físico recebido (+1 por nível)'},
-  {id:'onslaught',name:'Onslaught',      desc:'Chance de causar dano extra nos ataques'},
-  {id:'critc',   name:'Crit Chance',     desc:'Chance de golpe crítico (+0.35% por nível)'},
-  {id:'critd',   name:'Crit Damage',     desc:'Dano em críticos (+1.5% por nível)'},
-  {id:'lleech',  name:'Life Leech',      desc:'Converte dano em HP (+0.2% por nível)'},
-  {id:'mleech',  name:'Mana Leech',      desc:'Converte dano em MP (+0.2% por nível)'},
-  {id:'loot',    name:'Loot',            desc:'Chance de obter itens (+1% por nível)'},
-  {id:'exp',     name:'Exp',             desc:'Experiência ganha (+1% por nível)'},
-  {id:'protall', name:'Protect All',     desc:'Reduz todo tipo de dano (+0.17% por nível)'},
-  {id:'protele', name:'Protect (Elem.)', desc:'Reduz dano de elementos específicos (+0.5%/nível)'},
-  {id:'aspd',    name:'Attack Speed',    desc:'Velocidade de ataque (+0.35% por nível)'},
-  {id:'spelldmg',name:'Spell Damage',    desc:'Dano de magias (+0.5% por nível)'},
-  {id:'spellheal',name:'Spell Healing',  desc:'Cura de magias (+0.5% por nível)'},
-  {id:'maxhp',   name:'Max HP',          desc:'Vida máxima (+0.5% por nível)'},
-  {id:'maxmp',   name:'Max Mana',        desc:'Mana máxima (+0.5% por nível)'},
-  {id:'hpregen', name:'HP Regen',        desc:'Regeneração de vida ao longo do tempo'},
-  {id:'mpregen', name:'MP Regen',        desc:'Regeneração de mana ao longo do tempo'},
-  {id:'execute', name:'Execute',         desc:'Elimina inimigos com <10% de vida (+0.25%/nível)'},
-  {id:'frenzy',  name:'Frenzy',          desc:'Bônus temporário ao derrotar inimigos (+0.25%/nível)'}
-];
-var rrSelected=[];
-
-function buildRRAttrs(){
-  var grid=document.getElementById('rr-attr-grid');
-  grid.innerHTML='';
-  RR_ATTRS.forEach(function(attr){
-    var card=document.createElement('div');
-    card.className='attr-card';
-    card.id='rr-card-'+attr.id;
-    card.innerHTML='<span class="attr-name">'+attr.name+'</span><span class="attr-desc">'+attr.desc+'</span><div class="attr-tooltip">'+attr.desc+'</div>';
-    card.onclick=function(){rrToggleAttr(attr.id)};
-    grid.appendChild(card);
-  });
-}
-
-function rrToggleAttr(id){
-  var rarity=parseInt(document.getElementById('rr-rarity').value);
-  var locks=parseInt(document.getElementById('rr-locks').value)||0;
-  var freeSlots=rarity-locks;
-  var idx=rrSelected.indexOf(id);
-  if(idx>=0){
-    rrSelected.splice(idx,1);
-  } else {
-    // allow selecting up to freeSlots attrs (the ones you want to appear)
-    if(rrSelected.length>=freeSlots)return;
-    rrSelected.push(id);
-  }
-  rrRefreshCards();
-  rrUpdate();
-}
-
-function rrRefreshCards(){
-  var rarity=parseInt(document.getElementById('rr-rarity').value);
-  var locks=parseInt(document.getElementById('rr-locks').value)||0;
-  var freeSlots=rarity-locks;
-  RR_ATTRS.forEach(function(attr){
-    var card=document.getElementById('rr-card-'+attr.id);
-    if(!card)return;
-    var sel=rrSelected.includes(attr.id);
-    card.classList.toggle('selected',sel);
-    card.classList.toggle('disabled',!sel&&rrSelected.length>=freeSlots);
-  });
-}
-
-function rrUpdate(){
-  var rarity=parseInt(document.getElementById('rr-rarity').value);
-  var tries=parseInt(document.getElementById('rr-tries').value)||1;
-  var tokenVal=parseFloat(document.getElementById('rr-token-val').value)||0;
-
-  // rebuild locks select
-  var lockSel=document.getElementById('rr-locks');
-  var curLock=parseInt(lockSel.value)||0;
-  lockSel.innerHTML='';
-  for(var i=0;i<rarity;i++){
-    var opt=document.createElement('option');
-    opt.value=i;
-    opt.textContent=i===0?'0 slots travados':i+' slot'+(i>1?'s':'')+' travado'+(i>1?'s':'');
-    if(i===curLock)opt.selected=true;
-    lockSel.appendChild(opt);
-  }
-  var locks=parseInt(lockSel.value)||0;
-  var freeSlots=rarity-locks;
-  var maxSel=freeSlots;
-
-  // clamp selected
-  while(rrSelected.length>maxSel)rrSelected.pop();
-  rrRefreshCards();
-
-  document.getElementById('rr-max-sel').textContent=freeSlots;
-
-  var RARITY_NAMES={1:'Uncommon',2:'Rare',3:'Epic',4:'Legendary',5:'Mythical'};
-  var RARITY_KEYS={1:'uncommon',2:'rare',3:'epic',4:'legendary',5:'mythical'};
-  document.getElementById('rr-rarity-badge').innerHTML='<span class="rarity-badge rarity-'+RARITY_KEYS[rarity]+'">'+RARITY_NAMES[rarity]+'</span>';
-
-  var costKKperTry=locks*10;
-  var totalKK=costKKperTry*tries;
-  var totalTokens=100*tries;
-  var totalTokenCost=tokenVal*totalTokens;
-
-  // probability calc — hypergeometric model
-  // Pool P=21 attrs, drawing freeSlots without replacement, want M specific ones to appear
-  var P=RR_ATTRS.length; // 21
-  var pHit=0;
-  var probInfo='';
-  var M=rrSelected.length;
-  if(M>0&&freeSlots>0){
-    // P(all M appear in freeSlots drawn from P without replacement)
-    // = C(P-M, freeSlots-M) / C(P, freeSlots)   [hypergeometric, exactly M successes]
-    function comb(n,k){
-      if(k<0||k>n)return 0;
-      if(k===0||k===n)return 1;
-      k=Math.min(k,n-k);
-      var r=1;
-      for(var ii=0;ii<k;ii++){r=r*(n-ii)/(ii+1);}
-      return r;
-    }
-    if(M<=freeSlots){
-      pHit=comb(P-M,freeSlots-M)/comb(P,freeSlots);
-    } else {
-      pHit=0; // impossible: wanting more specific attrs than slots
-    }
-    var pHitPct=pHit>=0.01?(pHit*100).toFixed(2):(pHit*100).toFixed(4);
-    var expectedTries=Math.round(1/pHit);
-    var avgTokens=expectedTries*100;
-    var avgLockCost=expectedTries*costKKperTry; // in KK
-    var avgTokenCost=tokenVal*avgTokens; // in raw token-value units
-    var selNames=rrSelected.map(function(id){var a=RR_ATTRS.find(function(x){return x.id===id});return a?a.name:id});
-    probInfo='<div class="result-row"><span class="result-key">Atributos desejados</span><span class="result-val">'+M+' de '+freeSlots+' slot'+(freeSlots>1?'s':'')+' rerolados</span></div>'
-      +'<div style="font-size:.75rem;color:var(--gold-dim);margin-bottom:8px;line-height:1.4">'+selNames.join(', ')+'</div>'
-      +'<div class="result-row"><span class="result-key">Chance por tentativa</span><span class="result-val '+(pHit>=0.05?'ok':pHit>=0.01?'':'warn')+'">'+pHitPct+'%</span></div>'
-      +'<div class="chance-bar-wrap"><div class="chance-bar" style="width:'+Math.min(100,pHit*100*2)+'%;background:'+chanceColor(pHit*100*2)+'"></div></div>'
-      +'<div class="result-row"><span class="result-key">Tentativas médias esperadas</span><span class="result-val">~'+expectedTries.toLocaleString('pt-BR')+'</span></div>'
-      +'<div class="result-row"><span class="result-key">Tokens médios (100/tent.)</span><span class="result-val">~'+avgTokens.toLocaleString('pt-BR')+' tokens</span></div>'
-      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio em tokens</span><span class="result-val warn">~'+fmtGold(avgTokenCost)+'</span></div>':'')
-      +(avgLockCost>0?'<div class="result-row"><span class="result-key">Custo médio locks</span><span class="result-val warn">~'+fmtGold(avgLockCost*1000000)+'</span></div>':'');
-  } else if(freeSlots>0&&M===0){
-    probInfo='<div class="result-row"><span class="result-key" style="font-style:italic;color:var(--gold-dim)">Selecione atributos desejados abaixo (pode escolher 1 ou mais)</span></div>';
-  }
-
-  // costKKperTry is in KK → multiply by 1M for gold display
-  // tokenVal is the value per token in KK → tokenCost = tokenVal * qty tokens (in KK) → *1M for gold
-  document.getElementById('rr-results').innerHTML=probInfo
-    +'<div class="result-row" style="margin-top:8px;border-top:1px solid var(--border-gold);padding-top:9px"><span class="result-key">Custo por tentativa (locks)</span><span class="result-val big">'+fmtGold(costKKperTry*1000000)+'</span></div>'
-    +'<div class="result-row"><span class="result-key">Tokens por tentativa</span><span class="result-val">100 tokens'+(tokenVal>0?' ('+fmtGold(tokenVal*100)+' / tent.)':'')+'</span></div>'
-    +'<div class="result-row"><span class="result-key">Total locks ('+tries+' tent.)</span><span class="result-val '+(totalKK>=100?'warn':'')+'">'+fmtGold(totalKK*1000000)+'</span></div>'
-    +'<div class="result-row"><span class="result-key">Total tokens ('+tries+' tent.)</span><span class="result-val">'+totalTokens.toLocaleString('pt-BR')+' tokens</span></div>'
-    +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo tokens em gold</span><span class="result-val warn">'+fmtGold(totalTokenCost)+'</span></div>':'');
-}
-
-buildRRAttrs();rrUpdate();
-
-// ─── UPGRADE ───────────────────────────────────────────
-var UP_CHANCES={0:100,1:95,2:88,3:80,4:70,5:58,6:46,7:35,8:24,9:16,10:10,11:5,12:2};
-var UP_RARITY_NAMES={0:'Common',4:'Uncommon',6:'Rare',8:'Epic',10:'Legendary',12:'Mythical'};
-var UP_RARITY_KEYS={0:'common',4:'uncommon',6:'rare',8:'epic',10:'legendary',12:'mythical'};
-
-function upUpdate(){
-  var maxLvl=parseInt(document.getElementById('up-rarity').value);
-  var current=Math.min(parseInt(document.getElementById('up-current').value)||0,maxLvl);
-  var target=Math.min(parseInt(document.getElementById('up-target').value)||0,maxLvl);
-  var tokenVal=parseFloat(document.getElementById('up-token-val').value)||0;
-  var rarName=UP_RARITY_NAMES[maxLvl];
-  var rarKey=UP_RARITY_KEYS[maxLvl];
-
-  if(maxLvl===0){
-    document.getElementById('up-results').innerHTML='<span class="rarity-badge rarity-common">Common</span><div class="result-row"><span class="result-key">Itens Common não podem ser upgradados.</span></div>';
-    document.getElementById('up-table').innerHTML='';
-    return;
-  }
-
-  if(target<=current){
-    document.getElementById('up-results').innerHTML='<span class="rarity-badge rarity-'+rarKey+'">'+rarName+'</span><div class="result-row"><span class="result-key" style="color:var(--online)">✓ Nível desejado já atingido!</span></div>';
-  } else {
-    // expected tries from current to target
-    var expTries=0;
-    for(var lvl=current+1;lvl<=target;lvl++){
-      var c=UP_CHANCES[lvl]??2;
-      expTries+=100/c; // expected tries per level = 1/p
-    }
-    expTries=Math.round(expTries);
-    var tokensPerTry=40;
-    var expTokens=expTries*tokensPerTry;
-    var expTokenCost=tokenVal*expTokens;
-    var nextChance=UP_CHANCES[current+1]??2;
-    var sumC=0,cntC=0;
-    for(var lc=current+1;lc<=target;lc++){sumC+=(UP_CHANCES[lc]??2);cntC++;}
-    var avgChance=cntC>0?(sumC/cntC).toFixed(1):'0';
-
-    document.getElementById('up-results').innerHTML=
-      '<span class="rarity-badge rarity-'+rarKey+'">'+rarName+'</span>'
-      +'<div class="result-row"><span class="result-key">Nível atual</span><span class="result-val">+'+current+'</span></div>'
-      +'<div class="result-row"><span class="result-key">Nível desejado</span><span class="result-val">+'+target+'</span></div>'
-      +'<div class="result-row"><span class="result-key">Nível máximo</span><span class="result-val">+'+maxLvl+'</span></div>'
-      +'<div class="result-row"><span class="result-key">Chance atual (próx. upgrade)</span><span class="result-val" style="color:'+chanceColor(nextChance)+'">'+nextChance+'%</span></div>'
-      +'<div class="result-row"><span class="result-key">Chance média ('+current+'→'+target+')</span><span class="result-val" style="color:'+chanceColor(parseFloat(avgChance))+'">'+avgChance+'%</span></div>'
-      +'<div class="result-row"><span class="result-key">Tentativas médias esperadas</span><span class="result-val">~'+expTries.toLocaleString('pt-BR')+'</span></div>'
-      +'<div class="result-row"><span class="result-key">Tokens médios (40/tent.)</span><span class="result-val">~'+expTokens.toLocaleString('pt-BR')+' tokens</span></div>'
-      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio (tokens)</span><span class="result-val warn">~'+fmtGold(expTokenCost)+'</span></div>':'')
-      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo por tentativa</span><span class="result-val">'+fmtGold(tokenVal*tokensPerTry)+'</span></div>':'');
-  }
-
-  // table
-  var html='';
-  for(var lvl=1;lvl<=maxLvl;lvl++){
-    var c=UP_CHANCES[lvl]??2;
-    var bc=chanceColor(c);
-    var isNext=(lvl===current+1);
-    var isInRange=(lvl>current&&lvl<=target);
-    html+='<div class="up-row" style="'+(isNext?'background:rgba(201,168,76,.07);margin:0 -4px;padding:2px 4px;':'')+(isInRange&&!isNext?'opacity:.9;':'opacity:.55;')+'">'
-      +'<span class="up-row-label" style="color:'+(isNext?'var(--gold-light)':'var(--text-dim)')+'">'+(isNext?'▶ ':'')+'+'+(lvl-1)+'→+'+lvl+'</span>'
-      +'<span class="up-pct" style="color:'+bc+'">'+c+'%</span>'
-      +'<div style="flex:1"><div class="chance-bar-wrap"><div class="chance-bar" style="width:'+c+'%;background:'+bc+'"></div></div></div>'
-      +'<span style="font-size:.7rem;color:var(--text-dim);min-width:80px;text-align:right">~'+Math.round(100/c)+' tent.</span>'
-    +'</div>';
-  }
-  document.getElementById('up-table').innerHTML=html;
-}
-upUpdate();
-
-// ─── HELPERS ───────────────────────────────────────────
-function chanceColor(c){if(c>=70)return'#5dbf6e';if(c>=40)return'#c9a84c';if(c>=15)return'#e87830';return'#c95050'}
-// fmtGold: receives value in gold (absolute), outputs formatted string
-function fmtGold(v){
-  if(!v||v===0)return'0';
-  v=Math.round(v);
-  return v.toLocaleString('pt-BR');
-}
-// fmtGoldKK: receives value in KK, formats as gold
-function fmtGoldKK(kk){return fmtGold(kk*1000000)}
-// reset cost: individual cost of reset N (1-indexed)
-// T1(1-10): base 25M + (N-1)*10M
-// T2(11-20): base 150M + (N-11)*20M
-// T3+(21+): increment doubles every 10 resets (40M, 80M, 160M...)
-//   value = last reset of previous tier + pos_in_tier * increment
-function resetCostForReset(ri){
-  if(ri<=10)return 25000000+(ri-1)*10000000;
-  if(ri<=20)return 150000000+(ri-11)*20000000;
-  var tierIdx=Math.floor((ri-21)/10);
-  var inc=40000000;
-  for(var t=0;t<tierIdx;t++)inc*=2;
-  // base = value of last reset in previous tier
-  var base=330000000; // reset 20
-  for(var t2=0;t2<tierIdx;t2++){
-    var incT=40000000;
-    for(var tt=0;tt<t2;tt++)incT*=2;
-    base+=10*incT;
-  }
-  var posInTier=(ri-21)%10+1; // 1-indexed position within tier
-  return base+posInTier*inc;
-}
 </script>
 </body>
 </html>
