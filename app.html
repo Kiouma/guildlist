@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lowly People — Painel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="index.html" type="text/css" disabled/>
+  <style id="shared-css">/* loaded from index.html via JS */</style>
+  <style>
+    /* ── App-specific CSS (ranking, resets, pvp, war, calculadoras) ── */
+    :root{--gold:#c9a84c;--gold-light:#e8cb7a;--gold-dim:#7a6330;--bg:#0a0905;--bg2:#0f0d08;--bg3:#16130c;--bg4:#1e1a10;--border:#2e2815;--border-gold:#3d3218;--text:#d4c9a8;--text-dim:#7a7060;--online:#5dbf6e;--offline:#5a5040;--red:#c95050;--sidebar-w:260px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:19px;line-height:1.5;display:flex;overflow:hidden;height:100vh}
+    body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,168,76,.05) 0%,transparent 60%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+    #sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sidebar-w);background:var(--bg2);border-right:1px solid var(--border-gold);display:flex;flex-direction:column;z-index:100;transform:translateX(0);transition:transform .28s cubic-bezier(.4,0,.2,1)}
+    #sidebar.collapsed{transform:translateX(calc(-1 * var(--sidebar-w)))}
+    .sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:11px;flex-shrink:0}
+    .sb-logo-name{font-family:'Cinzel',serif;font-size:.82rem;font-weight:700;color:var(--gold-light);letter-spacing:.05em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sb-logo-sub{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.2em;color:var(--gold-dim);text-transform:uppercase}
+    .sb-section{padding:12px 10px 4px;flex-shrink:0}
+    .sb-section-title{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dim);padding:0 8px;margin-bottom:4px}
+    .nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:5px;cursor:pointer;transition:background .15s,color .15s;color:var(--text-dim);font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.06em;border:none;background:none;width:100%;text-align:left;text-decoration:none;user-select:none}
+    .nav-item:hover{background:var(--bg4);color:var(--text)}
+    .nav-item.active{background:var(--bg4);color:var(--gold-light);border:1px solid var(--border-gold)}
+    .nav-icon{width:17px;height:17px;flex-shrink:0;opacity:.7}
+    .nav-item.active .nav-icon{opacity:1}
+    .sb-divider{height:1px;background:var(--border);margin:6px 10px}
+    .sb-footer{padding:14px 10px;border-top:1px solid var(--border);margin-top:auto;font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.12em;color:var(--gold-dim);text-align:center}
+    .sb-footer a{color:var(--gold-dim);text-decoration:none}
+    .sb-footer a:hover{color:var(--gold-light)}
+    #toggle-btn{position:fixed;top:14px;left:calc(var(--sidebar-w) + 10px);z-index:200;width:34px;height:34px;background:var(--bg3);border:1px solid var(--border-gold);color:var(--gold-dim);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:left .28s cubic-bezier(.4,0,.2,1),color .15s,background .15s;border-radius:4px}
+    #toggle-btn:hover{background:var(--bg4);color:var(--gold-light)}
+    #toggle-btn.closed{left:10px}
+    #toggle-btn svg{width:17px;height:17px}
+    #overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:90}
+    #main{flex:1;margin-left:var(--sidebar-w);overflow-y:auto;overflow-x:hidden;transition:margin-left .28s cubic-bezier(.4,0,.2,1);position:relative;z-index:1;height:100vh}
+    #main.full{margin-left:0}
+    .page{display:none}
+    .page.active{display:block}
+    .cwrap{max-width:1040px;margin:0 auto;padding:60px 28px 80px}
+    .page-title{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;color:var(--gold-light);letter-spacing:.06em;margin-bottom:5px}
+    .page-desc{font-size:.95rem;color:var(--text-dim);margin-bottom:28px}
+    .page-divider{height:1px;background:linear-gradient(90deg,var(--border-gold),transparent);margin-bottom:28px}
+    .info-callout{background:rgba(201,168,76,.06);border:1px solid var(--border-gold);padding:13px 15px;margin-bottom:18px;font-size:.9rem;color:var(--text-dim);line-height:1.6}
+    .info-callout strong{color:var(--gold-light);font-weight:600}
+    .no-data{color:var(--text-dim);font-style:italic;font-size:.85rem;padding:8px 0}
+    .day-info{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;color:var(--gold-dim);margin-bottom:20px;padding:10px 14px;border:1px solid var(--border);background:var(--bg2)}
+    /* Ranking */
+    .rank-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+    .rank-tab{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;background:var(--bg3);border:1px solid var(--border-gold);color:var(--text-dim);cursor:pointer;transition:all .18s}
+    .rank-tab:hover{border-color:var(--gold-dim);color:var(--text)}
+    .rank-tab.active{background:var(--bg4);border-color:var(--gold);color:var(--gold-light)}
+    .rank-content{display:none}
+    .rank-content.active{display:block}
+    .rank-table-wrap{border:1px solid var(--border-gold);overflow-x:auto;margin-bottom:24px}
+    .rank-table{width:100%;border-collapse:collapse}
+    .rank-table thead tr{background:var(--bg3);border-bottom:2px solid var(--border-gold)}
+    .rank-table th{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dim);padding:10px 14px;text-align:left;white-space:nowrap}
+    .rank-table tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+    .rank-table tbody tr:hover{background:var(--bg3)}
+    .rank-table td{padding:9px 14px;font-size:.9rem}
+    .rank-num{font-family:'Cinzel',serif;font-size:.8rem;color:var(--text-dim);min-width:32px}
+    .rank-num.gold{color:#e8a030;font-weight:700}
+    .rank-num.silver{color:#b0b8c8;font-weight:700}
+    .rank-num.bronze{color:#c87840;font-weight:700}
+    .rank-name a{color:var(--gold-light);text-decoration:none;font-weight:600}
+    .rank-name a:hover{color:#fff;text-decoration:underline}
+    .rank-val{font-family:'Cinzel',serif;font-size:.85rem;color:var(--text);text-align:right}
+    .rank-guild{font-family:'Cinzel',serif;font-size:.72rem;color:var(--text-dim);text-align:center}
+    /* Resets do dia */
+    .reset-day-card{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:24px}
+    .reset-card{background:var(--bg3);border:1px solid var(--border-gold);padding:16px 18px;position:relative}
+    .reset-card-name{font-family:'Cinzel',serif;font-size:.88rem;font-weight:600;color:var(--gold-light);margin-bottom:4px}
+    .reset-card-num{font-family:'Cinzel',serif;font-size:1.5rem;font-weight:700;color:var(--gold)}
+    .reset-card-voc{font-size:.78rem;color:var(--text-dim);font-style:italic;margin-bottom:4px}
+    .reset-card-time{font-size:.78rem;color:var(--text-dim)}
+    .reset-card-7d{font-family:'Cinzel',serif;font-size:.72rem;color:var(--gold-dim);position:absolute;top:14px;right:14px;text-align:right}
+    .reset-card-7d-num{font-size:1rem;color:var(--gold);display:block}
+    /* PvP */
+    .pvp-table-wrap{border:1px solid var(--border-gold);overflow-x:auto}
+    .pvp-badge{display:inline-block;font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.1em;padding:2px 8px;border:1px solid;border-radius:2px}
+    .pvp-badge.hot{color:#e84040;border-color:#701010;background:rgba(232,64,64,.08)}
+    .pvp-none{color:var(--text-dim)}
+    /* War */
+    .war-scoreboard{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin-bottom:28px;border:1px solid var(--border-gold);overflow:hidden}
+    .war-side{padding:24px 20px;text-align:center}
+    .war-side.lp{background:linear-gradient(135deg,rgba(93,191,110,.08) 0%,transparent 60%);border-right:1px solid var(--border-gold)}
+    .war-side.enemy{background:linear-gradient(135deg,rgba(201,80,80,.08) 0%,transparent 60%)}
+    .war-vs{display:flex;align-items:center;justify-content:center;background:var(--bg2);border-left:1px solid var(--border-gold);border-right:1px solid var(--border-gold);padding:0 16px;font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:var(--gold-dim)}
+    .war-guild-name{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px}
+    .war-guild-name.lp{color:var(--online)}
+    .war-guild-name.enemy{color:var(--red)}
+    .war-kills-big{font-family:'Cinzel',serif;font-size:3rem;font-weight:900;line-height:1}
+    .war-kills-big.lp{color:var(--online);text-shadow:0 0 20px rgba(93,191,110,.3)}
+    .war-kills-big.enemy{color:var(--red);text-shadow:0 0 20px rgba(201,80,80,.3)}
+    .war-sub{font-size:.78rem;color:var(--text-dim);margin-top:8px}
+    .war-sub span{font-family:'Cinzel',serif;color:var(--text)}
+    .war-leading{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;padding:4px 12px;border:1px solid;border-radius:2px;display:inline-block;margin-top:8px}
+    .war-leading.lp{color:var(--online);border-color:rgba(93,191,110,.4);background:rgba(93,191,110,.08)}
+    .war-leading.enemy{color:var(--red);border-color:rgba(201,80,80,.4);background:rgba(201,80,80,.08)}
+    .war-leading.tie{color:var(--gold-dim);border-color:var(--border-gold);background:transparent}
+    .war-tables{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+    .war-table-wrap{border:1px solid var(--border-gold);overflow-x:auto}
+    .war-table-title{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;padding:10px 14px;border-bottom:1px solid var(--border-gold)}
+    .war-table-title.lp{color:var(--online);background:rgba(93,191,110,.05)}
+    .war-table-title.enemy{color:var(--red);background:rgba(201,80,80,.05)}
+    .war-log-entry{display:flex;gap:12px;padding:8px 14px;border-bottom:1px solid var(--border);font-size:.82rem;align-items:center}
+    .war-log-entry:last-child{border-bottom:none}
+    .war-log-entry.lp-kill{border-left:3px solid var(--online)}
+    .war-log-entry.enemy-kill{border-left:3px solid var(--red)}
+    .war-log-time{color:var(--text-dim);font-size:.75rem;white-space:nowrap;flex-shrink:0}
+    .war-log-text{flex:1;line-height:1.4}
+    .war-log-killer.lp{color:var(--online);font-weight:600}
+    .war-log-killer.enemy{color:var(--red);font-weight:600}
+    .war-log-victim{color:var(--text-dim)}
+    /* Calculadoras */
+    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+    .calc-panel{background:var(--bg3);border:1px solid var(--border-gold);padding:22px}
+    .calc-panel h3{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:16px;padding-bottom:9px;border-bottom:1px solid var(--border)}
+    .field-row{margin-bottom:14px}
+    .field-label{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);display:block;margin-bottom:5px}
+    .field-input,.field-select{width:100%;background:var(--bg2);border:1px solid var(--border-gold);color:var(--text);font-family:'Crimson Pro',serif;font-size:1rem;padding:7px 11px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+    .field-input:focus,.field-select:focus{border-color:var(--gold-dim)}
+    .field-select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a6330' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;padding-right:30px}
+    .result-box{background:var(--bg2);border:1px solid var(--border-gold);padding:18px 22px}
+    .result-box h3{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:14px}
+    .result-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);font-size:.86rem}
+    .result-row:last-child{border-bottom:none}
+    .result-key{color:var(--text-dim);font-size:.88rem}
+    .result-val{font-family:'Cinzel',serif;font-size:.95rem;color:var(--gold-light);font-weight:600}
+    .result-val.big{font-size:1.25rem}
+    .result-val.warn{color:var(--red)}
+    .result-val.ok{color:var(--online)}
+    .rarity-badge{display:inline-block;font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border:1px solid;margin-bottom:14px}
+    .rarity-common{color:#a0a0a0;border-color:#404040}.rarity-uncommon{color:#6ec96e;border-color:#2d5a2d}
+    .rarity-rare{color:#5ab0e8;border-color:#1e4a70}.rarity-epic{color:#b06fe8;border-color:#4a2070}
+    .rarity-legendary{color:#e8a030;border-color:#704010}.rarity-mythical{color:#e84040;border-color:#701010}
+    .pts-display{text-align:center;padding:13px;background:var(--bg2);border:1px solid var(--border-gold);margin-bottom:14px}
+    .pts-num{font-family:'Cinzel',serif;font-size:1.7rem;font-weight:700;color:var(--gold-light);display:block}
+    .pts-num.over{color:var(--red)}
+    .pts-label{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim)}
+    .asc-category{margin-bottom:22px}
+    .asc-cat-title{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:9px;padding-bottom:5px;border-bottom:1px solid var(--border)}
+    .asc-row{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+    .asc-attr-name{font-size:.85rem;color:var(--text-dim);width:130px;flex-shrink:0}
+    .asc-num-input{width:56px;flex-shrink:0;background:var(--bg2);border:1px solid var(--border);color:var(--text);font-family:'Cinzel',serif;font-size:.75rem;padding:4px 7px;text-align:center;outline:none;transition:border-color .2s}
+    .asc-num-input:focus{border-color:var(--gold-dim)}
+    .asc-slider-wrap{flex:1;position:relative;height:22px;display:flex;align-items:center;cursor:ew-resize;user-select:none}
+    .asc-slider-track{position:absolute;left:0;right:0;height:6px;background:var(--border);border-radius:3px}
+    .asc-slider-fill{position:absolute;left:0;height:6px;background:var(--gold);border-radius:3px;transition:width .15s}
+    .asc-slider-thumb{position:absolute;width:14px;height:14px;background:var(--gold-light);border:2px solid var(--bg2);border-radius:50%;top:50%;transform:translate(-50%,-50%);transition:left .15s;box-shadow:0 0 6px rgba(201,168,76,.4)}
+    .asc-pts-label{font-family:'Cinzel',serif;font-size:.68rem;color:var(--text-dim);min-width:28px;text-align:right}
+    .attr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:7px;margin-bottom:14px}
+    .attr-card{background:var(--bg2);border:1px solid var(--border);padding:9px 11px;cursor:pointer;transition:all .18s;position:relative;border-radius:3px}
+    .attr-card:hover{border-color:var(--gold-dim);background:var(--bg3)}
+    .attr-card.selected{border-color:var(--gold);background:rgba(201,168,76,.1);box-shadow:0 0 8px rgba(201,168,76,.15)}
+    .attr-card.disabled{opacity:.35;cursor:not-allowed;pointer-events:none}
+    .attr-name{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.05em;color:var(--gold-light);display:block;margin-bottom:3px}
+    .attr-desc{font-size:.8rem;color:var(--text-dim);line-height:1.4}
+    .attr-tooltip{position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--bg4);border:1px solid var(--border-gold);padding:8px 12px;font-size:.75rem;color:var(--text);white-space:nowrap;z-index:50;pointer-events:none;opacity:0;transition:opacity .15s;border-radius:3px}
+    .attr-card:hover .attr-tooltip{opacity:1}
+    .chance-bar-wrap{height:7px;background:var(--border);border-radius:3px;overflow:hidden;margin:5px 0 2px}
+    .chance-bar{height:100%;border-radius:3px;transition:width .3s,background .3s}
+    .up-row{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+    .up-row-label{font-family:'Cinzel',serif;font-size:.72rem;color:var(--text-dim);width:80px;flex-shrink:0}
+    .up-pct{font-family:'Cinzel',serif;font-size:.75rem;min-width:36px;text-align:right}
+    @media(max-width:700px){
+      :root{--sidebar-w:240px}
+      #sidebar{transform:translateX(calc(-1 * var(--sidebar-w)))}
+      #sidebar.open{transform:translateX(0)}
+      #main{margin-left:0!important}
+      #toggle-btn{left:10px!important}
+      #overlay{display:block;opacity:0;pointer-events:none;transition:opacity .28s}
+      #overlay.visible{opacity:1;pointer-events:auto}
+      .calc-grid{grid-template-columns:1fr}
+      .war-scoreboard{grid-template-columns:1fr}
+      .war-side.lp{border-right:none;border-bottom:1px solid var(--border-gold)}
+      .war-vs{padding:12px;border:none;border-top:1px solid var(--border-gold);border-bottom:1px solid var(--border-gold)}
+      .war-tables{grid-template-columns:1fr}
+      .cwrap{padding:52px 14px 56px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside id="sidebar">
+  <div class="sb-logo">
+    <svg width="28" height="28" viewBox="0 0 64 64" fill="none">
+      <path d="M32 4L38 24L58 24L42 36L48 56L32 44L16 56L22 36L6 24L26 24Z" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
+      <circle cx="32" cy="32" r="8" fill="none" stroke="#c9a84c" stroke-width="1"/>
+      <circle cx="32" cy="32" r="2" fill="#c9a84c"/>
+    </svg>
+    <div><div class="sb-logo-name">Lowly People</div><div class="sb-logo-sub">AmonOT · Baiak</div></div>
+  </div>
+  <div class="sb-section">
+    <div class="sb-section-title">Guild</div>
+    <a class="nav-item" href="index.html">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Lista de Membros
+    </a>
+  </div>
+  <div class="sb-divider"></div>
+  <div class="sb-section">
+    <div class="sb-section-title">Dados da Guild</div>
+    <button class="nav-item active" onclick="navigate('ranking')" id="nav-ranking">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 20 18 10"/><polyline points="12 20 12 4"/><polyline points="6 20 6 14"/></svg>
+      Ranking
+    </button>
+    <button class="nav-item" onclick="navigate('resets_day')" id="nav-resets_day">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      Resets do Dia
+    </button>
+    <button class="nav-item" onclick="navigate('pvp')" id="nav-pvp">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M8.5 15H7v-1.5c0-.83.67-1.5 1.5-1.5"/></svg>
+      PvP
+    </button>
+    <button class="nav-item" onclick="navigate('war')" id="nav-war" style="color:#c95050">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="M13 19l2-2"/><path d="M16 13l2 2"/><path d="m6 6 4.5 4.5"/><path d="m10 10 4 4"/><path d="M21.5 21.5 18 18"/></svg>
+      ⚔ Guerra
+    </button>
+  </div>
+  <div class="sb-divider"></div>
+  <div class="sb-section">
+    <div class="sb-section-title">Ferramentas</div>
+    <button class="nav-item" onclick="navigate('ascension')" id="nav-ascension">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Ascensão
+    </button>
+    <button class="nav-item" onclick="navigate('reroll')" id="nav-reroll">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      Reroll de Atributos
+    </button>
+    <button class="nav-item" onclick="navigate('upgrade')" id="nav-upgrade">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      Upgrade de Item
+    </button>
+  </div>
+  <div class="sb-footer">Dados via <a href="https://amonot.online/guilds?name=Lowly+People" target="_blank">amonot.online</a></div>
+</aside>
+
+<button id="toggle-btn" onclick="toggleSidebar()" aria-label="Menu">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div id="overlay" onclick="closeSidebarMobile()"></div>
+
+<main id="main">
+
+<!-- ── RANKING ── -->
+<div class="page active" id="page-ranking">
+  <div class="cwrap">
+    <div class="page-title">Ranking da Guild</div>
+    <div class="page-desc">Posições dos membros comparadas internamente, por categoria.</div>
+    <div class="page-divider"></div>
+    <div class="rank-tabs" id="rank-tabs"></div>
+    <div id="rank-contents"></div>
+  </div>
+</div>
+
+<!-- ── RESETS DO DIA ── -->
+<div class="page" id="page-resets_day">
+  <div class="cwrap">
+    <div class="page-title">Resets do Dia</div>
+    <div class="page-desc">Membros que fizeram reset nas últimas 24h (período 22h→22h).</div>
+    <div class="page-divider"></div>
+    <div class="day-info" id="resets-day-info">Carregando...</div>
+    <div id="resets-day-content"><div style="color:var(--text-dim);font-style:italic">Carregando...</div></div>
+  </div>
+</div>
+
+<!-- ── PVP ── -->
+<div class="page" id="page-pvp">
+  <div class="cwrap">
+    <div class="page-title">PvP — Abates</div>
+    <div class="page-desc">Abates detectados nas Últimas Mortes (PvP) de Baiak.</div>
+    <div class="page-divider"></div>
+    <div class="day-info" id="pvp-day-info">Carregando...</div>
+    <div class="pvp-table-wrap">
+      <table class="rank-table">
+        <thead><tr>
+          <th>#</th><th>Membro</th><th>Vocação</th>
+          <th style="text-align:right">Total</th><th style="text-align:right">Semana</th><th style="text-align:right">Hoje</th>
+        </tr></thead>
+        <tbody id="pvp-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ── GUERRA ── -->
+<div class="page" id="page-war">
+  <div class="cwrap">
+    <div class="page-title" style="color:#c95050">⚔ Guerra — Lowly People vs MentaliTY</div>
+    <div class="page-desc">Kill/Death tracker atualizado a cada hora. Apenas abates entre membros das duas guilds.</div>
+    <div class="page-divider" style="background:linear-gradient(90deg,#c95050,transparent)"></div>
+    <div class="war-scoreboard">
+      <div class="war-side lp">
+        <div class="war-guild-name lp">Lowly People</div>
+        <div class="war-kills-big lp" id="war-lp-kills">0</div>
+        <div class="war-sub">Abates <span id="war-lp-today">0</span> hoje · <span id="war-lp-week">0</span> semana</div>
+        <div class="war-sub" style="margin-top:4px">Mortes na guerra: <span id="war-lp-deaths">0</span></div>
+      </div>
+      <div class="war-vs">VS</div>
+      <div class="war-side enemy">
+        <div class="war-guild-name enemy">MentaliTY</div>
+        <div class="war-kills-big enemy" id="war-enemy-kills">0</div>
+        <div class="war-sub">Abates <span id="war-enemy-today">0</span> hoje · <span id="war-enemy-week">0</span> semana</div>
+        <div class="war-sub" style="margin-top:4px">Mortes na guerra: <span id="war-enemy-deaths">0</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-bottom:24px" id="war-leading-badge"></div>
+    <div class="war-tables">
+      <div class="war-table-wrap">
+        <div class="war-table-title lp">🗡 Top Killers — Lowly People</div>
+        <table class="rank-table"><thead><tr>
+          <th>#</th><th>Membro</th><th style="text-align:right">Total</th><th style="text-align:right">Semana</th><th style="text-align:right">Hoje</th>
+        </tr></thead><tbody id="war-lp-table"></tbody></table>
+      </div>
+      <div class="war-table-wrap">
+        <div class="war-table-title enemy">💀 Top Killers — MentaliTY</div>
+        <table class="rank-table"><thead><tr>
+          <th>#</th><th>Membro</th><th style="text-align:right">Total</th><th style="text-align:right">Semana</th><th style="text-align:right">Hoje</th>
+        </tr></thead><tbody id="war-enemy-table"></tbody></table>
+      </div>
+    </div>
+    <div class="calc-panel">
+      <h3>Log de Combate</h3>
+      <div id="war-log"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ASCENSÃO ── -->
+<div class="page" id="page-ascension">
+  <div class="cwrap">
+    <div class="page-title">Calculadora de Ascensão</div>
+    <div class="page-desc">Distribua seus pontos. Cada reset concede 25 pontos. Limite: 500 pts por atributo.</div>
+    <div class="page-divider"></div>
+    <div class="info-callout"><strong>Como funciona:</strong> Informe seus resets e distribua os pontos pelas 4 categorias. Os pontos são permanentes.</div>
+    <div class="calc-grid" style="margin-bottom:18px">
+      <div class="calc-panel">
+        <h3>Pontos Disponíveis</h3>
+        <div class="field-row"><label class="field-label">Número de Resets</label><input class="field-input" type="number" id="asc-resets" min="0" max="9999" value="0" oninput="ascUpdate()"></div>
+        <div class="pts-display"><span class="pts-num" id="asc-pts-avail">0</span><span class="pts-label">Pontos Disponíveis</span></div>
+        <div class="pts-display" style="border-color:var(--border)"><span class="pts-num" id="asc-pts-remain" style="font-size:1.3rem">0</span><span class="pts-label">Pontos Restantes</span></div>
+      </div>
+      <div class="result-box"><h3>Resumo por Categoria</h3><div id="asc-summary"></div></div>
+    </div>
+    <div id="asc-categories"></div>
+  </div>
+</div>
+
+<!-- ── REROLL ── -->
+<div class="page" id="page-reroll">
+  <div class="cwrap">
+    <div class="page-title">Calculadora de Reroll</div>
+    <div class="page-desc">Selecione a raridade, trave slots e escolha os atributos desejados.</div>
+    <div class="page-divider"></div>
+    <div class="calc-grid" style="margin-bottom:18px">
+      <div class="calc-panel">
+        <h3>Configuração</h3>
+        <div class="field-row"><label class="field-label">Raridade</label>
+          <select class="field-select" id="rr-rarity" onchange="rrUpdate()">
+            <option value="1">Uncommon — 1 atributo</option><option value="2">Rare — 2 atributos</option>
+            <option value="3" selected>Epic — 3 atributos</option><option value="4">Legendary — 4 atributos</option>
+            <option value="5">Mythical — 5 atributos</option>
+          </select></div>
+        <div class="field-row"><label class="field-label">Slots Travados</label><select class="field-select" id="rr-locks" onchange="rrUpdate()"><option value="0">0 slots</option></select></div>
+        <div class="field-row"><label class="field-label">Valor do Token (gold)</label><input class="field-input" type="number" id="rr-token-val" min="0" step="1" value="0" oninput="rrUpdate()"></div>
+        <div class="field-row"><label class="field-label">Número de Tentativas</label><input class="field-input" type="number" id="rr-tries" min="1" max="99999" value="10" oninput="rrUpdate()"></div>
+      </div>
+      <div class="result-box"><h3>Resultado</h3><div id="rr-rarity-badge"></div><div id="rr-results"></div></div>
+    </div>
+    <div class="calc-panel" style="margin-bottom:18px">
+      <h3>Atributos — clique para selecionar os desejados</h3>
+      <div style="font-size:.8rem;color:var(--text-dim);margin-bottom:12px">Máx: <span id="rr-max-sel">3</span> selecionados. Hover para detalhes.</div>
+      <div class="attr-grid" id="rr-attr-grid"></div>
+    </div>
+    <div class="info-callout"><strong>Custo:</strong> 100 Boss Tokens por tentativa. Cada slot travado custa 10KK/tentativa.</div>
+  </div>
+</div>
+
+<!-- ── UPGRADE ── -->
+<div class="page" id="page-upgrade">
+  <div class="cwrap">
+    <div class="page-title">Calculadora de Upgrade</div>
+    <div class="page-desc">Chances por nível e custo médio para atingir o nível desejado.</div>
+    <div class="page-divider"></div>
+    <div class="calc-grid" style="margin-bottom:18px">
+      <div class="calc-panel">
+        <h3>Configuração</h3>
+        <div class="field-row"><label class="field-label">Raridade</label>
+          <select class="field-select" id="up-rarity" onchange="upUpdate()">
+            <option value="0">Common — não upgrada</option><option value="4">Uncommon — máx +4</option>
+            <option value="6">Rare — máx +6</option><option value="8" selected>Epic — máx +8</option>
+            <option value="10">Legendary — máx +10</option><option value="12">Mythical — máx +12</option>
+          </select></div>
+        <div class="field-row"><label class="field-label">Nível Atual</label><input class="field-input" type="number" id="up-current" min="0" max="12" value="0" oninput="upUpdate()"></div>
+        <div class="field-row"><label class="field-label">Nível Desejado</label><input class="field-input" type="number" id="up-target" min="0" max="12" value="8" oninput="upUpdate()"></div>
+        <div class="field-row"><label class="field-label">Valor do Token (gold)</label><input class="field-input" type="number" id="up-token-val" min="0" step="1" value="0" oninput="upUpdate()"></div>
+      </div>
+      <div class="result-box"><h3>Resultado</h3><div id="up-results"></div></div>
+    </div>
+    <div class="calc-panel"><h3>Chances por Nível</h3><div id="up-table"></div></div>
+    <div class="info-callout" style="margin-top:18px"><strong>Custo por tentativa:</strong> 40 Boss Tokens.</div>
+  </div>
+</div>
+
+</main>
+
+<script>
+// ─── SIDEBAR ───────────────────────────────────────────
+var sbOpen=true;
+function isMob(){return window.innerWidth<=700}
+function toggleSidebar(){
+  if(isMob()){
+    var open=document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('overlay').classList.toggle('visible',open);
+  } else {
+    sbOpen=!sbOpen;
+    document.getElementById('sidebar').classList.toggle('collapsed',!sbOpen);
+    document.getElementById('main').classList.toggle('full',!sbOpen);
+    document.getElementById('toggle-btn').classList.toggle('closed',!sbOpen);
+  }
+}
+function closeSidebarMobile(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('visible');
+}
+function navigate(page){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active')});
+  document.getElementById('page-'+page).classList.add('active');
+  var nb=document.getElementById('nav-'+page);
+  if(nb)nb.classList.add('active');
+  document.getElementById('main').scrollTop=0;
+  if(isMob())closeSidebarMobile();
+}
+
+// Handle hash navigation
+function navigateFromHash(){
+  var hash=(location.hash||'').replace('#','');
+  var valid=['ranking','resets_day','pvp','war','ascension','reroll','upgrade'];
+  if(valid.indexOf(hash)>=0)navigate(hash);
+}
+window.addEventListener('hashchange',navigateFromHash);
+
+// ─── RANKING ───────────────────────────────────────────
+var guildHighscores={};
+var RANK_CAT_ORDER=['resets','experience','magic','fist','club','sword','axe','distance','shielding','fishing'];
+var RANK_CAT_LABEL={resets:'Resets',experience:'Experience',magic:'Magic Level',fist:'Fist',
+  club:'Club',sword:'Sword',axe:'Axe',distance:'Distance',shielding:'Shielding',fishing:'Fishing'};
+
+function renderRanking(){
+  var tabsEl=document.getElementById('rank-tabs');
+  var contEl=document.getElementById('rank-contents');
+  if(!tabsEl||!contEl)return;
+  if(!guildHighscores||!Object.keys(guildHighscores).length){
+    contEl.innerHTML='<div class="no-data" style="padding:32px">Dados de ranking ainda não disponíveis.</div>';return;
+  }
+  var tabsHtml='',contHtml='';
+  RANK_CAT_ORDER.forEach(function(cat,i){
+    var hs=guildHighscores[cat];if(!hs)return;
+    var active=i===0?'active':'';
+    tabsHtml+='<button class="rank-tab '+active+'" data-cat="'+cat+'">'+RANK_CAT_LABEL[cat]+'</button>';
+    contHtml+='<div class="rank-content '+active+'" id="rank-cat-'+cat+'">';
+    var entries=hs.entries||[];
+    if(!entries.length){contHtml+='<div class="no-data" style="padding:24px">Nenhum membro encontrado.</div>';}
+    else{
+      contHtml+='<div class="rank-table-wrap"><table class="rank-table"><thead><tr>'
+        +'<th>#</th><th>Membro</th><th>Vocação</th><th>Level</th><th style="text-align:right">'+hs.val_label+'</th>'
+        +'</tr></thead><tbody>';
+      entries.forEach(function(e){
+        var url='https://amonot.online/characters?name='+encodeURIComponent(e.name);
+        var rc=e.guild_rank===1?'gold':e.guild_rank===2?'silver':e.guild_rank===3?'bronze':'';
+        var valFmt=e.value_fmt||(e.value?e.value.toLocaleString('pt-BR'):'—');
+        contHtml+='<tr>'
+          +'<td class="rank-num '+rc+'">#'+e.guild_rank+'</td>'
+          +'<td class="rank-name"><a href="'+url+'" target="_blank" rel="noopener">'+e.name+'</a></td>'
+          +'<td style="color:var(--text-dim);font-style:italic;font-size:.85rem">'+e.vocation+'</td>'
+          +'<td class="rank-num" style="color:var(--text)">'+e.level+'</td>'
+          +'<td class="rank-val">'+valFmt+'</td>'
+          +'</tr>';
+      });
+      contHtml+='</tbody></table></div>';
+    }
+    contHtml+='</div>';
+  });
+  tabsEl.innerHTML=tabsHtml;contEl.innerHTML=contHtml;
+  tabsEl.onclick=function(e){
+    var btn=e.target.closest('.rank-tab');if(!btn)return;
+    var cat=btn.dataset.cat;
+    document.querySelectorAll('.rank-tab').forEach(function(t){t.classList.remove('active')});
+    document.querySelectorAll('.rank-content').forEach(function(c){c.classList.remove('active')});
+    btn.classList.add('active');
+    var el=document.getElementById('rank-cat-'+cat);if(el)el.classList.add('active');
+  };
+}
+
+// ─── RESETS DO DIA ─────────────────────────────────────
+var guildDayStart='';
+var resetsToday=[];
+function renderResetsDay(){
+  var info=document.getElementById('resets-day-info');
+  var cont=document.getElementById('resets-day-content');
+  if(info)info.textContent='Período: últimas 24h a partir das 22:00. Dia/semana mostrados no card.';
+  if(!cont)return;
+  if(!resetsToday.length){
+    cont.innerHTML='<div class="no-data" style="padding:32px 0">Nenhum reset nas últimas 24h.</div>';return;
+  }
+  var html='<div class="reset-day-card">';
+  resetsToday.forEach(function(r){
+    var gained=r.resets_gained||0,gained7=r.resets_7d||0;
+    html+='<div class="reset-card">'
+      +'<div class="reset-card-7d"><span style="font-size:.62rem;letter-spacing:.1em;text-transform:uppercase">7 dias</span><span class="reset-card-7d-num">+'+gained7+'</span></div>'
+      +'<div class="reset-card-voc">'+r.vocation+'</div>'
+      +'<div class="reset-card-name">'+r.name+'</div>'
+      +'<div class="reset-card-num">+'+gained+' <span style="font-size:.9rem;color:var(--gold-dim)">reset'+(gained>1?'s':'')+' hoje</span></div>'
+      +'<div class="reset-card-time">Total: '+r.resets+' resets</div>'
+      +'</div>';
+  });
+  html+='</div>';
+  cont.innerHTML=html;
+}
+
+// ─── PVP ───────────────────────────────────────────────
+var allMembers=[];
+function renderPvp(){
+  var info=document.getElementById('pvp-day-info');
+  var tbody=document.getElementById('pvp-tbody');
+  if(info)info.textContent='Abates detectados nas páginas PvP de Baiak. Período do dia: '+guildDayStart+'.';
+  if(!tbody)return;
+  var members=allMembers.slice();
+  members.sort(function(a,b){return(b.pvp_kills_total||0)-(a.pvp_kills_total||0)});
+  var html='',rank=0;
+  members.forEach(function(m){
+    var total=m.pvp_kills_total||0,week=m.pvp_kills_week||0,today=m.pvp_kills_today||0;
+    rank++;
+    var url='https://amonot.online/characters?name='+encodeURIComponent(m.name);
+    var rc=rank===1?'gold':rank===2?'silver':rank===3?'bronze':'';
+    var hot=today>=3?'<span class="pvp-badge hot">+'+today+' hoje</span>':'';
+    html+='<tr>'
+      +'<td class="rank-num '+rc+'">#'+rank+'</td>'
+      +'<td class="rank-name"><a href="'+url+'" target="_blank" rel="noopener">'+m.name+'</a> '+hot+'</td>'
+      +'<td style="color:var(--text-dim);font-style:italic;font-size:.85rem">'+(m.vocation||'—')+'</td>'
+      +'<td class="rank-val">'+(total>0?total:'<span class="pvp-none">—</span>')+'</td>'
+      +'<td class="rank-val">'+(week>0?week:'<span class="pvp-none">—</span>')+'</td>'
+      +'<td class="rank-val">'+(today>0?'<strong style="color:var(--online)">'+today+'</strong>':'<span class="pvp-none">—</span>')+'</td>'
+      +'</tr>';
+  });
+  tbody.innerHTML=html;
+}
+
+// ─── GUERRA ────────────────────────────────────────────
+var warData={};
+function renderWar(){
+  if(!warData||!warData.enemy_guild)return;
+  var w=warData;
+  document.getElementById('war-lp-kills').textContent    =w.lp_kills_total||0;
+  document.getElementById('war-enemy-kills').textContent =w.enemy_kills_total||0;
+  document.getElementById('war-lp-today').textContent    =w.lp_kills_today||0;
+  document.getElementById('war-lp-week').textContent     =w.lp_kills_week||0;
+  document.getElementById('war-enemy-today').textContent =w.enemy_kills_today||0;
+  document.getElementById('war-enemy-week').textContent  =w.enemy_kills_week||0;
+  document.getElementById('war-lp-deaths').textContent   =w.lp_deaths_war||0;
+  document.getElementById('war-enemy-deaths').textContent=w.enemy_deaths_war||0;
+  var badge=document.getElementById('war-leading-badge');
+  var lk=w.lp_kills_total||0,ek=w.enemy_kills_total||0;
+  if(lk>ek)      badge.innerHTML='<span class="war-leading lp">Lowly People em vantagem</span>';
+  else if(ek>lk) badge.innerHTML='<span class="war-leading enemy">MentaliTY em vantagem</span>';
+  else            badge.innerHTML='<span class="war-leading tie">Empate</span>';
+  var lpTbody=document.getElementById('war-lp-table');
+  var lpK=w.lp_top_killers||[];
+  lpTbody.innerHTML=lpK.length?lpK.map(function(e,i){
+    var url='https://amonot.online/characters?name='+encodeURIComponent(e.name);
+    var rc=i===0?'gold':i===1?'silver':i===2?'bronze':'';
+    return '<tr><td class="rank-num '+rc+'">#'+(i+1)+'</td>'
+      +'<td class="rank-name"><a href="'+url+'" target="_blank" rel="noopener" style="color:var(--online)">'+e.name+'</a></td>'
+      +'<td class="rank-val">'+e.kills+'</td><td class="rank-val">'+(e.kills_week||0)+'</td><td class="rank-val">'+(e.kills_day||0)+'</td></tr>';
+  }).join(''):'<tr><td colspan="5" class="no-data" style="padding:16px">Nenhum abate registrado.</td></tr>';
+  var enTbody=document.getElementById('war-enemy-table');
+  var enK=w.enemy_top_killers||[];
+  enTbody.innerHTML=enK.length?enK.map(function(e,i){
+    var url='https://amonot.online/characters?name='+encodeURIComponent(e.name);
+    var rc=i===0?'gold':i===1?'silver':i===2?'bronze':'';
+    return '<tr><td class="rank-num '+rc+'">#'+(i+1)+'</td>'
+      +'<td class="rank-name"><a href="'+url+'" target="_blank" rel="noopener" style="color:var(--red)">'+e.name+'</a></td>'
+      +'<td class="rank-val">'+e.kills+'</td><td class="rank-val">'+(e.kills_week||0)+'</td><td class="rank-val">'+(e.kills_day||0)+'</td></tr>';
+  }).join(''):'<tr><td colspan="5" class="no-data" style="padding:16px">Nenhum abate registrado.</td></tr>';
+  var logEl=document.getElementById('war-log');
+  var log=w.war_log||[];
+  logEl.innerHTML=log.length?log.slice(0,50).map(function(e){
+    var isLP=e.killer_guild==='lp';
+    return '<div class="war-log-entry '+(isLP?'lp-kill':'enemy-kill')+'">'
+      +'<span class="war-log-time">'+e.time+'</span>'
+      +'<span class="war-log-text"><span class="war-log-killer '+(isLP?'lp':'enemy')+'">'+e.killer+'</span>'
+      +' <span style="color:var(--text-dim)">eliminou</span> <span class="war-log-victim">'+e.victim+'</span></span></div>';
+  }).join(''):'<div class="no-data" style="padding:20px">Nenhum combate registrado ainda.</div>';
+}
+
+// ─── ASCENSÃO ──────────────────────────────────────────
+var ASC_CAP=500;
+var ASC_CATS=[
+  {id:'atk',name:'Attack',attrs:[
+    {id:'base_atk',name:'Base Attack',bonus:0.15,unit:'%'},
+    {id:'physical',name:'Physical',bonus:0.20,unit:'%'},
+    {id:'ice',name:'Ice',bonus:0.20,unit:'%'},
+    {id:'fire',name:'Fire',bonus:0.20,unit:'%'},
+    {id:'poison',name:'Poison',bonus:0.20,unit:'%'},
+    {id:'energy',name:'Energy',bonus:0.20,unit:'%'},
+    {id:'holy',name:'Holy',bonus:0.20,unit:'%'},
+    {id:'death',name:'Death',bonus:0.20,unit:'%'},
+    {id:'fatal',name:'Fatal',bonus:0.04,unit:'%'},
+    {id:'avatar',name:'Avatar',bonus:0.04,unit:'%'}
+  ]},
+  {id:'def',name:'Defense',attrs:[
+    {id:'base_def',name:'Base Defense',bonus:0.05,unit:'%'},
+    {id:'def_phys',name:'Physical',bonus:0.05,unit:'%'},
+    {id:'def_ice',name:'Ice',bonus:0.05,unit:'%'},
+    {id:'def_fire',name:'Fire',bonus:0.05,unit:'%'},
+    {id:'def_poison',name:'Poison',bonus:0.05,unit:'%'},
+    {id:'def_energy',name:'Energy',bonus:0.05,unit:'%'},
+    {id:'def_holy',name:'Holy',bonus:0.05,unit:'%'},
+    {id:'def_death',name:'Death',bonus:0.05,unit:'%'}
+  ]},
+  {id:'agi',name:'Agility',attrs:[
+    {id:'base_agi',name:'Base Agility',bonus:null,unit:'',note:'Concede +0.05% Mov, +0.04% Atk Spd, +0.01% Dodge por ponto'},
+    {id:'move_spd',name:'Move Speed',bonus:0.15,unit:'%'},
+    {id:'atk_spd',name:'Attack Speed',bonus:0.12,unit:'%'},
+    {id:'dodge',name:'Dodge',bonus:0.03,unit:'%'}
+  ]},
+  {id:'mas',name:'Mastery',attrs:[
+    {id:'momentum',name:'Momentum',bonus:0.05,unit:'%'},
+    {id:'stamina',name:'Stamina',bonus:0.25,unit:'%'},
+    {id:'exercise',name:'Exercise',bonus:1.00,unit:'%'}
+  ]}
+];
+var ascVals={};
+ASC_CATS.forEach(function(c){c.attrs.forEach(function(a){ascVals[a.id]=0})});
+
+function buildAscUI(){
+  var con=document.getElementById('asc-categories');con.innerHTML='';
+  ASC_CATS.forEach(function(cat){
+    var div=document.createElement('div');div.className='asc-category';
+    var html='<div class="asc-cat-title">'+cat.name+'</div>';
+    cat.attrs.forEach(function(attr){
+      var hint='';
+      if(attr.note)hint+='<span title="'+attr.note+'" style="font-size:.68rem;color:var(--gold-dim);margin-left:3px">ⓘ</span>';
+      if(attr.bonus)hint+='<span style="font-size:.68rem;color:var(--text-dim);margin-left:3px">(+'+attr.bonus+attr.unit+'/pt)</span>';
+      html+='<div class="asc-row" id="asc-row-'+attr.id+'">'
+        +'<span class="asc-attr-name" style="width:130px">'+attr.name+hint+'</span>'
+        +'<input class="asc-num-input" type="number" id="asc-n-'+attr.id+'" min="0" max="'+ASC_CAP+'" value="0" oninput="ascNumInput(\''+attr.id+'\')">'
+        +'<div class="asc-slider-wrap" id="asc-sw-'+attr.id+'">'
+          +'<div class="asc-slider-track"></div>'
+          +'<div class="asc-slider-fill" id="asc-sf-'+attr.id+'" style="width:0%"></div>'
+          +'<div class="asc-slider-thumb" id="asc-st-'+attr.id+'" style="left:0%"></div>'
+        +'</div>'
+        +'<span class="asc-pts-label" id="asc-pl-'+attr.id+'">0</span>'
+        +'<span id="asc-bv-'+attr.id+'" style="font-family:Cinzel,serif;font-size:.72rem;color:var(--gold);min-width:72px;text-align:right">0'+attr.unit+'</span>'
+        +'</div>';
+    });
+    div.innerHTML=html;con.appendChild(div);
+  });
+  ASC_CATS.forEach(function(cat){cat.attrs.forEach(function(attr){bindSlider(attr.id)})});
+}
+
+function bindSlider(id){
+  var wrap=document.getElementById('asc-sw-'+id);if(!wrap)return;
+  var dragging=false;
+  function getVal(clientX){
+    var rect=wrap.getBoundingClientRect();
+    var pct=Math.max(0,Math.min(1,(clientX-rect.left)/rect.width));
+    var total=getAscTotal(),remain=total-getTotalUsed()+ascVals[id];
+    var maxV=Math.min(ASC_CAP,remain);
+    return Math.max(0,Math.min(maxV,Math.round(pct*ASC_CAP/5)*5));
+  }
+  function apply(clientX){ascVals[id]=getVal(clientX);document.getElementById('asc-n-'+id).value=ascVals[id];ascRender()}
+  wrap.addEventListener('mousedown',function(e){dragging=true;apply(e.clientX);e.preventDefault()});
+  wrap.addEventListener('touchstart',function(e){dragging=true;apply(e.touches[0].clientX);e.preventDefault()},{passive:false});
+  document.addEventListener('mousemove',function(e){if(dragging)apply(e.clientX)});
+  document.addEventListener('touchmove',function(e){if(dragging)apply(e.touches[0].clientX)},{passive:true});
+  document.addEventListener('mouseup',function(){dragging=false});
+  document.addEventListener('touchend',function(){dragging=false});
+}
+
+function ascNumInput(id){
+  var total=getAscTotal(),v=parseInt(document.getElementById('asc-n-'+id).value)||0;
+  var remain=total-getTotalUsed()+ascVals[id];
+  v=Math.max(0,Math.min(ASC_CAP,Math.min(remain,Math.round(v/5)*5)));
+  ascVals[id]=v;document.getElementById('asc-n-'+id).value=v;ascRender();
+}
+function getAscTotal(){return(parseInt(document.getElementById('asc-resets').value)||0)*25}
+function getTotalUsed(){var s=0;Object.keys(ascVals).forEach(function(k){s+=ascVals[k]});return s}
+function ascUpdate(){ascRender()}
+
+function ascRender(){
+  var total=getAscTotal(),used=getTotalUsed(),remain=total-used;
+  document.getElementById('asc-pts-avail').textContent=total;
+  var rel=document.getElementById('asc-pts-remain');
+  rel.textContent=remain;rel.className='pts-num'+(remain<0?' over':'');
+  ASC_CATS.forEach(function(cat){
+    cat.attrs.forEach(function(attr){
+      var v=ascVals[attr.id];
+      var pct=ASC_CAP>0?Math.min(100,Math.round(v/ASC_CAP*100)):0;
+      var sf=document.getElementById('asc-sf-'+attr.id);
+      var st=document.getElementById('asc-st-'+attr.id);
+      var pl=document.getElementById('asc-pl-'+attr.id);
+      var ni=document.getElementById('asc-n-'+attr.id);
+      var bv=document.getElementById('asc-bv-'+attr.id);
+      if(sf){sf.style.width=pct+'%';sf.style.background=v>=ASC_CAP?'#c95050':v>400?'#e87830':'#c9a84c';}
+      if(st)st.style.left=pct+'%';
+      if(pl)pl.textContent=v;
+      if(ni&&parseInt(ni.value)!==v)ni.value=v;
+      if(bv&&attr.bonus){var bval=attr.bonus*v;bv.textContent=(bval%1===0?bval.toFixed(0):bval.toFixed(2))+attr.unit;}
+    });
+  });
+  // reset cost
+  var resets=parseInt(document.getElementById('asc-resets').value)||0;
+  var resetCostHtml='';
+  if(resets>0){
+    var totalCostGold=0;
+    for(var ri=1;ri<=resets;ri++)totalCostGold+=resetCostForReset(ri);
+    var lastCost=resetCostForReset(resets);
+    resetCostHtml='<div class="result-row" style="margin-top:7px;border-top:1px solid var(--border-gold);padding-top:9px">'
+      +'<span class="result-key">Custo do reset '+resets+'</span><span class="result-val" style="font-size:.85rem">'+fmtGold(lastCost)+'</span></div>'
+      +'<div class="result-row"><span class="result-key">Custo acumulado (1→'+resets+')</span>'
+      +'<span class="result-val warn" style="font-size:.85rem">'+fmtGold(totalCostGold)+'</span></div>';
+  }
+  var html='';
+  ASC_CATS.forEach(function(cat){
+    var ct=cat.attrs.reduce(function(s,a){return s+ascVals[a.id]},0);
+    if(ct>0){
+      var totalBonus=0,bonusLines='';
+      cat.attrs.forEach(function(attr){
+        var v=ascVals[attr.id];
+        if(v>0&&attr.bonus){var bval=attr.bonus*v;totalBonus+=bval;
+          bonusLines+='<div style="display:flex;justify-content:space-between;padding:2px 0 2px 10px;font-size:.75rem">'
+            +'<span style="color:var(--text-dim)">'+attr.name+'</span>'
+            +'<span style="font-family:Cinzel,serif;color:var(--gold)">'+(bval%1===0?bval.toFixed(0):bval.toFixed(2))+attr.unit+'</span></div>';
+        } else if(v>0&&attr.note){
+          bonusLines+='<div style="display:flex;justify-content:space-between;padding:2px 0 2px 10px;font-size:.75rem">'
+            +'<span style="color:var(--text-dim)">'+attr.name+'</span>'
+            +'<span style="font-family:Cinzel,serif;color:var(--gold-dim)">'+v+' pts</span></div>';
+        }
+      });
+      html+='<div class="result-row" style="flex-direction:column;align-items:flex-start;padding-bottom:6px">'
+        +'<div style="display:flex;justify-content:space-between;width:100%">'
+        +'<span class="result-key" style="font-weight:600;color:var(--text)">'+cat.name+'</span>'
+        +'<span class="result-val">'+ct+' pts'+(totalBonus>0?' · '+(totalBonus%1===0?totalBonus.toFixed(0):totalBonus.toFixed(2))+'%':'')+'</span></div>'
+        +bonusLines+'</div>';
+    }
+  });
+  if(!html)html='<div class="result-row"><span class="result-key" style="font-style:italic">Distribua pontos para ver o resumo</span></div>';
+  html+='<div class="result-row" style="margin-top:7px;border-top:1px solid var(--border-gold);padding-top:9px"><span class="result-key">Total usado</span>'
+    +'<span class="result-val '+(used>total?'warn':'ok')+'">'+used+' / '+total+'</span></div>'+resetCostHtml;
+  document.getElementById('asc-summary').innerHTML=html;
+}
+buildAscUI();ascRender();
+
+// ─── REROLL ────────────────────────────────────────────
+var RR_ATTRS=[
+  {id:'watk',name:'Weapon Attack',desc:'Dano da arma (+1% por nível)'},
+  {id:'defense',name:'Defense',desc:'Reduz dano recebido (+2 por nível)'},
+  {id:'armor',name:'Armor',desc:'Diminui dano físico (+1 por nível)'},
+  {id:'onslaught',name:'Onslaught',desc:'Chance de dano extra'},
+  {id:'critc',name:'Crit Chance',desc:'Chance de crítico (+0.35% por nível)'},
+  {id:'critd',name:'Crit Damage',desc:'Dano em críticos (+1.5% por nível)'},
+  {id:'lleech',name:'Life Leech',desc:'Converte dano em HP (+0.2% por nível)'},
+  {id:'mleech',name:'Mana Leech',desc:'Converte dano em MP (+0.2% por nível)'},
+  {id:'loot',name:'Loot',desc:'Chance de itens (+1% por nível)'},
+  {id:'exp',name:'Exp',desc:'Experiência (+1% por nível)'},
+  {id:'protall',name:'Protect All',desc:'Reduz todo dano (+0.17% por nível)'},
+  {id:'protele',name:'Protect (Elem.)',desc:'Reduz dano elemental (+0.5%/nível)'},
+  {id:'aspd',name:'Attack Speed',desc:'Velocidade de ataque (+0.35% por nível)'},
+  {id:'spelldmg',name:'Spell Damage',desc:'Dano de magias (+0.5% por nível)'},
+  {id:'spellheal',name:'Spell Healing',desc:'Cura de magias (+0.5% por nível)'},
+  {id:'maxhp',name:'Max HP',desc:'Vida máxima (+0.5% por nível)'},
+  {id:'maxmp',name:'Max Mana',desc:'Mana máxima (+0.5% por nível)'},
+  {id:'hpregen',name:'HP Regen',desc:'Regeneração de vida'},
+  {id:'mpregen',name:'MP Regen',desc:'Regeneração de mana'},
+  {id:'execute',name:'Execute',desc:'Elimina inimigos <10% HP (+0.25%/nível)'},
+  {id:'frenzy',name:'Frenzy',desc:'Bônus ao derrotar inimigos (+0.25%/nível)'}
+];
+var rrSelected=[];
+
+function buildRRAttrs(){
+  var grid=document.getElementById('rr-attr-grid');grid.innerHTML='';
+  RR_ATTRS.forEach(function(attr){
+    var card=document.createElement('div');card.className='attr-card';card.id='rr-card-'+attr.id;
+    card.innerHTML='<span class="attr-name">'+attr.name+'</span><span class="attr-desc">'+attr.desc+'</span><div class="attr-tooltip">'+attr.desc+'</div>';
+    card.onclick=function(){rrToggleAttr(attr.id)};
+    grid.appendChild(card);
+  });
+}
+function rrToggleAttr(id){
+  var rarity=parseInt(document.getElementById('rr-rarity').value);
+  var locks=parseInt(document.getElementById('rr-locks').value)||0;
+  var freeSlots=rarity-locks;
+  var idx=rrSelected.indexOf(id);
+  if(idx>=0)rrSelected.splice(idx,1);
+  else{if(rrSelected.length>=freeSlots)return;rrSelected.push(id);}
+  rrRefreshCards();rrUpdate();
+}
+function rrRefreshCards(){
+  var rarity=parseInt(document.getElementById('rr-rarity').value);
+  var locks=parseInt(document.getElementById('rr-locks').value)||0;
+  var freeSlots=rarity-locks;
+  RR_ATTRS.forEach(function(attr){
+    var card=document.getElementById('rr-card-'+attr.id);if(!card)return;
+    var sel=rrSelected.includes(attr.id);
+    card.classList.toggle('selected',sel);
+    card.classList.toggle('disabled',!sel&&rrSelected.length>=freeSlots);
+  });
+}
+function rrUpdate(){
+  var rarity=parseInt(document.getElementById('rr-rarity').value);
+  var tries=parseInt(document.getElementById('rr-tries').value)||1;
+  var tokenVal=parseFloat(document.getElementById('rr-token-val').value)||0;
+  var lockSel=document.getElementById('rr-locks');
+  var curLock=parseInt(lockSel.value)||0;
+  lockSel.innerHTML='';
+  for(var i=0;i<rarity;i++){var opt=document.createElement('option');opt.value=i;opt.textContent=i===0?'0 slots':i+' slot'+(i>1?'s':'')+' travado'+(i>1?'s':'');if(i===curLock)opt.selected=true;lockSel.appendChild(opt);}
+  var locks=parseInt(lockSel.value)||0,freeSlots=rarity-locks;
+  while(rrSelected.length>freeSlots)rrSelected.pop();
+  rrRefreshCards();
+  document.getElementById('rr-max-sel').textContent=freeSlots;
+  var RNAMES={1:'Uncommon',2:'Rare',3:'Epic',4:'Legendary',5:'Mythical'};
+  var RKEYS={1:'uncommon',2:'rare',3:'epic',4:'legendary',5:'mythical'};
+  document.getElementById('rr-rarity-badge').innerHTML='<span class="rarity-badge rarity-'+RKEYS[rarity]+'">'+RNAMES[rarity]+'</span>';
+  var costKKperTry=locks*10,totalKK=costKKperTry*tries,totalTokens=100*tries,totalTokenCost=tokenVal*totalTokens;
+  var P=RR_ATTRS.length,M=rrSelected.length,pHit=0,probInfo='';
+  function comb(n,k){if(k<0||k>n)return 0;if(k===0||k===n)return 1;k=Math.min(k,n-k);var r=1;for(var ii=0;ii<k;ii++){r=r*(n-ii)/(ii+1);}return r;}
+  if(M>0&&freeSlots>0&&M<=freeSlots){pHit=comb(P-M,freeSlots-M)/comb(P,freeSlots);}
+  if(M>0&&freeSlots>0){
+    var pHitPct=pHit>=0.01?(pHit*100).toFixed(2):(pHit*100).toFixed(4);
+    var expTries=Math.round(1/pHit),avgTokens=expTries*100,avgLockCost=expTries*costKKperTry;
+    var selNames=rrSelected.map(function(id){var a=RR_ATTRS.find(function(x){return x.id===id});return a?a.name:id});
+    probInfo='<div class="result-row"><span class="result-key">Atributos desejados</span><span class="result-val">'+M+' de '+freeSlots+' slots</span></div>'
+      +'<div style="font-size:.75rem;color:var(--gold-dim);margin-bottom:8px">'+selNames.join(', ')+'</div>'
+      +'<div class="result-row"><span class="result-key">Chance por tentativa</span><span class="result-val '+(pHit>=0.05?'ok':pHit>=0.01?'':'warn')+'">'+pHitPct+'%</span></div>'
+      +'<div class="chance-bar-wrap"><div class="chance-bar" style="width:'+Math.min(100,pHit*200)+'%;background:'+chanceColor(pHit*200)+'"></div></div>'
+      +'<div class="result-row"><span class="result-key">Tentativas médias</span><span class="result-val">~'+expTries.toLocaleString('pt-BR')+'</span></div>'
+      +'<div class="result-row"><span class="result-key">Tokens médios</span><span class="result-val">~'+avgTokens.toLocaleString('pt-BR')+'</span></div>'
+      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio (tokens)</span><span class="result-val warn">~'+fmtGold(tokenVal*avgTokens)+'</span></div>':'')
+      +(avgLockCost>0?'<div class="result-row"><span class="result-key">Custo médio (locks)</span><span class="result-val warn">~'+fmtGold(avgLockCost*1000000)+'</span></div>':'');
+  } else if(M===0){probInfo='<div class="result-row"><span class="result-key" style="font-style:italic;color:var(--gold-dim)">Selecione atributos abaixo</span></div>';}
+  document.getElementById('rr-results').innerHTML=probInfo
+    +'<div class="result-row" style="margin-top:8px;border-top:1px solid var(--border-gold);padding-top:9px"><span class="result-key">Custo/tent. (locks)</span><span class="result-val big">'+fmtGold(costKKperTry*1000000)+'</span></div>'
+    +'<div class="result-row"><span class="result-key">Tokens/tent.</span><span class="result-val">100'+(tokenVal>0?' ('+fmtGold(tokenVal*100)+'/tent.)':'')+'</span></div>'
+    +'<div class="result-row"><span class="result-key">Total locks ('+tries+' tent.)</span><span class="result-val '+(totalKK>=100?'warn':'')+'">'+fmtGold(totalKK*1000000)+'</span></div>'
+    +'<div class="result-row"><span class="result-key">Total tokens</span><span class="result-val">'+totalTokens.toLocaleString('pt-BR')+'</span></div>'
+    +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo tokens</span><span class="result-val warn">'+fmtGold(totalTokenCost)+'</span></div>':'');
+}
+buildRRAttrs();rrUpdate();
+
+// ─── UPGRADE ───────────────────────────────────────────
+var UP_CHANCES={0:100,1:95,2:88,3:80,4:70,5:58,6:46,7:35,8:24,9:16,10:10,11:5,12:2};
+var UP_RARITY_NAMES={0:'Common',4:'Uncommon',6:'Rare',8:'Epic',10:'Legendary',12:'Mythical'};
+var UP_RARITY_KEYS={0:'common',4:'uncommon',6:'rare',8:'epic',10:'legendary',12:'mythical'};
+function upUpdate(){
+  var maxLvl=parseInt(document.getElementById('up-rarity').value);
+  var current=Math.min(parseInt(document.getElementById('up-current').value)||0,maxLvl);
+  var target=Math.min(parseInt(document.getElementById('up-target').value)||0,maxLvl);
+  var tokenVal=parseFloat(document.getElementById('up-token-val').value)||0;
+  var rarName=UP_RARITY_NAMES[maxLvl],rarKey=UP_RARITY_KEYS[maxLvl];
+  if(maxLvl===0){document.getElementById('up-results').innerHTML='<span class="rarity-badge rarity-common">Common</span><div class="result-row"><span class="result-key">Itens Common não podem ser upgradados.</span></div>';document.getElementById('up-table').innerHTML='';return;}
+  if(target<=current){document.getElementById('up-results').innerHTML='<span class="rarity-badge rarity-'+rarKey+'">'+rarName+'</span><div class="result-row"><span class="result-key" style="color:var(--online)">✓ Nível desejado já atingido!</span></div>';} 
+  else {
+    var expTries=0;for(var lvl=current+1;lvl<=target;lvl++)expTries+=100/(UP_CHANCES[lvl]??2);
+    expTries=Math.round(expTries);
+    var tokensPerTry=40,expTokens=expTries*tokensPerTry,expTokenCost=tokenVal*expTokens;
+    var nextChance=UP_CHANCES[current+1]??2;
+    var sumC=0,cntC=0;for(var lc=current+1;lc<=target;lc++){sumC+=(UP_CHANCES[lc]??2);cntC++;}
+    var avgChance=cntC>0?(sumC/cntC).toFixed(1):'0';
+    document.getElementById('up-results').innerHTML='<span class="rarity-badge rarity-'+rarKey+'">'+rarName+'</span>'
+      +'<div class="result-row"><span class="result-key">Nível atual</span><span class="result-val">+'+current+'</span></div>'
+      +'<div class="result-row"><span class="result-key">Nível desejado</span><span class="result-val">+'+target+'</span></div>'
+      +'<div class="result-row"><span class="result-key">Nível máximo</span><span class="result-val">+'+maxLvl+'</span></div>'
+      +'<div class="result-row"><span class="result-key">Chance atual</span><span class="result-val" style="color:'+chanceColor(nextChance)+'">'+nextChance+'%</span></div>'
+      +'<div class="result-row"><span class="result-key">Chance média ('+current+'→'+target+')</span><span class="result-val" style="color:'+chanceColor(parseFloat(avgChance))+'">'+avgChance+'%</span></div>'
+      +'<div class="result-row"><span class="result-key">Tentativas médias</span><span class="result-val">~'+expTries.toLocaleString('pt-BR')+'</span></div>'
+      +'<div class="result-row"><span class="result-key">Tokens médios (40/tent.)</span><span class="result-val">~'+expTokens.toLocaleString('pt-BR')+'</span></div>'
+      +(tokenVal>0?'<div class="result-row"><span class="result-key">Custo médio</span><span class="result-val warn">~'+fmtGold(expTokenCost)+'</span></div>'
+        +'<div class="result-row"><span class="result-key">Custo por tentativa</span><span class="result-val">'+fmtGold(tokenVal*tokensPerTry)+'</span></div>':'');
+  }
+  var tableHtml='';
+  for(var lvl2=1;lvl2<=maxLvl;lvl2++){
+    var c=UP_CHANCES[lvl2]??2,bc=chanceColor(c);
+    var isNext=(lvl2===current+1),inRange=(lvl2>current&&lvl2<=target);
+    tableHtml+='<div class="up-row" style="'+(isNext?'background:rgba(201,168,76,.07);margin:0 -4px;padding:2px 4px;':'')+(inRange&&!isNext?'opacity:.9;':'opacity:.55;')+'">'
+      +'<span class="up-row-label" style="color:'+(isNext?'var(--gold-light)':'var(--text-dim)')+'">'+(isNext?'▶ ':'')+'+' +(lvl2-1)+'→+'+lvl2+'</span>'
+      +'<span class="up-pct" style="color:'+bc+'">'+c+'%</span>'
+      +'<div style="flex:1"><div class="chance-bar-wrap"><div class="chance-bar" style="width:'+c+'%;background:'+bc+'"></div></div></div>'
+      +'<span style="font-size:.7rem;color:var(--text-dim);min-width:80px;text-align:right">~'+Math.round(100/c)+' tent.</span>'
+      +'</div>';
+  }
+  document.getElementById('up-table').innerHTML=tableHtml;
+}
+upUpdate();
+
+// ─── HELPERS ───────────────────────────────────────────
+function chanceColor(c){if(c>=70)return'#5dbf6e';if(c>=40)return'#c9a84c';if(c>=15)return'#e87830';return'#c95050'}
+function fmtGold(v){if(!v||v===0)return'0';v=Math.round(v);return v.toLocaleString('pt-BR')}
+function resetCostForReset(ri){
+  if(ri<=10)return 25000000+(ri-1)*10000000;
+  if(ri<=20)return 150000000+(ri-11)*20000000;
+  var tierIdx=Math.floor((ri-21)/10),inc=40000000;
+  for(var t=0;t<tierIdx;t++)inc*=2;
+  var base=330000000;
+  for(var t2=0;t2<tierIdx;t2++){var incT=40000000;for(var tt=0;tt<t2;tt++)incT*=2;base+=10*incT;}
+  var posInTier=(ri-21)%10+1;
+  return base+posInTier*inc;
+}
+
+// ─── LOAD DATA ─────────────────────────────────────────
+async function loadData(){
+  try{
+    var resp=await fetch('guild_data.json?_='+Date.now());
+    if(!resp.ok)throw new Error('HTTP '+resp.status);
+    var data=await resp.json();
+    allMembers       =data.members||[];
+    guildHighscores  =data.highscores||{};
+    guildDayStart    =data.guild_day_start||'';
+    resetsToday      =data.resets_today||[];
+    warData          =data.war||{};
+    renderRanking();
+    renderResetsDay();
+    renderPvp();
+    renderWar();
+  }catch(e){console.error('Erro ao carregar guild_data.json:',e)}
+}
+loadData();
+
+// Navigate from URL hash on load
+window.addEventListener('load', navigateFromHash);
+</script>
+</body>
+</html>
