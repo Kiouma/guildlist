@@ -30,7 +30,7 @@ jobs:
         run: pip install requests beautifulsoup4 urllib3
 
       - name: Rodar scraper
-        run: python scraper.py
+        run: python debug_pvp.py
 
       - name: Verificar guild_data.json
         run: |
