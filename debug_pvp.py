@@ -3,44 +3,32 @@ from bs4 import BeautifulSoup
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36",
-    "Accept-Language": "pt-BR,pt;q=0.9",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
 }
 
-url = "https://amonot.online/guilds?name=Lowly+People&status=all"
-r = requests.get(url, headers=HEADERS, timeout=15)
-print(f"Status HTTP: {r.status_code} | Size: {len(r.text)}")
-
-soup = BeautifulSoup(r.text, "html.parser")
-rows = soup.select(".char-table-row")
-print(f"Rows encontradas: {len(rows)}")
-
-online_count = 0
-offline_count = 0
-
-for i, row in enumerate(rows[:10]):
-    # nome
-    name_el = row.select_one('span[data-label="Nome"]')
-    name = name_el.get_text(strip=True) if name_el else "?"
-
-    # status_el
-    status_el = row.select_one('span[data-label="Status"] .badge')
-    status_classes = status_el.get("class", []) if status_el else []
-    status_text = status_el.get_text(strip=True) if status_el else "NOT FOUND"
-
-    # raw status span
-    status_span = row.select_one('span[data-label="Status"]')
-    status_span_html = str(status_span)[:200] if status_span else "NOT FOUND"
-
-    is_online = "badge-success" in status_classes
-    if is_online:
-        online_count += 1
-    else:
-        offline_count += 1
-
-    print(f"\n[{i+1}] {name}")
-    print(f"  classes: {status_classes}")
-    print(f"  text: {status_text}")
-    print(f"  online: {is_online}")
-    print(f"  raw html: {status_span_html}")
-
-print(f"\nTotal amostra: {online_count} online, {offline_count} offline")
+for url in [
+    "https://amonot.online/guilds?name=Lowly+People&status=online",
+    "https://amonot.online/guilds?name=Lowly+People&status=offline",
+    "https://amonot.online/guilds?name=Lowly+People&status=all",
+    "https://amonot.online/guilds?name=Lowly+People",
+]:
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=15)
+        soup = BeautifulSoup(r.text, "html.parser")
+        rows = soup.select(".char-table-row")
+        sections = soup.select(".characters-section")
+        print(f"\nURL: {url}")
+        print(f"  Status: {r.status_code} | Size: {len(r.text)}")
+        print(f"  .char-table-row: {len(rows)}")
+        print(f"  .characters-section: {len(sections)}")
+        if rows:
+            first = rows[0]
+            def sp(lbl):
+                el = first.select_one(f'span[data-label="{lbl}"]')
+                return el.get_text(strip=True) if el else "NOT FOUND"
+            print(f"  Primeiro membro: Nome={sp('Nome')} Level={sp('Level')} Resets={sp('Resets')}")
+    except Exception as e:
+        print(f"\nURL: {url} → ERRO: {e}")
