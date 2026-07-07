@@ -1,6 +1,6 @@
 {
   "name": "Lowly People",
-  "updated_at": "07/07/2026 às 13:14 (Brasília)",
+  "updated_at": "07/07/2026 às 15:52 (Brasília)",
   "owner": "Yagoodz Hahaha",
   "founded": "Apr 30, 2026",
   "total_members": 73,
@@ -69,7 +69,8 @@
         "2026-07-07-03": 59,
         "2026-07-07-07": 59,
         "2026-07-07-10": 59,
-        "2026-07-07-13": 59
+        "2026-07-07-13": 59,
+        "2026-07-07-15": 59
       },
       "stats": {
         "experience": 0,
@@ -83,16 +84,16 @@
         "fishing": 0
       },
       "deaths": [],
-      "pvp_kills_total": 20,
-      "pvp_kills_today": 5,
-      "pvp_kills_week": 5,
+      "pvp_kills_total": 19,
+      "pvp_kills_today": 6,
+      "pvp_kills_week": 6,
       "war_kills": 0,
       "war_kills_day": 0,
       "war_kills_week": 0
     },
     {
       "name": "Gizao",
-      "level": 922,
+      "level": 1169,
       "resets": 56,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -151,7 +152,8 @@
         "2026-07-07-03": 55,
         "2026-07-07-07": 55,
         "2026-07-07-10": 55,
-        "2026-07-07-13": 56
+        "2026-07-07-13": 56,
+        "2026-07-07-15": 56
       },
       "stats": {
         "experience": 0,
@@ -165,7 +167,7 @@
         "fishing": 0
       },
       "deaths": [],
-      "pvp_kills_total": 5,
+      "pvp_kills_total": 4,
       "pvp_kills_today": 3,
       "pvp_kills_week": 3,
       "war_kills": 0,
@@ -213,7 +215,8 @@
         "2026-07-07-03": 70,
         "2026-07-07-07": 70,
         "2026-07-07-10": 70,
-        "2026-07-07-13": 70
+        "2026-07-07-13": 70,
+        "2026-07-07-15": 70
       },
       "stats": {
         "experience": 0,
@@ -279,7 +282,8 @@
         "2026-07-07-03": 50,
         "2026-07-07-07": 50,
         "2026-07-07-10": 50,
-        "2026-07-07-13": 50
+        "2026-07-07-13": 50,
+        "2026-07-07-15": 50
       },
       "stats": {
         "experience": 0,
@@ -294,18 +298,8 @@
       },
       "deaths": [
         {
-          "time": "Jul 07, 2026 12:38",
+          "time": "Jul 07, 2026 15:27",
           "by": "an infernal demon (monstro)",
-          "is_pvp": false
-        },
-        {
-          "time": "Jul 07, 2026 12:20",
-          "by": "an infernal demon (monstro)",
-          "is_pvp": false
-        },
-        {
-          "time": "Jul 07, 2026 11:15",
-          "by": "a brachiodemon (monstro)",
           "is_pvp": false
         }
       ],
@@ -377,7 +371,8 @@
         "2026-07-07-03": 50,
         "2026-07-07-07": 50,
         "2026-07-07-10": 50,
-        "2026-07-07-13": 50
+        "2026-07-07-13": 50,
+        "2026-07-07-15": 50
       },
       "stats": {
         "experience": 0,
@@ -459,7 +454,8 @@
         "2026-07-07-03": 58,
         "2026-07-07-07": 58,
         "2026-07-07-10": 58,
-        "2026-07-07-13": 58
+        "2026-07-07-13": 58,
+        "2026-07-07-15": 58
       },
       "stats": {
         "experience": 0,
@@ -472,13 +468,7 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [
-        {
-          "time": "Jul 07, 2026 12:19",
-          "by": "a bony sea devil (monstro) Maior dano:                                                            a turbulent elemental",
-          "is_pvp": false
-        }
-      ],
+      "deaths": [],
       "pvp_kills_total": 4,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -488,7 +478,7 @@
     },
     {
       "name": "Achilles",
-      "level": 1969,
+      "level": 1973,
       "resets": 18,
       "vocation": "Exalted Monk",
       "nick": "",
@@ -518,7 +508,8 @@
         "2026-07-07-03": 18,
         "2026-07-07-07": 18,
         "2026-07-07-10": 18,
-        "2026-07-07-13": 18
+        "2026-07-07-13": 18,
+        "2026-07-07-15": 18
       },
       "stats": {
         "experience": 0,
@@ -541,7 +532,7 @@
     },
     {
       "name": "Adjr",
-      "level": 1048,
+      "level": 1213,
       "resets": 26,
       "vocation": "Elder Druid",
       "nick": "",
@@ -562,7 +553,8 @@
         "2026-07-07-03": 25,
         "2026-07-07-07": 25,
         "2026-07-07-10": 25,
-        "2026-07-07-13": 26
+        "2026-07-07-13": 26,
+        "2026-07-07-15": 26
       },
       "stats": {
         "experience": 0,
@@ -585,7 +577,7 @@
     },
     {
       "name": "Adolph Healer",
-      "level": 999,
+      "level": 998,
       "resets": 13,
       "vocation": "Elder Druid",
       "nick": "",
@@ -624,7 +616,8 @@
         "2026-07-07-03": 13,
         "2026-07-07-07": 13,
         "2026-07-07-10": 13,
-        "2026-07-07-13": 13
+        "2026-07-07-13": 13,
+        "2026-07-07-15": 13
       },
       "stats": {
         "experience": 0,
@@ -637,7 +630,13 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Jul 07, 2026 14:04",
+          "by": "Titan of Frost (monstro)",
+          "is_pvp": false
+        }
+      ],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -647,13 +646,17 @@
     },
     {
       "name": "Affey",
-      "level": 1315,
-      "resets": 26,
+      "level": 579,
+      "resets": 27,
       "vocation": "Royal Paladin",
       "nick": "",
       "status": "online",
       "rank": "Member",
       "reset_history": [
+        {
+          "resets": 27,
+          "time": "07/07/2026 15:52"
+        },
         {
           "resets": 26,
           "time": "05/07/2026 11:22"
@@ -677,10 +680,6 @@
         {
           "resets": 19,
           "time": "17/06/2026 20:13"
-        },
-        {
-          "resets": 18,
-          "time": "16/06/2026 15:24"
         }
       ],
       "hourly_snapshots": {
@@ -706,7 +705,8 @@
         "2026-07-07-03": 26,
         "2026-07-07-07": 26,
         "2026-07-07-10": 26,
-        "2026-07-07-13": 26
+        "2026-07-07-13": 26,
+        "2026-07-07-15": 27
       },
       "stats": {
         "experience": 0,
@@ -719,7 +719,13 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Jul 07, 2026 15:23",
+          "by": "a courage leech (monstro) Maior dano:                                                            a vibrant phantom",
+          "is_pvp": false
+        }
+      ],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -776,7 +782,8 @@
         "2026-07-07-03": 50,
         "2026-07-07-07": 50,
         "2026-07-07-10": 50,
-        "2026-07-07-13": 50
+        "2026-07-07-13": 50,
+        "2026-07-07-15": 50
       },
       "stats": {
         "experience": 0,
@@ -799,7 +806,7 @@
     },
     {
       "name": "Baiakudinho",
-      "level": 1031,
+      "level": 1073,
       "resets": 54,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -833,7 +840,8 @@
         "2026-07-07-03": 53,
         "2026-07-07-07": 54,
         "2026-07-07-10": 54,
-        "2026-07-07-13": 54
+        "2026-07-07-13": 54,
+        "2026-07-07-15": 54
       },
       "stats": {
         "experience": 0,
@@ -846,13 +854,7 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [
-        {
-          "time": "Jul 07, 2026 11:40",
-          "by": "a cursed juggernaut (monstro)",
-          "is_pvp": false
-        }
-      ],
+      "deaths": [],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -862,7 +864,7 @@
     },
     {
       "name": "Black Reaper",
-      "level": 1971,
+      "level": 1977,
       "resets": 26,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -871,7 +873,8 @@
       "reset_history": [],
       "hourly_snapshots": {
         "2026-07-07-10": 26,
-        "2026-07-07-13": 26
+        "2026-07-07-13": 26,
+        "2026-07-07-15": 26
       },
       "stats": {
         "experience": 0,
@@ -941,7 +944,8 @@
         "2026-07-07-03": 30,
         "2026-07-07-07": 30,
         "2026-07-07-10": 30,
-        "2026-07-07-13": 30
+        "2026-07-07-13": 30,
+        "2026-07-07-15": 30
       },
       "stats": {
         "experience": 0,
@@ -1019,7 +1023,8 @@
         "2026-07-07-03": 50,
         "2026-07-07-07": 50,
         "2026-07-07-10": 50,
-        "2026-07-07-13": 50
+        "2026-07-07-13": 50,
+        "2026-07-07-15": 50
       },
       "stats": {
         "experience": 0,
@@ -1042,7 +1047,7 @@
     },
     {
       "name": "Cerebro",
-      "level": 1579,
+      "level": 1619,
       "resets": 50,
       "vocation": "Elite Knight",
       "nick": "",
@@ -1101,7 +1106,8 @@
         "2026-07-07-03": 50,
         "2026-07-07-07": 50,
         "2026-07-07-10": 50,
-        "2026-07-07-13": 50
+        "2026-07-07-13": 50,
+        "2026-07-07-15": 50
       },
       "stats": {
         "experience": 0,
@@ -1115,16 +1121,16 @@
         "fishing": 0
       },
       "deaths": [],
-      "pvp_kills_total": 7,
-      "pvp_kills_today": 2,
-      "pvp_kills_week": 2,
+      "pvp_kills_total": 8,
+      "pvp_kills_today": 3,
+      "pvp_kills_week": 3,
       "war_kills": 0,
       "war_kills_day": 0,
       "war_kills_week": 0
     },
     {
       "name": "Cheiro Dpneu",
-      "level": 1346,
+      "level": 1374,
       "resets": 37,
       "vocation": "Elder Druid",
       "nick": "",
@@ -1163,7 +1169,8 @@
         "2026-07-07-03": 37,
         "2026-07-07-07": 37,
         "2026-07-07-10": 37,
-        "2026-07-07-13": 37
+        "2026-07-07-13": 37,
+        "2026-07-07-15": 37
       },
       "stats": {
         "experience": 0,
@@ -1245,7 +1252,8 @@
         "2026-07-07-03": 50,
         "2026-07-07-07": 50,
         "2026-07-07-10": 50,
-        "2026-07-07-13": 50
+        "2026-07-07-13": 50,
+        "2026-07-07-15": 50
       },
       "stats": {
         "experience": 0,
@@ -1268,7 +1276,7 @@
     },
     {
       "name": "Dmonick",
-      "level": 926,
+      "level": 1068,
       "resets": 51,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -1327,7 +1335,8 @@
         "2026-07-07-03": 50,
         "2026-07-07-07": 50,
         "2026-07-07-10": 50,
-        "2026-07-07-13": 51
+        "2026-07-07-13": 51,
+        "2026-07-07-15": 51
       },
       "stats": {
         "experience": 0,
@@ -1340,18 +1349,7 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [
-        {
-          "time": "Jul 07, 2026 12:19",
-          "by": "a bony sea devil (monstro)",
-          "is_pvp": false
-        },
-        {
-          "time": "Jul 07, 2026 11:55",
-          "by": "a bony sea devil (monstro) Maior dano:                                                            a turbulent elemental",
-          "is_pvp": false
-        }
-      ],
+      "deaths": [],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -1361,7 +1359,7 @@
     },
     {
       "name": "Dvn Luktzeraah",
-      "level": 1620,
+      "level": 1670,
       "resets": 46,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -1395,7 +1393,8 @@
         "2026-07-07-03": 46,
         "2026-07-07-07": 46,
         "2026-07-07-10": 46,
-        "2026-07-07-13": 46
+        "2026-07-07-13": 46,
+        "2026-07-07-15": 46
       },
       "stats": {
         "experience": 0,
@@ -1418,13 +1417,17 @@
     },
     {
       "name": "Elder Lougon",
-      "level": 803,
-      "resets": 21,
+      "level": 570,
+      "resets": 22,
       "vocation": "Elder Druid",
       "nick": "",
       "status": "online",
       "rank": "Member",
       "reset_history": [
+        {
+          "resets": 22,
+          "time": "07/07/2026 15:52"
+        },
         {
           "resets": 21,
           "time": "06/07/2026 23:26"
@@ -1469,7 +1472,8 @@
         "2026-07-07-03": 21,
         "2026-07-07-07": 21,
         "2026-07-07-10": 21,
-        "2026-07-07-13": 21
+        "2026-07-07-13": 21,
+        "2026-07-07-15": 22
       },
       "stats": {
         "experience": 0,
@@ -1522,7 +1526,8 @@
         "2026-07-07-03": 36,
         "2026-07-07-07": 36,
         "2026-07-07-10": 36,
-        "2026-07-07-13": 36
+        "2026-07-07-13": 36,
+        "2026-07-07-15": 36
       },
       "stats": {
         "experience": 0,
@@ -1575,7 +1580,8 @@
         "2026-07-07-03": 62,
         "2026-07-07-07": 62,
         "2026-07-07-10": 62,
-        "2026-07-07-13": 62
+        "2026-07-07-13": 62,
+        "2026-07-07-15": 62
       },
       "stats": {
         "experience": 0,
@@ -1589,9 +1595,9 @@
         "fishing": 0
       },
       "deaths": [],
-      "pvp_kills_total": 7,
-      "pvp_kills_today": 6,
-      "pvp_kills_week": 6,
+      "pvp_kills_total": 11,
+      "pvp_kills_today": 10,
+      "pvp_kills_week": 10,
       "war_kills": 0,
       "war_kills_day": 0,
       "war_kills_week": 0
@@ -1657,7 +1663,8 @@
         "2026-07-07-03": 50,
         "2026-07-07-07": 50,
         "2026-07-07-10": 50,
-        "2026-07-07-13": 50
+        "2026-07-07-13": 50,
+        "2026-07-07-15": 50
       },
       "stats": {
         "experience": 0,
@@ -1680,13 +1687,17 @@
     },
     {
       "name": "Guidao Palao",
-      "level": 2001,
-      "resets": 44,
+      "level": 765,
+      "resets": 45,
       "vocation": "Royal Paladin",
       "nick": "",
       "status": "online",
       "rank": "Member",
       "reset_history": [
+        {
+          "resets": 45,
+          "time": "07/07/2026 15:52"
+        },
         {
           "resets": 44,
           "time": "05/07/2026 11:22"
@@ -1710,10 +1721,6 @@
         {
           "resets": 37,
           "time": "23/06/2026 22:54"
-        },
-        {
-          "resets": 36,
-          "time": "21/06/2026 21:02"
         }
       ],
       "hourly_snapshots": {
@@ -1739,7 +1746,8 @@
         "2026-07-07-03": 44,
         "2026-07-07-07": 44,
         "2026-07-07-10": 44,
-        "2026-07-07-13": 44
+        "2026-07-07-13": 44,
+        "2026-07-07-15": 45
       },
       "stats": {
         "experience": 0,
@@ -1801,7 +1809,8 @@
         "2026-07-07-03": 52,
         "2026-07-07-07": 52,
         "2026-07-07-10": 52,
-        "2026-07-07-13": 52
+        "2026-07-07-13": 52,
+        "2026-07-07-15": 52
       },
       "stats": {
         "experience": 0,
@@ -1824,7 +1833,7 @@
     },
     {
       "name": "Its Gui",
-      "level": 1059,
+      "level": 1106,
       "resets": 39,
       "vocation": "Elder Druid",
       "nick": "",
@@ -1867,7 +1876,8 @@
         "2026-07-07-03": 39,
         "2026-07-07-07": 39,
         "2026-07-07-10": 39,
-        "2026-07-07-13": 39
+        "2026-07-07-13": 39,
+        "2026-07-07-15": 39
       },
       "stats": {
         "experience": 0,
@@ -1890,7 +1900,7 @@
     },
     {
       "name": "Jhonnys Trembolizado",
-      "level": 1692,
+      "level": 1745,
       "resets": 79,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -1928,7 +1938,8 @@
         "2026-07-07-03": 79,
         "2026-07-07-07": 79,
         "2026-07-07-10": 79,
-        "2026-07-07-13": 79
+        "2026-07-07-13": 79,
+        "2026-07-07-15": 79
       },
       "stats": {
         "experience": 0,
@@ -1941,13 +1952,7 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [
-        {
-          "time": "Jul 07, 2026 11:47",
-          "by": "a darklight striker (monstro)",
-          "is_pvp": false
-        }
-      ],
+      "deaths": [],
       "pvp_kills_total": 2,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -1957,7 +1962,7 @@
     },
     {
       "name": "Kev",
-      "level": 1037,
+      "level": 1062,
       "resets": 25,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -2012,7 +2017,8 @@
         "2026-07-07-03": 25,
         "2026-07-07-07": 25,
         "2026-07-07-10": 25,
-        "2026-07-07-13": 25
+        "2026-07-07-13": 25,
+        "2026-07-07-15": 25
       },
       "stats": {
         "experience": 0,
@@ -2035,7 +2041,7 @@
     },
     {
       "name": "Kiel",
-      "level": 1355,
+      "level": 1440,
       "resets": 60,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -2094,7 +2100,8 @@
         "2026-07-07-03": 60,
         "2026-07-07-07": 60,
         "2026-07-07-10": 60,
-        "2026-07-07-13": 60
+        "2026-07-07-13": 60,
+        "2026-07-07-15": 60
       },
       "stats": {
         "experience": 0,
@@ -2117,7 +2124,7 @@
     },
     {
       "name": "Kolwaski",
-      "level": 1011,
+      "level": 1064,
       "resets": 46,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -2168,7 +2175,8 @@
         "2026-07-07-03": 45,
         "2026-07-07-07": 45,
         "2026-07-07-10": 46,
-        "2026-07-07-13": 46
+        "2026-07-07-13": 46,
+        "2026-07-07-15": 46
       },
       "stats": {
         "experience": 0,
@@ -2191,7 +2199,7 @@
     },
     {
       "name": "Lilian Faithkeeper",
-      "level": 1406,
+      "level": 1511,
       "resets": 30,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -2250,7 +2258,8 @@
         "2026-07-07-03": 30,
         "2026-07-07-07": 30,
         "2026-07-07-10": 30,
-        "2026-07-07-13": 30
+        "2026-07-07-13": 30,
+        "2026-07-07-15": 30
       },
       "stats": {
         "experience": 0,
@@ -2265,8 +2274,8 @@
       },
       "deaths": [
         {
-          "time": "Jul 07, 2026 12:00",
-          "by": "Nibbles (monstro)",
+          "time": "Jul 07, 2026 14:52",
+          "by": "field item (monstro)",
           "is_pvp": false
         }
       ],
@@ -2279,7 +2288,7 @@
     },
     {
       "name": "Lipe Knight",
-      "level": 1199,
+      "level": 1212,
       "resets": 47,
       "vocation": "Elite Knight",
       "nick": "",
@@ -2338,7 +2347,8 @@
         "2026-07-07-03": 47,
         "2026-07-07-07": 47,
         "2026-07-07-10": 47,
-        "2026-07-07-13": 47
+        "2026-07-07-13": 47,
+        "2026-07-07-15": 47
       },
       "stats": {
         "experience": 0,
@@ -2361,7 +2371,7 @@
     },
     {
       "name": "Lotus Lothbrook",
-      "level": 1179,
+      "level": 1211,
       "resets": 29,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -2420,7 +2430,8 @@
         "2026-07-07-03": 29,
         "2026-07-07-07": 29,
         "2026-07-07-10": 29,
-        "2026-07-07-13": 29
+        "2026-07-07-13": 29,
+        "2026-07-07-15": 29
       },
       "stats": {
         "experience": 0,
@@ -2443,7 +2454,7 @@
     },
     {
       "name": "Lougon Baiakeiro",
-      "level": 1750,
+      "level": 1787,
       "resets": 30,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -2486,7 +2497,8 @@
         "2026-07-07-03": 30,
         "2026-07-07-07": 30,
         "2026-07-07-10": 30,
-        "2026-07-07-13": 30
+        "2026-07-07-13": 30,
+        "2026-07-07-15": 30
       },
       "stats": {
         "experience": 0,
@@ -2509,7 +2521,7 @@
     },
     {
       "name": "Lukitas Brokenzada",
-      "level": 1717,
+      "level": 1733,
       "resets": 40,
       "vocation": "Elder Druid",
       "nick": "",
@@ -2560,7 +2572,8 @@
         "2026-07-07-03": 40,
         "2026-07-07-07": 40,
         "2026-07-07-10": 40,
-        "2026-07-07-13": 40
+        "2026-07-07-13": 40,
+        "2026-07-07-15": 40
       },
       "stats": {
         "experience": 0,
@@ -2642,7 +2655,8 @@
         "2026-07-07-03": 50,
         "2026-07-07-07": 50,
         "2026-07-07-10": 50,
-        "2026-07-07-13": 50
+        "2026-07-07-13": 50,
+        "2026-07-07-15": 50
       },
       "stats": {
         "experience": 0,
@@ -2665,7 +2679,7 @@
     },
     {
       "name": "Melbiss",
-      "level": 1785,
+      "level": 1797,
       "resets": 42,
       "vocation": "Elite Knight",
       "nick": "",
@@ -2724,7 +2738,8 @@
         "2026-07-07-03": 42,
         "2026-07-07-07": 42,
         "2026-07-07-10": 42,
-        "2026-07-07-13": 42
+        "2026-07-07-13": 42,
+        "2026-07-07-15": 42
       },
       "stats": {
         "experience": 0,
@@ -2747,7 +2762,7 @@
     },
     {
       "name": "Monstro Das Criptos",
-      "level": 241,
+      "level": 1092,
       "resets": 52,
       "vocation": "Elder Druid",
       "nick": "",
@@ -2806,7 +2821,8 @@
         "2026-07-07-03": 51,
         "2026-07-07-07": 51,
         "2026-07-07-10": 51,
-        "2026-07-07-13": 52
+        "2026-07-07-13": 52,
+        "2026-07-07-15": 52
       },
       "stats": {
         "experience": 0,
@@ -2819,7 +2835,18 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Jul 07, 2026 15:31",
+          "by": "a sabretooth (monstro) Maior dano:                                                            an emerald tortoise",
+          "is_pvp": false
+        },
+        {
+          "time": "Jul 07, 2026 14:20",
+          "by": "a hulking prehemoth (monstro)",
+          "is_pvp": false
+        }
+      ],
       "pvp_kills_total": 4,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -2829,7 +2856,7 @@
     },
     {
       "name": "Nagato Sorcerer",
-      "level": 1191,
+      "level": 1201,
       "resets": 30,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -2888,7 +2915,8 @@
         "2026-07-07-03": 30,
         "2026-07-07-07": 30,
         "2026-07-07-10": 30,
-        "2026-07-07-13": 30
+        "2026-07-07-13": 30,
+        "2026-07-07-15": 30
       },
       "stats": {
         "experience": 0,
@@ -2970,7 +2998,8 @@
         "2026-07-07-03": 55,
         "2026-07-07-07": 55,
         "2026-07-07-10": 55,
-        "2026-07-07-13": 55
+        "2026-07-07-13": 55,
+        "2026-07-07-15": 55
       },
       "stats": {
         "experience": 0,
@@ -3018,7 +3047,8 @@
         "2026-07-07-03": 33,
         "2026-07-07-07": 33,
         "2026-07-07-10": 33,
-        "2026-07-07-13": 33
+        "2026-07-07-13": 33,
+        "2026-07-07-15": 33
       },
       "stats": {
         "experience": 0,
@@ -3041,7 +3071,7 @@
     },
     {
       "name": "Red Hahaha",
-      "level": 1226,
+      "level": 1257,
       "resets": 26,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -3076,7 +3106,8 @@
         "2026-07-07-03": 26,
         "2026-07-07-07": 26,
         "2026-07-07-10": 26,
-        "2026-07-07-13": 26
+        "2026-07-07-13": 26,
+        "2026-07-07-15": 26
       },
       "stats": {
         "experience": 0,
@@ -3099,13 +3130,17 @@
     },
     {
       "name": "Roginho",
-      "level": 1392,
-      "resets": 35,
+      "level": 8,
+      "resets": 36,
       "vocation": "Master Sorcerer",
       "nick": "",
       "status": "online",
       "rank": "Member",
       "reset_history": [
+        {
+          "resets": 36,
+          "time": "07/07/2026 15:52"
+        },
         {
           "resets": 35,
           "time": "06/07/2026 03:13"
@@ -3142,7 +3177,8 @@
         "2026-07-07-03": 35,
         "2026-07-07-07": 35,
         "2026-07-07-10": 35,
-        "2026-07-07-13": 35
+        "2026-07-07-13": 35,
+        "2026-07-07-15": 36
       },
       "stats": {
         "experience": 0,
@@ -3220,7 +3256,8 @@
         "2026-07-07-03": 33,
         "2026-07-07-07": 33,
         "2026-07-07-10": 33,
-        "2026-07-07-13": 33
+        "2026-07-07-13": 33,
+        "2026-07-07-15": 33
       },
       "stats": {
         "experience": 0,
@@ -3273,7 +3310,8 @@
         "2026-07-07-03": 25,
         "2026-07-07-07": 25,
         "2026-07-07-10": 25,
-        "2026-07-07-13": 25
+        "2026-07-07-13": 25,
+        "2026-07-07-15": 25
       },
       "stats": {
         "experience": 0,
@@ -3296,7 +3334,7 @@
     },
     {
       "name": "Vinizerah On Amonot",
-      "level": 1253,
+      "level": 1283,
       "resets": 33,
       "vocation": "Elder Druid",
       "nick": "",
@@ -3343,7 +3381,8 @@
         "2026-07-07-03": 33,
         "2026-07-07-07": 33,
         "2026-07-07-10": 33,
-        "2026-07-07-13": 33
+        "2026-07-07-13": 33,
+        "2026-07-07-15": 33
       },
       "stats": {
         "experience": 0,
@@ -3401,7 +3440,8 @@
         "2026-07-07-03": 20,
         "2026-07-07-07": 20,
         "2026-07-07-10": 20,
-        "2026-07-07-13": 20
+        "2026-07-07-13": 20,
+        "2026-07-07-15": 20
       },
       "stats": {
         "experience": 0,
@@ -3454,7 +3494,8 @@
         "2026-07-07-03": 50,
         "2026-07-07-07": 50,
         "2026-07-07-10": 50,
-        "2026-07-07-13": 50
+        "2026-07-07-13": 50,
+        "2026-07-07-15": 50
       },
       "stats": {
         "experience": 0,
@@ -3477,7 +3518,7 @@
     },
     {
       "name": "Xeipe",
-      "level": 1463,
+      "level": 1626,
       "resets": 26,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -3532,7 +3573,8 @@
         "2026-07-07-03": 26,
         "2026-07-07-07": 26,
         "2026-07-07-10": 26,
-        "2026-07-07-13": 26
+        "2026-07-07-13": 26,
+        "2026-07-07-15": 26
       },
       "stats": {
         "experience": 0,
@@ -3545,7 +3587,13 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Jul 07, 2026 15:44",
+          "by": "a mercurial menace (monstro)",
+          "is_pvp": false
+        }
+      ],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -3555,7 +3603,7 @@
     },
     {
       "name": "Ynhaca Purah",
-      "level": 1742,
+      "level": 1839,
       "resets": 54,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -3614,7 +3662,8 @@
         "2026-07-07-03": 54,
         "2026-07-07-07": 54,
         "2026-07-07-10": 54,
-        "2026-07-07-13": 54
+        "2026-07-07-13": 54,
+        "2026-07-07-15": 54
       },
       "stats": {
         "experience": 0,
@@ -3637,7 +3686,7 @@
     },
     {
       "name": "Zap Seco",
-      "level": 1000,
+      "level": 1015,
       "resets": 21,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -3696,7 +3745,8 @@
         "2026-07-07-03": 21,
         "2026-07-07-07": 21,
         "2026-07-07-10": 21,
-        "2026-07-07-13": 21
+        "2026-07-07-13": 21,
+        "2026-07-07-15": 21
       },
       "stats": {
         "experience": 0,
@@ -3778,7 +3828,8 @@
         "2026-07-07-03": 37,
         "2026-07-07-07": 37,
         "2026-07-07-10": 37,
-        "2026-07-07-13": 37
+        "2026-07-07-13": 37,
+        "2026-07-07-15": 37
       },
       "stats": {
         "experience": 0,
@@ -3852,7 +3903,8 @@
         "2026-07-07-03": 30,
         "2026-07-07-07": 30,
         "2026-07-07-10": 30,
-        "2026-07-07-13": 30
+        "2026-07-07-13": 30,
+        "2026-07-07-15": 30
       },
       "stats": {
         "experience": 0,
@@ -3934,7 +3986,8 @@
         "2026-07-07-03": 26,
         "2026-07-07-07": 26,
         "2026-07-07-10": 26,
-        "2026-07-07-13": 26
+        "2026-07-07-13": 26,
+        "2026-07-07-15": 26
       },
       "stats": {
         "experience": 0,
@@ -4016,7 +4069,8 @@
         "2026-07-07-03": 32,
         "2026-07-07-07": 32,
         "2026-07-07-10": 32,
-        "2026-07-07-13": 32
+        "2026-07-07-13": 32,
+        "2026-07-07-15": 32
       },
       "stats": {
         "experience": 0,
@@ -4090,7 +4144,8 @@
         "2026-07-07-03": 40,
         "2026-07-07-07": 40,
         "2026-07-07-10": 40,
-        "2026-07-07-13": 40
+        "2026-07-07-13": 40,
+        "2026-07-07-15": 40
       },
       "stats": {
         "experience": 0,
@@ -4172,7 +4227,8 @@
         "2026-07-07-03": 47,
         "2026-07-07-07": 47,
         "2026-07-07-10": 47,
-        "2026-07-07-13": 47
+        "2026-07-07-13": 47,
+        "2026-07-07-15": 47
       },
       "stats": {
         "experience": 0,
@@ -4250,7 +4306,8 @@
         "2026-07-07-03": 13,
         "2026-07-07-07": 13,
         "2026-07-07-10": 13,
-        "2026-07-07-13": 13
+        "2026-07-07-13": 13,
+        "2026-07-07-15": 13
       },
       "stats": {
         "experience": 0,
@@ -4332,7 +4389,8 @@
         "2026-07-07-03": 23,
         "2026-07-07-07": 23,
         "2026-07-07-10": 23,
-        "2026-07-07-13": 23
+        "2026-07-07-13": 23,
+        "2026-07-07-15": 23
       },
       "stats": {
         "experience": 0,
@@ -4414,7 +4472,8 @@
         "2026-07-07-03": 32,
         "2026-07-07-07": 32,
         "2026-07-07-10": 32,
-        "2026-07-07-13": 32
+        "2026-07-07-13": 32,
+        "2026-07-07-15": 32
       },
       "stats": {
         "experience": 0,
@@ -4488,7 +4547,8 @@
         "2026-07-07-03": 28,
         "2026-07-07-07": 28,
         "2026-07-07-10": 28,
-        "2026-07-07-13": 28
+        "2026-07-07-13": 28,
+        "2026-07-07-15": 28
       },
       "stats": {
         "experience": 0,
@@ -4554,7 +4614,8 @@
         "2026-07-07-03": 27,
         "2026-07-07-07": 27,
         "2026-07-07-10": 27,
-        "2026-07-07-13": 27
+        "2026-07-07-13": 27,
+        "2026-07-07-15": 27
       },
       "stats": {
         "experience": 0,
@@ -4636,7 +4697,8 @@
         "2026-07-07-03": 53,
         "2026-07-07-07": 53,
         "2026-07-07-10": 53,
-        "2026-07-07-13": 53
+        "2026-07-07-13": 53,
+        "2026-07-07-15": 53
       },
       "stats": {
         "experience": 0,
@@ -4714,7 +4776,8 @@
         "2026-07-07-03": 24,
         "2026-07-07-07": 24,
         "2026-07-07-10": 24,
-        "2026-07-07-13": 24
+        "2026-07-07-13": 24,
+        "2026-07-07-15": 24
       },
       "stats": {
         "experience": 0,
@@ -4776,7 +4839,8 @@
         "2026-07-07-03": 10,
         "2026-07-07-07": 10,
         "2026-07-07-10": 10,
-        "2026-07-07-13": 10
+        "2026-07-07-13": 10,
+        "2026-07-07-15": 10
       },
       "stats": {
         "experience": 0,
@@ -4846,7 +4910,8 @@
         "2026-07-07-03": 26,
         "2026-07-07-07": 26,
         "2026-07-07-10": 26,
-        "2026-07-07-13": 26
+        "2026-07-07-13": 26,
+        "2026-07-07-15": 26
       },
       "stats": {
         "experience": 0,
@@ -4928,7 +4993,8 @@
         "2026-07-07-03": 34,
         "2026-07-07-07": 34,
         "2026-07-07-10": 34,
-        "2026-07-07-13": 34
+        "2026-07-07-13": 34,
+        "2026-07-07-15": 34
       },
       "stats": {
         "experience": 0,
@@ -5010,7 +5076,8 @@
         "2026-07-07-03": 30,
         "2026-07-07-07": 30,
         "2026-07-07-10": 30,
-        "2026-07-07-13": 30
+        "2026-07-07-13": 30,
+        "2026-07-07-15": 30
       },
       "stats": {
         "experience": 0,
@@ -5072,7 +5139,8 @@
         "2026-07-07-03": 31,
         "2026-07-07-07": 31,
         "2026-07-07-10": 31,
-        "2026-07-07-13": 31
+        "2026-07-07-13": 31,
+        "2026-07-07-15": 31
       },
       "stats": {
         "experience": 0,
@@ -5154,7 +5222,8 @@
         "2026-07-07-03": 46,
         "2026-07-07-07": 46,
         "2026-07-07-10": 46,
-        "2026-07-07-13": 46
+        "2026-07-07-13": 46,
+        "2026-07-07-15": 46
       },
       "stats": {
         "experience": 0,
@@ -5207,7 +5276,8 @@
         "2026-07-07-03": 7,
         "2026-07-07-07": 7,
         "2026-07-07-10": 7,
-        "2026-07-07-13": 7
+        "2026-07-07-13": 7,
+        "2026-07-07-15": 7
       },
       "stats": {
         "experience": 0,
@@ -5289,7 +5359,8 @@
         "2026-07-07-03": 32,
         "2026-07-07-07": 32,
         "2026-07-07-10": 32,
-        "2026-07-07-13": 32
+        "2026-07-07-13": 32,
+        "2026-07-07-15": 32
       },
       "stats": {
         "experience": 0,
@@ -5314,9 +5385,9 @@
   "resets_today": [
     {
       "name": "Elder Lougon",
-      "resets": 21,
-      "resets_gained": 2,
-      "resets_7d": 7,
+      "resets": 22,
+      "resets_gained": 3,
+      "resets_7d": 8,
       "vocation": "Elder Druid"
     },
     {
@@ -5334,6 +5405,13 @@
       "vocation": "Elder Druid"
     },
     {
+      "name": "Affey",
+      "resets": 27,
+      "resets_gained": 1,
+      "resets_7d": 2,
+      "vocation": "Royal Paladin"
+    },
+    {
       "name": "Baiakudinho",
       "resets": 54,
       "resets_gained": 1,
@@ -5341,18 +5419,18 @@
       "vocation": "Royal Paladin"
     },
     {
-      "name": "Cheiro Dpneu",
-      "resets": 37,
-      "resets_gained": 1,
-      "resets_7d": 3,
-      "vocation": "Elder Druid"
-    },
-    {
       "name": "Dmonick",
       "resets": 51,
       "resets_gained": 1,
       "resets_7d": 1,
       "vocation": "Master Sorcerer"
+    },
+    {
+      "name": "Guidao Palao",
+      "resets": 45,
+      "resets_gained": 1,
+      "resets_7d": 2,
+      "vocation": "Royal Paladin"
     },
     {
       "name": "Its Gui",
@@ -5404,11 +5482,11 @@
       "vocation": "Elite Knight"
     },
     {
-      "name": "Red Hahaha",
-      "resets": 26,
+      "name": "Roginho",
+      "resets": 36,
       "resets_gained": 1,
-      "resets_7d": 1,
-      "vocation": "Royal Paladin"
+      "resets_7d": 5,
+      "vocation": "Master Sorcerer"
     },
     {
       "name": "Vinizerah On Amonot",
@@ -5446,18 +5524,18 @@
       "vocation": "Elder Druid"
     },
     {
-      "name": "Affey",
-      "resets": 26,
-      "resets_gained": 0,
-      "resets_7d": 1,
-      "vocation": "Royal Paladin"
-    },
-    {
       "name": "Cerebro",
       "resets": 50,
       "resets_gained": 0,
       "resets_7d": 1,
       "vocation": "Elite Knight"
+    },
+    {
+      "name": "Cheiro Dpneu",
+      "resets": 37,
+      "resets_gained": 0,
+      "resets_7d": 3,
+      "vocation": "Elder Druid"
     },
     {
       "name": "Diegao Barba",
@@ -5469,13 +5547,6 @@
     {
       "name": "Dvn Luktzeraah",
       "resets": 46,
-      "resets_gained": 0,
-      "resets_7d": 1,
-      "vocation": "Royal Paladin"
-    },
-    {
-      "name": "Guidao Palao",
-      "resets": 44,
       "resets_gained": 0,
       "resets_7d": 1,
       "vocation": "Royal Paladin"
@@ -5516,11 +5587,11 @@
       "vocation": "Master Sorcerer"
     },
     {
-      "name": "Roginho",
-      "resets": 35,
+      "name": "Red Hahaha",
+      "resets": 26,
       "resets_gained": 0,
-      "resets_7d": 4,
-      "vocation": "Master Sorcerer"
+      "resets_7d": 1,
+      "vocation": "Royal Paladin"
     },
     {
       "name": "Xeipe",
@@ -5559,7 +5630,7 @@
         {
           "name": "Jhonnys Trembolizado",
           "value": 79,
-          "level": 1692,
+          "level": 1745,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -5580,7 +5651,7 @@
         {
           "name": "Kiel",
           "value": 60,
-          "level": 1355,
+          "level": 1440,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
@@ -5601,7 +5672,7 @@
         {
           "name": "Gizao",
           "value": 56,
-          "level": 922,
+          "level": 1169,
           "vocation": "Royal Paladin",
           "guild_rank": 7
         },
@@ -5615,14 +5686,14 @@
         {
           "name": "Baiakudinho",
           "value": 54,
-          "level": 1031,
+          "level": 1073,
           "vocation": "Royal Paladin",
           "guild_rank": 9
         },
         {
           "name": "Ynhaca Purah",
           "value": 54,
-          "level": 1742,
+          "level": 1839,
           "vocation": "Master Sorcerer",
           "guild_rank": 10
         },
@@ -5643,14 +5714,14 @@
         {
           "name": "Monstro Das Criptos",
           "value": 52,
-          "level": 241,
+          "level": 1092,
           "vocation": "Elder Druid",
           "guild_rank": 13
         },
         {
           "name": "Dmonick",
           "value": 51,
-          "level": 926,
+          "level": 1068,
           "vocation": "Master Sorcerer",
           "guild_rank": 14
         },
@@ -5685,7 +5756,7 @@
         {
           "name": "Cerebro",
           "value": 50,
-          "level": 1579,
+          "level": 1619,
           "vocation": "Elite Knight",
           "guild_rank": 19
         },
@@ -5720,7 +5791,7 @@
         {
           "name": "Lipe Knight",
           "value": 47,
-          "level": 1199,
+          "level": 1212,
           "vocation": "Elite Knight",
           "guild_rank": 24
         },
@@ -5734,14 +5805,14 @@
         {
           "name": "Dvn Luktzeraah",
           "value": 46,
-          "level": 1620,
+          "level": 1670,
           "vocation": "Royal Paladin",
           "guild_rank": 26
         },
         {
           "name": "Kolwaski",
           "value": 46,
-          "level": 1011,
+          "level": 1064,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
@@ -5754,22 +5825,22 @@
         },
         {
           "name": "Guidao Palao",
-          "value": 44,
-          "level": 2001,
+          "value": 45,
+          "level": 765,
           "vocation": "Royal Paladin",
           "guild_rank": 29
         },
         {
           "name": "Melbiss",
           "value": 42,
-          "level": 1785,
+          "level": 1797,
           "vocation": "Elite Knight",
           "guild_rank": 30
         },
         {
           "name": "Lukitas Brokenzada",
           "value": 40,
-          "level": 1717,
+          "level": 1733,
           "vocation": "Elder Druid",
           "guild_rank": 31
         },
@@ -5783,14 +5854,14 @@
         {
           "name": "Its Gui",
           "value": 39,
-          "level": 1059,
+          "level": 1106,
           "vocation": "Elder Druid",
           "guild_rank": 33
         },
         {
           "name": "Cheiro Dpneu",
           "value": 37,
-          "level": 1346,
+          "level": 1374,
           "vocation": "Elder Druid",
           "guild_rank": 34
         },
@@ -5810,8 +5881,8 @@
         },
         {
           "name": "Roginho",
-          "value": 35,
-          "level": 1392,
+          "value": 36,
+          "level": 8,
           "vocation": "Master Sorcerer",
           "guild_rank": 37
         },
@@ -5839,7 +5910,7 @@
         {
           "name": "Vinizerah On Amonot",
           "value": 33,
-          "level": 1253,
+          "level": 1283,
           "vocation": "Elder Druid",
           "guild_rank": 41
         },
@@ -5881,21 +5952,21 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 30,
-          "level": 1406,
+          "level": 1511,
           "vocation": "Royal Paladin",
           "guild_rank": 47
         },
         {
           "name": "Lougon Baiakeiro",
           "value": 30,
-          "level": 1750,
+          "level": 1787,
           "vocation": "Master Sorcerer",
           "guild_rank": 48
         },
         {
           "name": "Nagato Sorcerer",
           "value": 30,
-          "level": 1191,
+          "level": 1201,
           "vocation": "Master Sorcerer",
           "guild_rank": 49
         },
@@ -5916,7 +5987,7 @@
         {
           "name": "Lotus Lothbrook",
           "value": 29,
-          "level": 1179,
+          "level": 1211,
           "vocation": "Royal Paladin",
           "guild_rank": 52
         },
@@ -5928,44 +5999,44 @@
           "guild_rank": 53
         },
         {
+          "name": "Affey",
+          "value": 27,
+          "level": 579,
+          "vocation": "Royal Paladin",
+          "guild_rank": 54
+        },
+        {
           "name": "Ljxiv",
           "value": 27,
           "level": 1420,
           "vocation": "Elite Knight",
-          "guild_rank": 54
+          "guild_rank": 55
         },
         {
           "name": "Adjr",
           "value": 26,
-          "level": 1048,
+          "level": 1213,
           "vocation": "Elder Druid",
-          "guild_rank": 55
-        },
-        {
-          "name": "Affey",
-          "value": 26,
-          "level": 1315,
-          "vocation": "Royal Paladin",
           "guild_rank": 56
         },
         {
           "name": "Black Reaper",
           "value": 26,
-          "level": 1971,
+          "level": 1977,
           "vocation": "Royal Paladin",
           "guild_rank": 57
         },
         {
           "name": "Red Hahaha",
           "value": 26,
-          "level": 1226,
+          "level": 1257,
           "vocation": "Royal Paladin",
           "guild_rank": 58
         },
         {
           "name": "Xeipe",
           "value": 26,
-          "level": 1463,
+          "level": 1626,
           "vocation": "Royal Paladin",
           "guild_rank": 59
         },
@@ -5986,7 +6057,7 @@
         {
           "name": "Kev",
           "value": 25,
-          "level": 1037,
+          "level": 1062,
           "vocation": "Royal Paladin",
           "guild_rank": 62
         },
@@ -6013,15 +6084,15 @@
         },
         {
           "name": "Elder Lougon",
-          "value": 21,
-          "level": 803,
+          "value": 22,
+          "level": 570,
           "vocation": "Elder Druid",
           "guild_rank": 66
         },
         {
           "name": "Zap Seco",
           "value": 21,
-          "level": 1000,
+          "level": 1015,
           "vocation": "Master Sorcerer",
           "guild_rank": 67
         },
@@ -6035,14 +6106,14 @@
         {
           "name": "Achilles",
           "value": 18,
-          "level": 1969,
+          "level": 1973,
           "vocation": "Exalted Monk",
           "guild_rank": 69
         },
         {
           "name": "Adolph Healer",
           "value": 13,
-          "level": 999,
+          "level": 998,
           "vocation": "Elder Druid",
           "guild_rank": 70
         },
@@ -6083,7 +6154,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 922,
+          "level": 1169,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -6118,28 +6189,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1969,
+          "level": 1973,
           "vocation": "Exalted Monk",
           "guild_rank": 7
         },
         {
           "name": "Adjr",
           "value": 0,
-          "level": 1048,
+          "level": 1213,
           "vocation": "Elder Druid",
           "guild_rank": 8
         },
         {
           "name": "Adolph Healer",
           "value": 0,
-          "level": 999,
+          "level": 998,
           "vocation": "Elder Druid",
           "guild_rank": 9
         },
         {
           "name": "Affey",
           "value": 0,
-          "level": 1315,
+          "level": 579,
           "vocation": "Royal Paladin",
           "guild_rank": 10
         },
@@ -6153,14 +6224,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1031,
+          "level": 1073,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Black Reaper",
           "value": 0,
-          "level": 1971,
+          "level": 1977,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -6181,14 +6252,14 @@
         {
           "name": "Cerebro",
           "value": 0,
-          "level": 1579,
+          "level": 1619,
           "vocation": "Elite Knight",
           "guild_rank": 16
         },
         {
           "name": "Cheiro Dpneu",
           "value": 0,
-          "level": 1346,
+          "level": 1374,
           "vocation": "Elder Druid",
           "guild_rank": 17
         },
@@ -6202,21 +6273,21 @@
         {
           "name": "Dmonick",
           "value": 0,
-          "level": 926,
+          "level": 1068,
           "vocation": "Master Sorcerer",
           "guild_rank": 19
         },
         {
           "name": "Dvn Luktzeraah",
           "value": 0,
-          "level": 1620,
+          "level": 1670,
           "vocation": "Royal Paladin",
           "guild_rank": 20
         },
         {
           "name": "Elder Lougon",
           "value": 0,
-          "level": 803,
+          "level": 570,
           "vocation": "Elder Druid",
           "guild_rank": 21
         },
@@ -6244,7 +6315,7 @@
         {
           "name": "Guidao Palao",
           "value": 0,
-          "level": 2001,
+          "level": 765,
           "vocation": "Royal Paladin",
           "guild_rank": 25
         },
@@ -6258,70 +6329,70 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1059,
+          "level": 1106,
           "vocation": "Elder Druid",
           "guild_rank": 27
         },
         {
           "name": "Jhonnys Trembolizado",
           "value": 0,
-          "level": 1692,
+          "level": 1745,
           "vocation": "Royal Paladin",
           "guild_rank": 28
         },
         {
           "name": "Kev",
           "value": 0,
-          "level": 1037,
+          "level": 1062,
           "vocation": "Royal Paladin",
           "guild_rank": 29
         },
         {
           "name": "Kiel",
           "value": 0,
-          "level": 1355,
+          "level": 1440,
           "vocation": "Royal Paladin",
           "guild_rank": 30
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1011,
+          "level": 1064,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1406,
+          "level": 1511,
           "vocation": "Royal Paladin",
           "guild_rank": 32
         },
         {
           "name": "Lipe Knight",
           "value": 0,
-          "level": 1199,
+          "level": 1212,
           "vocation": "Elite Knight",
           "guild_rank": 33
         },
         {
           "name": "Lotus Lothbrook",
           "value": 0,
-          "level": 1179,
+          "level": 1211,
           "vocation": "Royal Paladin",
           "guild_rank": 34
         },
         {
           "name": "Lougon Baiakeiro",
           "value": 0,
-          "level": 1750,
+          "level": 1787,
           "vocation": "Master Sorcerer",
           "guild_rank": 35
         },
         {
           "name": "Lukitas Brokenzada",
           "value": 0,
-          "level": 1717,
+          "level": 1733,
           "vocation": "Elder Druid",
           "guild_rank": 36
         },
@@ -6335,21 +6406,21 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1785,
+          "level": 1797,
           "vocation": "Elite Knight",
           "guild_rank": 38
         },
         {
           "name": "Monstro Das Criptos",
           "value": 0,
-          "level": 241,
+          "level": 1092,
           "vocation": "Elder Druid",
           "guild_rank": 39
         },
         {
           "name": "Nagato Sorcerer",
           "value": 0,
-          "level": 1191,
+          "level": 1201,
           "vocation": "Master Sorcerer",
           "guild_rank": 40
         },
@@ -6370,14 +6441,14 @@
         {
           "name": "Red Hahaha",
           "value": 0,
-          "level": 1226,
+          "level": 1257,
           "vocation": "Royal Paladin",
           "guild_rank": 43
         },
         {
           "name": "Roginho",
           "value": 0,
-          "level": 1392,
+          "level": 8,
           "vocation": "Master Sorcerer",
           "guild_rank": 44
         },
@@ -6398,7 +6469,7 @@
         {
           "name": "Vinizerah On Amonot",
           "value": 0,
-          "level": 1253,
+          "level": 1283,
           "vocation": "Elder Druid",
           "guild_rank": 47
         },
@@ -6419,21 +6490,21 @@
         {
           "name": "Xeipe",
           "value": 0,
-          "level": 1463,
+          "level": 1626,
           "vocation": "Royal Paladin",
           "guild_rank": 50
         },
         {
           "name": "Ynhaca Purah",
           "value": 0,
-          "level": 1742,
+          "level": 1839,
           "vocation": "Master Sorcerer",
           "guild_rank": 51
         },
         {
           "name": "Zap Seco",
           "value": 0,
-          "level": 1000,
+          "level": 1015,
           "vocation": "Master Sorcerer",
           "guild_rank": 52
         },
@@ -6600,7 +6671,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 922,
+          "level": 1169,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -6635,28 +6706,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1969,
+          "level": 1973,
           "vocation": "Exalted Monk",
           "guild_rank": 7
         },
         {
           "name": "Adjr",
           "value": 0,
-          "level": 1048,
+          "level": 1213,
           "vocation": "Elder Druid",
           "guild_rank": 8
         },
         {
           "name": "Adolph Healer",
           "value": 0,
-          "level": 999,
+          "level": 998,
           "vocation": "Elder Druid",
           "guild_rank": 9
         },
         {
           "name": "Affey",
           "value": 0,
-          "level": 1315,
+          "level": 579,
           "vocation": "Royal Paladin",
           "guild_rank": 10
         },
@@ -6670,14 +6741,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1031,
+          "level": 1073,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Black Reaper",
           "value": 0,
-          "level": 1971,
+          "level": 1977,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -6698,14 +6769,14 @@
         {
           "name": "Cerebro",
           "value": 0,
-          "level": 1579,
+          "level": 1619,
           "vocation": "Elite Knight",
           "guild_rank": 16
         },
         {
           "name": "Cheiro Dpneu",
           "value": 0,
-          "level": 1346,
+          "level": 1374,
           "vocation": "Elder Druid",
           "guild_rank": 17
         },
@@ -6719,21 +6790,21 @@
         {
           "name": "Dmonick",
           "value": 0,
-          "level": 926,
+          "level": 1068,
           "vocation": "Master Sorcerer",
           "guild_rank": 19
         },
         {
           "name": "Dvn Luktzeraah",
           "value": 0,
-          "level": 1620,
+          "level": 1670,
           "vocation": "Royal Paladin",
           "guild_rank": 20
         },
         {
           "name": "Elder Lougon",
           "value": 0,
-          "level": 803,
+          "level": 570,
           "vocation": "Elder Druid",
           "guild_rank": 21
         },
@@ -6761,7 +6832,7 @@
         {
           "name": "Guidao Palao",
           "value": 0,
-          "level": 2001,
+          "level": 765,
           "vocation": "Royal Paladin",
           "guild_rank": 25
         },
@@ -6775,70 +6846,70 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1059,
+          "level": 1106,
           "vocation": "Elder Druid",
           "guild_rank": 27
         },
         {
           "name": "Jhonnys Trembolizado",
           "value": 0,
-          "level": 1692,
+          "level": 1745,
           "vocation": "Royal Paladin",
           "guild_rank": 28
         },
         {
           "name": "Kev",
           "value": 0,
-          "level": 1037,
+          "level": 1062,
           "vocation": "Royal Paladin",
           "guild_rank": 29
         },
         {
           "name": "Kiel",
           "value": 0,
-          "level": 1355,
+          "level": 1440,
           "vocation": "Royal Paladin",
           "guild_rank": 30
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1011,
+          "level": 1064,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1406,
+          "level": 1511,
           "vocation": "Royal Paladin",
           "guild_rank": 32
         },
         {
           "name": "Lipe Knight",
           "value": 0,
-          "level": 1199,
+          "level": 1212,
           "vocation": "Elite Knight",
           "guild_rank": 33
         },
         {
           "name": "Lotus Lothbrook",
           "value": 0,
-          "level": 1179,
+          "level": 1211,
           "vocation": "Royal Paladin",
           "guild_rank": 34
         },
         {
           "name": "Lougon Baiakeiro",
           "value": 0,
-          "level": 1750,
+          "level": 1787,
           "vocation": "Master Sorcerer",
           "guild_rank": 35
         },
         {
           "name": "Lukitas Brokenzada",
           "value": 0,
-          "level": 1717,
+          "level": 1733,
           "vocation": "Elder Druid",
           "guild_rank": 36
         },
@@ -6852,21 +6923,21 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1785,
+          "level": 1797,
           "vocation": "Elite Knight",
           "guild_rank": 38
         },
         {
           "name": "Monstro Das Criptos",
           "value": 0,
-          "level": 241,
+          "level": 1092,
           "vocation": "Elder Druid",
           "guild_rank": 39
         },
         {
           "name": "Nagato Sorcerer",
           "value": 0,
-          "level": 1191,
+          "level": 1201,
           "vocation": "Master Sorcerer",
           "guild_rank": 40
         },
@@ -6887,14 +6958,14 @@
         {
           "name": "Red Hahaha",
           "value": 0,
-          "level": 1226,
+          "level": 1257,
           "vocation": "Royal Paladin",
           "guild_rank": 43
         },
         {
           "name": "Roginho",
           "value": 0,
-          "level": 1392,
+          "level": 8,
           "vocation": "Master Sorcerer",
           "guild_rank": 44
         },
@@ -6915,7 +6986,7 @@
         {
           "name": "Vinizerah On Amonot",
           "value": 0,
-          "level": 1253,
+          "level": 1283,
           "vocation": "Elder Druid",
           "guild_rank": 47
         },
@@ -6936,21 +7007,21 @@
         {
           "name": "Xeipe",
           "value": 0,
-          "level": 1463,
+          "level": 1626,
           "vocation": "Royal Paladin",
           "guild_rank": 50
         },
         {
           "name": "Ynhaca Purah",
           "value": 0,
-          "level": 1742,
+          "level": 1839,
           "vocation": "Master Sorcerer",
           "guild_rank": 51
         },
         {
           "name": "Zap Seco",
           "value": 0,
-          "level": 1000,
+          "level": 1015,
           "vocation": "Master Sorcerer",
           "guild_rank": 52
         },
@@ -7117,7 +7188,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 922,
+          "level": 1169,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -7152,28 +7223,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1969,
+          "level": 1973,
           "vocation": "Exalted Monk",
           "guild_rank": 7
         },
         {
           "name": "Adjr",
           "value": 0,
-          "level": 1048,
+          "level": 1213,
           "vocation": "Elder Druid",
           "guild_rank": 8
         },
         {
           "name": "Adolph Healer",
           "value": 0,
-          "level": 999,
+          "level": 998,
           "vocation": "Elder Druid",
           "guild_rank": 9
         },
         {
           "name": "Affey",
           "value": 0,
-          "level": 1315,
+          "level": 579,
           "vocation": "Royal Paladin",
           "guild_rank": 10
         },
@@ -7187,14 +7258,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1031,
+          "level": 1073,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Black Reaper",
           "value": 0,
-          "level": 1971,
+          "level": 1977,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -7215,14 +7286,14 @@
         {
           "name": "Cerebro",
           "value": 0,
-          "level": 1579,
+          "level": 1619,
           "vocation": "Elite Knight",
           "guild_rank": 16
         },
         {
           "name": "Cheiro Dpneu",
           "value": 0,
-          "level": 1346,
+          "level": 1374,
           "vocation": "Elder Druid",
           "guild_rank": 17
         },
@@ -7236,21 +7307,21 @@
         {
           "name": "Dmonick",
           "value": 0,
-          "level": 926,
+          "level": 1068,
           "vocation": "Master Sorcerer",
           "guild_rank": 19
         },
         {
           "name": "Dvn Luktzeraah",
           "value": 0,
-          "level": 1620,
+          "level": 1670,
           "vocation": "Royal Paladin",
           "guild_rank": 20
         },
         {
           "name": "Elder Lougon",
           "value": 0,
-          "level": 803,
+          "level": 570,
           "vocation": "Elder Druid",
           "guild_rank": 21
         },
@@ -7278,7 +7349,7 @@
         {
           "name": "Guidao Palao",
           "value": 0,
-          "level": 2001,
+          "level": 765,
           "vocation": "Royal Paladin",
           "guild_rank": 25
         },
@@ -7292,70 +7363,70 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1059,
+          "level": 1106,
           "vocation": "Elder Druid",
           "guild_rank": 27
         },
         {
           "name": "Jhonnys Trembolizado",
           "value": 0,
-          "level": 1692,
+          "level": 1745,
           "vocation": "Royal Paladin",
           "guild_rank": 28
         },
         {
           "name": "Kev",
           "value": 0,
-          "level": 1037,
+          "level": 1062,
           "vocation": "Royal Paladin",
           "guild_rank": 29
         },
         {
           "name": "Kiel",
           "value": 0,
-          "level": 1355,
+          "level": 1440,
           "vocation": "Royal Paladin",
           "guild_rank": 30
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1011,
+          "level": 1064,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1406,
+          "level": 1511,
           "vocation": "Royal Paladin",
           "guild_rank": 32
         },
         {
           "name": "Lipe Knight",
           "value": 0,
-          "level": 1199,
+          "level": 1212,
           "vocation": "Elite Knight",
           "guild_rank": 33
         },
         {
           "name": "Lotus Lothbrook",
           "value": 0,
-          "level": 1179,
+          "level": 1211,
           "vocation": "Royal Paladin",
           "guild_rank": 34
         },
         {
           "name": "Lougon Baiakeiro",
           "value": 0,
-          "level": 1750,
+          "level": 1787,
           "vocation": "Master Sorcerer",
           "guild_rank": 35
         },
         {
           "name": "Lukitas Brokenzada",
           "value": 0,
-          "level": 1717,
+          "level": 1733,
           "vocation": "Elder Druid",
           "guild_rank": 36
         },
@@ -7369,21 +7440,21 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1785,
+          "level": 1797,
           "vocation": "Elite Knight",
           "guild_rank": 38
         },
         {
           "name": "Monstro Das Criptos",
           "value": 0,
-          "level": 241,
+          "level": 1092,
           "vocation": "Elder Druid",
           "guild_rank": 39
         },
         {
           "name": "Nagato Sorcerer",
           "value": 0,
-          "level": 1191,
+          "level": 1201,
           "vocation": "Master Sorcerer",
           "guild_rank": 40
         },
@@ -7404,14 +7475,14 @@
         {
           "name": "Red Hahaha",
           "value": 0,
-          "level": 1226,
+          "level": 1257,
           "vocation": "Royal Paladin",
           "guild_rank": 43
         },
         {
           "name": "Roginho",
           "value": 0,
-          "level": 1392,
+          "level": 8,
           "vocation": "Master Sorcerer",
           "guild_rank": 44
         },
@@ -7432,7 +7503,7 @@
         {
           "name": "Vinizerah On Amonot",
           "value": 0,
-          "level": 1253,
+          "level": 1283,
           "vocation": "Elder Druid",
           "guild_rank": 47
         },
@@ -7453,21 +7524,21 @@
         {
           "name": "Xeipe",
           "value": 0,
-          "level": 1463,
+          "level": 1626,
           "vocation": "Royal Paladin",
           "guild_rank": 50
         },
         {
           "name": "Ynhaca Purah",
           "value": 0,
-          "level": 1742,
+          "level": 1839,
           "vocation": "Master Sorcerer",
           "guild_rank": 51
         },
         {
           "name": "Zap Seco",
           "value": 0,
-          "level": 1000,
+          "level": 1015,
           "vocation": "Master Sorcerer",
           "guild_rank": 52
         },
@@ -7634,7 +7705,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 922,
+          "level": 1169,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -7669,28 +7740,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1969,
+          "level": 1973,
           "vocation": "Exalted Monk",
           "guild_rank": 7
         },
         {
           "name": "Adjr",
           "value": 0,
-          "level": 1048,
+          "level": 1213,
           "vocation": "Elder Druid",
           "guild_rank": 8
         },
         {
           "name": "Adolph Healer",
           "value": 0,
-          "level": 999,
+          "level": 998,
           "vocation": "Elder Druid",
           "guild_rank": 9
         },
         {
           "name": "Affey",
           "value": 0,
-          "level": 1315,
+          "level": 579,
           "vocation": "Royal Paladin",
           "guild_rank": 10
         },
@@ -7704,14 +7775,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1031,
+          "level": 1073,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Black Reaper",
           "value": 0,
-          "level": 1971,
+          "level": 1977,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -7732,14 +7803,14 @@
         {
           "name": "Cerebro",
           "value": 0,
-          "level": 1579,
+          "level": 1619,
           "vocation": "Elite Knight",
           "guild_rank": 16
         },
         {
           "name": "Cheiro Dpneu",
           "value": 0,
-          "level": 1346,
+          "level": 1374,
           "vocation": "Elder Druid",
           "guild_rank": 17
         },
@@ -7753,21 +7824,21 @@
         {
           "name": "Dmonick",
           "value": 0,
-          "level": 926,
+          "level": 1068,
           "vocation": "Master Sorcerer",
           "guild_rank": 19
         },
         {
           "name": "Dvn Luktzeraah",
           "value": 0,
-          "level": 1620,
+          "level": 1670,
           "vocation": "Royal Paladin",
           "guild_rank": 20
         },
         {
           "name": "Elder Lougon",
           "value": 0,
-          "level": 803,
+          "level": 570,
           "vocation": "Elder Druid",
           "guild_rank": 21
         },
@@ -7795,7 +7866,7 @@
         {
           "name": "Guidao Palao",
           "value": 0,
-          "level": 2001,
+          "level": 765,
           "vocation": "Royal Paladin",
           "guild_rank": 25
         },
@@ -7809,70 +7880,70 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1059,
+          "level": 1106,
           "vocation": "Elder Druid",
           "guild_rank": 27
         },
         {
           "name": "Jhonnys Trembolizado",
           "value": 0,
-          "level": 1692,
+          "level": 1745,
           "vocation": "Royal Paladin",
           "guild_rank": 28
         },
         {
           "name": "Kev",
           "value": 0,
-          "level": 1037,
+          "level": 1062,
           "vocation": "Royal Paladin",
           "guild_rank": 29
         },
         {
           "name": "Kiel",
           "value": 0,
-          "level": 1355,
+          "level": 1440,
           "vocation": "Royal Paladin",
           "guild_rank": 30
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1011,
+          "level": 1064,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1406,
+          "level": 1511,
           "vocation": "Royal Paladin",
           "guild_rank": 32
         },
         {
           "name": "Lipe Knight",
           "value": 0,
-          "level": 1199,
+          "level": 1212,
           "vocation": "Elite Knight",
           "guild_rank": 33
         },
         {
           "name": "Lotus Lothbrook",
           "value": 0,
-          "level": 1179,
+          "level": 1211,
           "vocation": "Royal Paladin",
           "guild_rank": 34
         },
         {
           "name": "Lougon Baiakeiro",
           "value": 0,
-          "level": 1750,
+          "level": 1787,
           "vocation": "Master Sorcerer",
           "guild_rank": 35
         },
         {
           "name": "Lukitas Brokenzada",
           "value": 0,
-          "level": 1717,
+          "level": 1733,
           "vocation": "Elder Druid",
           "guild_rank": 36
         },
@@ -7886,21 +7957,21 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1785,
+          "level": 1797,
           "vocation": "Elite Knight",
           "guild_rank": 38
         },
         {
           "name": "Monstro Das Criptos",
           "value": 0,
-          "level": 241,
+          "level": 1092,
           "vocation": "Elder Druid",
           "guild_rank": 39
         },
         {
           "name": "Nagato Sorcerer",
           "value": 0,
-          "level": 1191,
+          "level": 1201,
           "vocation": "Master Sorcerer",
           "guild_rank": 40
         },
@@ -7921,14 +7992,14 @@
         {
           "name": "Red Hahaha",
           "value": 0,
-          "level": 1226,
+          "level": 1257,
           "vocation": "Royal Paladin",
           "guild_rank": 43
         },
         {
           "name": "Roginho",
           "value": 0,
-          "level": 1392,
+          "level": 8,
           "vocation": "Master Sorcerer",
           "guild_rank": 44
         },
@@ -7949,7 +8020,7 @@
         {
           "name": "Vinizerah On Amonot",
           "value": 0,
-          "level": 1253,
+          "level": 1283,
           "vocation": "Elder Druid",
           "guild_rank": 47
         },
@@ -7970,21 +8041,21 @@
         {
           "name": "Xeipe",
           "value": 0,
-          "level": 1463,
+          "level": 1626,
           "vocation": "Royal Paladin",
           "guild_rank": 50
         },
         {
           "name": "Ynhaca Purah",
           "value": 0,
-          "level": 1742,
+          "level": 1839,
           "vocation": "Master Sorcerer",
           "guild_rank": 51
         },
         {
           "name": "Zap Seco",
           "value": 0,
-          "level": 1000,
+          "level": 1015,
           "vocation": "Master Sorcerer",
           "guild_rank": 52
         },
@@ -8151,7 +8222,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 922,
+          "level": 1169,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -8186,28 +8257,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1969,
+          "level": 1973,
           "vocation": "Exalted Monk",
           "guild_rank": 7
         },
         {
           "name": "Adjr",
           "value": 0,
-          "level": 1048,
+          "level": 1213,
           "vocation": "Elder Druid",
           "guild_rank": 8
         },
         {
           "name": "Adolph Healer",
           "value": 0,
-          "level": 999,
+          "level": 998,
           "vocation": "Elder Druid",
           "guild_rank": 9
         },
         {
           "name": "Affey",
           "value": 0,
-          "level": 1315,
+          "level": 579,
           "vocation": "Royal Paladin",
           "guild_rank": 10
         },
@@ -8221,14 +8292,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1031,
+          "level": 1073,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Black Reaper",
           "value": 0,
-          "level": 1971,
+          "level": 1977,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -8249,14 +8320,14 @@
         {
           "name": "Cerebro",
           "value": 0,
-          "level": 1579,
+          "level": 1619,
           "vocation": "Elite Knight",
           "guild_rank": 16
         },
         {
           "name": "Cheiro Dpneu",
           "value": 0,
-          "level": 1346,
+          "level": 1374,
           "vocation": "Elder Druid",
           "guild_rank": 17
         },
@@ -8270,21 +8341,21 @@
         {
           "name": "Dmonick",
           "value": 0,
-          "level": 926,
+          "level": 1068,
           "vocation": "Master Sorcerer",
           "guild_rank": 19
         },
         {
           "name": "Dvn Luktzeraah",
           "value": 0,
-          "level": 1620,
+          "level": 1670,
           "vocation": "Royal Paladin",
           "guild_rank": 20
         },
         {
           "name": "Elder Lougon",
           "value": 0,
-          "level": 803,
+          "level": 570,
           "vocation": "Elder Druid",
           "guild_rank": 21
         },
@@ -8312,7 +8383,7 @@
         {
           "name": "Guidao Palao",
           "value": 0,
-          "level": 2001,
+          "level": 765,
           "vocation": "Royal Paladin",
           "guild_rank": 25
         },
@@ -8326,70 +8397,70 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1059,
+          "level": 1106,
           "vocation": "Elder Druid",
           "guild_rank": 27
         },
         {
           "name": "Jhonnys Trembolizado",
           "value": 0,
-          "level": 1692,
+          "level": 1745,
           "vocation": "Royal Paladin",
           "guild_rank": 28
         },
         {
           "name": "Kev",
           "value": 0,
-          "level": 1037,
+          "level": 1062,
           "vocation": "Royal Paladin",
           "guild_rank": 29
         },
         {
           "name": "Kiel",
           "value": 0,
-          "level": 1355,
+          "level": 1440,
           "vocation": "Royal Paladin",
           "guild_rank": 30
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1011,
+          "level": 1064,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1406,
+          "level": 1511,
           "vocation": "Royal Paladin",
           "guild_rank": 32
         },
         {
           "name": "Lipe Knight",
           "value": 0,
-          "level": 1199,
+          "level": 1212,
           "vocation": "Elite Knight",
           "guild_rank": 33
         },
         {
           "name": "Lotus Lothbrook",
           "value": 0,
-          "level": 1179,
+          "level": 1211,
           "vocation": "Royal Paladin",
           "guild_rank": 34
         },
         {
           "name": "Lougon Baiakeiro",
           "value": 0,
-          "level": 1750,
+          "level": 1787,
           "vocation": "Master Sorcerer",
           "guild_rank": 35
         },
         {
           "name": "Lukitas Brokenzada",
           "value": 0,
-          "level": 1717,
+          "level": 1733,
           "vocation": "Elder Druid",
           "guild_rank": 36
         },
@@ -8403,21 +8474,21 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1785,
+          "level": 1797,
           "vocation": "Elite Knight",
           "guild_rank": 38
         },
         {
           "name": "Monstro Das Criptos",
           "value": 0,
-          "level": 241,
+          "level": 1092,
           "vocation": "Elder Druid",
           "guild_rank": 39
         },
         {
           "name": "Nagato Sorcerer",
           "value": 0,
-          "level": 1191,
+          "level": 1201,
           "vocation": "Master Sorcerer",
           "guild_rank": 40
         },
@@ -8438,14 +8509,14 @@
         {
           "name": "Red Hahaha",
           "value": 0,
-          "level": 1226,
+          "level": 1257,
           "vocation": "Royal Paladin",
           "guild_rank": 43
         },
         {
           "name": "Roginho",
           "value": 0,
-          "level": 1392,
+          "level": 8,
           "vocation": "Master Sorcerer",
           "guild_rank": 44
         },
@@ -8466,7 +8537,7 @@
         {
           "name": "Vinizerah On Amonot",
           "value": 0,
-          "level": 1253,
+          "level": 1283,
           "vocation": "Elder Druid",
           "guild_rank": 47
         },
@@ -8487,21 +8558,21 @@
         {
           "name": "Xeipe",
           "value": 0,
-          "level": 1463,
+          "level": 1626,
           "vocation": "Royal Paladin",
           "guild_rank": 50
         },
         {
           "name": "Ynhaca Purah",
           "value": 0,
-          "level": 1742,
+          "level": 1839,
           "vocation": "Master Sorcerer",
           "guild_rank": 51
         },
         {
           "name": "Zap Seco",
           "value": 0,
-          "level": 1000,
+          "level": 1015,
           "vocation": "Master Sorcerer",
           "guild_rank": 52
         },
@@ -8668,7 +8739,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 922,
+          "level": 1169,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -8703,28 +8774,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1969,
+          "level": 1973,
           "vocation": "Exalted Monk",
           "guild_rank": 7
         },
         {
           "name": "Adjr",
           "value": 0,
-          "level": 1048,
+          "level": 1213,
           "vocation": "Elder Druid",
           "guild_rank": 8
         },
         {
           "name": "Adolph Healer",
           "value": 0,
-          "level": 999,
+          "level": 998,
           "vocation": "Elder Druid",
           "guild_rank": 9
         },
         {
           "name": "Affey",
           "value": 0,
-          "level": 1315,
+          "level": 579,
           "vocation": "Royal Paladin",
           "guild_rank": 10
         },
@@ -8738,14 +8809,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1031,
+          "level": 1073,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Black Reaper",
           "value": 0,
-          "level": 1971,
+          "level": 1977,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -8766,14 +8837,14 @@
         {
           "name": "Cerebro",
           "value": 0,
-          "level": 1579,
+          "level": 1619,
           "vocation": "Elite Knight",
           "guild_rank": 16
         },
         {
           "name": "Cheiro Dpneu",
           "value": 0,
-          "level": 1346,
+          "level": 1374,
           "vocation": "Elder Druid",
           "guild_rank": 17
         },
@@ -8787,21 +8858,21 @@
         {
           "name": "Dmonick",
           "value": 0,
-          "level": 926,
+          "level": 1068,
           "vocation": "Master Sorcerer",
           "guild_rank": 19
         },
         {
           "name": "Dvn Luktzeraah",
           "value": 0,
-          "level": 1620,
+          "level": 1670,
           "vocation": "Royal Paladin",
           "guild_rank": 20
         },
         {
           "name": "Elder Lougon",
           "value": 0,
-          "level": 803,
+          "level": 570,
           "vocation": "Elder Druid",
           "guild_rank": 21
         },
@@ -8829,7 +8900,7 @@
         {
           "name": "Guidao Palao",
           "value": 0,
-          "level": 2001,
+          "level": 765,
           "vocation": "Royal Paladin",
           "guild_rank": 25
         },
@@ -8843,70 +8914,70 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1059,
+          "level": 1106,
           "vocation": "Elder Druid",
           "guild_rank": 27
         },
         {
           "name": "Jhonnys Trembolizado",
           "value": 0,
-          "level": 1692,
+          "level": 1745,
           "vocation": "Royal Paladin",
           "guild_rank": 28
         },
         {
           "name": "Kev",
           "value": 0,
-          "level": 1037,
+          "level": 1062,
           "vocation": "Royal Paladin",
           "guild_rank": 29
         },
         {
           "name": "Kiel",
           "value": 0,
-          "level": 1355,
+          "level": 1440,
           "vocation": "Royal Paladin",
           "guild_rank": 30
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1011,
+          "level": 1064,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1406,
+          "level": 1511,
           "vocation": "Royal Paladin",
           "guild_rank": 32
         },
         {
           "name": "Lipe Knight",
           "value": 0,
-          "level": 1199,
+          "level": 1212,
           "vocation": "Elite Knight",
           "guild_rank": 33
         },
         {
           "name": "Lotus Lothbrook",
           "value": 0,
-          "level": 1179,
+          "level": 1211,
           "vocation": "Royal Paladin",
           "guild_rank": 34
         },
         {
           "name": "Lougon Baiakeiro",
           "value": 0,
-          "level": 1750,
+          "level": 1787,
           "vocation": "Master Sorcerer",
           "guild_rank": 35
         },
         {
           "name": "Lukitas Brokenzada",
           "value": 0,
-          "level": 1717,
+          "level": 1733,
           "vocation": "Elder Druid",
           "guild_rank": 36
         },
@@ -8920,21 +8991,21 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1785,
+          "level": 1797,
           "vocation": "Elite Knight",
           "guild_rank": 38
         },
         {
           "name": "Monstro Das Criptos",
           "value": 0,
-          "level": 241,
+          "level": 1092,
           "vocation": "Elder Druid",
           "guild_rank": 39
         },
         {
           "name": "Nagato Sorcerer",
           "value": 0,
-          "level": 1191,
+          "level": 1201,
           "vocation": "Master Sorcerer",
           "guild_rank": 40
         },
@@ -8955,14 +9026,14 @@
         {
           "name": "Red Hahaha",
           "value": 0,
-          "level": 1226,
+          "level": 1257,
           "vocation": "Royal Paladin",
           "guild_rank": 43
         },
         {
           "name": "Roginho",
           "value": 0,
-          "level": 1392,
+          "level": 8,
           "vocation": "Master Sorcerer",
           "guild_rank": 44
         },
@@ -8983,7 +9054,7 @@
         {
           "name": "Vinizerah On Amonot",
           "value": 0,
-          "level": 1253,
+          "level": 1283,
           "vocation": "Elder Druid",
           "guild_rank": 47
         },
@@ -9004,21 +9075,21 @@
         {
           "name": "Xeipe",
           "value": 0,
-          "level": 1463,
+          "level": 1626,
           "vocation": "Royal Paladin",
           "guild_rank": 50
         },
         {
           "name": "Ynhaca Purah",
           "value": 0,
-          "level": 1742,
+          "level": 1839,
           "vocation": "Master Sorcerer",
           "guild_rank": 51
         },
         {
           "name": "Zap Seco",
           "value": 0,
-          "level": 1000,
+          "level": 1015,
           "vocation": "Master Sorcerer",
           "guild_rank": 52
         },
@@ -9185,7 +9256,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 922,
+          "level": 1169,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -9220,28 +9291,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1969,
+          "level": 1973,
           "vocation": "Exalted Monk",
           "guild_rank": 7
         },
         {
           "name": "Adjr",
           "value": 0,
-          "level": 1048,
+          "level": 1213,
           "vocation": "Elder Druid",
           "guild_rank": 8
         },
         {
           "name": "Adolph Healer",
           "value": 0,
-          "level": 999,
+          "level": 998,
           "vocation": "Elder Druid",
           "guild_rank": 9
         },
         {
           "name": "Affey",
           "value": 0,
-          "level": 1315,
+          "level": 579,
           "vocation": "Royal Paladin",
           "guild_rank": 10
         },
@@ -9255,14 +9326,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1031,
+          "level": 1073,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Black Reaper",
           "value": 0,
-          "level": 1971,
+          "level": 1977,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -9283,14 +9354,14 @@
         {
           "name": "Cerebro",
           "value": 0,
-          "level": 1579,
+          "level": 1619,
           "vocation": "Elite Knight",
           "guild_rank": 16
         },
         {
           "name": "Cheiro Dpneu",
           "value": 0,
-          "level": 1346,
+          "level": 1374,
           "vocation": "Elder Druid",
           "guild_rank": 17
         },
@@ -9304,21 +9375,21 @@
         {
           "name": "Dmonick",
           "value": 0,
-          "level": 926,
+          "level": 1068,
           "vocation": "Master Sorcerer",
           "guild_rank": 19
         },
         {
           "name": "Dvn Luktzeraah",
           "value": 0,
-          "level": 1620,
+          "level": 1670,
           "vocation": "Royal Paladin",
           "guild_rank": 20
         },
         {
           "name": "Elder Lougon",
           "value": 0,
-          "level": 803,
+          "level": 570,
           "vocation": "Elder Druid",
           "guild_rank": 21
         },
@@ -9346,7 +9417,7 @@
         {
           "name": "Guidao Palao",
           "value": 0,
-          "level": 2001,
+          "level": 765,
           "vocation": "Royal Paladin",
           "guild_rank": 25
         },
@@ -9360,70 +9431,70 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1059,
+          "level": 1106,
           "vocation": "Elder Druid",
           "guild_rank": 27
         },
         {
           "name": "Jhonnys Trembolizado",
           "value": 0,
-          "level": 1692,
+          "level": 1745,
           "vocation": "Royal Paladin",
           "guild_rank": 28
         },
         {
           "name": "Kev",
           "value": 0,
-          "level": 1037,
+          "level": 1062,
           "vocation": "Royal Paladin",
           "guild_rank": 29
         },
         {
           "name": "Kiel",
           "value": 0,
-          "level": 1355,
+          "level": 1440,
           "vocation": "Royal Paladin",
           "guild_rank": 30
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1011,
+          "level": 1064,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1406,
+          "level": 1511,
           "vocation": "Royal Paladin",
           "guild_rank": 32
         },
         {
           "name": "Lipe Knight",
           "value": 0,
-          "level": 1199,
+          "level": 1212,
           "vocation": "Elite Knight",
           "guild_rank": 33
         },
         {
           "name": "Lotus Lothbrook",
           "value": 0,
-          "level": 1179,
+          "level": 1211,
           "vocation": "Royal Paladin",
           "guild_rank": 34
         },
         {
           "name": "Lougon Baiakeiro",
           "value": 0,
-          "level": 1750,
+          "level": 1787,
           "vocation": "Master Sorcerer",
           "guild_rank": 35
         },
         {
           "name": "Lukitas Brokenzada",
           "value": 0,
-          "level": 1717,
+          "level": 1733,
           "vocation": "Elder Druid",
           "guild_rank": 36
         },
@@ -9437,21 +9508,21 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1785,
+          "level": 1797,
           "vocation": "Elite Knight",
           "guild_rank": 38
         },
         {
           "name": "Monstro Das Criptos",
           "value": 0,
-          "level": 241,
+          "level": 1092,
           "vocation": "Elder Druid",
           "guild_rank": 39
         },
         {
           "name": "Nagato Sorcerer",
           "value": 0,
-          "level": 1191,
+          "level": 1201,
           "vocation": "Master Sorcerer",
           "guild_rank": 40
         },
@@ -9472,14 +9543,14 @@
         {
           "name": "Red Hahaha",
           "value": 0,
-          "level": 1226,
+          "level": 1257,
           "vocation": "Royal Paladin",
           "guild_rank": 43
         },
         {
           "name": "Roginho",
           "value": 0,
-          "level": 1392,
+          "level": 8,
           "vocation": "Master Sorcerer",
           "guild_rank": 44
         },
@@ -9500,7 +9571,7 @@
         {
           "name": "Vinizerah On Amonot",
           "value": 0,
-          "level": 1253,
+          "level": 1283,
           "vocation": "Elder Druid",
           "guild_rank": 47
         },
@@ -9521,21 +9592,21 @@
         {
           "name": "Xeipe",
           "value": 0,
-          "level": 1463,
+          "level": 1626,
           "vocation": "Royal Paladin",
           "guild_rank": 50
         },
         {
           "name": "Ynhaca Purah",
           "value": 0,
-          "level": 1742,
+          "level": 1839,
           "vocation": "Master Sorcerer",
           "guild_rank": 51
         },
         {
           "name": "Zap Seco",
           "value": 0,
-          "level": 1000,
+          "level": 1015,
           "vocation": "Master Sorcerer",
           "guild_rank": 52
         },
@@ -9702,7 +9773,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 922,
+          "level": 1169,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -9737,28 +9808,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1969,
+          "level": 1973,
           "vocation": "Exalted Monk",
           "guild_rank": 7
         },
         {
           "name": "Adjr",
           "value": 0,
-          "level": 1048,
+          "level": 1213,
           "vocation": "Elder Druid",
           "guild_rank": 8
         },
         {
           "name": "Adolph Healer",
           "value": 0,
-          "level": 999,
+          "level": 998,
           "vocation": "Elder Druid",
           "guild_rank": 9
         },
         {
           "name": "Affey",
           "value": 0,
-          "level": 1315,
+          "level": 579,
           "vocation": "Royal Paladin",
           "guild_rank": 10
         },
@@ -9772,14 +9843,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1031,
+          "level": 1073,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Black Reaper",
           "value": 0,
-          "level": 1971,
+          "level": 1977,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -9800,14 +9871,14 @@
         {
           "name": "Cerebro",
           "value": 0,
-          "level": 1579,
+          "level": 1619,
           "vocation": "Elite Knight",
           "guild_rank": 16
         },
         {
           "name": "Cheiro Dpneu",
           "value": 0,
-          "level": 1346,
+          "level": 1374,
           "vocation": "Elder Druid",
           "guild_rank": 17
         },
@@ -9821,21 +9892,21 @@
         {
           "name": "Dmonick",
           "value": 0,
-          "level": 926,
+          "level": 1068,
           "vocation": "Master Sorcerer",
           "guild_rank": 19
         },
         {
           "name": "Dvn Luktzeraah",
           "value": 0,
-          "level": 1620,
+          "level": 1670,
           "vocation": "Royal Paladin",
           "guild_rank": 20
         },
         {
           "name": "Elder Lougon",
           "value": 0,
-          "level": 803,
+          "level": 570,
           "vocation": "Elder Druid",
           "guild_rank": 21
         },
@@ -9863,7 +9934,7 @@
         {
           "name": "Guidao Palao",
           "value": 0,
-          "level": 2001,
+          "level": 765,
           "vocation": "Royal Paladin",
           "guild_rank": 25
         },
@@ -9877,70 +9948,70 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1059,
+          "level": 1106,
           "vocation": "Elder Druid",
           "guild_rank": 27
         },
         {
           "name": "Jhonnys Trembolizado",
           "value": 0,
-          "level": 1692,
+          "level": 1745,
           "vocation": "Royal Paladin",
           "guild_rank": 28
         },
         {
           "name": "Kev",
           "value": 0,
-          "level": 1037,
+          "level": 1062,
           "vocation": "Royal Paladin",
           "guild_rank": 29
         },
         {
           "name": "Kiel",
           "value": 0,
-          "level": 1355,
+          "level": 1440,
           "vocation": "Royal Paladin",
           "guild_rank": 30
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1011,
+          "level": 1064,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1406,
+          "level": 1511,
           "vocation": "Royal Paladin",
           "guild_rank": 32
         },
         {
           "name": "Lipe Knight",
           "value": 0,
-          "level": 1199,
+          "level": 1212,
           "vocation": "Elite Knight",
           "guild_rank": 33
         },
         {
           "name": "Lotus Lothbrook",
           "value": 0,
-          "level": 1179,
+          "level": 1211,
           "vocation": "Royal Paladin",
           "guild_rank": 34
         },
         {
           "name": "Lougon Baiakeiro",
           "value": 0,
-          "level": 1750,
+          "level": 1787,
           "vocation": "Master Sorcerer",
           "guild_rank": 35
         },
         {
           "name": "Lukitas Brokenzada",
           "value": 0,
-          "level": 1717,
+          "level": 1733,
           "vocation": "Elder Druid",
           "guild_rank": 36
         },
@@ -9954,21 +10025,21 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1785,
+          "level": 1797,
           "vocation": "Elite Knight",
           "guild_rank": 38
         },
         {
           "name": "Monstro Das Criptos",
           "value": 0,
-          "level": 241,
+          "level": 1092,
           "vocation": "Elder Druid",
           "guild_rank": 39
         },
         {
           "name": "Nagato Sorcerer",
           "value": 0,
-          "level": 1191,
+          "level": 1201,
           "vocation": "Master Sorcerer",
           "guild_rank": 40
         },
@@ -9989,14 +10060,14 @@
         {
           "name": "Red Hahaha",
           "value": 0,
-          "level": 1226,
+          "level": 1257,
           "vocation": "Royal Paladin",
           "guild_rank": 43
         },
         {
           "name": "Roginho",
           "value": 0,
-          "level": 1392,
+          "level": 8,
           "vocation": "Master Sorcerer",
           "guild_rank": 44
         },
@@ -10017,7 +10088,7 @@
         {
           "name": "Vinizerah On Amonot",
           "value": 0,
-          "level": 1253,
+          "level": 1283,
           "vocation": "Elder Druid",
           "guild_rank": 47
         },
@@ -10038,21 +10109,21 @@
         {
           "name": "Xeipe",
           "value": 0,
-          "level": 1463,
+          "level": 1626,
           "vocation": "Royal Paladin",
           "guild_rank": 50
         },
         {
           "name": "Ynhaca Purah",
           "value": 0,
-          "level": 1742,
+          "level": 1839,
           "vocation": "Master Sorcerer",
           "guild_rank": 51
         },
         {
           "name": "Zap Seco",
           "value": 0,
-          "level": 1000,
+          "level": 1015,
           "vocation": "Master Sorcerer",
           "guild_rank": 52
         },
@@ -10219,7 +10290,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 922,
+          "level": 1169,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -10254,28 +10325,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1969,
+          "level": 1973,
           "vocation": "Exalted Monk",
           "guild_rank": 7
         },
         {
           "name": "Adjr",
           "value": 0,
-          "level": 1048,
+          "level": 1213,
           "vocation": "Elder Druid",
           "guild_rank": 8
         },
         {
           "name": "Adolph Healer",
           "value": 0,
-          "level": 999,
+          "level": 998,
           "vocation": "Elder Druid",
           "guild_rank": 9
         },
         {
           "name": "Affey",
           "value": 0,
-          "level": 1315,
+          "level": 579,
           "vocation": "Royal Paladin",
           "guild_rank": 10
         },
@@ -10289,14 +10360,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1031,
+          "level": 1073,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Black Reaper",
           "value": 0,
-          "level": 1971,
+          "level": 1977,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -10317,14 +10388,14 @@
         {
           "name": "Cerebro",
           "value": 0,
-          "level": 1579,
+          "level": 1619,
           "vocation": "Elite Knight",
           "guild_rank": 16
         },
         {
           "name": "Cheiro Dpneu",
           "value": 0,
-          "level": 1346,
+          "level": 1374,
           "vocation": "Elder Druid",
           "guild_rank": 17
         },
@@ -10338,21 +10409,21 @@
         {
           "name": "Dmonick",
           "value": 0,
-          "level": 926,
+          "level": 1068,
           "vocation": "Master Sorcerer",
           "guild_rank": 19
         },
         {
           "name": "Dvn Luktzeraah",
           "value": 0,
-          "level": 1620,
+          "level": 1670,
           "vocation": "Royal Paladin",
           "guild_rank": 20
         },
         {
           "name": "Elder Lougon",
           "value": 0,
-          "level": 803,
+          "level": 570,
           "vocation": "Elder Druid",
           "guild_rank": 21
         },
@@ -10380,7 +10451,7 @@
         {
           "name": "Guidao Palao",
           "value": 0,
-          "level": 2001,
+          "level": 765,
           "vocation": "Royal Paladin",
           "guild_rank": 25
         },
@@ -10394,70 +10465,70 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1059,
+          "level": 1106,
           "vocation": "Elder Druid",
           "guild_rank": 27
         },
         {
           "name": "Jhonnys Trembolizado",
           "value": 0,
-          "level": 1692,
+          "level": 1745,
           "vocation": "Royal Paladin",
           "guild_rank": 28
         },
         {
           "name": "Kev",
           "value": 0,
-          "level": 1037,
+          "level": 1062,
           "vocation": "Royal Paladin",
           "guild_rank": 29
         },
         {
           "name": "Kiel",
           "value": 0,
-          "level": 1355,
+          "level": 1440,
           "vocation": "Royal Paladin",
           "guild_rank": 30
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1011,
+          "level": 1064,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1406,
+          "level": 1511,
           "vocation": "Royal Paladin",
           "guild_rank": 32
         },
         {
           "name": "Lipe Knight",
           "value": 0,
-          "level": 1199,
+          "level": 1212,
           "vocation": "Elite Knight",
           "guild_rank": 33
         },
         {
           "name": "Lotus Lothbrook",
           "value": 0,
-          "level": 1179,
+          "level": 1211,
           "vocation": "Royal Paladin",
           "guild_rank": 34
         },
         {
           "name": "Lougon Baiakeiro",
           "value": 0,
-          "level": 1750,
+          "level": 1787,
           "vocation": "Master Sorcerer",
           "guild_rank": 35
         },
         {
           "name": "Lukitas Brokenzada",
           "value": 0,
-          "level": 1717,
+          "level": 1733,
           "vocation": "Elder Druid",
           "guild_rank": 36
         },
@@ -10471,21 +10542,21 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1785,
+          "level": 1797,
           "vocation": "Elite Knight",
           "guild_rank": 38
         },
         {
           "name": "Monstro Das Criptos",
           "value": 0,
-          "level": 241,
+          "level": 1092,
           "vocation": "Elder Druid",
           "guild_rank": 39
         },
         {
           "name": "Nagato Sorcerer",
           "value": 0,
-          "level": 1191,
+          "level": 1201,
           "vocation": "Master Sorcerer",
           "guild_rank": 40
         },
@@ -10506,14 +10577,14 @@
         {
           "name": "Red Hahaha",
           "value": 0,
-          "level": 1226,
+          "level": 1257,
           "vocation": "Royal Paladin",
           "guild_rank": 43
         },
         {
           "name": "Roginho",
           "value": 0,
-          "level": 1392,
+          "level": 8,
           "vocation": "Master Sorcerer",
           "guild_rank": 44
         },
@@ -10534,7 +10605,7 @@
         {
           "name": "Vinizerah On Amonot",
           "value": 0,
-          "level": 1253,
+          "level": 1283,
           "vocation": "Elder Druid",
           "guild_rank": 47
         },
@@ -10555,21 +10626,21 @@
         {
           "name": "Xeipe",
           "value": 0,
-          "level": 1463,
+          "level": 1626,
           "vocation": "Royal Paladin",
           "guild_rank": 50
         },
         {
           "name": "Ynhaca Purah",
           "value": 0,
-          "level": 1742,
+          "level": 1839,
           "vocation": "Master Sorcerer",
           "guild_rank": 51
         },
         {
           "name": "Zap Seco",
           "value": 0,
-          "level": 1000,
+          "level": 1015,
           "vocation": "Master Sorcerer",
           "guild_rank": 52
         },
