@@ -1,6 +1,6 @@
 {
   "name": "Lowly People",
-  "updated_at": "15/08/2026 às 04:19 (Brasília)",
+  "updated_at": "15/08/2026 às 05:12 (Brasília)",
   "owner": "Albatrozz",
   "founded": "Apr 30, 2026",
   "total_members": 68,
@@ -191,7 +191,8 @@
         "2026-08-15-01": 70,
         "2026-08-15-02": 70,
         "2026-08-15-03": 70,
-        "2026-08-15-04": 70
+        "2026-08-15-04": 70,
+        "2026-08-15-05": 70
       },
       "stats": {
         "experience": 0,
@@ -391,7 +392,8 @@
         "2026-08-15-01": 61,
         "2026-08-15-02": 61,
         "2026-08-15-03": 61,
-        "2026-08-15-04": 61
+        "2026-08-15-04": 61,
+        "2026-08-15-05": 61
       },
       "stats": {
         "experience": 0,
@@ -611,7 +613,8 @@
         "2026-08-15-01": 68,
         "2026-08-15-02": 68,
         "2026-08-15-03": 68,
-        "2026-08-15-04": 68
+        "2026-08-15-04": 68,
+        "2026-08-15-05": 68
       },
       "stats": {
         "experience": 0,
@@ -625,9 +628,9 @@
         "fishing": 0
       },
       "deaths": [],
-      "pvp_kills_total": 13,
+      "pvp_kills_total": 8,
       "pvp_kills_today": 0,
-      "pvp_kills_week": 13,
+      "pvp_kills_week": 8,
       "war_kills": 0,
       "war_kills_day": 0,
       "war_kills_week": 0
@@ -811,7 +814,8 @@
         "2026-08-15-01": 62,
         "2026-08-15-02": 62,
         "2026-08-15-03": 62,
-        "2026-08-15-04": 62
+        "2026-08-15-04": 62,
+        "2026-08-15-05": 62
       },
       "stats": {
         "experience": 0,
@@ -1007,7 +1011,8 @@
         "2026-08-15-01": 94,
         "2026-08-15-02": 94,
         "2026-08-15-03": 94,
-        "2026-08-15-04": 94
+        "2026-08-15-04": 94,
+        "2026-08-15-05": 94
       },
       "stats": {
         "experience": 0,
@@ -1020,13 +1025,7 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [
-        {
-          "time": "Aug 14, 2026 22:43",
-          "by": "a hellflame juggernaut (monstro) Maior dano:                                                            a hellflame demon",
-          "is_pvp": false
-        }
-      ],
+      "deaths": [],
       "pvp_kills_total": 1,
       "pvp_kills_today": 0,
       "pvp_kills_week": 1,
@@ -1217,7 +1216,8 @@
         "2026-08-15-01": 60,
         "2026-08-15-02": 60,
         "2026-08-15-03": 60,
-        "2026-08-15-04": 60
+        "2026-08-15-04": 60,
+        "2026-08-15-05": 60
       },
       "stats": {
         "experience": 0,
@@ -1408,7 +1408,8 @@
         "2026-08-15-01": 62,
         "2026-08-15-02": 62,
         "2026-08-15-03": 62,
-        "2026-08-15-04": 62
+        "2026-08-15-04": 62,
+        "2026-08-15-05": 62
       },
       "stats": {
         "experience": 0,
@@ -1599,7 +1600,8 @@
         "2026-08-15-01": 70,
         "2026-08-15-02": 70,
         "2026-08-15-03": 70,
-        "2026-08-15-04": 70
+        "2026-08-15-04": 70,
+        "2026-08-15-05": 70
       },
       "stats": {
         "experience": 0,
@@ -1622,7 +1624,7 @@
     },
     {
       "name": "Achilles",
-      "level": 2000,
+      "level": 1997,
       "resets": 18,
       "vocation": "Exalted Monk",
       "nick": "",
@@ -1790,7 +1792,8 @@
         "2026-08-15-01": 18,
         "2026-08-15-02": 18,
         "2026-08-15-03": 18,
-        "2026-08-15-04": 18
+        "2026-08-15-04": 18,
+        "2026-08-15-05": 18
       },
       "stats": {
         "experience": 0,
@@ -1804,6 +1807,11 @@
         "fishing": 0
       },
       "deaths": [
+        {
+          "time": "Aug 15, 2026 04:47",
+          "by": "Monkchia (jogador)",
+          "is_pvp": true
+        },
         {
           "time": "Aug 15, 2026 00:48",
           "by": "Quasenada (jogador)",
@@ -1819,7 +1827,7 @@
     },
     {
       "name": "Albatroz",
-      "level": 1981,
+      "level": 1983,
       "resets": 54,
       "vocation": "Exalted Monk",
       "nick": "",
@@ -1938,7 +1946,8 @@
         "2026-08-15-01": 54,
         "2026-08-15-02": 54,
         "2026-08-15-03": 54,
-        "2026-08-15-04": 54
+        "2026-08-15-04": 54,
+        "2026-08-15-05": 54
       },
       "stats": {
         "experience": 0,
@@ -1952,16 +1961,16 @@
         "fishing": 0
       },
       "deaths": [],
-      "pvp_kills_total": 1,
+      "pvp_kills_total": 0,
       "pvp_kills_today": 0,
-      "pvp_kills_week": 1,
+      "pvp_kills_week": 0,
       "war_kills": 0,
       "war_kills_day": 0,
       "war_kills_week": 0
     },
     {
       "name": "Amelior",
-      "level": 1859,
+      "level": 1861,
       "resets": 53,
       "vocation": "Elite Knight",
       "nick": "",
@@ -2122,7 +2131,8 @@
         "2026-08-15-01": 53,
         "2026-08-15-02": 53,
         "2026-08-15-03": 53,
-        "2026-08-15-04": 53
+        "2026-08-15-04": 53,
+        "2026-08-15-05": 53
       },
       "stats": {
         "experience": 0,
@@ -2135,7 +2145,13 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Aug 15, 2026 04:44",
+          "by": "an oozing corpus (monstro)",
+          "is_pvp": false
+        }
+      ],
       "pvp_kills_total": 9,
       "pvp_kills_today": 7,
       "pvp_kills_week": 9,
@@ -2145,7 +2161,7 @@
     },
     {
       "name": "Baiakudinho",
-      "level": 1349,
+      "level": 1373,
       "resets": 66,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -2342,7 +2358,8 @@
         "2026-08-15-01": 66,
         "2026-08-15-02": 66,
         "2026-08-15-03": 66,
-        "2026-08-15-04": 66
+        "2026-08-15-04": 66,
+        "2026-08-15-05": 66
       },
       "stats": {
         "experience": 0,
@@ -2365,7 +2382,7 @@
     },
     {
       "name": "Boltfly Peoplecry",
-      "level": 1723,
+      "level": 1731,
       "resets": 45,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -2546,7 +2563,8 @@
         "2026-08-15-01": 45,
         "2026-08-15-02": 45,
         "2026-08-15-03": 45,
-        "2026-08-15-04": 45
+        "2026-08-15-04": 45,
+        "2026-08-15-05": 45
       },
       "stats": {
         "experience": 0,
@@ -2742,7 +2760,8 @@
         "2026-08-15-01": 31,
         "2026-08-15-02": 31,
         "2026-08-15-03": 31,
-        "2026-08-15-04": 31
+        "2026-08-15-04": 31,
+        "2026-08-15-05": 31
       },
       "stats": {
         "experience": 0,
@@ -2765,7 +2784,7 @@
     },
     {
       "name": "Dede Knight",
-      "level": 1223,
+      "level": 1226,
       "resets": 45,
       "vocation": "Elite Knight",
       "nick": "",
@@ -2802,7 +2821,8 @@
         "2026-08-15-01": 45,
         "2026-08-15-02": 45,
         "2026-08-15-03": 45,
-        "2026-08-15-04": 45
+        "2026-08-15-04": 45,
+        "2026-08-15-05": 45
       },
       "stats": {
         "experience": 0,
@@ -2815,13 +2835,7 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [
-        {
-          "time": "Aug 14, 2026 22:40",
-          "by": "a hellflame juggernaut (monstro)",
-          "is_pvp": false
-        }
-      ],
+      "deaths": [],
       "pvp_kills_total": 4,
       "pvp_kills_today": 2,
       "pvp_kills_week": 4,
@@ -2831,7 +2845,7 @@
     },
     {
       "name": "Ed Da Deepweb",
-      "level": 1869,
+      "level": 1892,
       "resets": 50,
       "vocation": "Elder Druid",
       "nick": "",
@@ -2863,7 +2877,8 @@
         "2026-08-15-01": 50,
         "2026-08-15-02": 50,
         "2026-08-15-03": 50,
-        "2026-08-15-04": 50
+        "2026-08-15-04": 50,
+        "2026-08-15-05": 50
       },
       "stats": {
         "experience": 0,
@@ -3067,7 +3082,8 @@
         "2026-08-15-01": 71,
         "2026-08-15-02": 71,
         "2026-08-15-03": 71,
-        "2026-08-15-04": 71
+        "2026-08-15-04": 71,
+        "2026-08-15-05": 71
       },
       "stats": {
         "experience": 0,
@@ -3287,7 +3303,8 @@
         "2026-08-15-01": 25,
         "2026-08-15-02": 25,
         "2026-08-15-03": 25,
-        "2026-08-15-04": 25
+        "2026-08-15-04": 25,
+        "2026-08-15-05": 25
       },
       "stats": {
         "experience": 0,
@@ -3411,7 +3428,8 @@
         "2026-08-15-01": 54,
         "2026-08-15-02": 54,
         "2026-08-15-03": 54,
-        "2026-08-15-04": 54
+        "2026-08-15-04": 54,
+        "2026-08-15-05": 54
       },
       "stats": {
         "experience": 0,
@@ -3533,7 +3551,8 @@
         "2026-08-15-01": 60,
         "2026-08-15-02": 60,
         "2026-08-15-03": 60,
-        "2026-08-15-04": 60
+        "2026-08-15-04": 60,
+        "2026-08-15-05": 60
       },
       "stats": {
         "experience": 0,
@@ -3733,7 +3752,8 @@
         "2026-08-15-01": 60,
         "2026-08-15-02": 60,
         "2026-08-15-03": 60,
-        "2026-08-15-04": 60
+        "2026-08-15-04": 60,
+        "2026-08-15-05": 60
       },
       "stats": {
         "experience": 0,
@@ -3933,7 +3953,8 @@
         "2026-08-15-01": 58,
         "2026-08-15-02": 58,
         "2026-08-15-03": 58,
-        "2026-08-15-04": 58
+        "2026-08-15-04": 58,
+        "2026-08-15-05": 58
       },
       "stats": {
         "experience": 0,
@@ -4135,7 +4156,8 @@
         "2026-08-15-01": 51,
         "2026-08-15-02": 51,
         "2026-08-15-03": 51,
-        "2026-08-15-04": 51
+        "2026-08-15-04": 51,
+        "2026-08-15-05": 51
       },
       "stats": {
         "experience": 0,
@@ -4158,7 +4180,7 @@
     },
     {
       "name": "Hurtles Ownsz",
-      "level": 1300,
+      "level": 1299,
       "resets": 24,
       "vocation": "Exalted Monk",
       "nick": "",
@@ -4210,7 +4232,8 @@
         "2026-08-15-01": 24,
         "2026-08-15-02": 24,
         "2026-08-15-03": 24,
-        "2026-08-15-04": 24
+        "2026-08-15-04": 24,
+        "2026-08-15-05": 24
       },
       "stats": {
         "experience": 0,
@@ -4412,7 +4435,8 @@
         "2026-08-15-01": 44,
         "2026-08-15-02": 44,
         "2026-08-15-03": 44,
-        "2026-08-15-04": 44
+        "2026-08-15-04": 44,
+        "2026-08-15-05": 44
       },
       "stats": {
         "experience": 0,
@@ -4643,7 +4667,8 @@
         "2026-08-15-01": 66,
         "2026-08-15-02": 66,
         "2026-08-15-03": 66,
-        "2026-08-15-04": 66
+        "2026-08-15-04": 66,
+        "2026-08-15-05": 66
       },
       "stats": {
         "experience": 0,
@@ -4666,7 +4691,7 @@
     },
     {
       "name": "Kashambao",
-      "level": 771,
+      "level": 847,
       "resets": 57,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -4793,7 +4818,8 @@
         "2026-08-15-01": 56,
         "2026-08-15-02": 56,
         "2026-08-15-03": 57,
-        "2026-08-15-04": 57
+        "2026-08-15-04": 57,
+        "2026-08-15-05": 57
       },
       "stats": {
         "experience": 0,
@@ -4816,7 +4842,7 @@
     },
     {
       "name": "Kawik",
-      "level": 1528,
+      "level": 1534,
       "resets": 60,
       "vocation": "Elite Knight",
       "nick": "",
@@ -4830,7 +4856,8 @@
         "2026-08-15-01": 60,
         "2026-08-15-02": 60,
         "2026-08-15-03": 60,
-        "2026-08-15-04": 60
+        "2026-08-15-04": 60,
+        "2026-08-15-05": 60
       },
       "stats": {
         "experience": 0,
@@ -5038,7 +5065,8 @@
         "2026-08-15-01": 34,
         "2026-08-15-02": 34,
         "2026-08-15-03": 34,
-        "2026-08-15-04": 34
+        "2026-08-15-04": 34,
+        "2026-08-15-05": 34
       },
       "stats": {
         "experience": 0,
@@ -5235,7 +5263,8 @@
         "2026-08-15-01": 65,
         "2026-08-15-02": 65,
         "2026-08-15-03": 65,
-        "2026-08-15-04": 65
+        "2026-08-15-04": 65,
+        "2026-08-15-05": 65
       },
       "stats": {
         "experience": 0,
@@ -5258,7 +5287,7 @@
     },
     {
       "name": "Kolwaski",
-      "level": 1163,
+      "level": 1174,
       "resets": 55,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -5435,7 +5464,8 @@
         "2026-08-15-01": 55,
         "2026-08-15-02": 55,
         "2026-08-15-03": 55,
-        "2026-08-15-04": 55
+        "2026-08-15-04": 55,
+        "2026-08-15-05": 55
       },
       "stats": {
         "experience": 0,
@@ -5655,7 +5685,8 @@
         "2026-08-15-01": 67,
         "2026-08-15-02": 67,
         "2026-08-15-03": 67,
-        "2026-08-15-04": 67
+        "2026-08-15-04": 67,
+        "2026-08-15-05": 67
       },
       "stats": {
         "experience": 0,
@@ -5875,7 +5906,8 @@
         "2026-08-15-01": 60,
         "2026-08-15-02": 60,
         "2026-08-15-03": 60,
-        "2026-08-15-04": 60
+        "2026-08-15-04": 60,
+        "2026-08-15-05": 60
       },
       "stats": {
         "experience": 0,
@@ -6066,7 +6098,8 @@
         "2026-08-15-01": 33,
         "2026-08-15-02": 33,
         "2026-08-15-03": 33,
-        "2026-08-15-04": 33
+        "2026-08-15-04": 33,
+        "2026-08-15-05": 33
       },
       "stats": {
         "experience": 0,
@@ -6095,7 +6128,7 @@
     },
     {
       "name": "Luiscrazynear",
-      "level": 1126,
+      "level": 1157,
       "resets": 45,
       "vocation": "Elder Druid",
       "nick": "",
@@ -6154,7 +6187,8 @@
         "2026-08-15-01": 45,
         "2026-08-15-02": 45,
         "2026-08-15-03": 45,
-        "2026-08-15-04": 45
+        "2026-08-15-04": 45,
+        "2026-08-15-05": 45
       },
       "stats": {
         "experience": 0,
@@ -6183,7 +6217,7 @@
     },
     {
       "name": "MekZera",
-      "level": 1590,
+      "level": 1613,
       "resets": 63,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -6368,7 +6402,8 @@
         "2026-08-15-01": 63,
         "2026-08-15-02": 63,
         "2026-08-15-03": 63,
-        "2026-08-15-04": 63
+        "2026-08-15-04": 63,
+        "2026-08-15-05": 63
       },
       "stats": {
         "experience": 0,
@@ -6391,7 +6426,7 @@
     },
     {
       "name": "Melbiss",
-      "level": 1718,
+      "level": 1742,
       "resets": 58,
       "vocation": "Elite Knight",
       "nick": "",
@@ -6584,7 +6619,8 @@
         "2026-08-15-01": 58,
         "2026-08-15-02": 58,
         "2026-08-15-03": 58,
-        "2026-08-15-04": 58
+        "2026-08-15-04": 58,
+        "2026-08-15-05": 58
       },
       "stats": {
         "experience": 0,
@@ -6613,7 +6649,7 @@
     },
     {
       "name": "Mugunza",
-      "level": 1671,
+      "level": 1675,
       "resets": 56,
       "vocation": "Master Sorcerer",
       "nick": "",
@@ -6645,7 +6681,8 @@
         "2026-08-15-01": 56,
         "2026-08-15-02": 56,
         "2026-08-15-03": 56,
-        "2026-08-15-04": 56
+        "2026-08-15-04": 56,
+        "2026-08-15-05": 56
       },
       "stats": {
         "experience": 0,
@@ -6849,7 +6886,8 @@
         "2026-08-15-01": 53,
         "2026-08-15-02": 53,
         "2026-08-15-03": 53,
-        "2026-08-15-04": 53
+        "2026-08-15-04": 53,
+        "2026-08-15-05": 53
       },
       "stats": {
         "experience": 0,
@@ -6872,7 +6910,7 @@
     },
     {
       "name": "Ntka",
-      "level": 2000,
+      "level": 1998,
       "resets": 57,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -7040,7 +7078,8 @@
         "2026-08-15-01": 57,
         "2026-08-15-02": 57,
         "2026-08-15-03": 57,
-        "2026-08-15-04": 57
+        "2026-08-15-04": 57,
+        "2026-08-15-05": 57
       },
       "stats": {
         "experience": 0,
@@ -7054,6 +7093,11 @@
         "fishing": 0
       },
       "deaths": [
+        {
+          "time": "Aug 15, 2026 05:00",
+          "by": "Guizinho Fofinho (jogador)",
+          "is_pvp": true
+        },
         {
           "time": "Aug 14, 2026 22:58",
           "by": "Julian Alvarez (jogador)",
@@ -7237,7 +7281,8 @@
         "2026-08-15-01": 55,
         "2026-08-15-02": 55,
         "2026-08-15-03": 55,
-        "2026-08-15-04": 55
+        "2026-08-15-04": 55,
+        "2026-08-15-05": 55
       },
       "stats": {
         "experience": 0,
@@ -7437,7 +7482,8 @@
         "2026-08-15-01": 38,
         "2026-08-15-02": 38,
         "2026-08-15-03": 38,
-        "2026-08-15-04": 38
+        "2026-08-15-04": 38,
+        "2026-08-15-05": 38
       },
       "stats": {
         "experience": 0,
@@ -7450,7 +7496,13 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Aug 15, 2026 04:46",
+          "by": "Knighterror (jogador)",
+          "is_pvp": true
+        }
+      ],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -7641,7 +7693,8 @@
         "2026-08-15-01": 65,
         "2026-08-15-02": 65,
         "2026-08-15-03": 65,
-        "2026-08-15-04": 65
+        "2026-08-15-04": 65,
+        "2026-08-15-05": 65
       },
       "stats": {
         "experience": 0,
@@ -7664,7 +7717,7 @@
     },
     {
       "name": "Tadala De Cinco",
-      "level": 1753,
+      "level": 1766,
       "resets": 61,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -7706,7 +7759,8 @@
         "2026-08-15-01": 61,
         "2026-08-15-02": 61,
         "2026-08-15-03": 61,
-        "2026-08-15-04": 61
+        "2026-08-15-04": 61,
+        "2026-08-15-05": 61
       },
       "stats": {
         "experience": 0,
@@ -7842,7 +7896,8 @@
         "2026-08-15-01": 60,
         "2026-08-15-02": 60,
         "2026-08-15-03": 60,
-        "2026-08-15-04": 60
+        "2026-08-15-04": 60,
+        "2026-08-15-05": 60
       },
       "stats": {
         "experience": 0,
@@ -8033,7 +8088,8 @@
         "2026-08-15-01": 50,
         "2026-08-15-02": 50,
         "2026-08-15-03": 50,
-        "2026-08-15-04": 50
+        "2026-08-15-04": 50,
+        "2026-08-15-05": 50
       },
       "stats": {
         "experience": 0,
@@ -8062,7 +8118,7 @@
     },
     {
       "name": "Welljacob",
-      "level": 1584,
+      "level": 1595,
       "resets": 40,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -8120,7 +8176,8 @@
         "2026-08-15-01": 40,
         "2026-08-15-02": 40,
         "2026-08-15-03": 40,
-        "2026-08-15-04": 40
+        "2026-08-15-04": 40,
+        "2026-08-15-05": 40
       },
       "stats": {
         "experience": 0,
@@ -8311,7 +8368,8 @@
         "2026-08-15-01": 20,
         "2026-08-15-02": 20,
         "2026-08-15-03": 20,
-        "2026-08-15-04": 20
+        "2026-08-15-04": 20,
+        "2026-08-15-05": 20
       },
       "stats": {
         "experience": 0,
@@ -8523,7 +8581,8 @@
         "2026-08-15-01": 30,
         "2026-08-15-02": 30,
         "2026-08-15-03": 30,
-        "2026-08-15-04": 30
+        "2026-08-15-04": 30,
+        "2026-08-15-05": 30
       },
       "stats": {
         "experience": 0,
@@ -8714,7 +8773,8 @@
         "2026-08-15-01": 50,
         "2026-08-15-02": 50,
         "2026-08-15-03": 50,
-        "2026-08-15-04": 50
+        "2026-08-15-04": 50,
+        "2026-08-15-05": 50
       },
       "stats": {
         "experience": 0,
@@ -8849,7 +8909,8 @@
         "2026-08-15-01": 64,
         "2026-08-15-02": 64,
         "2026-08-15-03": 64,
-        "2026-08-15-04": 64
+        "2026-08-15-04": 64,
+        "2026-08-15-05": 64
       },
       "stats": {
         "experience": 0,
@@ -8929,7 +8990,8 @@
         "2026-08-15-01": 38,
         "2026-08-15-02": 38,
         "2026-08-15-03": 38,
-        "2026-08-15-04": 38
+        "2026-08-15-04": 38,
+        "2026-08-15-05": 38
       },
       "stats": {
         "experience": 0,
@@ -9001,7 +9063,8 @@
         "2026-08-15-01": 40,
         "2026-08-15-02": 40,
         "2026-08-15-03": 40,
-        "2026-08-15-04": 40
+        "2026-08-15-04": 40,
+        "2026-08-15-05": 40
       },
       "stats": {
         "experience": 0,
@@ -9076,7 +9139,8 @@
         "2026-08-15-01": 40,
         "2026-08-15-02": 40,
         "2026-08-15-03": 40,
-        "2026-08-15-04": 40
+        "2026-08-15-04": 40,
+        "2026-08-15-05": 40
       },
       "stats": {
         "experience": 0,
@@ -9284,7 +9348,8 @@
         "2026-08-15-01": 46,
         "2026-08-15-02": 46,
         "2026-08-15-03": 46,
-        "2026-08-15-04": 46
+        "2026-08-15-04": 46,
+        "2026-08-15-05": 46
       },
       "stats": {
         "experience": 0,
@@ -9504,7 +9569,8 @@
         "2026-08-15-01": 38,
         "2026-08-15-02": 38,
         "2026-08-15-03": 38,
-        "2026-08-15-04": 38
+        "2026-08-15-04": 38,
+        "2026-08-15-05": 38
       },
       "stats": {
         "experience": 0,
@@ -9720,7 +9786,8 @@
         "2026-08-15-01": 41,
         "2026-08-15-02": 41,
         "2026-08-15-03": 41,
-        "2026-08-15-04": 41
+        "2026-08-15-04": 41,
+        "2026-08-15-05": 41
       },
       "stats": {
         "experience": 0,
@@ -9916,7 +9983,8 @@
         "2026-08-15-01": 59,
         "2026-08-15-02": 59,
         "2026-08-15-03": 59,
-        "2026-08-15-04": 59
+        "2026-08-15-04": 59,
+        "2026-08-15-05": 59
       },
       "stats": {
         "experience": 0,
@@ -10015,7 +10083,8 @@
         "2026-08-15-01": 29,
         "2026-08-15-02": 29,
         "2026-08-15-03": 29,
-        "2026-08-15-04": 29
+        "2026-08-15-04": 29,
+        "2026-08-15-05": 29
       },
       "stats": {
         "experience": 0,
@@ -10100,7 +10169,8 @@
         "2026-08-15-01": 34,
         "2026-08-15-02": 34,
         "2026-08-15-03": 34,
-        "2026-08-15-04": 34
+        "2026-08-15-04": 34,
+        "2026-08-15-05": 34
       },
       "stats": {
         "experience": 0,
@@ -10190,7 +10260,8 @@
         "2026-08-15-01": 53,
         "2026-08-15-02": 53,
         "2026-08-15-03": 53,
-        "2026-08-15-04": 53
+        "2026-08-15-04": 53,
+        "2026-08-15-05": 53
       },
       "stats": {
         "experience": 0,
@@ -10390,7 +10461,8 @@
         "2026-08-15-01": 42,
         "2026-08-15-02": 42,
         "2026-08-15-03": 42,
-        "2026-08-15-04": 42
+        "2026-08-15-04": 42,
+        "2026-08-15-05": 42
       },
       "stats": {
         "experience": 0,
@@ -10586,7 +10658,8 @@
         "2026-08-15-01": 53,
         "2026-08-15-02": 53,
         "2026-08-15-03": 53,
-        "2026-08-15-04": 53
+        "2026-08-15-04": 53,
+        "2026-08-15-05": 53
       },
       "stats": {
         "experience": 0,
@@ -10665,7 +10738,8 @@
         "2026-08-15-01": 45,
         "2026-08-15-02": 45,
         "2026-08-15-03": 45,
-        "2026-08-15-04": 45
+        "2026-08-15-04": 45,
+        "2026-08-15-05": 45
       },
       "stats": {
         "experience": 0,
@@ -10678,13 +10752,7 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [
-        {
-          "time": "Aug 14, 2026 22:39",
-          "by": "a hellflame juggernaut (monstro)",
-          "is_pvp": false
-        }
-      ],
+      "deaths": [],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -10741,7 +10809,8 @@
         "2026-08-15-01": 39,
         "2026-08-15-02": 39,
         "2026-08-15-03": 39,
-        "2026-08-15-04": 39
+        "2026-08-15-04": 39,
+        "2026-08-15-05": 39
       },
       "stats": {
         "experience": 0,
@@ -10808,7 +10877,8 @@
         "2026-08-15-01": 40,
         "2026-08-15-02": 40,
         "2026-08-15-03": 40,
-        "2026-08-15-04": 40
+        "2026-08-15-04": 40,
+        "2026-08-15-05": 40
       },
       "stats": {
         "experience": 0,
@@ -10999,7 +11069,8 @@
         "2026-08-15-01": 25,
         "2026-08-15-02": 25,
         "2026-08-15-03": 25,
-        "2026-08-15-04": 25
+        "2026-08-15-04": 25,
+        "2026-08-15-05": 25
       },
       "stats": {
         "experience": 0,
@@ -11203,7 +11274,8 @@
         "2026-08-15-01": 22,
         "2026-08-15-02": 22,
         "2026-08-15-03": 22,
-        "2026-08-15-04": 22
+        "2026-08-15-04": 22,
+        "2026-08-15-05": 22
       },
       "stats": {
         "experience": 0,
@@ -11494,7 +11566,7 @@
         {
           "name": "Baiakudinho",
           "value": 66,
-          "level": 1349,
+          "level": 1373,
           "vocation": "Royal Paladin",
           "guild_rank": 7
         },
@@ -11529,7 +11601,7 @@
         {
           "name": "MekZera",
           "value": 63,
-          "level": 1590,
+          "level": 1613,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
@@ -11557,7 +11629,7 @@
         {
           "name": "Tadala De Cinco",
           "value": 61,
-          "level": 1753,
+          "level": 1766,
           "vocation": "Royal Paladin",
           "guild_rank": 16
         },
@@ -11585,7 +11657,7 @@
         {
           "name": "Kawik",
           "value": 60,
-          "level": 1528,
+          "level": 1534,
           "vocation": "Elite Knight",
           "guild_rank": 20
         },
@@ -11620,35 +11692,35 @@
         {
           "name": "Melbiss",
           "value": 58,
-          "level": 1718,
+          "level": 1742,
           "vocation": "Elite Knight",
           "guild_rank": 25
         },
         {
           "name": "Kashambao",
           "value": 57,
-          "level": 771,
+          "level": 847,
           "vocation": "Royal Paladin",
           "guild_rank": 26
         },
         {
           "name": "Ntka",
           "value": 57,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
         {
           "name": "Mugunza",
           "value": 56,
-          "level": 1671,
+          "level": 1675,
           "vocation": "Master Sorcerer",
           "guild_rank": 28
         },
         {
           "name": "Kolwaski",
           "value": 55,
-          "level": 1163,
+          "level": 1174,
           "vocation": "Royal Paladin",
           "guild_rank": 29
         },
@@ -11662,7 +11734,7 @@
         {
           "name": "Albatroz",
           "value": 54,
-          "level": 1981,
+          "level": 1983,
           "vocation": "Exalted Monk",
           "guild_rank": 31
         },
@@ -11676,7 +11748,7 @@
         {
           "name": "Amelior",
           "value": 53,
-          "level": 1859,
+          "level": 1861,
           "vocation": "Elite Knight",
           "guild_rank": 33
         },
@@ -11711,7 +11783,7 @@
         {
           "name": "Ed Da Deepweb",
           "value": 50,
-          "level": 1869,
+          "level": 1892,
           "vocation": "Elder Druid",
           "guild_rank": 38
         },
@@ -11739,21 +11811,21 @@
         {
           "name": "Boltfly Peoplecry",
           "value": 45,
-          "level": 1723,
+          "level": 1731,
           "vocation": "Royal Paladin",
           "guild_rank": 42
         },
         {
           "name": "Dede Knight",
           "value": 45,
-          "level": 1223,
+          "level": 1226,
           "vocation": "Elite Knight",
           "guild_rank": 43
         },
         {
           "name": "Luiscrazynear",
           "value": 45,
-          "level": 1126,
+          "level": 1157,
           "vocation": "Elder Druid",
           "guild_rank": 44
         },
@@ -11788,7 +11860,7 @@
         {
           "name": "Welljacob",
           "value": 40,
-          "level": 1584,
+          "level": 1595,
           "vocation": "Royal Paladin",
           "guild_rank": 49
         },
@@ -11900,7 +11972,7 @@
         {
           "name": "Hurtles Ownsz",
           "value": 24,
-          "level": 1300,
+          "level": 1299,
           "vocation": "Exalted Monk",
           "guild_rank": 65
         },
@@ -11921,7 +11993,7 @@
         {
           "name": "Achilles",
           "value": 18,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 68
         }
@@ -11990,35 +12062,35 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 9
         },
         {
           "name": "Albatroz",
           "value": 0,
-          "level": 1981,
+          "level": 1983,
           "vocation": "Exalted Monk",
           "guild_rank": 10
         },
         {
           "name": "Amelior",
           "value": 0,
-          "level": 1859,
+          "level": 1861,
           "vocation": "Elite Knight",
           "guild_rank": 11
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1349,
+          "level": 1373,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1723,
+          "level": 1731,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -12032,14 +12104,14 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1223,
+          "level": 1226,
           "vocation": "Elite Knight",
           "guild_rank": 15
         },
         {
           "name": "Ed Da Deepweb",
           "value": 0,
-          "level": 1869,
+          "level": 1892,
           "vocation": "Elder Druid",
           "guild_rank": 16
         },
@@ -12095,7 +12167,7 @@
         {
           "name": "Hurtles Ownsz",
           "value": 0,
-          "level": 1300,
+          "level": 1299,
           "vocation": "Exalted Monk",
           "guild_rank": 24
         },
@@ -12116,14 +12188,14 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 771,
+          "level": 847,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
         {
           "name": "Kawik",
           "value": 0,
-          "level": 1528,
+          "level": 1534,
           "vocation": "Elite Knight",
           "guild_rank": 28
         },
@@ -12144,7 +12216,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1163,
+          "level": 1174,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
@@ -12172,28 +12244,28 @@
         {
           "name": "Luiscrazynear",
           "value": 0,
-          "level": 1126,
+          "level": 1157,
           "vocation": "Elder Druid",
           "guild_rank": 35
         },
         {
           "name": "MekZera",
           "value": 0,
-          "level": 1590,
+          "level": 1613,
           "vocation": "Royal Paladin",
           "guild_rank": 36
         },
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1718,
+          "level": 1742,
           "vocation": "Elite Knight",
           "guild_rank": 37
         },
         {
           "name": "Mugunza",
           "value": 0,
-          "level": 1671,
+          "level": 1675,
           "vocation": "Master Sorcerer",
           "guild_rank": 38
         },
@@ -12207,7 +12279,7 @@
         {
           "name": "Ntka",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 40
         },
@@ -12235,7 +12307,7 @@
         {
           "name": "Tadala De Cinco",
           "value": 0,
-          "level": 1753,
+          "level": 1766,
           "vocation": "Royal Paladin",
           "guild_rank": 44
         },
@@ -12256,7 +12328,7 @@
         {
           "name": "Welljacob",
           "value": 0,
-          "level": 1584,
+          "level": 1595,
           "vocation": "Royal Paladin",
           "guild_rank": 47
         },
@@ -12472,35 +12544,35 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 9
         },
         {
           "name": "Albatroz",
           "value": 0,
-          "level": 1981,
+          "level": 1983,
           "vocation": "Exalted Monk",
           "guild_rank": 10
         },
         {
           "name": "Amelior",
           "value": 0,
-          "level": 1859,
+          "level": 1861,
           "vocation": "Elite Knight",
           "guild_rank": 11
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1349,
+          "level": 1373,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1723,
+          "level": 1731,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -12514,14 +12586,14 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1223,
+          "level": 1226,
           "vocation": "Elite Knight",
           "guild_rank": 15
         },
         {
           "name": "Ed Da Deepweb",
           "value": 0,
-          "level": 1869,
+          "level": 1892,
           "vocation": "Elder Druid",
           "guild_rank": 16
         },
@@ -12577,7 +12649,7 @@
         {
           "name": "Hurtles Ownsz",
           "value": 0,
-          "level": 1300,
+          "level": 1299,
           "vocation": "Exalted Monk",
           "guild_rank": 24
         },
@@ -12598,14 +12670,14 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 771,
+          "level": 847,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
         {
           "name": "Kawik",
           "value": 0,
-          "level": 1528,
+          "level": 1534,
           "vocation": "Elite Knight",
           "guild_rank": 28
         },
@@ -12626,7 +12698,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1163,
+          "level": 1174,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
@@ -12654,28 +12726,28 @@
         {
           "name": "Luiscrazynear",
           "value": 0,
-          "level": 1126,
+          "level": 1157,
           "vocation": "Elder Druid",
           "guild_rank": 35
         },
         {
           "name": "MekZera",
           "value": 0,
-          "level": 1590,
+          "level": 1613,
           "vocation": "Royal Paladin",
           "guild_rank": 36
         },
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1718,
+          "level": 1742,
           "vocation": "Elite Knight",
           "guild_rank": 37
         },
         {
           "name": "Mugunza",
           "value": 0,
-          "level": 1671,
+          "level": 1675,
           "vocation": "Master Sorcerer",
           "guild_rank": 38
         },
@@ -12689,7 +12761,7 @@
         {
           "name": "Ntka",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 40
         },
@@ -12717,7 +12789,7 @@
         {
           "name": "Tadala De Cinco",
           "value": 0,
-          "level": 1753,
+          "level": 1766,
           "vocation": "Royal Paladin",
           "guild_rank": 44
         },
@@ -12738,7 +12810,7 @@
         {
           "name": "Welljacob",
           "value": 0,
-          "level": 1584,
+          "level": 1595,
           "vocation": "Royal Paladin",
           "guild_rank": 47
         },
@@ -12954,35 +13026,35 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 9
         },
         {
           "name": "Albatroz",
           "value": 0,
-          "level": 1981,
+          "level": 1983,
           "vocation": "Exalted Monk",
           "guild_rank": 10
         },
         {
           "name": "Amelior",
           "value": 0,
-          "level": 1859,
+          "level": 1861,
           "vocation": "Elite Knight",
           "guild_rank": 11
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1349,
+          "level": 1373,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1723,
+          "level": 1731,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -12996,14 +13068,14 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1223,
+          "level": 1226,
           "vocation": "Elite Knight",
           "guild_rank": 15
         },
         {
           "name": "Ed Da Deepweb",
           "value": 0,
-          "level": 1869,
+          "level": 1892,
           "vocation": "Elder Druid",
           "guild_rank": 16
         },
@@ -13059,7 +13131,7 @@
         {
           "name": "Hurtles Ownsz",
           "value": 0,
-          "level": 1300,
+          "level": 1299,
           "vocation": "Exalted Monk",
           "guild_rank": 24
         },
@@ -13080,14 +13152,14 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 771,
+          "level": 847,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
         {
           "name": "Kawik",
           "value": 0,
-          "level": 1528,
+          "level": 1534,
           "vocation": "Elite Knight",
           "guild_rank": 28
         },
@@ -13108,7 +13180,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1163,
+          "level": 1174,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
@@ -13136,28 +13208,28 @@
         {
           "name": "Luiscrazynear",
           "value": 0,
-          "level": 1126,
+          "level": 1157,
           "vocation": "Elder Druid",
           "guild_rank": 35
         },
         {
           "name": "MekZera",
           "value": 0,
-          "level": 1590,
+          "level": 1613,
           "vocation": "Royal Paladin",
           "guild_rank": 36
         },
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1718,
+          "level": 1742,
           "vocation": "Elite Knight",
           "guild_rank": 37
         },
         {
           "name": "Mugunza",
           "value": 0,
-          "level": 1671,
+          "level": 1675,
           "vocation": "Master Sorcerer",
           "guild_rank": 38
         },
@@ -13171,7 +13243,7 @@
         {
           "name": "Ntka",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 40
         },
@@ -13199,7 +13271,7 @@
         {
           "name": "Tadala De Cinco",
           "value": 0,
-          "level": 1753,
+          "level": 1766,
           "vocation": "Royal Paladin",
           "guild_rank": 44
         },
@@ -13220,7 +13292,7 @@
         {
           "name": "Welljacob",
           "value": 0,
-          "level": 1584,
+          "level": 1595,
           "vocation": "Royal Paladin",
           "guild_rank": 47
         },
@@ -13436,35 +13508,35 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 9
         },
         {
           "name": "Albatroz",
           "value": 0,
-          "level": 1981,
+          "level": 1983,
           "vocation": "Exalted Monk",
           "guild_rank": 10
         },
         {
           "name": "Amelior",
           "value": 0,
-          "level": 1859,
+          "level": 1861,
           "vocation": "Elite Knight",
           "guild_rank": 11
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1349,
+          "level": 1373,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1723,
+          "level": 1731,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -13478,14 +13550,14 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1223,
+          "level": 1226,
           "vocation": "Elite Knight",
           "guild_rank": 15
         },
         {
           "name": "Ed Da Deepweb",
           "value": 0,
-          "level": 1869,
+          "level": 1892,
           "vocation": "Elder Druid",
           "guild_rank": 16
         },
@@ -13541,7 +13613,7 @@
         {
           "name": "Hurtles Ownsz",
           "value": 0,
-          "level": 1300,
+          "level": 1299,
           "vocation": "Exalted Monk",
           "guild_rank": 24
         },
@@ -13562,14 +13634,14 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 771,
+          "level": 847,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
         {
           "name": "Kawik",
           "value": 0,
-          "level": 1528,
+          "level": 1534,
           "vocation": "Elite Knight",
           "guild_rank": 28
         },
@@ -13590,7 +13662,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1163,
+          "level": 1174,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
@@ -13618,28 +13690,28 @@
         {
           "name": "Luiscrazynear",
           "value": 0,
-          "level": 1126,
+          "level": 1157,
           "vocation": "Elder Druid",
           "guild_rank": 35
         },
         {
           "name": "MekZera",
           "value": 0,
-          "level": 1590,
+          "level": 1613,
           "vocation": "Royal Paladin",
           "guild_rank": 36
         },
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1718,
+          "level": 1742,
           "vocation": "Elite Knight",
           "guild_rank": 37
         },
         {
           "name": "Mugunza",
           "value": 0,
-          "level": 1671,
+          "level": 1675,
           "vocation": "Master Sorcerer",
           "guild_rank": 38
         },
@@ -13653,7 +13725,7 @@
         {
           "name": "Ntka",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 40
         },
@@ -13681,7 +13753,7 @@
         {
           "name": "Tadala De Cinco",
           "value": 0,
-          "level": 1753,
+          "level": 1766,
           "vocation": "Royal Paladin",
           "guild_rank": 44
         },
@@ -13702,7 +13774,7 @@
         {
           "name": "Welljacob",
           "value": 0,
-          "level": 1584,
+          "level": 1595,
           "vocation": "Royal Paladin",
           "guild_rank": 47
         },
@@ -13918,35 +13990,35 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 9
         },
         {
           "name": "Albatroz",
           "value": 0,
-          "level": 1981,
+          "level": 1983,
           "vocation": "Exalted Monk",
           "guild_rank": 10
         },
         {
           "name": "Amelior",
           "value": 0,
-          "level": 1859,
+          "level": 1861,
           "vocation": "Elite Knight",
           "guild_rank": 11
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1349,
+          "level": 1373,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1723,
+          "level": 1731,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -13960,14 +14032,14 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1223,
+          "level": 1226,
           "vocation": "Elite Knight",
           "guild_rank": 15
         },
         {
           "name": "Ed Da Deepweb",
           "value": 0,
-          "level": 1869,
+          "level": 1892,
           "vocation": "Elder Druid",
           "guild_rank": 16
         },
@@ -14023,7 +14095,7 @@
         {
           "name": "Hurtles Ownsz",
           "value": 0,
-          "level": 1300,
+          "level": 1299,
           "vocation": "Exalted Monk",
           "guild_rank": 24
         },
@@ -14044,14 +14116,14 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 771,
+          "level": 847,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
         {
           "name": "Kawik",
           "value": 0,
-          "level": 1528,
+          "level": 1534,
           "vocation": "Elite Knight",
           "guild_rank": 28
         },
@@ -14072,7 +14144,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1163,
+          "level": 1174,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
@@ -14100,28 +14172,28 @@
         {
           "name": "Luiscrazynear",
           "value": 0,
-          "level": 1126,
+          "level": 1157,
           "vocation": "Elder Druid",
           "guild_rank": 35
         },
         {
           "name": "MekZera",
           "value": 0,
-          "level": 1590,
+          "level": 1613,
           "vocation": "Royal Paladin",
           "guild_rank": 36
         },
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1718,
+          "level": 1742,
           "vocation": "Elite Knight",
           "guild_rank": 37
         },
         {
           "name": "Mugunza",
           "value": 0,
-          "level": 1671,
+          "level": 1675,
           "vocation": "Master Sorcerer",
           "guild_rank": 38
         },
@@ -14135,7 +14207,7 @@
         {
           "name": "Ntka",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 40
         },
@@ -14163,7 +14235,7 @@
         {
           "name": "Tadala De Cinco",
           "value": 0,
-          "level": 1753,
+          "level": 1766,
           "vocation": "Royal Paladin",
           "guild_rank": 44
         },
@@ -14184,7 +14256,7 @@
         {
           "name": "Welljacob",
           "value": 0,
-          "level": 1584,
+          "level": 1595,
           "vocation": "Royal Paladin",
           "guild_rank": 47
         },
@@ -14400,35 +14472,35 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 9
         },
         {
           "name": "Albatroz",
           "value": 0,
-          "level": 1981,
+          "level": 1983,
           "vocation": "Exalted Monk",
           "guild_rank": 10
         },
         {
           "name": "Amelior",
           "value": 0,
-          "level": 1859,
+          "level": 1861,
           "vocation": "Elite Knight",
           "guild_rank": 11
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1349,
+          "level": 1373,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1723,
+          "level": 1731,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -14442,14 +14514,14 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1223,
+          "level": 1226,
           "vocation": "Elite Knight",
           "guild_rank": 15
         },
         {
           "name": "Ed Da Deepweb",
           "value": 0,
-          "level": 1869,
+          "level": 1892,
           "vocation": "Elder Druid",
           "guild_rank": 16
         },
@@ -14505,7 +14577,7 @@
         {
           "name": "Hurtles Ownsz",
           "value": 0,
-          "level": 1300,
+          "level": 1299,
           "vocation": "Exalted Monk",
           "guild_rank": 24
         },
@@ -14526,14 +14598,14 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 771,
+          "level": 847,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
         {
           "name": "Kawik",
           "value": 0,
-          "level": 1528,
+          "level": 1534,
           "vocation": "Elite Knight",
           "guild_rank": 28
         },
@@ -14554,7 +14626,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1163,
+          "level": 1174,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
@@ -14582,28 +14654,28 @@
         {
           "name": "Luiscrazynear",
           "value": 0,
-          "level": 1126,
+          "level": 1157,
           "vocation": "Elder Druid",
           "guild_rank": 35
         },
         {
           "name": "MekZera",
           "value": 0,
-          "level": 1590,
+          "level": 1613,
           "vocation": "Royal Paladin",
           "guild_rank": 36
         },
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1718,
+          "level": 1742,
           "vocation": "Elite Knight",
           "guild_rank": 37
         },
         {
           "name": "Mugunza",
           "value": 0,
-          "level": 1671,
+          "level": 1675,
           "vocation": "Master Sorcerer",
           "guild_rank": 38
         },
@@ -14617,7 +14689,7 @@
         {
           "name": "Ntka",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 40
         },
@@ -14645,7 +14717,7 @@
         {
           "name": "Tadala De Cinco",
           "value": 0,
-          "level": 1753,
+          "level": 1766,
           "vocation": "Royal Paladin",
           "guild_rank": 44
         },
@@ -14666,7 +14738,7 @@
         {
           "name": "Welljacob",
           "value": 0,
-          "level": 1584,
+          "level": 1595,
           "vocation": "Royal Paladin",
           "guild_rank": 47
         },
@@ -14882,35 +14954,35 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 9
         },
         {
           "name": "Albatroz",
           "value": 0,
-          "level": 1981,
+          "level": 1983,
           "vocation": "Exalted Monk",
           "guild_rank": 10
         },
         {
           "name": "Amelior",
           "value": 0,
-          "level": 1859,
+          "level": 1861,
           "vocation": "Elite Knight",
           "guild_rank": 11
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1349,
+          "level": 1373,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1723,
+          "level": 1731,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -14924,14 +14996,14 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1223,
+          "level": 1226,
           "vocation": "Elite Knight",
           "guild_rank": 15
         },
         {
           "name": "Ed Da Deepweb",
           "value": 0,
-          "level": 1869,
+          "level": 1892,
           "vocation": "Elder Druid",
           "guild_rank": 16
         },
@@ -14987,7 +15059,7 @@
         {
           "name": "Hurtles Ownsz",
           "value": 0,
-          "level": 1300,
+          "level": 1299,
           "vocation": "Exalted Monk",
           "guild_rank": 24
         },
@@ -15008,14 +15080,14 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 771,
+          "level": 847,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
         {
           "name": "Kawik",
           "value": 0,
-          "level": 1528,
+          "level": 1534,
           "vocation": "Elite Knight",
           "guild_rank": 28
         },
@@ -15036,7 +15108,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1163,
+          "level": 1174,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
@@ -15064,28 +15136,28 @@
         {
           "name": "Luiscrazynear",
           "value": 0,
-          "level": 1126,
+          "level": 1157,
           "vocation": "Elder Druid",
           "guild_rank": 35
         },
         {
           "name": "MekZera",
           "value": 0,
-          "level": 1590,
+          "level": 1613,
           "vocation": "Royal Paladin",
           "guild_rank": 36
         },
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1718,
+          "level": 1742,
           "vocation": "Elite Knight",
           "guild_rank": 37
         },
         {
           "name": "Mugunza",
           "value": 0,
-          "level": 1671,
+          "level": 1675,
           "vocation": "Master Sorcerer",
           "guild_rank": 38
         },
@@ -15099,7 +15171,7 @@
         {
           "name": "Ntka",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 40
         },
@@ -15127,7 +15199,7 @@
         {
           "name": "Tadala De Cinco",
           "value": 0,
-          "level": 1753,
+          "level": 1766,
           "vocation": "Royal Paladin",
           "guild_rank": 44
         },
@@ -15148,7 +15220,7 @@
         {
           "name": "Welljacob",
           "value": 0,
-          "level": 1584,
+          "level": 1595,
           "vocation": "Royal Paladin",
           "guild_rank": 47
         },
@@ -15364,35 +15436,35 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 9
         },
         {
           "name": "Albatroz",
           "value": 0,
-          "level": 1981,
+          "level": 1983,
           "vocation": "Exalted Monk",
           "guild_rank": 10
         },
         {
           "name": "Amelior",
           "value": 0,
-          "level": 1859,
+          "level": 1861,
           "vocation": "Elite Knight",
           "guild_rank": 11
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1349,
+          "level": 1373,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1723,
+          "level": 1731,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -15406,14 +15478,14 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1223,
+          "level": 1226,
           "vocation": "Elite Knight",
           "guild_rank": 15
         },
         {
           "name": "Ed Da Deepweb",
           "value": 0,
-          "level": 1869,
+          "level": 1892,
           "vocation": "Elder Druid",
           "guild_rank": 16
         },
@@ -15469,7 +15541,7 @@
         {
           "name": "Hurtles Ownsz",
           "value": 0,
-          "level": 1300,
+          "level": 1299,
           "vocation": "Exalted Monk",
           "guild_rank": 24
         },
@@ -15490,14 +15562,14 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 771,
+          "level": 847,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
         {
           "name": "Kawik",
           "value": 0,
-          "level": 1528,
+          "level": 1534,
           "vocation": "Elite Knight",
           "guild_rank": 28
         },
@@ -15518,7 +15590,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1163,
+          "level": 1174,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
@@ -15546,28 +15618,28 @@
         {
           "name": "Luiscrazynear",
           "value": 0,
-          "level": 1126,
+          "level": 1157,
           "vocation": "Elder Druid",
           "guild_rank": 35
         },
         {
           "name": "MekZera",
           "value": 0,
-          "level": 1590,
+          "level": 1613,
           "vocation": "Royal Paladin",
           "guild_rank": 36
         },
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1718,
+          "level": 1742,
           "vocation": "Elite Knight",
           "guild_rank": 37
         },
         {
           "name": "Mugunza",
           "value": 0,
-          "level": 1671,
+          "level": 1675,
           "vocation": "Master Sorcerer",
           "guild_rank": 38
         },
@@ -15581,7 +15653,7 @@
         {
           "name": "Ntka",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 40
         },
@@ -15609,7 +15681,7 @@
         {
           "name": "Tadala De Cinco",
           "value": 0,
-          "level": 1753,
+          "level": 1766,
           "vocation": "Royal Paladin",
           "guild_rank": 44
         },
@@ -15630,7 +15702,7 @@
         {
           "name": "Welljacob",
           "value": 0,
-          "level": 1584,
+          "level": 1595,
           "vocation": "Royal Paladin",
           "guild_rank": 47
         },
@@ -15846,35 +15918,35 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 9
         },
         {
           "name": "Albatroz",
           "value": 0,
-          "level": 1981,
+          "level": 1983,
           "vocation": "Exalted Monk",
           "guild_rank": 10
         },
         {
           "name": "Amelior",
           "value": 0,
-          "level": 1859,
+          "level": 1861,
           "vocation": "Elite Knight",
           "guild_rank": 11
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1349,
+          "level": 1373,
           "vocation": "Royal Paladin",
           "guild_rank": 12
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1723,
+          "level": 1731,
           "vocation": "Royal Paladin",
           "guild_rank": 13
         },
@@ -15888,14 +15960,14 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1223,
+          "level": 1226,
           "vocation": "Elite Knight",
           "guild_rank": 15
         },
         {
           "name": "Ed Da Deepweb",
           "value": 0,
-          "level": 1869,
+          "level": 1892,
           "vocation": "Elder Druid",
           "guild_rank": 16
         },
@@ -15951,7 +16023,7 @@
         {
           "name": "Hurtles Ownsz",
           "value": 0,
-          "level": 1300,
+          "level": 1299,
           "vocation": "Exalted Monk",
           "guild_rank": 24
         },
@@ -15972,14 +16044,14 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 771,
+          "level": 847,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
         {
           "name": "Kawik",
           "value": 0,
-          "level": 1528,
+          "level": 1534,
           "vocation": "Elite Knight",
           "guild_rank": 28
         },
@@ -16000,7 +16072,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1163,
+          "level": 1174,
           "vocation": "Royal Paladin",
           "guild_rank": 31
         },
@@ -16028,28 +16100,28 @@
         {
           "name": "Luiscrazynear",
           "value": 0,
-          "level": 1126,
+          "level": 1157,
           "vocation": "Elder Druid",
           "guild_rank": 35
         },
         {
           "name": "MekZera",
           "value": 0,
-          "level": 1590,
+          "level": 1613,
           "vocation": "Royal Paladin",
           "guild_rank": 36
         },
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1718,
+          "level": 1742,
           "vocation": "Elite Knight",
           "guild_rank": 37
         },
         {
           "name": "Mugunza",
           "value": 0,
-          "level": 1671,
+          "level": 1675,
           "vocation": "Master Sorcerer",
           "guild_rank": 38
         },
@@ -16063,7 +16135,7 @@
         {
           "name": "Ntka",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 40
         },
@@ -16091,7 +16163,7 @@
         {
           "name": "Tadala De Cinco",
           "value": 0,
-          "level": 1753,
+          "level": 1766,
           "vocation": "Royal Paladin",
           "guild_rank": 44
         },
@@ -16112,7 +16184,7 @@
         {
           "name": "Welljacob",
           "value": 0,
-          "level": 1584,
+          "level": 1595,
           "vocation": "Royal Paladin",
           "guild_rank": 47
         },
