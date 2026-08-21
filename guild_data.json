@@ -1,6 +1,6 @@
 {
   "name": "Lowly People",
-  "updated_at": "21/08/2026 às 04:32 (Brasília)",
+  "updated_at": "21/08/2026 às 05:22 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 37,
@@ -96,7 +96,8 @@
         "2026-08-21-01": 60,
         "2026-08-21-02": 60,
         "2026-08-21-03": 60,
-        "2026-08-21-04": 60
+        "2026-08-21-04": 60,
+        "2026-08-21-05": 60
       },
       "stats": {
         "experience": 0,
@@ -136,7 +137,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 61,
         "2026-08-13-05": 61,
         "2026-08-13-06": 61,
         "2026-08-13-07": 61,
@@ -310,7 +310,8 @@
         "2026-08-21-01": 61,
         "2026-08-21-02": 61,
         "2026-08-21-03": 61,
-        "2026-08-21-04": 61
+        "2026-08-21-04": 61,
+        "2026-08-21-05": 61
       },
       "stats": {
         "experience": 0,
@@ -346,7 +347,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 94,
         "2026-08-13-05": 94,
         "2026-08-13-06": 94,
         "2026-08-13-07": 94,
@@ -520,7 +520,8 @@
         "2026-08-21-01": 94,
         "2026-08-21-02": 94,
         "2026-08-21-03": 94,
-        "2026-08-21-04": 94
+        "2026-08-21-04": 94,
+        "2026-08-21-05": 94
       },
       "stats": {
         "experience": 0,
@@ -572,7 +573,6 @@
       "rank": "Vice-Leader",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-13-04": 62,
         "2026-08-13-05": 62,
         "2026-08-13-06": 62,
         "2026-08-13-07": 62,
@@ -746,7 +746,8 @@
         "2026-08-21-01": 62,
         "2026-08-21-02": 62,
         "2026-08-21-03": 62,
-        "2026-08-21-04": 62
+        "2026-08-21-04": 62,
+        "2026-08-21-05": 62
       },
       "stats": {
         "experience": 0,
@@ -775,7 +776,7 @@
     },
     {
       "name": "Yagoodz Hahaha",
-      "level": 1395,
+      "level": 1420,
       "resets": 71,
       "vocation": "Elite Knight",
       "nick": "",
@@ -788,7 +789,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 70,
         "2026-08-13-05": 70,
         "2026-08-13-06": 70,
         "2026-08-13-07": 70,
@@ -962,7 +962,8 @@
         "2026-08-21-01": 71,
         "2026-08-21-02": 71,
         "2026-08-21-03": 71,
-        "2026-08-21-04": 71
+        "2026-08-21-04": 71,
+        "2026-08-21-05": 71
       },
       "stats": {
         "experience": 0,
@@ -993,7 +994,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-13-04": 18,
         "2026-08-13-05": 18,
         "2026-08-13-06": 18,
         "2026-08-13-07": 18,
@@ -1167,7 +1167,8 @@
         "2026-08-21-01": 18,
         "2026-08-21-02": 18,
         "2026-08-21-03": 18,
-        "2026-08-21-04": 18
+        "2026-08-21-04": 18,
+        "2026-08-21-05": 18
       },
       "stats": {
         "experience": 0,
@@ -1201,7 +1202,7 @@
     },
     {
       "name": "Baiakudinho",
-      "level": 921,
+      "level": 961,
       "resets": 70,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -1238,7 +1239,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 65,
         "2026-08-13-05": 65,
         "2026-08-13-06": 65,
         "2026-08-13-07": 65,
@@ -1412,7 +1412,8 @@
         "2026-08-21-01": 70,
         "2026-08-21-02": 70,
         "2026-08-21-03": 70,
-        "2026-08-21-04": 70
+        "2026-08-21-04": 70,
+        "2026-08-21-05": 70
       },
       "stats": {
         "experience": 0,
@@ -1435,7 +1436,7 @@
     },
     {
       "name": "Balinho",
-      "level": 1516,
+      "level": 1533,
       "resets": 52,
       "vocation": "Exalted Monk",
       "nick": "",
@@ -1506,7 +1507,8 @@
         "2026-08-21-01": 52,
         "2026-08-21-02": 52,
         "2026-08-21-03": 52,
-        "2026-08-21-04": 52
+        "2026-08-21-04": 52,
+        "2026-08-21-05": 52
       },
       "stats": {
         "experience": 0,
@@ -1520,9 +1522,9 @@
         "fishing": 0
       },
       "deaths": [],
-      "pvp_kills_total": 2,
-      "pvp_kills_today": 1,
-      "pvp_kills_week": 2,
+      "pvp_kills_total": 3,
+      "pvp_kills_today": 2,
+      "pvp_kills_week": 3,
       "war_kills": 0,
       "war_kills_day": 0,
       "war_kills_week": 0
@@ -1562,7 +1564,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 44,
         "2026-08-13-05": 44,
         "2026-08-13-06": 44,
         "2026-08-13-07": 44,
@@ -1736,7 +1737,8 @@
         "2026-08-21-01": 48,
         "2026-08-21-02": 48,
         "2026-08-21-03": 48,
-        "2026-08-21-04": 48
+        "2026-08-21-04": 48,
+        "2026-08-21-05": 48
       },
       "stats": {
         "experience": 0,
@@ -1759,7 +1761,7 @@
     },
     {
       "name": "Dede Knight",
-      "level": 1998,
+      "level": 2000,
       "resets": 49,
       "vocation": "Elite Knight",
       "nick": "",
@@ -1945,7 +1947,8 @@
         "2026-08-21-01": 49,
         "2026-08-21-02": 49,
         "2026-08-21-03": 49,
-        "2026-08-21-04": 49
+        "2026-08-21-04": 49,
+        "2026-08-21-05": 49
       },
       "stats": {
         "experience": 0,
@@ -2128,7 +2131,8 @@
         "2026-08-21-01": 49,
         "2026-08-21-02": 49,
         "2026-08-21-03": 49,
-        "2026-08-21-04": 49
+        "2026-08-21-04": 49,
+        "2026-08-21-05": 49
       },
       "stats": {
         "experience": 0,
@@ -2322,7 +2326,8 @@
         "2026-08-21-01": 50,
         "2026-08-21-02": 50,
         "2026-08-21-03": 50,
-        "2026-08-21-04": 50
+        "2026-08-21-04": 50,
+        "2026-08-21-05": 50
       },
       "stats": {
         "experience": 0,
@@ -2366,7 +2371,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 71,
         "2026-08-13-05": 71,
         "2026-08-13-06": 71,
         "2026-08-13-07": 71,
@@ -2540,7 +2544,8 @@
         "2026-08-21-01": 71,
         "2026-08-21-02": 71,
         "2026-08-21-03": 71,
-        "2026-08-21-04": 71
+        "2026-08-21-04": 71,
+        "2026-08-21-05": 71
       },
       "stats": {
         "experience": 0,
@@ -2563,7 +2568,7 @@
     },
     {
       "name": "Ethernal Pally",
-      "level": 1794,
+      "level": 1806,
       "resets": 40,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -2584,7 +2589,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 37,
         "2026-08-13-05": 37,
         "2026-08-13-06": 37,
         "2026-08-13-07": 37,
@@ -2758,7 +2762,8 @@
         "2026-08-21-01": 40,
         "2026-08-21-02": 40,
         "2026-08-21-03": 40,
-        "2026-08-21-04": 40
+        "2026-08-21-04": 40,
+        "2026-08-21-05": 40
       },
       "stats": {
         "experience": 0,
@@ -2875,7 +2880,8 @@
         "2026-08-21-01": 60,
         "2026-08-21-02": 60,
         "2026-08-21-03": 60,
-        "2026-08-21-04": 60
+        "2026-08-21-04": 60,
+        "2026-08-21-05": 60
       },
       "stats": {
         "experience": 0,
@@ -2921,7 +2927,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 60,
         "2026-08-13-05": 60,
         "2026-08-13-06": 60,
         "2026-08-13-07": 60,
@@ -3095,7 +3100,8 @@
         "2026-08-21-01": 60,
         "2026-08-21-02": 60,
         "2026-08-21-03": 60,
-        "2026-08-21-04": 60
+        "2026-08-21-04": 60,
+        "2026-08-21-05": 60
       },
       "stats": {
         "experience": 0,
@@ -3199,7 +3205,7 @@
     },
     {
       "name": "Haony",
-      "level": 855,
+      "level": 990,
       "resets": 62,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -3232,7 +3238,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 58,
         "2026-08-13-05": 58,
         "2026-08-13-06": 58,
         "2026-08-13-07": 58,
@@ -3406,7 +3411,8 @@
         "2026-08-21-01": 61,
         "2026-08-21-02": 61,
         "2026-08-21-03": 61,
-        "2026-08-21-04": 62
+        "2026-08-21-04": 62,
+        "2026-08-21-05": 62
       },
       "stats": {
         "experience": 0,
@@ -3448,7 +3454,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-13-04": 44,
         "2026-08-13-05": 44,
         "2026-08-13-06": 44,
         "2026-08-13-07": 44,
@@ -3622,7 +3627,8 @@
         "2026-08-21-01": 44,
         "2026-08-21-02": 44,
         "2026-08-21-03": 44,
-        "2026-08-21-04": 44
+        "2026-08-21-04": 44,
+        "2026-08-21-05": 44
       },
       "stats": {
         "experience": 0,
@@ -3645,7 +3651,7 @@
     },
     {
       "name": "Kashambao",
-      "level": 1629,
+      "level": 1633,
       "resets": 62,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -3682,7 +3688,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 55,
         "2026-08-13-05": 55,
         "2026-08-13-06": 55,
         "2026-08-13-07": 55,
@@ -3856,7 +3861,8 @@
         "2026-08-21-01": 62,
         "2026-08-21-02": 62,
         "2026-08-21-03": 62,
-        "2026-08-21-04": 62
+        "2026-08-21-04": 62,
+        "2026-08-21-05": 62
       },
       "stats": {
         "experience": 0,
@@ -4042,7 +4048,8 @@
         "2026-08-21-01": 61,
         "2026-08-21-02": 61,
         "2026-08-21-03": 61,
-        "2026-08-21-04": 61
+        "2026-08-21-04": 61,
+        "2026-08-21-05": 61
       },
       "stats": {
         "experience": 0,
@@ -4082,7 +4089,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 54,
         "2026-08-13-05": 54,
         "2026-08-13-06": 54,
         "2026-08-13-07": 54,
@@ -4256,7 +4262,8 @@
         "2026-08-21-01": 55,
         "2026-08-21-02": 55,
         "2026-08-21-03": 55,
-        "2026-08-21-04": 55
+        "2026-08-21-04": 55,
+        "2026-08-21-05": 55
       },
       "stats": {
         "experience": 0,
@@ -4279,7 +4286,7 @@
     },
     {
       "name": "Lilian Faithkeeper",
-      "level": 1616,
+      "level": 1619,
       "resets": 47,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -4308,7 +4315,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 46,
         "2026-08-13-05": 46,
         "2026-08-13-06": 46,
         "2026-08-13-07": 46,
@@ -4482,7 +4488,8 @@
         "2026-08-21-01": 47,
         "2026-08-21-02": 47,
         "2026-08-21-03": 47,
-        "2026-08-21-04": 47
+        "2026-08-21-04": 47,
+        "2026-08-21-05": 47
       },
       "stats": {
         "experience": 0,
@@ -4542,7 +4549,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 59,
         "2026-08-13-05": 59,
         "2026-08-13-06": 59,
         "2026-08-13-07": 59,
@@ -4716,7 +4722,8 @@
         "2026-08-21-01": 60,
         "2026-08-21-02": 60,
         "2026-08-21-03": 60,
-        "2026-08-21-04": 60
+        "2026-08-21-04": 60,
+        "2026-08-21-05": 60
       },
       "stats": {
         "experience": 0,
@@ -4783,7 +4790,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 43,
         "2026-08-13-05": 43,
         "2026-08-13-06": 43,
         "2026-08-13-07": 43,
@@ -4957,7 +4963,8 @@
         "2026-08-21-01": 49,
         "2026-08-21-02": 49,
         "2026-08-21-03": 49,
-        "2026-08-21-04": 49
+        "2026-08-21-04": 49,
+        "2026-08-21-05": 49
       },
       "stats": {
         "experience": 0,
@@ -5011,7 +5018,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 62,
         "2026-08-13-05": 62,
         "2026-08-13-06": 62,
         "2026-08-13-07": 62,
@@ -5185,7 +5191,8 @@
         "2026-08-21-01": 63,
         "2026-08-21-02": 63,
         "2026-08-21-03": 63,
-        "2026-08-21-04": 63
+        "2026-08-21-04": 63,
+        "2026-08-21-05": 63
       },
       "stats": {
         "experience": 0,
@@ -5211,11 +5218,6 @@
         },
         {
           "time": "Aug 20, 2026 23:29",
-          "by": "Nao Eh Pedim (jogador)",
-          "is_pvp": true
-        },
-        {
-          "time": "Aug 20, 2026 23:26",
           "by": "Nao Eh Pedim (jogador)",
           "is_pvp": true
         }
@@ -5266,7 +5268,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 33,
         "2026-08-13-05": 33,
         "2026-08-13-06": 33,
         "2026-08-13-07": 33,
@@ -5440,7 +5441,8 @@
         "2026-08-21-01": 38,
         "2026-08-21-02": 38,
         "2026-08-21-03": 38,
-        "2026-08-21-04": 38
+        "2026-08-21-04": 38,
+        "2026-08-21-05": 38
       },
       "stats": {
         "experience": 0,
@@ -5469,7 +5471,7 @@
     },
     {
       "name": "Rp Terror",
-      "level": 1149,
+      "level": 1165,
       "resets": 39,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -5490,7 +5492,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 38,
         "2026-08-13-05": 38,
         "2026-08-13-06": 38,
         "2026-08-13-07": 38,
@@ -5664,7 +5665,8 @@
         "2026-08-21-01": 39,
         "2026-08-21-02": 39,
         "2026-08-21-03": 39,
-        "2026-08-21-04": 39
+        "2026-08-21-04": 39,
+        "2026-08-21-05": 39
       },
       "stats": {
         "experience": 0,
@@ -5716,7 +5718,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 60,
         "2026-08-13-05": 60,
         "2026-08-13-06": 60,
         "2026-08-13-07": 60,
@@ -5890,7 +5891,8 @@
         "2026-08-21-01": 62,
         "2026-08-21-02": 62,
         "2026-08-21-03": 62,
-        "2026-08-21-04": 62
+        "2026-08-21-04": 62,
+        "2026-08-21-05": 62
       },
       "stats": {
         "experience": 0,
@@ -5930,7 +5932,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 40,
         "2026-08-13-05": 40,
         "2026-08-13-06": 40,
         "2026-08-13-07": 40,
@@ -6104,7 +6105,8 @@
         "2026-08-21-01": 42,
         "2026-08-21-02": 42,
         "2026-08-21-03": 42,
-        "2026-08-21-04": 42
+        "2026-08-21-04": 42,
+        "2026-08-21-05": 42
       },
       "stats": {
         "experience": 0,
@@ -6135,7 +6137,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-13-04": 51,
         "2026-08-13-05": 51,
         "2026-08-13-06": 51,
         "2026-08-13-07": 51,
@@ -6309,7 +6310,8 @@
         "2026-08-21-01": 51,
         "2026-08-21-02": 51,
         "2026-08-21-03": 51,
-        "2026-08-21-04": 51
+        "2026-08-21-04": 51,
+        "2026-08-21-05": 51
       },
       "stats": {
         "experience": 0,
@@ -6369,7 +6371,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 57,
         "2026-08-13-05": 57,
         "2026-08-13-06": 57,
         "2026-08-13-07": 57,
@@ -6543,7 +6544,8 @@
         "2026-08-21-01": 59,
         "2026-08-21-02": 59,
         "2026-08-21-03": 59,
-        "2026-08-21-04": 59
+        "2026-08-21-04": 59,
+        "2026-08-21-05": 59
       },
       "stats": {
         "experience": 0,
@@ -6731,7 +6733,8 @@
         "2026-08-21-01": 56,
         "2026-08-21-02": 56,
         "2026-08-21-03": 56,
-        "2026-08-21-04": 56
+        "2026-08-21-04": 56,
+        "2026-08-21-05": 56
       },
       "stats": {
         "experience": 0,
@@ -6777,7 +6780,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 52,
         "2026-08-13-05": 52,
         "2026-08-13-06": 52,
         "2026-08-13-07": 52,
@@ -6951,7 +6953,8 @@
         "2026-08-21-01": 54,
         "2026-08-21-02": 54,
         "2026-08-21-03": 54,
-        "2026-08-21-04": 54
+        "2026-08-21-04": 54,
+        "2026-08-21-05": 54
       },
       "stats": {
         "experience": 0,
@@ -6986,7 +6989,8 @@
         "2026-08-21-01": 50,
         "2026-08-21-02": 50,
         "2026-08-21-03": 50,
-        "2026-08-21-04": 50
+        "2026-08-21-04": 50,
+        "2026-08-21-05": 50
       },
       "stats": {
         "experience": 0,
@@ -7220,7 +7224,8 @@
         "2026-08-21-01": 45,
         "2026-08-21-02": 45,
         "2026-08-21-03": 45,
-        "2026-08-21-04": 45
+        "2026-08-21-04": 45,
+        "2026-08-21-05": 45
       },
       "stats": {
         "experience": 0,
@@ -7251,7 +7256,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-13-04": 25,
         "2026-08-13-05": 25,
         "2026-08-13-06": 25,
         "2026-08-13-07": 25,
@@ -7425,7 +7429,8 @@
         "2026-08-21-01": 25,
         "2026-08-21-02": 25,
         "2026-08-21-03": 25,
-        "2026-08-21-04": 25
+        "2026-08-21-04": 25,
+        "2026-08-21-05": 25
       },
       "stats": {
         "experience": 0,
@@ -7477,7 +7482,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-13-04": 39,
         "2026-08-13-05": 39,
         "2026-08-13-06": 39,
         "2026-08-13-07": 39,
@@ -7651,7 +7655,8 @@
         "2026-08-21-01": 44,
         "2026-08-21-02": 44,
         "2026-08-21-03": 44,
-        "2026-08-21-04": 44
+        "2026-08-21-04": 44,
+        "2026-08-21-05": 44
       },
       "stats": {
         "experience": 0,
@@ -7837,7 +7842,7 @@
         {
           "name": "Yagoodz Hahaha",
           "value": 71,
-          "level": 1395,
+          "level": 1420,
           "vocation": "Elite Knight",
           "guild_rank": 2
         },
@@ -7851,7 +7856,7 @@
         {
           "name": "Baiakudinho",
           "value": 70,
-          "level": 921,
+          "level": 961,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
@@ -7872,14 +7877,14 @@
         {
           "name": "Haony",
           "value": 62,
-          "level": 855,
+          "level": 990,
           "vocation": "Royal Paladin",
           "guild_rank": 7
         },
         {
           "name": "Kashambao",
           "value": 62,
-          "level": 1629,
+          "level": 1633,
           "vocation": "Royal Paladin",
           "guild_rank": 8
         },
@@ -7963,7 +7968,7 @@
         {
           "name": "Balinho",
           "value": 52,
-          "level": 1516,
+          "level": 1533,
           "vocation": "Exalted Monk",
           "guild_rank": 20
         },
@@ -7991,7 +7996,7 @@
         {
           "name": "Dede Knight",
           "value": 49,
-          "level": 1998,
+          "level": 2000,
           "vocation": "Elite Knight",
           "guild_rank": 24
         },
@@ -8019,7 +8024,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 47,
-          "level": 1616,
+          "level": 1619,
           "vocation": "Royal Paladin",
           "guild_rank": 28
         },
@@ -8054,14 +8059,14 @@
         {
           "name": "Ethernal Pally",
           "value": 40,
-          "level": 1794,
+          "level": 1806,
           "vocation": "Royal Paladin",
           "guild_rank": 33
         },
         {
           "name": "Rp Terror",
           "value": 39,
-          "level": 1149,
+          "level": 1165,
           "vocation": "Royal Paladin",
           "guild_rank": 34
         },
@@ -8123,7 +8128,7 @@
         {
           "name": "Yagoodz Hahaha",
           "value": 0,
-          "level": 1395,
+          "level": 1420,
           "vocation": "Elite Knight",
           "guild_rank": 5
         },
@@ -8137,14 +8142,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 921,
+          "level": 961,
           "vocation": "Royal Paladin",
           "guild_rank": 7
         },
         {
           "name": "Balinho",
           "value": 0,
-          "level": 1516,
+          "level": 1533,
           "vocation": "Exalted Monk",
           "guild_rank": 8
         },
@@ -8158,7 +8163,7 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
           "vocation": "Elite Knight",
           "guild_rank": 10
         },
@@ -8186,7 +8191,7 @@
         {
           "name": "Ethernal Pally",
           "value": 0,
-          "level": 1794,
+          "level": 1806,
           "vocation": "Royal Paladin",
           "guild_rank": 14
         },
@@ -8207,7 +8212,7 @@
         {
           "name": "Haony",
           "value": 0,
-          "level": 855,
+          "level": 990,
           "vocation": "Royal Paladin",
           "guild_rank": 17
         },
@@ -8221,7 +8226,7 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 1629,
+          "level": 1633,
           "vocation": "Royal Paladin",
           "guild_rank": 19
         },
@@ -8242,7 +8247,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1616,
+          "level": 1619,
           "vocation": "Royal Paladin",
           "guild_rank": 22
         },
@@ -8277,7 +8282,7 @@
         {
           "name": "Rp Terror",
           "value": 0,
-          "level": 1149,
+          "level": 1165,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
@@ -8388,7 +8393,7 @@
         {
           "name": "Yagoodz Hahaha",
           "value": 0,
-          "level": 1395,
+          "level": 1420,
           "vocation": "Elite Knight",
           "guild_rank": 5
         },
@@ -8402,14 +8407,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 921,
+          "level": 961,
           "vocation": "Royal Paladin",
           "guild_rank": 7
         },
         {
           "name": "Balinho",
           "value": 0,
-          "level": 1516,
+          "level": 1533,
           "vocation": "Exalted Monk",
           "guild_rank": 8
         },
@@ -8423,7 +8428,7 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
           "vocation": "Elite Knight",
           "guild_rank": 10
         },
@@ -8451,7 +8456,7 @@
         {
           "name": "Ethernal Pally",
           "value": 0,
-          "level": 1794,
+          "level": 1806,
           "vocation": "Royal Paladin",
           "guild_rank": 14
         },
@@ -8472,7 +8477,7 @@
         {
           "name": "Haony",
           "value": 0,
-          "level": 855,
+          "level": 990,
           "vocation": "Royal Paladin",
           "guild_rank": 17
         },
@@ -8486,7 +8491,7 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 1629,
+          "level": 1633,
           "vocation": "Royal Paladin",
           "guild_rank": 19
         },
@@ -8507,7 +8512,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1616,
+          "level": 1619,
           "vocation": "Royal Paladin",
           "guild_rank": 22
         },
@@ -8542,7 +8547,7 @@
         {
           "name": "Rp Terror",
           "value": 0,
-          "level": 1149,
+          "level": 1165,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
@@ -8653,7 +8658,7 @@
         {
           "name": "Yagoodz Hahaha",
           "value": 0,
-          "level": 1395,
+          "level": 1420,
           "vocation": "Elite Knight",
           "guild_rank": 5
         },
@@ -8667,14 +8672,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 921,
+          "level": 961,
           "vocation": "Royal Paladin",
           "guild_rank": 7
         },
         {
           "name": "Balinho",
           "value": 0,
-          "level": 1516,
+          "level": 1533,
           "vocation": "Exalted Monk",
           "guild_rank": 8
         },
@@ -8688,7 +8693,7 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
           "vocation": "Elite Knight",
           "guild_rank": 10
         },
@@ -8716,7 +8721,7 @@
         {
           "name": "Ethernal Pally",
           "value": 0,
-          "level": 1794,
+          "level": 1806,
           "vocation": "Royal Paladin",
           "guild_rank": 14
         },
@@ -8737,7 +8742,7 @@
         {
           "name": "Haony",
           "value": 0,
-          "level": 855,
+          "level": 990,
           "vocation": "Royal Paladin",
           "guild_rank": 17
         },
@@ -8751,7 +8756,7 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 1629,
+          "level": 1633,
           "vocation": "Royal Paladin",
           "guild_rank": 19
         },
@@ -8772,7 +8777,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1616,
+          "level": 1619,
           "vocation": "Royal Paladin",
           "guild_rank": 22
         },
@@ -8807,7 +8812,7 @@
         {
           "name": "Rp Terror",
           "value": 0,
-          "level": 1149,
+          "level": 1165,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
@@ -8918,7 +8923,7 @@
         {
           "name": "Yagoodz Hahaha",
           "value": 0,
-          "level": 1395,
+          "level": 1420,
           "vocation": "Elite Knight",
           "guild_rank": 5
         },
@@ -8932,14 +8937,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 921,
+          "level": 961,
           "vocation": "Royal Paladin",
           "guild_rank": 7
         },
         {
           "name": "Balinho",
           "value": 0,
-          "level": 1516,
+          "level": 1533,
           "vocation": "Exalted Monk",
           "guild_rank": 8
         },
@@ -8953,7 +8958,7 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
           "vocation": "Elite Knight",
           "guild_rank": 10
         },
@@ -8981,7 +8986,7 @@
         {
           "name": "Ethernal Pally",
           "value": 0,
-          "level": 1794,
+          "level": 1806,
           "vocation": "Royal Paladin",
           "guild_rank": 14
         },
@@ -9002,7 +9007,7 @@
         {
           "name": "Haony",
           "value": 0,
-          "level": 855,
+          "level": 990,
           "vocation": "Royal Paladin",
           "guild_rank": 17
         },
@@ -9016,7 +9021,7 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 1629,
+          "level": 1633,
           "vocation": "Royal Paladin",
           "guild_rank": 19
         },
@@ -9037,7 +9042,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1616,
+          "level": 1619,
           "vocation": "Royal Paladin",
           "guild_rank": 22
         },
@@ -9072,7 +9077,7 @@
         {
           "name": "Rp Terror",
           "value": 0,
-          "level": 1149,
+          "level": 1165,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
@@ -9183,7 +9188,7 @@
         {
           "name": "Yagoodz Hahaha",
           "value": 0,
-          "level": 1395,
+          "level": 1420,
           "vocation": "Elite Knight",
           "guild_rank": 5
         },
@@ -9197,14 +9202,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 921,
+          "level": 961,
           "vocation": "Royal Paladin",
           "guild_rank": 7
         },
         {
           "name": "Balinho",
           "value": 0,
-          "level": 1516,
+          "level": 1533,
           "vocation": "Exalted Monk",
           "guild_rank": 8
         },
@@ -9218,7 +9223,7 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
           "vocation": "Elite Knight",
           "guild_rank": 10
         },
@@ -9246,7 +9251,7 @@
         {
           "name": "Ethernal Pally",
           "value": 0,
-          "level": 1794,
+          "level": 1806,
           "vocation": "Royal Paladin",
           "guild_rank": 14
         },
@@ -9267,7 +9272,7 @@
         {
           "name": "Haony",
           "value": 0,
-          "level": 855,
+          "level": 990,
           "vocation": "Royal Paladin",
           "guild_rank": 17
         },
@@ -9281,7 +9286,7 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 1629,
+          "level": 1633,
           "vocation": "Royal Paladin",
           "guild_rank": 19
         },
@@ -9302,7 +9307,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1616,
+          "level": 1619,
           "vocation": "Royal Paladin",
           "guild_rank": 22
         },
@@ -9337,7 +9342,7 @@
         {
           "name": "Rp Terror",
           "value": 0,
-          "level": 1149,
+          "level": 1165,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
@@ -9448,7 +9453,7 @@
         {
           "name": "Yagoodz Hahaha",
           "value": 0,
-          "level": 1395,
+          "level": 1420,
           "vocation": "Elite Knight",
           "guild_rank": 5
         },
@@ -9462,14 +9467,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 921,
+          "level": 961,
           "vocation": "Royal Paladin",
           "guild_rank": 7
         },
         {
           "name": "Balinho",
           "value": 0,
-          "level": 1516,
+          "level": 1533,
           "vocation": "Exalted Monk",
           "guild_rank": 8
         },
@@ -9483,7 +9488,7 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
           "vocation": "Elite Knight",
           "guild_rank": 10
         },
@@ -9511,7 +9516,7 @@
         {
           "name": "Ethernal Pally",
           "value": 0,
-          "level": 1794,
+          "level": 1806,
           "vocation": "Royal Paladin",
           "guild_rank": 14
         },
@@ -9532,7 +9537,7 @@
         {
           "name": "Haony",
           "value": 0,
-          "level": 855,
+          "level": 990,
           "vocation": "Royal Paladin",
           "guild_rank": 17
         },
@@ -9546,7 +9551,7 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 1629,
+          "level": 1633,
           "vocation": "Royal Paladin",
           "guild_rank": 19
         },
@@ -9567,7 +9572,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1616,
+          "level": 1619,
           "vocation": "Royal Paladin",
           "guild_rank": 22
         },
@@ -9602,7 +9607,7 @@
         {
           "name": "Rp Terror",
           "value": 0,
-          "level": 1149,
+          "level": 1165,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
@@ -9713,7 +9718,7 @@
         {
           "name": "Yagoodz Hahaha",
           "value": 0,
-          "level": 1395,
+          "level": 1420,
           "vocation": "Elite Knight",
           "guild_rank": 5
         },
@@ -9727,14 +9732,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 921,
+          "level": 961,
           "vocation": "Royal Paladin",
           "guild_rank": 7
         },
         {
           "name": "Balinho",
           "value": 0,
-          "level": 1516,
+          "level": 1533,
           "vocation": "Exalted Monk",
           "guild_rank": 8
         },
@@ -9748,7 +9753,7 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
           "vocation": "Elite Knight",
           "guild_rank": 10
         },
@@ -9776,7 +9781,7 @@
         {
           "name": "Ethernal Pally",
           "value": 0,
-          "level": 1794,
+          "level": 1806,
           "vocation": "Royal Paladin",
           "guild_rank": 14
         },
@@ -9797,7 +9802,7 @@
         {
           "name": "Haony",
           "value": 0,
-          "level": 855,
+          "level": 990,
           "vocation": "Royal Paladin",
           "guild_rank": 17
         },
@@ -9811,7 +9816,7 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 1629,
+          "level": 1633,
           "vocation": "Royal Paladin",
           "guild_rank": 19
         },
@@ -9832,7 +9837,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1616,
+          "level": 1619,
           "vocation": "Royal Paladin",
           "guild_rank": 22
         },
@@ -9867,7 +9872,7 @@
         {
           "name": "Rp Terror",
           "value": 0,
-          "level": 1149,
+          "level": 1165,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
@@ -9978,7 +9983,7 @@
         {
           "name": "Yagoodz Hahaha",
           "value": 0,
-          "level": 1395,
+          "level": 1420,
           "vocation": "Elite Knight",
           "guild_rank": 5
         },
@@ -9992,14 +9997,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 921,
+          "level": 961,
           "vocation": "Royal Paladin",
           "guild_rank": 7
         },
         {
           "name": "Balinho",
           "value": 0,
-          "level": 1516,
+          "level": 1533,
           "vocation": "Exalted Monk",
           "guild_rank": 8
         },
@@ -10013,7 +10018,7 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
           "vocation": "Elite Knight",
           "guild_rank": 10
         },
@@ -10041,7 +10046,7 @@
         {
           "name": "Ethernal Pally",
           "value": 0,
-          "level": 1794,
+          "level": 1806,
           "vocation": "Royal Paladin",
           "guild_rank": 14
         },
@@ -10062,7 +10067,7 @@
         {
           "name": "Haony",
           "value": 0,
-          "level": 855,
+          "level": 990,
           "vocation": "Royal Paladin",
           "guild_rank": 17
         },
@@ -10076,7 +10081,7 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 1629,
+          "level": 1633,
           "vocation": "Royal Paladin",
           "guild_rank": 19
         },
@@ -10097,7 +10102,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1616,
+          "level": 1619,
           "vocation": "Royal Paladin",
           "guild_rank": 22
         },
@@ -10132,7 +10137,7 @@
         {
           "name": "Rp Terror",
           "value": 0,
-          "level": 1149,
+          "level": 1165,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
@@ -10243,7 +10248,7 @@
         {
           "name": "Yagoodz Hahaha",
           "value": 0,
-          "level": 1395,
+          "level": 1420,
           "vocation": "Elite Knight",
           "guild_rank": 5
         },
@@ -10257,14 +10262,14 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 921,
+          "level": 961,
           "vocation": "Royal Paladin",
           "guild_rank": 7
         },
         {
           "name": "Balinho",
           "value": 0,
-          "level": 1516,
+          "level": 1533,
           "vocation": "Exalted Monk",
           "guild_rank": 8
         },
@@ -10278,7 +10283,7 @@
         {
           "name": "Dede Knight",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
           "vocation": "Elite Knight",
           "guild_rank": 10
         },
@@ -10306,7 +10311,7 @@
         {
           "name": "Ethernal Pally",
           "value": 0,
-          "level": 1794,
+          "level": 1806,
           "vocation": "Royal Paladin",
           "guild_rank": 14
         },
@@ -10327,7 +10332,7 @@
         {
           "name": "Haony",
           "value": 0,
-          "level": 855,
+          "level": 990,
           "vocation": "Royal Paladin",
           "guild_rank": 17
         },
@@ -10341,7 +10346,7 @@
         {
           "name": "Kashambao",
           "value": 0,
-          "level": 1629,
+          "level": 1633,
           "vocation": "Royal Paladin",
           "guild_rank": 19
         },
@@ -10362,7 +10367,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1616,
+          "level": 1619,
           "vocation": "Royal Paladin",
           "guild_rank": 22
         },
@@ -10397,7 +10402,7 @@
         {
           "name": "Rp Terror",
           "value": 0,
-          "level": 1149,
+          "level": 1165,
           "vocation": "Royal Paladin",
           "guild_rank": 27
         },
