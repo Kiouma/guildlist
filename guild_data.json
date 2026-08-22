@@ -1,6 +1,6 @@
 {
   "name": "Lowly People",
-  "updated_at": "22/08/2026 às 02:15 (Brasília)",
+  "updated_at": "22/08/2026 às 03:16 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 17,
@@ -27,7 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-02": 61,
         "2026-08-14-04": 61,
         "2026-08-14-05": 61,
         "2026-08-14-06": 61,
@@ -204,7 +203,8 @@
         "2026-08-21-23": 61,
         "2026-08-22-00": 61,
         "2026-08-22-01": 61,
-        "2026-08-22-02": 61
+        "2026-08-22-02": 61,
+        "2026-08-22-03": 61
       },
       "stats": {
         "experience": 0,
@@ -235,7 +235,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-14-02": 18,
         "2026-08-14-04": 18,
         "2026-08-14-05": 18,
         "2026-08-14-06": 18,
@@ -412,7 +411,8 @@
         "2026-08-21-23": 18,
         "2026-08-22-00": 18,
         "2026-08-22-01": 18,
-        "2026-08-22-02": 18
+        "2026-08-22-02": 18,
+        "2026-08-22-03": 18
       },
       "stats": {
         "experience": 0,
@@ -435,7 +435,7 @@
     },
     {
       "name": "Baiakudinho",
-      "level": 1393,
+      "level": 1429,
       "resets": 70,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -472,7 +472,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-02": 65,
         "2026-08-14-04": 65,
         "2026-08-14-05": 65,
         "2026-08-14-06": 65,
@@ -649,7 +648,8 @@
         "2026-08-21-23": 70,
         "2026-08-22-00": 70,
         "2026-08-22-01": 70,
-        "2026-08-22-02": 70
+        "2026-08-22-02": 70,
+        "2026-08-22-03": 70
       },
       "stats": {
         "experience": 0,
@@ -672,7 +672,7 @@
     },
     {
       "name": "Boltfly Peoplecry",
-      "level": 1070,
+      "level": 1087,
       "resets": 49,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -709,7 +709,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-02": 45,
         "2026-08-14-04": 45,
         "2026-08-14-05": 45,
         "2026-08-14-06": 45,
@@ -886,7 +885,8 @@
         "2026-08-21-23": 49,
         "2026-08-22-00": 49,
         "2026-08-22-01": 49,
-        "2026-08-22-02": 49
+        "2026-08-22-02": 49,
+        "2026-08-22-03": 49
       },
       "stats": {
         "experience": 0,
@@ -909,7 +909,7 @@
     },
     {
       "name": "Eckoss",
-      "level": 1887,
+      "level": 1896,
       "resets": 49,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -1069,7 +1069,8 @@
         "2026-08-21-23": 49,
         "2026-08-22-00": 49,
         "2026-08-22-01": 49,
-        "2026-08-22-02": 49
+        "2026-08-22-02": 49,
+        "2026-08-22-03": 49
       },
       "stats": {
         "experience": 0,
@@ -1113,7 +1114,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-02": 71,
         "2026-08-14-04": 71,
         "2026-08-14-05": 71,
         "2026-08-14-06": 71,
@@ -1290,7 +1290,8 @@
         "2026-08-21-23": 71,
         "2026-08-22-00": 71,
         "2026-08-22-01": 71,
-        "2026-08-22-02": 71
+        "2026-08-22-02": 71,
+        "2026-08-22-03": 71
       },
       "stats": {
         "experience": 0,
@@ -1321,7 +1322,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-14-02": 44,
         "2026-08-14-04": 44,
         "2026-08-14-05": 44,
         "2026-08-14-06": 44,
@@ -1498,7 +1498,8 @@
         "2026-08-21-23": 44,
         "2026-08-22-00": 44,
         "2026-08-22-01": 44,
-        "2026-08-22-02": 44
+        "2026-08-22-02": 44,
+        "2026-08-22-03": 44
       },
       "stats": {
         "experience": 0,
@@ -1538,7 +1539,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-02": 55,
         "2026-08-14-04": 55,
         "2026-08-14-05": 55,
         "2026-08-14-06": 55,
@@ -1715,7 +1715,8 @@
         "2026-08-21-23": 55,
         "2026-08-22-00": 55,
         "2026-08-22-01": 55,
-        "2026-08-22-02": 55
+        "2026-08-22-02": 55,
+        "2026-08-22-03": 55
       },
       "stats": {
         "experience": 0,
@@ -1767,7 +1768,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-02": 60,
         "2026-08-14-04": 60,
         "2026-08-14-05": 60,
         "2026-08-14-06": 60,
@@ -1944,7 +1944,8 @@
         "2026-08-21-23": 62,
         "2026-08-22-00": 62,
         "2026-08-22-01": 62,
-        "2026-08-22-02": 62
+        "2026-08-22-02": 62,
+        "2026-08-22-03": 62
       },
       "stats": {
         "experience": 0,
@@ -1975,7 +1976,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-14-02": 51,
         "2026-08-14-04": 51,
         "2026-08-14-05": 51,
         "2026-08-14-06": 51,
@@ -2152,7 +2152,8 @@
         "2026-08-21-23": 51,
         "2026-08-22-00": 51,
         "2026-08-22-01": 51,
-        "2026-08-22-02": 51
+        "2026-08-22-02": 51,
+        "2026-08-22-03": 51
       },
       "stats": {
         "experience": 0,
@@ -2204,7 +2205,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-02": 46,
         "2026-08-14-04": 46,
         "2026-08-14-05": 46,
         "2026-08-14-06": 46,
@@ -2381,7 +2381,8 @@
         "2026-08-21-23": 47,
         "2026-08-22-00": 47,
         "2026-08-22-01": 47,
-        "2026-08-22-02": 47
+        "2026-08-22-02": 47,
+        "2026-08-22-03": 47
       },
       "stats": {
         "experience": 0,
@@ -2441,7 +2442,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-02": 60,
         "2026-08-14-04": 60,
         "2026-08-14-05": 60,
         "2026-08-14-06": 60,
@@ -2618,7 +2618,8 @@
         "2026-08-21-23": 60,
         "2026-08-22-00": 60,
         "2026-08-22-01": 60,
-        "2026-08-22-02": 60
+        "2026-08-22-02": 60,
+        "2026-08-22-03": 60
       },
       "stats": {
         "experience": 0,
@@ -2678,7 +2679,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-02": 57,
         "2026-08-14-04": 57,
         "2026-08-14-05": 57,
         "2026-08-14-06": 57,
@@ -2855,7 +2855,8 @@
         "2026-08-21-23": 59,
         "2026-08-22-00": 59,
         "2026-08-22-01": 59,
-        "2026-08-22-02": 59
+        "2026-08-22-02": 59,
+        "2026-08-22-03": 59
       },
       "stats": {
         "experience": 0,
@@ -2895,7 +2896,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-02": 53,
         "2026-08-14-04": 53,
         "2026-08-14-05": 53,
         "2026-08-14-06": 53,
@@ -3072,7 +3072,8 @@
         "2026-08-21-23": 54,
         "2026-08-22-00": 54,
         "2026-08-22-01": 54,
-        "2026-08-22-02": 54
+        "2026-08-22-02": 54,
+        "2026-08-22-03": 54
       },
       "stats": {
         "experience": 0,
@@ -3116,7 +3117,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-02": 38,
         "2026-08-14-04": 38,
         "2026-08-14-05": 38,
         "2026-08-14-06": 38,
@@ -3293,7 +3293,8 @@
         "2026-08-21-23": 39,
         "2026-08-22-00": 39,
         "2026-08-22-01": 39,
-        "2026-08-22-02": 39
+        "2026-08-22-02": 39,
+        "2026-08-22-03": 39
       },
       "stats": {
         "experience": 0,
@@ -3353,7 +3354,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-02": 37,
         "2026-08-14-04": 37,
         "2026-08-14-05": 37,
         "2026-08-14-06": 37,
@@ -3530,7 +3530,8 @@
         "2026-08-21-23": 45,
         "2026-08-22-00": 45,
         "2026-08-22-01": 45,
-        "2026-08-22-02": 45
+        "2026-08-22-02": 45,
+        "2026-08-22-03": 45
       },
       "stats": {
         "experience": 0,
@@ -3561,7 +3562,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-14-02": 25,
         "2026-08-14-04": 25,
         "2026-08-14-05": 25,
         "2026-08-14-06": 25,
@@ -3738,7 +3738,8 @@
         "2026-08-21-23": 25,
         "2026-08-22-00": 25,
         "2026-08-22-01": 25,
-        "2026-08-22-02": 25
+        "2026-08-22-02": 25,
+        "2026-08-22-03": 25
       },
       "stats": {
         "experience": 0,
@@ -3840,7 +3841,7 @@
         {
           "name": "Baiakudinho",
           "value": 70,
-          "level": 1393,
+          "level": 1429,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -3896,14 +3897,14 @@
         {
           "name": "Boltfly Peoplecry",
           "value": 49,
-          "level": 1070,
+          "level": 1087,
           "vocation": "Royal Paladin",
           "guild_rank": 10
         },
         {
           "name": "Eckoss",
           "value": 49,
-          "level": 1887,
+          "level": 1896,
           "vocation": "Royal Paladin",
           "guild_rank": 11
         },
@@ -3972,21 +3973,21 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1393,
+          "level": 1429,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1070,
+          "level": 1087,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1887,
+          "level": 1896,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4097,21 +4098,21 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1393,
+          "level": 1429,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1070,
+          "level": 1087,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1887,
+          "level": 1896,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4222,21 +4223,21 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1393,
+          "level": 1429,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1070,
+          "level": 1087,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1887,
+          "level": 1896,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4347,21 +4348,21 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1393,
+          "level": 1429,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1070,
+          "level": 1087,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1887,
+          "level": 1896,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4472,21 +4473,21 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1393,
+          "level": 1429,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1070,
+          "level": 1087,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1887,
+          "level": 1896,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4597,21 +4598,21 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1393,
+          "level": 1429,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1070,
+          "level": 1087,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1887,
+          "level": 1896,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4722,21 +4723,21 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1393,
+          "level": 1429,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1070,
+          "level": 1087,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1887,
+          "level": 1896,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4847,21 +4848,21 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1393,
+          "level": 1429,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1070,
+          "level": 1087,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1887,
+          "level": 1896,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4972,21 +4973,21 @@
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1393,
+          "level": 1429,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1070,
+          "level": 1087,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1887,
+          "level": 1896,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
