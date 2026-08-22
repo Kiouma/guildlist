@@ -1,6 +1,6 @@
 {
   "name": "Lowly People",
-  "updated_at": "22/08/2026 às 14:09 (Brasília)",
+  "updated_at": "22/08/2026 às 15:10 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 16,
@@ -27,7 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-14": 61,
         "2026-08-14-15": 61,
         "2026-08-14-16": 61,
         "2026-08-14-17": 61,
@@ -205,7 +204,8 @@
         "2026-08-22-10": 61,
         "2026-08-22-12": 61,
         "2026-08-22-13": 61,
-        "2026-08-22-14": 61
+        "2026-08-22-14": 61,
+        "2026-08-22-15": 61
       },
       "stats": {
         "experience": 0,
@@ -228,7 +228,7 @@
     },
     {
       "name": "Achilles",
-      "level": 1999,
+      "level": 2000,
       "resets": 18,
       "vocation": "Exalted Monk",
       "nick": "",
@@ -236,7 +236,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-14-14": 18,
         "2026-08-14-15": 18,
         "2026-08-14-16": 18,
         "2026-08-14-17": 18,
@@ -414,7 +413,8 @@
         "2026-08-22-10": 18,
         "2026-08-22-12": 18,
         "2026-08-22-13": 18,
-        "2026-08-22-14": 18
+        "2026-08-22-14": 18,
+        "2026-08-22-15": 18
       },
       "stats": {
         "experience": 0,
@@ -437,7 +437,7 @@
     },
     {
       "name": "Baiakudinho",
-      "level": 1634,
+      "level": 1651,
       "resets": 70,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -474,7 +474,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-14": 65,
         "2026-08-14-15": 65,
         "2026-08-14-16": 65,
         "2026-08-14-17": 65,
@@ -652,7 +651,8 @@
         "2026-08-22-10": 70,
         "2026-08-22-12": 70,
         "2026-08-22-13": 70,
-        "2026-08-22-14": 70
+        "2026-08-22-14": 70,
+        "2026-08-22-15": 70
       },
       "stats": {
         "experience": 0,
@@ -675,7 +675,7 @@
     },
     {
       "name": "Boltfly Peoplecry",
-      "level": 1118,
+      "level": 1132,
       "resets": 49,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -712,7 +712,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-14": 45,
         "2026-08-14-15": 45,
         "2026-08-14-16": 45,
         "2026-08-14-17": 45,
@@ -890,7 +889,8 @@
         "2026-08-22-10": 49,
         "2026-08-22-12": 49,
         "2026-08-22-13": 49,
-        "2026-08-22-14": 49
+        "2026-08-22-14": 49,
+        "2026-08-22-15": 49
       },
       "stats": {
         "experience": 0,
@@ -913,7 +913,7 @@
     },
     {
       "name": "Eckoss",
-      "level": 1978,
+      "level": 1982,
       "resets": 49,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -1084,7 +1084,8 @@
         "2026-08-22-10": 49,
         "2026-08-22-12": 49,
         "2026-08-22-13": 49,
-        "2026-08-22-14": 49
+        "2026-08-22-14": 49,
+        "2026-08-22-15": 49
       },
       "stats": {
         "experience": 0,
@@ -1128,7 +1129,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-14": 71,
         "2026-08-14-15": 71,
         "2026-08-14-16": 71,
         "2026-08-14-17": 71,
@@ -1306,7 +1306,8 @@
         "2026-08-22-10": 71,
         "2026-08-22-12": 71,
         "2026-08-22-13": 71,
-        "2026-08-22-14": 71
+        "2026-08-22-14": 71,
+        "2026-08-22-15": 71
       },
       "stats": {
         "experience": 0,
@@ -1326,16 +1327,16 @@
           "is_pvp": false
         }
       ],
-      "pvp_kills_total": 0,
-      "pvp_kills_today": 0,
-      "pvp_kills_week": 0,
+      "pvp_kills_total": 2,
+      "pvp_kills_today": 2,
+      "pvp_kills_week": 2,
       "war_kills": 0,
       "war_kills_day": 0,
       "war_kills_week": 0
     },
     {
       "name": "Its Gui",
-      "level": 1996,
+      "level": 1999,
       "resets": 44,
       "vocation": "Elder Druid",
       "nick": "",
@@ -1343,7 +1344,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-14-14": 44,
         "2026-08-14-15": 44,
         "2026-08-14-16": 44,
         "2026-08-14-17": 44,
@@ -1521,7 +1521,8 @@
         "2026-08-22-10": 44,
         "2026-08-22-12": 44,
         "2026-08-22-13": 44,
-        "2026-08-22-14": 44
+        "2026-08-22-14": 44,
+        "2026-08-22-15": 44
       },
       "stats": {
         "experience": 0,
@@ -1572,7 +1573,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-14": 55,
         "2026-08-14-15": 55,
         "2026-08-14-16": 55,
         "2026-08-14-17": 55,
@@ -1750,7 +1750,8 @@
         "2026-08-22-10": 55,
         "2026-08-22-12": 55,
         "2026-08-22-13": 55,
-        "2026-08-22-14": 55
+        "2026-08-22-14": 55,
+        "2026-08-22-15": 55
       },
       "stats": {
         "experience": 0,
@@ -1773,7 +1774,7 @@
     },
     {
       "name": "Melbiss",
-      "level": 1661,
+      "level": 1663,
       "resets": 59,
       "vocation": "Elite Knight",
       "nick": "",
@@ -1810,7 +1811,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-14": 58,
         "2026-08-14-15": 58,
         "2026-08-14-16": 58,
         "2026-08-14-17": 58,
@@ -1988,7 +1988,8 @@
         "2026-08-22-10": 59,
         "2026-08-22-12": 59,
         "2026-08-22-13": 59,
-        "2026-08-22-14": 59
+        "2026-08-22-14": 59,
+        "2026-08-22-15": 59
       },
       "stats": {
         "experience": 0,
@@ -2054,7 +2055,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-14": 38,
         "2026-08-14-15": 39,
         "2026-08-14-16": 39,
         "2026-08-14-17": 39,
@@ -2232,7 +2232,8 @@
         "2026-08-22-10": 45,
         "2026-08-22-12": 45,
         "2026-08-22-13": 45,
-        "2026-08-22-14": 45
+        "2026-08-22-14": 45,
+        "2026-08-22-15": 45
       },
       "stats": {
         "experience": 0,
@@ -2295,7 +2296,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-14": 60,
         "2026-08-14-15": 60,
         "2026-08-14-16": 60,
         "2026-08-14-17": 60,
@@ -2473,7 +2473,8 @@
         "2026-08-22-10": 62,
         "2026-08-22-12": 62,
         "2026-08-22-13": 62,
-        "2026-08-22-14": 62
+        "2026-08-22-14": 62,
+        "2026-08-22-15": 62
       },
       "stats": {
         "experience": 0,
@@ -2525,7 +2526,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-14": 46,
         "2026-08-14-15": 46,
         "2026-08-14-16": 46,
         "2026-08-14-17": 46,
@@ -2703,7 +2703,8 @@
         "2026-08-22-10": 47,
         "2026-08-22-12": 47,
         "2026-08-22-13": 47,
-        "2026-08-22-14": 47
+        "2026-08-22-14": 47,
+        "2026-08-22-15": 47
       },
       "stats": {
         "experience": 0,
@@ -2763,7 +2764,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-14": 60,
         "2026-08-14-15": 60,
         "2026-08-14-16": 60,
         "2026-08-14-17": 60,
@@ -2941,7 +2941,8 @@
         "2026-08-22-10": 60,
         "2026-08-22-12": 60,
         "2026-08-22-13": 60,
-        "2026-08-22-14": 60
+        "2026-08-22-14": 60,
+        "2026-08-22-15": 60
       },
       "stats": {
         "experience": 0,
@@ -2981,7 +2982,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-14": 53,
         "2026-08-14-15": 53,
         "2026-08-14-16": 53,
         "2026-08-14-17": 53,
@@ -3159,7 +3159,8 @@
         "2026-08-22-10": 54,
         "2026-08-22-12": 54,
         "2026-08-22-13": 54,
-        "2026-08-22-14": 54
+        "2026-08-22-14": 54,
+        "2026-08-22-15": 54
       },
       "stats": {
         "experience": 0,
@@ -3203,7 +3204,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-14-14": 38,
         "2026-08-14-15": 38,
         "2026-08-14-16": 38,
         "2026-08-14-17": 38,
@@ -3381,7 +3381,8 @@
         "2026-08-22-10": 39,
         "2026-08-22-12": 39,
         "2026-08-22-13": 39,
-        "2026-08-22-14": 39
+        "2026-08-22-14": 39,
+        "2026-08-22-15": 39
       },
       "stats": {
         "experience": 0,
@@ -3412,7 +3413,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-14-14": 25,
         "2026-08-14-15": 25,
         "2026-08-14-16": 25,
         "2026-08-14-17": 25,
@@ -3590,7 +3590,8 @@
         "2026-08-22-10": 25,
         "2026-08-22-12": 25,
         "2026-08-22-13": 25,
-        "2026-08-22-14": 25
+        "2026-08-22-14": 25,
+        "2026-08-22-15": 25
       },
       "stats": {
         "experience": 0,
@@ -3692,7 +3693,7 @@
         {
           "name": "Baiakudinho",
           "value": 70,
-          "level": 1634,
+          "level": 1651,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -3720,7 +3721,7 @@
         {
           "name": "Melbiss",
           "value": 59,
-          "level": 1661,
+          "level": 1663,
           "vocation": "Elite Knight",
           "guild_rank": 6
         },
@@ -3741,14 +3742,14 @@
         {
           "name": "Boltfly Peoplecry",
           "value": 49,
-          "level": 1118,
+          "level": 1132,
           "vocation": "Royal Paladin",
           "guild_rank": 9
         },
         {
           "name": "Eckoss",
           "value": 49,
-          "level": 1978,
+          "level": 1982,
           "vocation": "Royal Paladin",
           "guild_rank": 10
         },
@@ -3769,7 +3770,7 @@
         {
           "name": "Its Gui",
           "value": 44,
-          "level": 1996,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 13
         },
@@ -3790,7 +3791,7 @@
         {
           "name": "Achilles",
           "value": 18,
-          "level": 1999,
+          "level": 2000,
           "vocation": "Exalted Monk",
           "guild_rank": 16
         }
@@ -3810,28 +3811,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1999,
+          "level": 2000,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1634,
+          "level": 1651,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1118,
+          "level": 1132,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1978,
+          "level": 1982,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -3845,7 +3846,7 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1996,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 7
         },
@@ -3859,7 +3860,7 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1661,
+          "level": 1663,
           "vocation": "Elite Knight",
           "guild_rank": 9
         },
@@ -3928,28 +3929,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1999,
+          "level": 2000,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1634,
+          "level": 1651,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1118,
+          "level": 1132,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1978,
+          "level": 1982,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -3963,7 +3964,7 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1996,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 7
         },
@@ -3977,7 +3978,7 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1661,
+          "level": 1663,
           "vocation": "Elite Knight",
           "guild_rank": 9
         },
@@ -4046,28 +4047,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1999,
+          "level": 2000,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1634,
+          "level": 1651,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1118,
+          "level": 1132,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1978,
+          "level": 1982,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4081,7 +4082,7 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1996,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 7
         },
@@ -4095,7 +4096,7 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1661,
+          "level": 1663,
           "vocation": "Elite Knight",
           "guild_rank": 9
         },
@@ -4164,28 +4165,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1999,
+          "level": 2000,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1634,
+          "level": 1651,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1118,
+          "level": 1132,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1978,
+          "level": 1982,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4199,7 +4200,7 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1996,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 7
         },
@@ -4213,7 +4214,7 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1661,
+          "level": 1663,
           "vocation": "Elite Knight",
           "guild_rank": 9
         },
@@ -4282,28 +4283,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1999,
+          "level": 2000,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1634,
+          "level": 1651,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1118,
+          "level": 1132,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1978,
+          "level": 1982,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4317,7 +4318,7 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1996,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 7
         },
@@ -4331,7 +4332,7 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1661,
+          "level": 1663,
           "vocation": "Elite Knight",
           "guild_rank": 9
         },
@@ -4400,28 +4401,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1999,
+          "level": 2000,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1634,
+          "level": 1651,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1118,
+          "level": 1132,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1978,
+          "level": 1982,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4435,7 +4436,7 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1996,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 7
         },
@@ -4449,7 +4450,7 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1661,
+          "level": 1663,
           "vocation": "Elite Knight",
           "guild_rank": 9
         },
@@ -4518,28 +4519,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1999,
+          "level": 2000,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1634,
+          "level": 1651,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1118,
+          "level": 1132,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1978,
+          "level": 1982,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4553,7 +4554,7 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1996,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 7
         },
@@ -4567,7 +4568,7 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1661,
+          "level": 1663,
           "vocation": "Elite Knight",
           "guild_rank": 9
         },
@@ -4636,28 +4637,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1999,
+          "level": 2000,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1634,
+          "level": 1651,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1118,
+          "level": 1132,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1978,
+          "level": 1982,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4671,7 +4672,7 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1996,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 7
         },
@@ -4685,7 +4686,7 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1661,
+          "level": 1663,
           "vocation": "Elite Knight",
           "guild_rank": 9
         },
@@ -4754,28 +4755,28 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 1999,
+          "level": 2000,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
         {
           "name": "Baiakudinho",
           "value": 0,
-          "level": 1634,
+          "level": 1651,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 1118,
+          "level": 1132,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1978,
+          "level": 1982,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -4789,7 +4790,7 @@
         {
           "name": "Its Gui",
           "value": 0,
-          "level": 1996,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 7
         },
@@ -4803,7 +4804,7 @@
         {
           "name": "Melbiss",
           "value": 0,
-          "level": 1661,
+          "level": 1663,
           "vocation": "Elite Knight",
           "guild_rank": 9
         },
