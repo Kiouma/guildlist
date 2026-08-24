@@ -1,6 +1,6 @@
 {
   "name": "Lowly People",
-  "updated_at": "24/08/2026 às 00:41 (Brasília)",
+  "updated_at": "24/08/2026 às 01:32 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 11,
@@ -27,7 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-16-00": 61,
         "2026-08-16-01": 61,
         "2026-08-16-02": 61,
         "2026-08-16-03": 61,
@@ -205,7 +204,8 @@
         "2026-08-23-20": 61,
         "2026-08-23-21": 61,
         "2026-08-23-23": 61,
-        "2026-08-24-00": 61
+        "2026-08-24-00": 61,
+        "2026-08-24-01": 61
       },
       "stats": {
         "experience": 0,
@@ -263,7 +263,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-16-00": 60,
         "2026-08-16-01": 60,
         "2026-08-16-02": 60,
         "2026-08-16-03": 60,
@@ -441,7 +440,8 @@
         "2026-08-23-20": 62,
         "2026-08-23-21": 62,
         "2026-08-23-23": 62,
-        "2026-08-24-00": 62
+        "2026-08-24-00": 62,
+        "2026-08-24-01": 62
       },
       "stats": {
         "experience": 0,
@@ -472,7 +472,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-16-00": 18,
         "2026-08-16-01": 18,
         "2026-08-16-02": 18,
         "2026-08-16-03": 18,
@@ -650,7 +649,8 @@
         "2026-08-23-20": 18,
         "2026-08-23-21": 18,
         "2026-08-23-23": 18,
-        "2026-08-24-00": 18
+        "2026-08-24-00": 18,
+        "2026-08-24-01": 18
       },
       "stats": {
         "experience": 0,
@@ -679,7 +679,7 @@
     },
     {
       "name": "Boltfly Peoplecry",
-      "level": 728,
+      "level": 880,
       "resets": 50,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -716,7 +716,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-16-00": 46,
         "2026-08-16-01": 46,
         "2026-08-16-02": 46,
         "2026-08-16-03": 46,
@@ -894,7 +893,8 @@
         "2026-08-23-20": 49,
         "2026-08-23-21": 49,
         "2026-08-23-23": 49,
-        "2026-08-24-00": 50
+        "2026-08-24-00": 50,
+        "2026-08-24-01": 50
       },
       "stats": {
         "experience": 0,
@@ -917,7 +917,7 @@
     },
     {
       "name": "Eckoss",
-      "level": 1609,
+      "level": 1629,
       "resets": 50,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -942,7 +942,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-16-00": 46,
         "2026-08-16-01": 46,
         "2026-08-16-02": 46,
         "2026-08-16-03": 46,
@@ -1120,7 +1119,8 @@
         "2026-08-23-20": 50,
         "2026-08-23-21": 50,
         "2026-08-23-23": 50,
-        "2026-08-24-00": 50
+        "2026-08-24-00": 50,
+        "2026-08-24-01": 50
       },
       "stats": {
         "experience": 0,
@@ -1164,7 +1164,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-16-00": 71,
         "2026-08-16-01": 71,
         "2026-08-16-02": 71,
         "2026-08-16-03": 71,
@@ -1342,7 +1341,8 @@
         "2026-08-23-20": 71,
         "2026-08-23-21": 71,
         "2026-08-23-23": 71,
-        "2026-08-24-00": 71
+        "2026-08-24-00": 71,
+        "2026-08-24-01": 71
       },
       "stats": {
         "experience": 0,
@@ -1388,7 +1388,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-16-00": 55,
         "2026-08-16-01": 55,
         "2026-08-16-02": 55,
         "2026-08-16-03": 55,
@@ -1566,7 +1565,8 @@
         "2026-08-23-20": 55,
         "2026-08-23-21": 55,
         "2026-08-23-23": 55,
-        "2026-08-24-00": 55
+        "2026-08-24-00": 55,
+        "2026-08-24-01": 55
       },
       "stats": {
         "experience": 0,
@@ -1589,7 +1589,7 @@
     },
     {
       "name": "Lilian Faithkeeper",
-      "level": 1877,
+      "level": 1879,
       "resets": 47,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -1618,7 +1618,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-16-00": 46,
         "2026-08-16-01": 46,
         "2026-08-16-02": 46,
         "2026-08-16-03": 46,
@@ -1796,7 +1795,8 @@
         "2026-08-23-20": 47,
         "2026-08-23-21": 47,
         "2026-08-23-23": 47,
-        "2026-08-24-00": 47
+        "2026-08-24-00": 47,
+        "2026-08-24-01": 47
       },
       "stats": {
         "experience": 0,
@@ -1856,7 +1856,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-16-00": 60,
         "2026-08-16-01": 60,
         "2026-08-16-02": 60,
         "2026-08-16-03": 60,
@@ -2034,7 +2033,8 @@
         "2026-08-23-20": 60,
         "2026-08-23-21": 60,
         "2026-08-23-23": 60,
-        "2026-08-24-00": 60
+        "2026-08-24-00": 60,
+        "2026-08-24-01": 60
       },
       "stats": {
         "experience": 0,
@@ -2078,7 +2078,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-16-00": 38,
         "2026-08-16-01": 38,
         "2026-08-16-02": 38,
         "2026-08-16-03": 38,
@@ -2256,7 +2255,8 @@
         "2026-08-23-20": 39,
         "2026-08-23-21": 39,
         "2026-08-23-23": 39,
-        "2026-08-24-00": 39
+        "2026-08-24-00": 39,
+        "2026-08-24-01": 39
       },
       "stats": {
         "experience": 0,
@@ -2287,7 +2287,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-16-00": 25,
         "2026-08-16-01": 25,
         "2026-08-16-02": 25,
         "2026-08-16-03": 25,
@@ -2465,7 +2464,8 @@
         "2026-08-23-20": 25,
         "2026-08-23-21": 25,
         "2026-08-23-23": 25,
-        "2026-08-24-00": 25
+        "2026-08-24-00": 25,
+        "2026-08-24-01": 25
       },
       "stats": {
         "experience": 0,
@@ -2560,21 +2560,21 @@
         {
           "name": "Boltfly Peoplecry",
           "value": 50,
-          "level": 728,
+          "level": 880,
           "vocation": "Royal Paladin",
           "guild_rank": 6
         },
         {
           "name": "Eckoss",
           "value": 50,
-          "level": 1609,
+          "level": 1629,
           "vocation": "Royal Paladin",
           "guild_rank": 7
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 47,
-          "level": 1877,
+          "level": 1879,
           "vocation": "Royal Paladin",
           "guild_rank": 8
         },
@@ -2629,14 +2629,14 @@
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 728,
+          "level": 880,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1609,
+          "level": 1629,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -2657,7 +2657,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1877,
+          "level": 1879,
           "vocation": "Royal Paladin",
           "guild_rank": 8
         },
@@ -2712,14 +2712,14 @@
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 728,
+          "level": 880,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1609,
+          "level": 1629,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -2740,7 +2740,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1877,
+          "level": 1879,
           "vocation": "Royal Paladin",
           "guild_rank": 8
         },
@@ -2795,14 +2795,14 @@
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 728,
+          "level": 880,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1609,
+          "level": 1629,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -2823,7 +2823,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1877,
+          "level": 1879,
           "vocation": "Royal Paladin",
           "guild_rank": 8
         },
@@ -2878,14 +2878,14 @@
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 728,
+          "level": 880,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1609,
+          "level": 1629,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -2906,7 +2906,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1877,
+          "level": 1879,
           "vocation": "Royal Paladin",
           "guild_rank": 8
         },
@@ -2961,14 +2961,14 @@
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 728,
+          "level": 880,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1609,
+          "level": 1629,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -2989,7 +2989,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1877,
+          "level": 1879,
           "vocation": "Royal Paladin",
           "guild_rank": 8
         },
@@ -3044,14 +3044,14 @@
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 728,
+          "level": 880,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1609,
+          "level": 1629,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -3072,7 +3072,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1877,
+          "level": 1879,
           "vocation": "Royal Paladin",
           "guild_rank": 8
         },
@@ -3127,14 +3127,14 @@
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 728,
+          "level": 880,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1609,
+          "level": 1629,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -3155,7 +3155,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1877,
+          "level": 1879,
           "vocation": "Royal Paladin",
           "guild_rank": 8
         },
@@ -3210,14 +3210,14 @@
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 728,
+          "level": 880,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1609,
+          "level": 1629,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -3238,7 +3238,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1877,
+          "level": 1879,
           "vocation": "Royal Paladin",
           "guild_rank": 8
         },
@@ -3293,14 +3293,14 @@
         {
           "name": "Boltfly Peoplecry",
           "value": 0,
-          "level": 728,
+          "level": 880,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
           "name": "Eckoss",
           "value": 0,
-          "level": 1609,
+          "level": 1629,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -3321,7 +3321,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1877,
+          "level": 1879,
           "vocation": "Royal Paladin",
           "guild_rank": 8
         },
