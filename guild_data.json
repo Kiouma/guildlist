@@ -1,11 +1,11 @@
 {
   "name": "Lowly People",
-  "updated_at": "25/08/2026 às 18:14 (Brasília)",
+  "updated_at": "25/08/2026 às 19:12 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 8,
-  "online_count": 5,
-  "offline_count": 3,
+  "online_count": 6,
+  "offline_count": 2,
   "guild_day_start": "24/08/2026 às 22:00 (Brasília)",
   "members": [
     {
@@ -27,7 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-17-18": 61,
         "2026-08-17-19": 61,
         "2026-08-17-20": 61,
         "2026-08-17-21": 61,
@@ -205,7 +204,8 @@
         "2026-08-25-15": 61,
         "2026-08-25-16": 61,
         "2026-08-25-17": 61,
-        "2026-08-25-18": 61
+        "2026-08-25-18": 61,
+        "2026-08-25-19": 61
       },
       "stats": {
         "experience": 0,
@@ -257,7 +257,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-17-18": 61,
         "2026-08-17-19": 61,
         "2026-08-17-20": 61,
         "2026-08-17-21": 61,
@@ -435,7 +434,8 @@
         "2026-08-25-15": 62,
         "2026-08-25-16": 62,
         "2026-08-25-17": 62,
-        "2026-08-25-18": 62
+        "2026-08-25-18": 62,
+        "2026-08-25-19": 62
       },
       "stats": {
         "experience": 0,
@@ -466,7 +466,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-17-18": 18,
         "2026-08-17-19": 18,
         "2026-08-17-20": 18,
         "2026-08-17-21": 18,
@@ -644,7 +643,8 @@
         "2026-08-25-15": 18,
         "2026-08-25-16": 18,
         "2026-08-25-17": 18,
-        "2026-08-25-18": 18
+        "2026-08-25-18": 18,
+        "2026-08-25-19": 18
       },
       "stats": {
         "experience": 0,
@@ -667,7 +667,7 @@
     },
     {
       "name": "El Diablo",
-      "level": 1997,
+      "level": 1999,
       "resets": 71,
       "vocation": "Elder Druid",
       "nick": "",
@@ -688,7 +688,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-17-18": 71,
         "2026-08-17-19": 71,
         "2026-08-17-20": 71,
         "2026-08-17-21": 71,
@@ -866,7 +865,8 @@
         "2026-08-25-15": 71,
         "2026-08-25-16": 71,
         "2026-08-25-17": 71,
-        "2026-08-25-18": 71
+        "2026-08-25-18": 71,
+        "2026-08-25-19": 71
       },
       "stats": {
         "experience": 0,
@@ -912,7 +912,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-17-18": 55,
         "2026-08-17-19": 55,
         "2026-08-17-20": 55,
         "2026-08-17-21": 55,
@@ -1090,7 +1089,8 @@
         "2026-08-25-15": 55,
         "2026-08-25-16": 55,
         "2026-08-25-17": 55,
-        "2026-08-25-18": 55
+        "2026-08-25-18": 55,
+        "2026-08-25-19": 55
       },
       "stats": {
         "experience": 0,
@@ -1113,11 +1113,11 @@
     },
     {
       "name": "Lilian Faithkeeper",
-      "level": 1177,
+      "level": 1181,
       "resets": 48,
       "vocation": "Royal Paladin",
       "nick": "",
-      "status": "offline",
+      "status": "online",
       "rank": "Member",
       "reset_history": [
         {
@@ -1146,7 +1146,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-17-18": 47,
         "2026-08-17-19": 47,
         "2026-08-17-20": 47,
         "2026-08-17-21": 47,
@@ -1324,7 +1323,8 @@
         "2026-08-25-15": 48,
         "2026-08-25-16": 48,
         "2026-08-25-17": 48,
-        "2026-08-25-18": 48
+        "2026-08-25-18": 48,
+        "2026-08-25-19": 48
       },
       "stats": {
         "experience": 0,
@@ -1374,7 +1374,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-17-18": 38,
         "2026-08-17-19": 38,
         "2026-08-17-20": 38,
         "2026-08-17-21": 38,
@@ -1552,7 +1551,8 @@
         "2026-08-25-15": 39,
         "2026-08-25-16": 39,
         "2026-08-25-17": 39,
-        "2026-08-25-18": 39
+        "2026-08-25-18": 39,
+        "2026-08-25-19": 39
       },
       "stats": {
         "experience": 0,
@@ -1583,7 +1583,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-17-18": 25,
         "2026-08-17-19": 25,
         "2026-08-17-20": 25,
         "2026-08-17-21": 25,
@@ -1761,7 +1760,8 @@
         "2026-08-25-15": 25,
         "2026-08-25-16": 25,
         "2026-08-25-17": 25,
-        "2026-08-25-18": 25
+        "2026-08-25-18": 25,
+        "2026-08-25-19": 25
       },
       "stats": {
         "experience": 0,
@@ -1814,7 +1814,7 @@
         {
           "name": "El Diablo",
           "value": 71,
-          "level": 1997,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 1
         },
@@ -1842,7 +1842,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 48,
-          "level": 1177,
+          "level": 1181,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1897,7 +1897,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 1997,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 4
         },
@@ -1911,7 +1911,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1177,
+          "level": 1181,
           "vocation": "Royal Paladin",
           "guild_rank": 6
         },
@@ -1959,7 +1959,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 1997,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 4
         },
@@ -1973,7 +1973,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1177,
+          "level": 1181,
           "vocation": "Royal Paladin",
           "guild_rank": 6
         },
@@ -2021,7 +2021,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 1997,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 4
         },
@@ -2035,7 +2035,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1177,
+          "level": 1181,
           "vocation": "Royal Paladin",
           "guild_rank": 6
         },
@@ -2083,7 +2083,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 1997,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 4
         },
@@ -2097,7 +2097,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1177,
+          "level": 1181,
           "vocation": "Royal Paladin",
           "guild_rank": 6
         },
@@ -2145,7 +2145,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 1997,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 4
         },
@@ -2159,7 +2159,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1177,
+          "level": 1181,
           "vocation": "Royal Paladin",
           "guild_rank": 6
         },
@@ -2207,7 +2207,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 1997,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 4
         },
@@ -2221,7 +2221,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1177,
+          "level": 1181,
           "vocation": "Royal Paladin",
           "guild_rank": 6
         },
@@ -2269,7 +2269,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 1997,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 4
         },
@@ -2283,7 +2283,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1177,
+          "level": 1181,
           "vocation": "Royal Paladin",
           "guild_rank": 6
         },
@@ -2331,7 +2331,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 1997,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 4
         },
@@ -2345,7 +2345,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1177,
+          "level": 1181,
           "vocation": "Royal Paladin",
           "guild_rank": 6
         },
@@ -2393,7 +2393,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 1997,
+          "level": 1999,
           "vocation": "Elder Druid",
           "guild_rank": 4
         },
@@ -2407,7 +2407,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1177,
+          "level": 1181,
           "vocation": "Royal Paladin",
           "guild_rank": 6
         },
