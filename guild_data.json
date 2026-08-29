@@ -1,6 +1,6 @@
 {
   "name": "Lowly People",
-  "updated_at": "29/08/2026 às 14:56 (Brasília)",
+  "updated_at": "29/08/2026 às 17:08 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 6,
@@ -10,7 +10,7 @@
   "members": [
     {
       "name": "Gizao",
-      "level": 1997,
+      "level": 2000,
       "resets": 61,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -27,9 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-21-14": 61,
-        "2026-08-21-15": 61,
-        "2026-08-21-16": 61,
         "2026-08-21-17": 61,
         "2026-08-21-18": 61,
         "2026-08-21-19": 61,
@@ -150,7 +147,8 @@
         "2026-08-28-23": 61,
         "2026-08-29-06": 61,
         "2026-08-29-11": 61,
-        "2026-08-29-14": 61
+        "2026-08-29-14": 61,
+        "2026-08-29-17": 61
       },
       "stats": {
         "experience": 0,
@@ -163,13 +161,7 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [
-        {
-          "time": "Aug 29, 2026 09:23",
-          "by": "a mercurial menace (monstro)",
-          "is_pvp": false
-        }
-      ],
+      "deaths": [],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -187,9 +179,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-21-14": 18,
-        "2026-08-21-15": 18,
-        "2026-08-21-16": 18,
         "2026-08-21-17": 18,
         "2026-08-21-18": 18,
         "2026-08-21-19": 18,
@@ -310,7 +299,8 @@
         "2026-08-28-23": 18,
         "2026-08-29-06": 18,
         "2026-08-29-11": 18,
-        "2026-08-29-14": 18
+        "2026-08-29-14": 18,
+        "2026-08-29-17": 18
       },
       "stats": {
         "experience": 0,
@@ -354,9 +344,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-21-14": 71,
-        "2026-08-21-15": 71,
-        "2026-08-21-16": 71,
         "2026-08-21-17": 71,
         "2026-08-21-18": 71,
         "2026-08-21-19": 71,
@@ -477,7 +464,8 @@
         "2026-08-28-23": 71,
         "2026-08-29-06": 71,
         "2026-08-29-11": 71,
-        "2026-08-29-14": 71
+        "2026-08-29-14": 71,
+        "2026-08-29-17": 71
       },
       "stats": {
         "experience": 0,
@@ -517,9 +505,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-21-14": 55,
-        "2026-08-21-15": 55,
-        "2026-08-21-16": 55,
         "2026-08-21-17": 55,
         "2026-08-21-18": 55,
         "2026-08-21-19": 55,
@@ -640,7 +625,8 @@
         "2026-08-28-23": 55,
         "2026-08-29-06": 55,
         "2026-08-29-11": 55,
-        "2026-08-29-14": 55
+        "2026-08-29-14": 55,
+        "2026-08-29-17": 55
       },
       "stats": {
         "experience": 0,
@@ -663,7 +649,7 @@
     },
     {
       "name": "Lilian Faithkeeper",
-      "level": 1843,
+      "level": 1852,
       "resets": 48,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -696,9 +682,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-21-14": 47,
-        "2026-08-21-15": 47,
-        "2026-08-21-16": 47,
         "2026-08-21-17": 47,
         "2026-08-21-18": 47,
         "2026-08-21-19": 47,
@@ -819,7 +802,8 @@
         "2026-08-28-23": 48,
         "2026-08-29-06": 48,
         "2026-08-29-11": 48,
-        "2026-08-29-14": 48
+        "2026-08-29-14": 48,
+        "2026-08-29-17": 48
       },
       "stats": {
         "experience": 0,
@@ -850,9 +834,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-21-14": 25,
-        "2026-08-21-15": 25,
-        "2026-08-21-16": 25,
         "2026-08-21-17": 25,
         "2026-08-21-18": 25,
         "2026-08-21-19": 25,
@@ -973,7 +954,8 @@
         "2026-08-28-23": 25,
         "2026-08-29-06": 25,
         "2026-08-29-11": 25,
-        "2026-08-29-14": 25
+        "2026-08-29-14": 25,
+        "2026-08-29-17": 25
       },
       "stats": {
         "experience": 0,
@@ -1019,7 +1001,7 @@
         {
           "name": "Gizao",
           "value": 61,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -1033,7 +1015,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 48,
-          "level": 1843,
+          "level": 1852,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
@@ -1060,7 +1042,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -1088,7 +1070,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1843,
+          "level": 1852,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1108,7 +1090,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -1136,7 +1118,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1843,
+          "level": 1852,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1156,7 +1138,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -1184,7 +1166,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1843,
+          "level": 1852,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1204,7 +1186,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -1232,7 +1214,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1843,
+          "level": 1852,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1252,7 +1234,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -1280,7 +1262,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1843,
+          "level": 1852,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1300,7 +1282,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -1328,7 +1310,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1843,
+          "level": 1852,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1348,7 +1330,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -1376,7 +1358,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1843,
+          "level": 1852,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1396,7 +1378,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -1424,7 +1406,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1843,
+          "level": 1852,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1444,7 +1426,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -1472,7 +1454,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1843,
+          "level": 1852,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
