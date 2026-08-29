@@ -1,12 +1,12 @@
 {
   "name": "Lowly People",
-  "updated_at": "28/08/2026 às 16:38 (Brasília)",
+  "updated_at": "28/08/2026 às 23:29 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 6,
   "online_count": 5,
   "offline_count": 1,
-  "guild_day_start": "27/08/2026 às 22:00 (Brasília)",
+  "guild_day_start": "28/08/2026 às 22:00 (Brasília)",
   "members": [
     {
       "name": "Gizao",
@@ -27,12 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-20-16": 61,
-        "2026-08-20-17": 61,
-        "2026-08-20-18": 61,
-        "2026-08-20-19": 61,
-        "2026-08-20-20": 61,
-        "2026-08-20-21": 61,
         "2026-08-20-23": 61,
         "2026-08-21-00": 61,
         "2026-08-21-01": 61,
@@ -167,7 +161,8 @@
         "2026-08-27-10": 61,
         "2026-08-27-20": 61,
         "2026-08-28-04": 61,
-        "2026-08-28-16": 61
+        "2026-08-28-16": 61,
+        "2026-08-28-23": 61
       },
       "stats": {
         "experience": 0,
@@ -190,7 +185,7 @@
     },
     {
       "name": "Achilles",
-      "level": 2000,
+      "level": 1997,
       "resets": 18,
       "vocation": "Exalted Monk",
       "nick": "",
@@ -198,12 +193,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-20-16": 18,
-        "2026-08-20-17": 18,
-        "2026-08-20-18": 18,
-        "2026-08-20-19": 18,
-        "2026-08-20-20": 18,
-        "2026-08-20-21": 18,
         "2026-08-20-23": 18,
         "2026-08-21-00": 18,
         "2026-08-21-01": 18,
@@ -338,7 +327,8 @@
         "2026-08-27-10": 18,
         "2026-08-27-20": 18,
         "2026-08-28-04": 18,
-        "2026-08-28-16": 18
+        "2026-08-28-16": 18,
+        "2026-08-28-23": 18
       },
       "stats": {
         "experience": 0,
@@ -353,8 +343,13 @@
       },
       "deaths": [
         {
-          "time": "Aug 28, 2026 13:56",
-          "by": "Tadala De Brinde (jogador)",
+          "time": "Aug 28, 2026 21:58",
+          "by": "Jhonnys Trembolizado (jogador)",
+          "is_pvp": true
+        },
+        {
+          "time": "Aug 28, 2026 21:56",
+          "by": "Magabela (jogador) Maior dano: Fearless",
           "is_pvp": true
         }
       ],
@@ -388,12 +383,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-20-16": 71,
-        "2026-08-20-17": 71,
-        "2026-08-20-18": 71,
-        "2026-08-20-19": 71,
-        "2026-08-20-20": 71,
-        "2026-08-20-21": 71,
         "2026-08-20-23": 71,
         "2026-08-21-00": 71,
         "2026-08-21-01": 71,
@@ -528,7 +517,8 @@
         "2026-08-27-10": 71,
         "2026-08-27-20": 71,
         "2026-08-28-04": 71,
-        "2026-08-28-16": 71
+        "2026-08-28-16": 71,
+        "2026-08-28-23": 71
       },
       "stats": {
         "experience": 0,
@@ -568,12 +558,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-20-16": 55,
-        "2026-08-20-17": 55,
-        "2026-08-20-18": 55,
-        "2026-08-20-19": 55,
-        "2026-08-20-20": 55,
-        "2026-08-20-21": 55,
         "2026-08-20-23": 55,
         "2026-08-21-00": 55,
         "2026-08-21-01": 55,
@@ -708,7 +692,8 @@
         "2026-08-27-10": 55,
         "2026-08-27-20": 55,
         "2026-08-28-04": 55,
-        "2026-08-28-16": 55
+        "2026-08-28-16": 55,
+        "2026-08-28-23": 55
       },
       "stats": {
         "experience": 0,
@@ -731,7 +716,7 @@
     },
     {
       "name": "Lilian Faithkeeper",
-      "level": 1747,
+      "level": 1773,
       "resets": 48,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -764,12 +749,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-20-16": 47,
-        "2026-08-20-17": 47,
-        "2026-08-20-18": 47,
-        "2026-08-20-19": 47,
-        "2026-08-20-20": 47,
-        "2026-08-20-21": 47,
         "2026-08-20-23": 47,
         "2026-08-21-00": 47,
         "2026-08-21-01": 47,
@@ -904,7 +883,8 @@
         "2026-08-27-10": 48,
         "2026-08-27-20": 48,
         "2026-08-28-04": 48,
-        "2026-08-28-16": 48
+        "2026-08-28-16": 48,
+        "2026-08-28-23": 48
       },
       "stats": {
         "experience": 0,
@@ -919,18 +899,8 @@
       },
       "deaths": [
         {
-          "time": "Aug 28, 2026 15:52",
-          "by": "Jotunn (monstro)",
-          "is_pvp": false
-        },
-        {
-          "time": "Aug 28, 2026 15:03",
-          "by": "Famosa (jogador)",
-          "is_pvp": true
-        },
-        {
-          "time": "Aug 28, 2026 12:55",
-          "by": "Teko News (jogador)",
+          "time": "Aug 28, 2026 21:53",
+          "by": "Monkchia (jogador)",
           "is_pvp": true
         }
       ],
@@ -951,12 +921,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-20-16": 25,
-        "2026-08-20-17": 25,
-        "2026-08-20-18": 25,
-        "2026-08-20-19": 25,
-        "2026-08-20-20": 25,
-        "2026-08-20-21": 25,
         "2026-08-20-23": 25,
         "2026-08-21-00": 25,
         "2026-08-21-01": 25,
@@ -1091,7 +1055,8 @@
         "2026-08-27-10": 25,
         "2026-08-27-20": 25,
         "2026-08-28-04": 25,
-        "2026-08-28-16": 25
+        "2026-08-28-16": 25,
+        "2026-08-28-23": 25
       },
       "stats": {
         "experience": 0,
@@ -1151,7 +1116,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 48,
-          "level": 1747,
+          "level": 1773,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
@@ -1165,7 +1130,7 @@
         {
           "name": "Achilles",
           "value": 18,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 6
         }
@@ -1185,7 +1150,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1206,7 +1171,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1747,
+          "level": 1773,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1233,7 +1198,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1254,7 +1219,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1747,
+          "level": 1773,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1281,7 +1246,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1302,7 +1267,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1747,
+          "level": 1773,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1329,7 +1294,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1350,7 +1315,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1747,
+          "level": 1773,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1377,7 +1342,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1398,7 +1363,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1747,
+          "level": 1773,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1425,7 +1390,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1446,7 +1411,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1747,
+          "level": 1773,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1473,7 +1438,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1494,7 +1459,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1747,
+          "level": 1773,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1521,7 +1486,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1542,7 +1507,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1747,
+          "level": 1773,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1569,7 +1534,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1590,7 +1555,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1747,
+          "level": 1773,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
