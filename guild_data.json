@@ -1,16 +1,16 @@
 {
   "name": "Lowly People",
-  "updated_at": "31/08/2026 às 13:31 (Brasília)",
+  "updated_at": "31/08/2026 às 18:40 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 6,
-  "online_count": 5,
-  "offline_count": 1,
+  "online_count": 4,
+  "offline_count": 2,
   "guild_day_start": "30/08/2026 às 22:00 (Brasília)",
   "members": [
     {
       "name": "Gizao",
-      "level": 2000,
+      "level": 1997,
       "resets": 61,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -27,11 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-23-13": 61,
-        "2026-08-23-14": 61,
-        "2026-08-23-15": 61,
-        "2026-08-23-16": 61,
-        "2026-08-23-17": 61,
         "2026-08-23-18": 61,
         "2026-08-23-19": 61,
         "2026-08-23-20": 61,
@@ -118,7 +113,8 @@
         "2026-08-30-20": 61,
         "2026-08-30-23": 61,
         "2026-08-31-05": 61,
-        "2026-08-31-13": 61
+        "2026-08-31-13": 61,
+        "2026-08-31-18": 61
       },
       "stats": {
         "experience": 0,
@@ -131,7 +127,13 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Aug 31, 2026 16:49",
+          "by": "a mercurial menace (monstro) Maior dano: Only Cash",
+          "is_pvp": false
+        }
+      ],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -141,7 +143,7 @@
     },
     {
       "name": "Achilles",
-      "level": 2000,
+      "level": 1997,
       "resets": 18,
       "vocation": "Exalted Monk",
       "nick": "",
@@ -149,11 +151,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-23-13": 18,
-        "2026-08-23-14": 18,
-        "2026-08-23-15": 18,
-        "2026-08-23-16": 18,
-        "2026-08-23-17": 18,
         "2026-08-23-18": 18,
         "2026-08-23-19": 18,
         "2026-08-23-20": 18,
@@ -240,7 +237,8 @@
         "2026-08-30-20": 18,
         "2026-08-30-23": 18,
         "2026-08-31-05": 18,
-        "2026-08-31-13": 18
+        "2026-08-31-13": 18,
+        "2026-08-31-18": 18
       },
       "stats": {
         "experience": 0,
@@ -253,7 +251,13 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Aug 31, 2026 18:06",
+          "by": "Open Detheca (jogador)",
+          "is_pvp": true
+        }
+      ],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -284,11 +288,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-23-13": 71,
-        "2026-08-23-14": 71,
-        "2026-08-23-15": 71,
-        "2026-08-23-16": 71,
-        "2026-08-23-17": 71,
         "2026-08-23-18": 71,
         "2026-08-23-19": 71,
         "2026-08-23-20": 71,
@@ -375,138 +374,8 @@
         "2026-08-30-20": 71,
         "2026-08-30-23": 71,
         "2026-08-31-05": 71,
-        "2026-08-31-13": 71
-      },
-      "stats": {
-        "experience": 0,
-        "magic": 0,
-        "fist": 0,
-        "club": 0,
-        "sword": 0,
-        "axe": 0,
-        "distance": 0,
-        "shielding": 0,
-        "fishing": 0
-      },
-      "deaths": [],
-      "pvp_kills_total": 0,
-      "pvp_kills_today": 0,
-      "pvp_kills_week": 0,
-      "war_kills": 0,
-      "war_kills_day": 0,
-      "war_kills_week": 0
-    },
-    {
-      "name": "Kolwaski",
-      "level": 2000,
-      "resets": 55,
-      "vocation": "Royal Paladin",
-      "nick": "",
-      "status": "online",
-      "rank": "Member",
-      "reset_history": [
-        {
-          "resets": 55,
-          "time": "13/08/2026 18:32"
-        },
-        {
-          "resets": 54,
-          "time": "08/08/2026 01:00"
-        }
-      ],
-      "hourly_snapshots": {
-        "2026-08-23-13": 55,
-        "2026-08-23-14": 55,
-        "2026-08-23-15": 55,
-        "2026-08-23-16": 55,
-        "2026-08-23-17": 55,
-        "2026-08-23-18": 55,
-        "2026-08-23-19": 55,
-        "2026-08-23-20": 55,
-        "2026-08-23-21": 55,
-        "2026-08-23-23": 55,
-        "2026-08-24-00": 55,
-        "2026-08-24-01": 55,
-        "2026-08-24-02": 55,
-        "2026-08-24-03": 55,
-        "2026-08-24-04": 55,
-        "2026-08-24-05": 55,
-        "2026-08-24-06": 55,
-        "2026-08-24-07": 55,
-        "2026-08-24-08": 55,
-        "2026-08-24-09": 55,
-        "2026-08-24-10": 55,
-        "2026-08-24-11": 55,
-        "2026-08-24-12": 55,
-        "2026-08-24-13": 55,
-        "2026-08-24-14": 55,
-        "2026-08-24-15": 55,
-        "2026-08-24-16": 55,
-        "2026-08-24-17": 55,
-        "2026-08-24-18": 55,
-        "2026-08-24-19": 55,
-        "2026-08-24-20": 55,
-        "2026-08-24-21": 55,
-        "2026-08-24-23": 55,
-        "2026-08-25-00": 55,
-        "2026-08-25-01": 55,
-        "2026-08-25-02": 55,
-        "2026-08-25-03": 55,
-        "2026-08-25-04": 55,
-        "2026-08-25-05": 55,
-        "2026-08-25-06": 55,
-        "2026-08-25-07": 55,
-        "2026-08-25-08": 55,
-        "2026-08-25-09": 55,
-        "2026-08-25-10": 55,
-        "2026-08-25-11": 55,
-        "2026-08-25-12": 55,
-        "2026-08-25-13": 55,
-        "2026-08-25-14": 55,
-        "2026-08-25-15": 55,
-        "2026-08-25-16": 55,
-        "2026-08-25-17": 55,
-        "2026-08-25-18": 55,
-        "2026-08-25-19": 55,
-        "2026-08-25-20": 55,
-        "2026-08-25-21": 55,
-        "2026-08-25-23": 55,
-        "2026-08-26-00": 55,
-        "2026-08-26-01": 55,
-        "2026-08-26-02": 55,
-        "2026-08-26-03": 55,
-        "2026-08-26-04": 55,
-        "2026-08-26-05": 55,
-        "2026-08-26-06": 55,
-        "2026-08-26-07": 55,
-        "2026-08-26-08": 55,
-        "2026-08-26-09": 55,
-        "2026-08-26-10": 55,
-        "2026-08-26-11": 55,
-        "2026-08-26-13": 55,
-        "2026-08-26-15": 55,
-        "2026-08-26-18": 55,
-        "2026-08-26-23": 55,
-        "2026-08-27-10": 55,
-        "2026-08-27-20": 55,
-        "2026-08-28-04": 55,
-        "2026-08-28-16": 55,
-        "2026-08-28-23": 55,
-        "2026-08-29-06": 55,
-        "2026-08-29-11": 55,
-        "2026-08-29-14": 55,
-        "2026-08-29-17": 55,
-        "2026-08-29-19": 55,
-        "2026-08-29-21": 55,
-        "2026-08-30-02": 55,
-        "2026-08-30-08": 55,
-        "2026-08-30-12": 55,
-        "2026-08-30-15": 55,
-        "2026-08-30-18": 55,
-        "2026-08-30-20": 55,
-        "2026-08-30-23": 55,
-        "2026-08-31-05": 55,
-        "2026-08-31-13": 55
+        "2026-08-31-13": 71,
+        "2026-08-31-18": 71
       },
       "stats": {
         "experience": 0,
@@ -529,7 +398,7 @@
     },
     {
       "name": "Lilian Faithkeeper",
-      "level": 1943,
+      "level": 1966,
       "resets": 48,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -562,11 +431,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-23-13": 47,
-        "2026-08-23-14": 47,
-        "2026-08-23-15": 47,
-        "2026-08-23-16": 47,
-        "2026-08-23-17": 47,
         "2026-08-23-18": 47,
         "2026-08-23-19": 47,
         "2026-08-23-20": 47,
@@ -653,7 +517,135 @@
         "2026-08-30-20": 48,
         "2026-08-30-23": 48,
         "2026-08-31-05": 48,
-        "2026-08-31-13": 48
+        "2026-08-31-13": 48,
+        "2026-08-31-18": 48
+      },
+      "stats": {
+        "experience": 0,
+        "magic": 0,
+        "fist": 0,
+        "club": 0,
+        "sword": 0,
+        "axe": 0,
+        "distance": 0,
+        "shielding": 0,
+        "fishing": 0
+      },
+      "deaths": [],
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0,
+      "war_kills": 0,
+      "war_kills_day": 0,
+      "war_kills_week": 0
+    },
+    {
+      "name": "Kolwaski",
+      "level": 2000,
+      "resets": 55,
+      "vocation": "Royal Paladin",
+      "nick": "",
+      "status": "offline",
+      "rank": "Member",
+      "reset_history": [
+        {
+          "resets": 55,
+          "time": "13/08/2026 18:32"
+        },
+        {
+          "resets": 54,
+          "time": "08/08/2026 01:00"
+        }
+      ],
+      "hourly_snapshots": {
+        "2026-08-23-18": 55,
+        "2026-08-23-19": 55,
+        "2026-08-23-20": 55,
+        "2026-08-23-21": 55,
+        "2026-08-23-23": 55,
+        "2026-08-24-00": 55,
+        "2026-08-24-01": 55,
+        "2026-08-24-02": 55,
+        "2026-08-24-03": 55,
+        "2026-08-24-04": 55,
+        "2026-08-24-05": 55,
+        "2026-08-24-06": 55,
+        "2026-08-24-07": 55,
+        "2026-08-24-08": 55,
+        "2026-08-24-09": 55,
+        "2026-08-24-10": 55,
+        "2026-08-24-11": 55,
+        "2026-08-24-12": 55,
+        "2026-08-24-13": 55,
+        "2026-08-24-14": 55,
+        "2026-08-24-15": 55,
+        "2026-08-24-16": 55,
+        "2026-08-24-17": 55,
+        "2026-08-24-18": 55,
+        "2026-08-24-19": 55,
+        "2026-08-24-20": 55,
+        "2026-08-24-21": 55,
+        "2026-08-24-23": 55,
+        "2026-08-25-00": 55,
+        "2026-08-25-01": 55,
+        "2026-08-25-02": 55,
+        "2026-08-25-03": 55,
+        "2026-08-25-04": 55,
+        "2026-08-25-05": 55,
+        "2026-08-25-06": 55,
+        "2026-08-25-07": 55,
+        "2026-08-25-08": 55,
+        "2026-08-25-09": 55,
+        "2026-08-25-10": 55,
+        "2026-08-25-11": 55,
+        "2026-08-25-12": 55,
+        "2026-08-25-13": 55,
+        "2026-08-25-14": 55,
+        "2026-08-25-15": 55,
+        "2026-08-25-16": 55,
+        "2026-08-25-17": 55,
+        "2026-08-25-18": 55,
+        "2026-08-25-19": 55,
+        "2026-08-25-20": 55,
+        "2026-08-25-21": 55,
+        "2026-08-25-23": 55,
+        "2026-08-26-00": 55,
+        "2026-08-26-01": 55,
+        "2026-08-26-02": 55,
+        "2026-08-26-03": 55,
+        "2026-08-26-04": 55,
+        "2026-08-26-05": 55,
+        "2026-08-26-06": 55,
+        "2026-08-26-07": 55,
+        "2026-08-26-08": 55,
+        "2026-08-26-09": 55,
+        "2026-08-26-10": 55,
+        "2026-08-26-11": 55,
+        "2026-08-26-13": 55,
+        "2026-08-26-15": 55,
+        "2026-08-26-18": 55,
+        "2026-08-26-23": 55,
+        "2026-08-27-10": 55,
+        "2026-08-27-20": 55,
+        "2026-08-28-04": 55,
+        "2026-08-28-16": 55,
+        "2026-08-28-23": 55,
+        "2026-08-29-06": 55,
+        "2026-08-29-11": 55,
+        "2026-08-29-14": 55,
+        "2026-08-29-17": 55,
+        "2026-08-29-19": 55,
+        "2026-08-29-21": 55,
+        "2026-08-30-02": 55,
+        "2026-08-30-08": 55,
+        "2026-08-30-12": 55,
+        "2026-08-30-15": 55,
+        "2026-08-30-18": 55,
+        "2026-08-30-20": 55,
+        "2026-08-30-23": 55,
+        "2026-08-31-05": 55,
+        "2026-08-31-13": 55,
+        "2026-08-31-18": 55
       },
       "stats": {
         "experience": 0,
@@ -684,11 +676,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-23-13": 25,
-        "2026-08-23-14": 25,
-        "2026-08-23-15": 25,
-        "2026-08-23-16": 25,
-        "2026-08-23-17": 25,
         "2026-08-23-18": 25,
         "2026-08-23-19": 25,
         "2026-08-23-20": 25,
@@ -775,7 +762,8 @@
         "2026-08-30-20": 25,
         "2026-08-30-23": 25,
         "2026-08-31-05": 25,
-        "2026-08-31-13": 25
+        "2026-08-31-13": 25,
+        "2026-08-31-18": 25
       },
       "stats": {
         "experience": 0,
@@ -821,7 +809,7 @@
         {
           "name": "Gizao",
           "value": 61,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -835,7 +823,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 48,
-          "level": 1943,
+          "level": 1966,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
@@ -849,7 +837,7 @@
         {
           "name": "Achilles",
           "value": 18,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 6
         }
@@ -862,14 +850,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -881,16 +869,16 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1966,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
+          "name": "Kolwaski",
           "value": 0,
-          "level": 1943,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -910,14 +898,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -929,16 +917,16 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1966,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
+          "name": "Kolwaski",
           "value": 0,
-          "level": 1943,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -958,14 +946,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -977,16 +965,16 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1966,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
+          "name": "Kolwaski",
           "value": 0,
-          "level": 1943,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1006,14 +994,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1025,16 +1013,16 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1966,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
+          "name": "Kolwaski",
           "value": 0,
-          "level": 1943,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1054,14 +1042,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1073,16 +1061,16 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1966,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
+          "name": "Kolwaski",
           "value": 0,
-          "level": 1943,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1102,14 +1090,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1121,16 +1109,16 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1966,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
+          "name": "Kolwaski",
           "value": 0,
-          "level": 1943,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1150,14 +1138,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1169,16 +1157,16 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1966,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
+          "name": "Kolwaski",
           "value": 0,
-          "level": 1943,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1198,14 +1186,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1217,16 +1205,16 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1966,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
+          "name": "Kolwaski",
           "value": 0,
-          "level": 1943,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -1246,14 +1234,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -1265,16 +1253,16 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1966,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
+          "name": "Kolwaski",
           "value": 0,
-          "level": 1943,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
