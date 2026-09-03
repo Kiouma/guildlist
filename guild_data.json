@@ -1,6 +1,6 @@
 {
   "name": "Lowly People",
-  "updated_at": "03/09/2026 às 15:55 (Brasília)",
+  "updated_at": "03/09/2026 às 18:27 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 6,
@@ -27,7 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-26-15": 61,
         "2026-08-26-18": 61,
         "2026-08-26-23": 61,
         "2026-08-27-10": 61,
@@ -69,7 +68,8 @@
         "2026-09-03-03": 61,
         "2026-09-03-08": 61,
         "2026-09-03-12": 61,
-        "2026-09-03-15": 61
+        "2026-09-03-15": 61,
+        "2026-09-03-18": 61
       },
       "stats": {
         "experience": 0,
@@ -100,7 +100,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-26-15": 18,
         "2026-08-26-18": 18,
         "2026-08-26-23": 18,
         "2026-08-27-10": 18,
@@ -142,7 +141,8 @@
         "2026-09-03-03": 18,
         "2026-09-03-08": 18,
         "2026-09-03-12": 18,
-        "2026-09-03-15": 18
+        "2026-09-03-15": 18,
+        "2026-09-03-18": 18
       },
       "stats": {
         "experience": 0,
@@ -186,7 +186,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-26-15": 71,
         "2026-08-26-18": 71,
         "2026-08-26-23": 71,
         "2026-08-27-10": 71,
@@ -228,7 +227,8 @@
         "2026-09-03-03": 71,
         "2026-09-03-08": 71,
         "2026-09-03-12": 71,
-        "2026-09-03-15": 71
+        "2026-09-03-15": 71,
+        "2026-09-03-18": 71
       },
       "stats": {
         "experience": 0,
@@ -241,13 +241,7 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [
-        {
-          "time": "Sep 03, 2026 10:23",
-          "by": "a hellhunter inferniarch (monstro) Maior dano:                                                            a brinebrute inferniarch",
-          "is_pvp": false
-        }
-      ],
+      "deaths": [],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -274,7 +268,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-26-15": 55,
         "2026-08-26-18": 55,
         "2026-08-26-23": 55,
         "2026-08-27-10": 55,
@@ -316,7 +309,8 @@
         "2026-09-03-03": 55,
         "2026-09-03-08": 55,
         "2026-09-03-12": 55,
-        "2026-09-03-15": 55
+        "2026-09-03-15": 55,
+        "2026-09-03-18": 55
       },
       "stats": {
         "experience": 0,
@@ -339,7 +333,7 @@
     },
     {
       "name": "Lilian Faithkeeper",
-      "level": 2000,
+      "level": 1998,
       "resets": 48,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -372,7 +366,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-26-15": 48,
         "2026-08-26-18": 48,
         "2026-08-26-23": 48,
         "2026-08-27-10": 48,
@@ -414,7 +407,8 @@
         "2026-09-03-03": 48,
         "2026-09-03-08": 48,
         "2026-09-03-12": 48,
-        "2026-09-03-15": 48
+        "2026-09-03-15": 48,
+        "2026-09-03-18": 48
       },
       "stats": {
         "experience": 0,
@@ -427,7 +421,13 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Sep 03, 2026 18:21",
+          "by": "Famosa (jogador)",
+          "is_pvp": true
+        }
+      ],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -445,7 +445,6 @@
       "rank": "The Leader",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-26-15": 25,
         "2026-08-26-18": 25,
         "2026-08-26-23": 25,
         "2026-08-27-10": 25,
@@ -487,7 +486,8 @@
         "2026-09-03-03": 25,
         "2026-09-03-08": 25,
         "2026-09-03-12": 25,
-        "2026-09-03-15": 25
+        "2026-09-03-15": 25,
+        "2026-09-03-18": 25
       },
       "stats": {
         "experience": 0,
@@ -539,7 +539,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 48,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
@@ -594,7 +594,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -642,7 +642,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -690,7 +690,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -738,7 +738,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -786,7 +786,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -834,7 +834,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -882,7 +882,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -930,7 +930,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
@@ -978,7 +978,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 2000,
+          "level": 1998,
           "vocation": "Royal Paladin",
           "guild_rank": 5
         },
