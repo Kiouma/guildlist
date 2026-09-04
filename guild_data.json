@@ -1,11 +1,11 @@
 {
   "name": "Lowly People",
-  "updated_at": "04/09/2026 às 03:35 (Brasília)",
+  "updated_at": "04/09/2026 às 08:48 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 6,
-  "online_count": 4,
-  "offline_count": 2,
+  "online_count": 3,
+  "offline_count": 3,
   "guild_day_start": "03/09/2026 às 22:00 (Brasília)",
   "members": [
     {
@@ -70,7 +70,8 @@
         "2026-09-03-18": 61,
         "2026-09-03-20": 61,
         "2026-09-03-22": 61,
-        "2026-09-04-03": 61
+        "2026-09-04-03": 61,
+        "2026-09-04-08": 61
       },
       "stats": {
         "experience": 0,
@@ -144,7 +145,8 @@
         "2026-09-03-18": 18,
         "2026-09-03-20": 18,
         "2026-09-03-22": 18,
-        "2026-09-04-03": 18
+        "2026-09-04-03": 18,
+        "2026-09-04-08": 18
       },
       "stats": {
         "experience": 0,
@@ -158,99 +160,6 @@
         "fishing": 0
       },
       "deaths": [],
-      "pvp_kills_total": 0,
-      "pvp_kills_today": 0,
-      "pvp_kills_week": 0,
-      "war_kills": 0,
-      "war_kills_day": 0,
-      "war_kills_week": 0
-    },
-    {
-      "name": "El Diablo",
-      "level": 2000,
-      "resets": 71,
-      "vocation": "Elder Druid",
-      "nick": "",
-      "status": "online",
-      "rank": "Member",
-      "reset_history": [
-        {
-          "resets": 71,
-          "time": "02/08/2026 02:12"
-        },
-        {
-          "resets": 70,
-          "time": "01/08/2026 15:46"
-        },
-        {
-          "resets": 69,
-          "time": "01/08/2026 11:18"
-        }
-      ],
-      "hourly_snapshots": {
-        "2026-08-27-10": 71,
-        "2026-08-27-20": 71,
-        "2026-08-28-04": 71,
-        "2026-08-28-16": 71,
-        "2026-08-28-23": 71,
-        "2026-08-29-06": 71,
-        "2026-08-29-11": 71,
-        "2026-08-29-14": 71,
-        "2026-08-29-17": 71,
-        "2026-08-29-19": 71,
-        "2026-08-29-21": 71,
-        "2026-08-30-02": 71,
-        "2026-08-30-08": 71,
-        "2026-08-30-12": 71,
-        "2026-08-30-15": 71,
-        "2026-08-30-18": 71,
-        "2026-08-30-20": 71,
-        "2026-08-30-23": 71,
-        "2026-08-31-05": 71,
-        "2026-08-31-13": 71,
-        "2026-08-31-18": 71,
-        "2026-08-31-21": 71,
-        "2026-09-01-02": 71,
-        "2026-09-01-07": 71,
-        "2026-09-01-12": 71,
-        "2026-09-01-15": 71,
-        "2026-09-01-18": 71,
-        "2026-09-01-20": 71,
-        "2026-09-01-22": 71,
-        "2026-09-02-03": 71,
-        "2026-09-02-08": 71,
-        "2026-09-02-12": 71,
-        "2026-09-02-16": 71,
-        "2026-09-02-18": 71,
-        "2026-09-02-20": 71,
-        "2026-09-02-22": 71,
-        "2026-09-03-03": 71,
-        "2026-09-03-08": 71,
-        "2026-09-03-12": 71,
-        "2026-09-03-15": 71,
-        "2026-09-03-18": 71,
-        "2026-09-03-20": 71,
-        "2026-09-03-22": 71,
-        "2026-09-04-03": 71
-      },
-      "stats": {
-        "experience": 0,
-        "magic": 0,
-        "fist": 0,
-        "club": 0,
-        "sword": 0,
-        "axe": 0,
-        "distance": 0,
-        "shielding": 0,
-        "fishing": 0
-      },
-      "deaths": [
-        {
-          "time": "Sep 03, 2026 20:39",
-          "by": "a brinebrute inferniarch (monstro) Maior dano:                                                            a hellhunter inferniarch",
-          "is_pvp": false
-        }
-      ],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -336,7 +245,8 @@
         "2026-09-03-18": 48,
         "2026-09-03-20": 48,
         "2026-09-03-22": 48,
-        "2026-09-04-03": 48
+        "2026-09-04-03": 48,
+        "2026-09-04-08": 48
       },
       "stats": {
         "experience": 0,
@@ -410,7 +320,96 @@
         "2026-09-03-18": 25,
         "2026-09-03-20": 25,
         "2026-09-03-22": 25,
-        "2026-09-04-03": 25
+        "2026-09-04-03": 25,
+        "2026-09-04-08": 25
+      },
+      "stats": {
+        "experience": 0,
+        "magic": 0,
+        "fist": 0,
+        "club": 0,
+        "sword": 0,
+        "axe": 0,
+        "distance": 0,
+        "shielding": 0,
+        "fishing": 0
+      },
+      "deaths": [],
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0,
+      "war_kills": 0,
+      "war_kills_day": 0,
+      "war_kills_week": 0
+    },
+    {
+      "name": "El Diablo",
+      "level": 2000,
+      "resets": 71,
+      "vocation": "Elder Druid",
+      "nick": "",
+      "status": "offline",
+      "rank": "Member",
+      "reset_history": [
+        {
+          "resets": 71,
+          "time": "02/08/2026 02:12"
+        },
+        {
+          "resets": 70,
+          "time": "01/08/2026 15:46"
+        },
+        {
+          "resets": 69,
+          "time": "01/08/2026 11:18"
+        }
+      ],
+      "hourly_snapshots": {
+        "2026-08-27-10": 71,
+        "2026-08-27-20": 71,
+        "2026-08-28-04": 71,
+        "2026-08-28-16": 71,
+        "2026-08-28-23": 71,
+        "2026-08-29-06": 71,
+        "2026-08-29-11": 71,
+        "2026-08-29-14": 71,
+        "2026-08-29-17": 71,
+        "2026-08-29-19": 71,
+        "2026-08-29-21": 71,
+        "2026-08-30-02": 71,
+        "2026-08-30-08": 71,
+        "2026-08-30-12": 71,
+        "2026-08-30-15": 71,
+        "2026-08-30-18": 71,
+        "2026-08-30-20": 71,
+        "2026-08-30-23": 71,
+        "2026-08-31-05": 71,
+        "2026-08-31-13": 71,
+        "2026-08-31-18": 71,
+        "2026-08-31-21": 71,
+        "2026-09-01-02": 71,
+        "2026-09-01-07": 71,
+        "2026-09-01-12": 71,
+        "2026-09-01-15": 71,
+        "2026-09-01-18": 71,
+        "2026-09-01-20": 71,
+        "2026-09-01-22": 71,
+        "2026-09-02-03": 71,
+        "2026-09-02-08": 71,
+        "2026-09-02-12": 71,
+        "2026-09-02-16": 71,
+        "2026-09-02-18": 71,
+        "2026-09-02-20": 71,
+        "2026-09-02-22": 71,
+        "2026-09-03-03": 71,
+        "2026-09-03-08": 71,
+        "2026-09-03-12": 71,
+        "2026-09-03-15": 71,
+        "2026-09-03-18": 71,
+        "2026-09-03-20": 71,
+        "2026-09-03-22": 71,
+        "2026-09-04-03": 71,
+        "2026-09-04-08": 71
       },
       "stats": {
         "experience": 0,
@@ -493,7 +492,8 @@
         "2026-09-03-18": 55,
         "2026-09-03-20": 55,
         "2026-09-03-22": 55,
-        "2026-09-04-03": 55
+        "2026-09-04-03": 55,
+        "2026-09-04-08": 55
       },
       "stats": {
         "experience": 0,
@@ -584,24 +584,24 @@
           "guild_rank": 2
         },
         {
-          "name": "El Diablo",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Elder Druid",
-          "guild_rank": 3
-        },
-        {
           "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 4
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 4
+        },
+        {
+          "name": "El Diablo",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Elder Druid",
           "guild_rank": 5
         },
         {
@@ -632,24 +632,24 @@
           "guild_rank": 2
         },
         {
-          "name": "El Diablo",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Elder Druid",
-          "guild_rank": 3
-        },
-        {
           "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 4
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 4
+        },
+        {
+          "name": "El Diablo",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Elder Druid",
           "guild_rank": 5
         },
         {
@@ -680,24 +680,24 @@
           "guild_rank": 2
         },
         {
-          "name": "El Diablo",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Elder Druid",
-          "guild_rank": 3
-        },
-        {
           "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 4
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 4
+        },
+        {
+          "name": "El Diablo",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Elder Druid",
           "guild_rank": 5
         },
         {
@@ -728,24 +728,24 @@
           "guild_rank": 2
         },
         {
-          "name": "El Diablo",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Elder Druid",
-          "guild_rank": 3
-        },
-        {
           "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 4
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 4
+        },
+        {
+          "name": "El Diablo",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Elder Druid",
           "guild_rank": 5
         },
         {
@@ -776,24 +776,24 @@
           "guild_rank": 2
         },
         {
-          "name": "El Diablo",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Elder Druid",
-          "guild_rank": 3
-        },
-        {
           "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 4
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 4
+        },
+        {
+          "name": "El Diablo",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Elder Druid",
           "guild_rank": 5
         },
         {
@@ -824,24 +824,24 @@
           "guild_rank": 2
         },
         {
-          "name": "El Diablo",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Elder Druid",
-          "guild_rank": 3
-        },
-        {
           "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 4
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 4
+        },
+        {
+          "name": "El Diablo",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Elder Druid",
           "guild_rank": 5
         },
         {
@@ -872,24 +872,24 @@
           "guild_rank": 2
         },
         {
-          "name": "El Diablo",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Elder Druid",
-          "guild_rank": 3
-        },
-        {
           "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 4
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 4
+        },
+        {
+          "name": "El Diablo",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Elder Druid",
           "guild_rank": 5
         },
         {
@@ -920,24 +920,24 @@
           "guild_rank": 2
         },
         {
-          "name": "El Diablo",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Elder Druid",
-          "guild_rank": 3
-        },
-        {
           "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 4
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 4
+        },
+        {
+          "name": "El Diablo",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Elder Druid",
           "guild_rank": 5
         },
         {
@@ -968,24 +968,24 @@
           "guild_rank": 2
         },
         {
-          "name": "El Diablo",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Elder Druid",
-          "guild_rank": 3
-        },
-        {
           "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 4
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 4
+        },
+        {
+          "name": "El Diablo",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Elder Druid",
           "guild_rank": 5
         },
         {
