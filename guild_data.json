@@ -1,11 +1,11 @@
 {
   "name": "Lowly People",
-  "updated_at": "03/09/2026 às 22:29 (Brasília)",
+  "updated_at": "04/09/2026 às 03:35 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 6,
-  "online_count": 5,
-  "offline_count": 1,
+  "online_count": 4,
+  "offline_count": 2,
   "guild_day_start": "03/09/2026 às 22:00 (Brasília)",
   "members": [
     {
@@ -27,7 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-26-23": 61,
         "2026-08-27-10": 61,
         "2026-08-27-20": 61,
         "2026-08-28-04": 61,
@@ -70,7 +69,8 @@
         "2026-09-03-15": 61,
         "2026-09-03-18": 61,
         "2026-09-03-20": 61,
-        "2026-09-03-22": 61
+        "2026-09-03-22": 61,
+        "2026-09-04-03": 61
       },
       "stats": {
         "experience": 0,
@@ -101,7 +101,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-26-23": 18,
         "2026-08-27-10": 18,
         "2026-08-27-20": 18,
         "2026-08-28-04": 18,
@@ -144,7 +143,8 @@
         "2026-09-03-15": 18,
         "2026-09-03-18": 18,
         "2026-09-03-20": 18,
-        "2026-09-03-22": 18
+        "2026-09-03-22": 18,
+        "2026-09-04-03": 18
       },
       "stats": {
         "experience": 0,
@@ -188,7 +188,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-26-23": 71,
         "2026-08-27-10": 71,
         "2026-08-27-20": 71,
         "2026-08-28-04": 71,
@@ -231,7 +230,8 @@
         "2026-09-03-15": 71,
         "2026-09-03-18": 71,
         "2026-09-03-20": 71,
-        "2026-09-03-22": 71
+        "2026-09-03-22": 71,
+        "2026-09-04-03": 71
       },
       "stats": {
         "experience": 0,
@@ -251,89 +251,6 @@
           "is_pvp": false
         }
       ],
-      "pvp_kills_total": 0,
-      "pvp_kills_today": 0,
-      "pvp_kills_week": 0,
-      "war_kills": 0,
-      "war_kills_day": 0,
-      "war_kills_week": 0
-    },
-    {
-      "name": "Kolwaski",
-      "level": 2000,
-      "resets": 55,
-      "vocation": "Royal Paladin",
-      "nick": "",
-      "status": "online",
-      "rank": "Member",
-      "reset_history": [
-        {
-          "resets": 55,
-          "time": "13/08/2026 18:32"
-        },
-        {
-          "resets": 54,
-          "time": "08/08/2026 01:00"
-        }
-      ],
-      "hourly_snapshots": {
-        "2026-08-26-23": 55,
-        "2026-08-27-10": 55,
-        "2026-08-27-20": 55,
-        "2026-08-28-04": 55,
-        "2026-08-28-16": 55,
-        "2026-08-28-23": 55,
-        "2026-08-29-06": 55,
-        "2026-08-29-11": 55,
-        "2026-08-29-14": 55,
-        "2026-08-29-17": 55,
-        "2026-08-29-19": 55,
-        "2026-08-29-21": 55,
-        "2026-08-30-02": 55,
-        "2026-08-30-08": 55,
-        "2026-08-30-12": 55,
-        "2026-08-30-15": 55,
-        "2026-08-30-18": 55,
-        "2026-08-30-20": 55,
-        "2026-08-30-23": 55,
-        "2026-08-31-05": 55,
-        "2026-08-31-13": 55,
-        "2026-08-31-18": 55,
-        "2026-08-31-21": 55,
-        "2026-09-01-02": 55,
-        "2026-09-01-07": 55,
-        "2026-09-01-12": 55,
-        "2026-09-01-15": 55,
-        "2026-09-01-18": 55,
-        "2026-09-01-20": 55,
-        "2026-09-01-22": 55,
-        "2026-09-02-03": 55,
-        "2026-09-02-08": 55,
-        "2026-09-02-12": 55,
-        "2026-09-02-16": 55,
-        "2026-09-02-18": 55,
-        "2026-09-02-20": 55,
-        "2026-09-02-22": 55,
-        "2026-09-03-03": 55,
-        "2026-09-03-08": 55,
-        "2026-09-03-12": 55,
-        "2026-09-03-15": 55,
-        "2026-09-03-18": 55,
-        "2026-09-03-20": 55,
-        "2026-09-03-22": 55
-      },
-      "stats": {
-        "experience": 0,
-        "magic": 0,
-        "fist": 0,
-        "club": 0,
-        "sword": 0,
-        "axe": 0,
-        "distance": 0,
-        "shielding": 0,
-        "fishing": 0
-      },
-      "deaths": [],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -376,7 +293,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-08-26-23": 48,
         "2026-08-27-10": 48,
         "2026-08-27-20": 48,
         "2026-08-28-04": 48,
@@ -419,7 +335,8 @@
         "2026-09-03-15": 48,
         "2026-09-03-18": 48,
         "2026-09-03-20": 48,
-        "2026-09-03-22": 48
+        "2026-09-03-22": 48,
+        "2026-09-04-03": 48
       },
       "stats": {
         "experience": 0,
@@ -432,13 +349,7 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [
-        {
-          "time": "Sep 03, 2026 18:21",
-          "by": "Famosa (jogador)",
-          "is_pvp": true
-        }
-      ],
+      "deaths": [],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -456,7 +367,6 @@
       "rank": "The Leader",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-08-26-23": 25,
         "2026-08-27-10": 25,
         "2026-08-27-20": 25,
         "2026-08-28-04": 25,
@@ -499,7 +409,91 @@
         "2026-09-03-15": 25,
         "2026-09-03-18": 25,
         "2026-09-03-20": 25,
-        "2026-09-03-22": 25
+        "2026-09-03-22": 25,
+        "2026-09-04-03": 25
+      },
+      "stats": {
+        "experience": 0,
+        "magic": 0,
+        "fist": 0,
+        "club": 0,
+        "sword": 0,
+        "axe": 0,
+        "distance": 0,
+        "shielding": 0,
+        "fishing": 0
+      },
+      "deaths": [],
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0,
+      "war_kills": 0,
+      "war_kills_day": 0,
+      "war_kills_week": 0
+    },
+    {
+      "name": "Kolwaski",
+      "level": 2000,
+      "resets": 55,
+      "vocation": "Royal Paladin",
+      "nick": "",
+      "status": "offline",
+      "rank": "Member",
+      "reset_history": [
+        {
+          "resets": 55,
+          "time": "13/08/2026 18:32"
+        },
+        {
+          "resets": 54,
+          "time": "08/08/2026 01:00"
+        }
+      ],
+      "hourly_snapshots": {
+        "2026-08-27-10": 55,
+        "2026-08-27-20": 55,
+        "2026-08-28-04": 55,
+        "2026-08-28-16": 55,
+        "2026-08-28-23": 55,
+        "2026-08-29-06": 55,
+        "2026-08-29-11": 55,
+        "2026-08-29-14": 55,
+        "2026-08-29-17": 55,
+        "2026-08-29-19": 55,
+        "2026-08-29-21": 55,
+        "2026-08-30-02": 55,
+        "2026-08-30-08": 55,
+        "2026-08-30-12": 55,
+        "2026-08-30-15": 55,
+        "2026-08-30-18": 55,
+        "2026-08-30-20": 55,
+        "2026-08-30-23": 55,
+        "2026-08-31-05": 55,
+        "2026-08-31-13": 55,
+        "2026-08-31-18": 55,
+        "2026-08-31-21": 55,
+        "2026-09-01-02": 55,
+        "2026-09-01-07": 55,
+        "2026-09-01-12": 55,
+        "2026-09-01-15": 55,
+        "2026-09-01-18": 55,
+        "2026-09-01-20": 55,
+        "2026-09-01-22": 55,
+        "2026-09-02-03": 55,
+        "2026-09-02-08": 55,
+        "2026-09-02-12": 55,
+        "2026-09-02-16": 55,
+        "2026-09-02-18": 55,
+        "2026-09-02-20": 55,
+        "2026-09-02-22": 55,
+        "2026-09-03-03": 55,
+        "2026-09-03-08": 55,
+        "2026-09-03-12": 55,
+        "2026-09-03-15": 55,
+        "2026-09-03-18": 55,
+        "2026-09-03-20": 55,
+        "2026-09-03-22": 55,
+        "2026-09-04-03": 55
       },
       "stats": {
         "experience": 0,
@@ -597,24 +591,24 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 5
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 5
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 6
         }
       ]
@@ -645,24 +639,24 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 5
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 5
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 6
         }
       ]
@@ -693,24 +687,24 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 5
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 5
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 6
         }
       ]
@@ -741,24 +735,24 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 5
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 5
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 6
         }
       ]
@@ -789,24 +783,24 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 5
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 5
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 6
         }
       ]
@@ -837,24 +831,24 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 5
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 5
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 6
         }
       ]
@@ -885,24 +879,24 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 5
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 5
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 6
         }
       ]
@@ -933,24 +927,24 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 5
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 5
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 6
         }
       ]
@@ -981,24 +975,24 @@
           "guild_rank": 3
         },
         {
-          "name": "Kolwaski",
+          "name": "Lilian Faithkeeper",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
         {
-          "name": "Lilian Faithkeeper",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 5
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 5
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 6
         }
       ]
