@@ -1,107 +1,13 @@
 {
   "name": "Lowly People",
-  "updated_at": "05/09/2026 às 08:14 (Brasília)",
+  "updated_at": "05/09/2026 às 10:37 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 6,
-  "online_count": 3,
-  "offline_count": 3,
+  "online_count": 2,
+  "offline_count": 4,
   "guild_day_start": "04/09/2026 às 22:00 (Brasília)",
   "members": [
-    {
-      "name": "Gizao",
-      "level": 2000,
-      "resets": 61,
-      "vocation": "Royal Paladin",
-      "nick": "",
-      "status": "online",
-      "rank": "The Leader",
-      "reset_history": [
-        {
-          "resets": 61,
-          "time": "04/08/2026 22:14"
-        },
-        {
-          "resets": 60,
-          "time": "15/07/2026 01:35"
-        }
-      ],
-      "hourly_snapshots": {
-        "2026-08-28-16": 61,
-        "2026-08-28-23": 61,
-        "2026-08-29-06": 61,
-        "2026-08-29-11": 61,
-        "2026-08-29-14": 61,
-        "2026-08-29-17": 61,
-        "2026-08-29-19": 61,
-        "2026-08-29-21": 61,
-        "2026-08-30-02": 61,
-        "2026-08-30-08": 61,
-        "2026-08-30-12": 61,
-        "2026-08-30-15": 61,
-        "2026-08-30-18": 61,
-        "2026-08-30-20": 61,
-        "2026-08-30-23": 61,
-        "2026-08-31-05": 61,
-        "2026-08-31-13": 61,
-        "2026-08-31-18": 61,
-        "2026-08-31-21": 61,
-        "2026-09-01-02": 61,
-        "2026-09-01-07": 61,
-        "2026-09-01-12": 61,
-        "2026-09-01-15": 61,
-        "2026-09-01-18": 61,
-        "2026-09-01-20": 61,
-        "2026-09-01-22": 61,
-        "2026-09-02-03": 61,
-        "2026-09-02-08": 61,
-        "2026-09-02-12": 61,
-        "2026-09-02-16": 61,
-        "2026-09-02-18": 61,
-        "2026-09-02-20": 61,
-        "2026-09-02-22": 61,
-        "2026-09-03-03": 61,
-        "2026-09-03-08": 61,
-        "2026-09-03-12": 61,
-        "2026-09-03-15": 61,
-        "2026-09-03-18": 61,
-        "2026-09-03-20": 61,
-        "2026-09-03-22": 61,
-        "2026-09-04-03": 61,
-        "2026-09-04-08": 61,
-        "2026-09-04-12": 61,
-        "2026-09-04-15": 61,
-        "2026-09-04-18": 61,
-        "2026-09-04-20": 61,
-        "2026-09-04-22": 61,
-        "2026-09-05-03": 61,
-        "2026-09-05-08": 61
-      },
-      "stats": {
-        "experience": 0,
-        "magic": 0,
-        "fist": 0,
-        "club": 0,
-        "sword": 0,
-        "axe": 0,
-        "distance": 0,
-        "shielding": 0,
-        "fishing": 0
-      },
-      "deaths": [
-        {
-          "time": "Sep 05, 2026 05:25",
-          "by": "Kashambao (jogador)",
-          "is_pvp": true
-        }
-      ],
-      "pvp_kills_total": 1,
-      "pvp_kills_today": 1,
-      "pvp_kills_week": 1,
-      "war_kills": 0,
-      "war_kills_day": 0,
-      "war_kills_week": 0
-    },
     {
       "name": "Achilles",
       "level": 2000,
@@ -160,7 +66,8 @@
         "2026-09-04-20": 18,
         "2026-09-04-22": 18,
         "2026-09-05-03": 18,
-        "2026-09-05-08": 18
+        "2026-09-05-08": 18,
+        "2026-09-05-10": 18
       },
       "stats": {
         "experience": 0,
@@ -183,7 +90,7 @@
     },
     {
       "name": "Lilian Faithkeeper",
-      "level": 1998,
+      "level": 2000,
       "resets": 48,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -264,7 +171,8 @@
         "2026-09-04-20": 48,
         "2026-09-04-22": 48,
         "2026-09-05-03": 48,
-        "2026-09-05-08": 48
+        "2026-09-05-08": 48,
+        "2026-09-05-10": 48
       },
       "stats": {
         "experience": 0,
@@ -287,6 +195,106 @@
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
+      "war_kills": 0,
+      "war_kills_day": 0,
+      "war_kills_week": 0
+    },
+    {
+      "name": "Gizao",
+      "level": 1997,
+      "resets": 61,
+      "vocation": "Royal Paladin",
+      "nick": "",
+      "status": "offline",
+      "rank": "The Leader",
+      "reset_history": [
+        {
+          "resets": 61,
+          "time": "04/08/2026 22:14"
+        },
+        {
+          "resets": 60,
+          "time": "15/07/2026 01:35"
+        }
+      ],
+      "hourly_snapshots": {
+        "2026-08-28-16": 61,
+        "2026-08-28-23": 61,
+        "2026-08-29-06": 61,
+        "2026-08-29-11": 61,
+        "2026-08-29-14": 61,
+        "2026-08-29-17": 61,
+        "2026-08-29-19": 61,
+        "2026-08-29-21": 61,
+        "2026-08-30-02": 61,
+        "2026-08-30-08": 61,
+        "2026-08-30-12": 61,
+        "2026-08-30-15": 61,
+        "2026-08-30-18": 61,
+        "2026-08-30-20": 61,
+        "2026-08-30-23": 61,
+        "2026-08-31-05": 61,
+        "2026-08-31-13": 61,
+        "2026-08-31-18": 61,
+        "2026-08-31-21": 61,
+        "2026-09-01-02": 61,
+        "2026-09-01-07": 61,
+        "2026-09-01-12": 61,
+        "2026-09-01-15": 61,
+        "2026-09-01-18": 61,
+        "2026-09-01-20": 61,
+        "2026-09-01-22": 61,
+        "2026-09-02-03": 61,
+        "2026-09-02-08": 61,
+        "2026-09-02-12": 61,
+        "2026-09-02-16": 61,
+        "2026-09-02-18": 61,
+        "2026-09-02-20": 61,
+        "2026-09-02-22": 61,
+        "2026-09-03-03": 61,
+        "2026-09-03-08": 61,
+        "2026-09-03-12": 61,
+        "2026-09-03-15": 61,
+        "2026-09-03-18": 61,
+        "2026-09-03-20": 61,
+        "2026-09-03-22": 61,
+        "2026-09-04-03": 61,
+        "2026-09-04-08": 61,
+        "2026-09-04-12": 61,
+        "2026-09-04-15": 61,
+        "2026-09-04-18": 61,
+        "2026-09-04-20": 61,
+        "2026-09-04-22": 61,
+        "2026-09-05-03": 61,
+        "2026-09-05-08": 61,
+        "2026-09-05-10": 61
+      },
+      "stats": {
+        "experience": 0,
+        "magic": 0,
+        "fist": 0,
+        "club": 0,
+        "sword": 0,
+        "axe": 0,
+        "distance": 0,
+        "shielding": 0,
+        "fishing": 0
+      },
+      "deaths": [
+        {
+          "time": "Sep 05, 2026 10:10",
+          "by": "Nao Eh Open (jogador)",
+          "is_pvp": true
+        },
+        {
+          "time": "Sep 05, 2026 05:25",
+          "by": "Kashambao (jogador)",
+          "is_pvp": true
+        }
+      ],
+      "pvp_kills_total": 1,
+      "pvp_kills_today": 1,
+      "pvp_kills_week": 1,
       "war_kills": 0,
       "war_kills_day": 0,
       "war_kills_week": 0
@@ -349,7 +357,8 @@
         "2026-09-04-20": 25,
         "2026-09-04-22": 25,
         "2026-09-05-03": 25,
-        "2026-09-05-08": 25
+        "2026-09-05-08": 25,
+        "2026-09-05-10": 25
       },
       "stats": {
         "experience": 0,
@@ -441,7 +450,8 @@
         "2026-09-04-20": 71,
         "2026-09-04-22": 71,
         "2026-09-05-03": 71,
-        "2026-09-05-08": 71
+        "2026-09-05-08": 71,
+        "2026-09-05-10": 71
       },
       "stats": {
         "experience": 0,
@@ -529,7 +539,8 @@
         "2026-09-04-20": 55,
         "2026-09-04-22": 55,
         "2026-09-05-03": 55,
-        "2026-09-05-08": 55
+        "2026-09-05-08": 55,
+        "2026-09-05-10": 55
       },
       "stats": {
         "experience": 0,
@@ -567,7 +578,7 @@
         {
           "name": "Gizao",
           "value": 61,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -581,7 +592,7 @@
         {
           "name": "Lilian Faithkeeper",
           "value": 48,
-          "level": 1998,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 4
         },
@@ -606,23 +617,23 @@
       "val_label": "Experience",
       "entries": [
         {
-          "name": "Gizao",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 1
-        },
-        {
           "name": "Achilles",
           "value": 0,
           "level": 2000,
           "vocation": "Exalted Monk",
-          "guild_rank": 2
+          "guild_rank": 1
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
+          "vocation": "Royal Paladin",
+          "guild_rank": 2
+        },
+        {
+          "name": "Gizao",
+          "value": 0,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
@@ -654,23 +665,23 @@
       "val_label": "Magic Level",
       "entries": [
         {
-          "name": "Gizao",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 1
-        },
-        {
           "name": "Achilles",
           "value": 0,
           "level": 2000,
           "vocation": "Exalted Monk",
-          "guild_rank": 2
+          "guild_rank": 1
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
+          "vocation": "Royal Paladin",
+          "guild_rank": 2
+        },
+        {
+          "name": "Gizao",
+          "value": 0,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
@@ -702,23 +713,23 @@
       "val_label": "Fist",
       "entries": [
         {
-          "name": "Gizao",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 1
-        },
-        {
           "name": "Achilles",
           "value": 0,
           "level": 2000,
           "vocation": "Exalted Monk",
-          "guild_rank": 2
+          "guild_rank": 1
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
+          "vocation": "Royal Paladin",
+          "guild_rank": 2
+        },
+        {
+          "name": "Gizao",
+          "value": 0,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
@@ -750,23 +761,23 @@
       "val_label": "Club",
       "entries": [
         {
-          "name": "Gizao",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 1
-        },
-        {
           "name": "Achilles",
           "value": 0,
           "level": 2000,
           "vocation": "Exalted Monk",
-          "guild_rank": 2
+          "guild_rank": 1
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
+          "vocation": "Royal Paladin",
+          "guild_rank": 2
+        },
+        {
+          "name": "Gizao",
+          "value": 0,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
@@ -798,23 +809,23 @@
       "val_label": "Sword",
       "entries": [
         {
-          "name": "Gizao",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 1
-        },
-        {
           "name": "Achilles",
           "value": 0,
           "level": 2000,
           "vocation": "Exalted Monk",
-          "guild_rank": 2
+          "guild_rank": 1
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
+          "vocation": "Royal Paladin",
+          "guild_rank": 2
+        },
+        {
+          "name": "Gizao",
+          "value": 0,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
@@ -846,23 +857,23 @@
       "val_label": "Axe",
       "entries": [
         {
-          "name": "Gizao",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 1
-        },
-        {
           "name": "Achilles",
           "value": 0,
           "level": 2000,
           "vocation": "Exalted Monk",
-          "guild_rank": 2
+          "guild_rank": 1
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
+          "vocation": "Royal Paladin",
+          "guild_rank": 2
+        },
+        {
+          "name": "Gizao",
+          "value": 0,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
@@ -894,23 +905,23 @@
       "val_label": "Distance",
       "entries": [
         {
-          "name": "Gizao",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 1
-        },
-        {
           "name": "Achilles",
           "value": 0,
           "level": 2000,
           "vocation": "Exalted Monk",
-          "guild_rank": 2
+          "guild_rank": 1
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
+          "vocation": "Royal Paladin",
+          "guild_rank": 2
+        },
+        {
+          "name": "Gizao",
+          "value": 0,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
@@ -942,23 +953,23 @@
       "val_label": "Shielding",
       "entries": [
         {
-          "name": "Gizao",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 1
-        },
-        {
           "name": "Achilles",
           "value": 0,
           "level": 2000,
           "vocation": "Exalted Monk",
-          "guild_rank": 2
+          "guild_rank": 1
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
+          "vocation": "Royal Paladin",
+          "guild_rank": 2
+        },
+        {
+          "name": "Gizao",
+          "value": 0,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
@@ -990,23 +1001,23 @@
       "val_label": "Fishing",
       "entries": [
         {
-          "name": "Gizao",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 1
-        },
-        {
           "name": "Achilles",
           "value": 0,
           "level": 2000,
           "vocation": "Exalted Monk",
-          "guild_rank": 2
+          "guild_rank": 1
         },
         {
           "name": "Lilian Faithkeeper",
           "value": 0,
-          "level": 1998,
+          "level": 2000,
+          "vocation": "Royal Paladin",
+          "guild_rank": 2
+        },
+        {
+          "name": "Gizao",
+          "value": 0,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 3
         },
