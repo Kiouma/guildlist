@@ -1,6 +1,6 @@
 {
   "name": "Lowly People",
-  "updated_at": "06/09/2026 às 15:41 (Brasília)",
+  "updated_at": "06/09/2026 às 17:53 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 6,
@@ -81,7 +81,8 @@
         "2026-09-06-06": 61,
         "2026-09-06-10": 61,
         "2026-09-06-13": 61,
-        "2026-09-06-15": 61
+        "2026-09-06-15": 61,
+        "2026-09-06-17": 61
       },
       "stats": {
         "experience": 0,
@@ -166,7 +167,8 @@
         "2026-09-06-06": 18,
         "2026-09-06-10": 18,
         "2026-09-06-13": 18,
-        "2026-09-06-15": 18
+        "2026-09-06-15": 18,
+        "2026-09-06-17": 18
       },
       "stats": {
         "experience": 0,
@@ -195,7 +197,7 @@
     },
     {
       "name": "El Diablo",
-      "level": 2000,
+      "level": 1997,
       "resets": 71,
       "vocation": "Elder Druid",
       "nick": "",
@@ -270,7 +272,8 @@
         "2026-09-06-06": 71,
         "2026-09-06-10": 71,
         "2026-09-06-13": 71,
-        "2026-09-06-15": 71
+        "2026-09-06-15": 71,
+        "2026-09-06-17": 71
       },
       "stats": {
         "experience": 0,
@@ -283,7 +286,13 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Sep 06, 2026 17:42",
+          "by": "a soulcleaver (monstro)",
+          "is_pvp": false
+        }
+      ],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -380,7 +389,8 @@
         "2026-09-06-06": 48,
         "2026-09-06-10": 48,
         "2026-09-06-13": 48,
-        "2026-09-06-15": 48
+        "2026-09-06-15": 48,
+        "2026-09-06-17": 48
       },
       "stats": {
         "experience": 0,
@@ -393,7 +403,13 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Sep 06, 2026 17:54",
+          "by": "Julian Alvarez (jogador)",
+          "is_pvp": true
+        }
+      ],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -465,7 +481,8 @@
         "2026-09-06-06": 25,
         "2026-09-06-10": 25,
         "2026-09-06-13": 25,
-        "2026-09-06-15": 25
+        "2026-09-06-15": 25,
+        "2026-09-06-17": 25
       },
       "stats": {
         "experience": 0,
@@ -559,7 +576,8 @@
         "2026-09-06-06": 55,
         "2026-09-06-10": 55,
         "2026-09-06-13": 55,
-        "2026-09-06-15": 55
+        "2026-09-06-15": 55,
+        "2026-09-06-17": 55
       },
       "stats": {
         "experience": 0,
@@ -590,7 +608,7 @@
         {
           "name": "El Diablo",
           "value": 71,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Elder Druid",
           "guild_rank": 1
         },
@@ -652,7 +670,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Elder Druid",
           "guild_rank": 3
         },
@@ -700,7 +718,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Elder Druid",
           "guild_rank": 3
         },
@@ -748,7 +766,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Elder Druid",
           "guild_rank": 3
         },
@@ -796,7 +814,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Elder Druid",
           "guild_rank": 3
         },
@@ -844,7 +862,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Elder Druid",
           "guild_rank": 3
         },
@@ -892,7 +910,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Elder Druid",
           "guild_rank": 3
         },
@@ -940,7 +958,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Elder Druid",
           "guild_rank": 3
         },
@@ -988,7 +1006,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Elder Druid",
           "guild_rank": 3
         },
@@ -1036,7 +1054,7 @@
         {
           "name": "El Diablo",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Elder Druid",
           "guild_rank": 3
         },
