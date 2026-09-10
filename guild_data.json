@@ -1,6 +1,6 @@
 {
   "name": "Lowly People",
-  "updated_at": "10/09/2026 às 08:54 (Brasília)",
+  "updated_at": "10/09/2026 às 12:16 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 4,
@@ -27,7 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-09-02-08": 61,
         "2026-09-02-12": 61,
         "2026-09-02-16": 61,
         "2026-09-02-18": 61,
@@ -83,7 +82,8 @@
         "2026-09-09-20": 61,
         "2026-09-09-22": 61,
         "2026-09-10-03": 61,
-        "2026-09-10-08": 61
+        "2026-09-10-08": 61,
+        "2026-09-10-12": 61
       },
       "stats": {
         "experience": 0,
@@ -106,7 +106,7 @@
     },
     {
       "name": "Achilles",
-      "level": 2000,
+      "level": 1997,
       "resets": 18,
       "vocation": "Exalted Monk",
       "nick": "",
@@ -114,7 +114,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-09-02-08": 18,
         "2026-09-02-12": 18,
         "2026-09-02-16": 18,
         "2026-09-02-18": 18,
@@ -170,7 +169,8 @@
         "2026-09-09-20": 18,
         "2026-09-09-22": 18,
         "2026-09-10-03": 18,
-        "2026-09-10-08": 18
+        "2026-09-10-08": 18,
+        "2026-09-10-12": 18
       },
       "stats": {
         "experience": 0,
@@ -183,7 +183,13 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Sep 10, 2026 12:15",
+          "by": "a makara (monstro)",
+          "is_pvp": false
+        }
+      ],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -210,7 +216,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-09-02-08": 55,
         "2026-09-02-12": 55,
         "2026-09-02-16": 55,
         "2026-09-02-18": 55,
@@ -266,7 +271,8 @@
         "2026-09-09-20": 55,
         "2026-09-09-22": 55,
         "2026-09-10-03": 55,
-        "2026-09-10-08": 55
+        "2026-09-10-08": 55,
+        "2026-09-10-12": 55
       },
       "stats": {
         "experience": 0,
@@ -297,7 +303,6 @@
       "rank": "The Leader",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-09-02-08": 25,
         "2026-09-02-12": 25,
         "2026-09-02-16": 25,
         "2026-09-02-18": 25,
@@ -353,7 +358,8 @@
         "2026-09-09-20": 25,
         "2026-09-09-22": 25,
         "2026-09-10-03": 25,
-        "2026-09-10-08": 25
+        "2026-09-10-08": 25,
+        "2026-09-10-12": 25
       },
       "stats": {
         "experience": 0,
@@ -405,7 +411,7 @@
         {
           "name": "Achilles",
           "value": 18,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 4
         }
@@ -425,7 +431,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -459,7 +465,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -493,7 +499,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -527,7 +533,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -561,7 +567,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -595,7 +601,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -629,7 +635,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -663,7 +669,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
@@ -697,7 +703,7 @@
         {
           "name": "Achilles",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Exalted Monk",
           "guild_rank": 2
         },
