@@ -1,116 +1,20 @@
 {
   "name": "Lowly People",
-  "updated_at": "10/09/2026 às 22:34 (Brasília)",
+  "updated_at": "11/09/2026 às 03:41 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 4,
-  "online_count": 1,
-  "offline_count": 3,
+  "online_count": 3,
+  "offline_count": 1,
   "guild_day_start": "10/09/2026 às 22:00 (Brasília)",
   "members": [
-    {
-      "name": "Kolwaski",
-      "level": 2000,
-      "resets": 55,
-      "vocation": "Royal Paladin",
-      "nick": "",
-      "status": "online",
-      "rank": "Member",
-      "reset_history": [
-        {
-          "resets": 55,
-          "time": "13/08/2026 18:32"
-        },
-        {
-          "resets": 54,
-          "time": "08/08/2026 01:00"
-        }
-      ],
-      "hourly_snapshots": {
-        "2026-09-02-22": 55,
-        "2026-09-03-03": 55,
-        "2026-09-03-08": 55,
-        "2026-09-03-12": 55,
-        "2026-09-03-15": 55,
-        "2026-09-03-18": 55,
-        "2026-09-03-20": 55,
-        "2026-09-03-22": 55,
-        "2026-09-04-03": 55,
-        "2026-09-04-08": 55,
-        "2026-09-04-12": 55,
-        "2026-09-04-15": 55,
-        "2026-09-04-18": 55,
-        "2026-09-04-20": 55,
-        "2026-09-04-22": 55,
-        "2026-09-05-03": 55,
-        "2026-09-05-08": 55,
-        "2026-09-05-10": 55,
-        "2026-09-05-13": 55,
-        "2026-09-05-15": 55,
-        "2026-09-05-17": 55,
-        "2026-09-05-19": 55,
-        "2026-09-05-21": 55,
-        "2026-09-06-02": 55,
-        "2026-09-06-06": 55,
-        "2026-09-06-10": 55,
-        "2026-09-06-13": 55,
-        "2026-09-06-15": 55,
-        "2026-09-06-17": 55,
-        "2026-09-06-19": 55,
-        "2026-09-06-21": 55,
-        "2026-09-07-02": 55,
-        "2026-09-07-07": 55,
-        "2026-09-07-13": 55,
-        "2026-09-07-17": 55,
-        "2026-09-07-20": 55,
-        "2026-09-07-22": 55,
-        "2026-09-08-03": 55,
-        "2026-09-08-08": 55,
-        "2026-09-08-12": 55,
-        "2026-09-08-16": 55,
-        "2026-09-08-19": 55,
-        "2026-09-08-21": 55,
-        "2026-09-09-02": 55,
-        "2026-09-09-07": 55,
-        "2026-09-09-11": 55,
-        "2026-09-09-15": 55,
-        "2026-09-09-18": 55,
-        "2026-09-09-20": 55,
-        "2026-09-09-22": 55,
-        "2026-09-10-03": 55,
-        "2026-09-10-08": 55,
-        "2026-09-10-12": 55,
-        "2026-09-10-15": 55,
-        "2026-09-10-18": 55,
-        "2026-09-10-20": 55,
-        "2026-09-10-22": 55
-      },
-      "stats": {
-        "experience": 0,
-        "magic": 0,
-        "fist": 0,
-        "club": 0,
-        "sword": 0,
-        "axe": 0,
-        "distance": 0,
-        "shielding": 0,
-        "fishing": 0
-      },
-      "deaths": [],
-      "pvp_kills_total": 0,
-      "pvp_kills_today": 0,
-      "pvp_kills_week": 0,
-      "war_kills": 0,
-      "war_kills_day": 0,
-      "war_kills_week": 0
-    },
     {
       "name": "Gizao",
       "level": 2000,
       "resets": 61,
       "vocation": "Royal Paladin",
       "nick": "",
-      "status": "offline",
+      "status": "online",
       "rank": "The Leader",
       "reset_history": [
         {
@@ -123,7 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-09-02-22": 61,
         "2026-09-03-03": 61,
         "2026-09-03-08": 61,
         "2026-09-03-12": 61,
@@ -179,100 +82,8 @@
         "2026-09-10-15": 61,
         "2026-09-10-18": 61,
         "2026-09-10-20": 61,
-        "2026-09-10-22": 61
-      },
-      "stats": {
-        "experience": 0,
-        "magic": 0,
-        "fist": 0,
-        "club": 0,
-        "sword": 0,
-        "axe": 0,
-        "distance": 0,
-        "shielding": 0,
-        "fishing": 0
-      },
-      "deaths": [
-        {
-          "time": "Sep 10, 2026 19:48",
-          "by": "Julian Alvarez (jogador)",
-          "is_pvp": true
-        }
-      ],
-      "pvp_kills_total": 0,
-      "pvp_kills_today": 0,
-      "pvp_kills_week": 0,
-      "war_kills": 0,
-      "war_kills_day": 0,
-      "war_kills_week": 0
-    },
-    {
-      "name": "Ultimate Warrior",
-      "level": 2000,
-      "resets": 25,
-      "vocation": "Elite Knight",
-      "nick": "",
-      "status": "offline",
-      "rank": "The Leader",
-      "reset_history": [],
-      "hourly_snapshots": {
-        "2026-09-02-22": 25,
-        "2026-09-03-03": 25,
-        "2026-09-03-08": 25,
-        "2026-09-03-12": 25,
-        "2026-09-03-15": 25,
-        "2026-09-03-18": 25,
-        "2026-09-03-20": 25,
-        "2026-09-03-22": 25,
-        "2026-09-04-03": 25,
-        "2026-09-04-08": 25,
-        "2026-09-04-12": 25,
-        "2026-09-04-15": 25,
-        "2026-09-04-18": 25,
-        "2026-09-04-20": 25,
-        "2026-09-04-22": 25,
-        "2026-09-05-03": 25,
-        "2026-09-05-08": 25,
-        "2026-09-05-10": 25,
-        "2026-09-05-13": 25,
-        "2026-09-05-15": 25,
-        "2026-09-05-17": 25,
-        "2026-09-05-19": 25,
-        "2026-09-05-21": 25,
-        "2026-09-06-02": 25,
-        "2026-09-06-06": 25,
-        "2026-09-06-10": 25,
-        "2026-09-06-13": 25,
-        "2026-09-06-15": 25,
-        "2026-09-06-17": 25,
-        "2026-09-06-19": 25,
-        "2026-09-06-21": 25,
-        "2026-09-07-02": 25,
-        "2026-09-07-07": 25,
-        "2026-09-07-13": 25,
-        "2026-09-07-17": 25,
-        "2026-09-07-20": 25,
-        "2026-09-07-22": 25,
-        "2026-09-08-03": 25,
-        "2026-09-08-08": 25,
-        "2026-09-08-12": 25,
-        "2026-09-08-16": 25,
-        "2026-09-08-19": 25,
-        "2026-09-08-21": 25,
-        "2026-09-09-02": 25,
-        "2026-09-09-07": 25,
-        "2026-09-09-11": 25,
-        "2026-09-09-15": 25,
-        "2026-09-09-18": 25,
-        "2026-09-09-20": 25,
-        "2026-09-09-22": 25,
-        "2026-09-10-03": 25,
-        "2026-09-10-08": 25,
-        "2026-09-10-12": 25,
-        "2026-09-10-15": 25,
-        "2026-09-10-18": 25,
-        "2026-09-10-20": 25,
-        "2026-09-10-22": 25
+        "2026-09-10-22": 61,
+        "2026-09-11-03": 61
       },
       "stats": {
         "experience": 0,
@@ -299,11 +110,10 @@
       "resets": 18,
       "vocation": "Exalted Monk",
       "nick": "",
-      "status": "offline",
+      "status": "online",
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-09-02-22": 18,
         "2026-09-03-03": 18,
         "2026-09-03-08": 18,
         "2026-09-03-12": 18,
@@ -359,7 +169,191 @@
         "2026-09-10-15": 18,
         "2026-09-10-18": 18,
         "2026-09-10-20": 18,
-        "2026-09-10-22": 18
+        "2026-09-10-22": 18,
+        "2026-09-11-03": 18
+      },
+      "stats": {
+        "experience": 0,
+        "magic": 0,
+        "fist": 0,
+        "club": 0,
+        "sword": 0,
+        "axe": 0,
+        "distance": 0,
+        "shielding": 0,
+        "fishing": 0
+      },
+      "deaths": [],
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0,
+      "war_kills": 0,
+      "war_kills_day": 0,
+      "war_kills_week": 0
+    },
+    {
+      "name": "Kolwaski",
+      "level": 2000,
+      "resets": 55,
+      "vocation": "Royal Paladin",
+      "nick": "",
+      "status": "online",
+      "rank": "Member",
+      "reset_history": [
+        {
+          "resets": 55,
+          "time": "13/08/2026 18:32"
+        },
+        {
+          "resets": 54,
+          "time": "08/08/2026 01:00"
+        }
+      ],
+      "hourly_snapshots": {
+        "2026-09-03-03": 55,
+        "2026-09-03-08": 55,
+        "2026-09-03-12": 55,
+        "2026-09-03-15": 55,
+        "2026-09-03-18": 55,
+        "2026-09-03-20": 55,
+        "2026-09-03-22": 55,
+        "2026-09-04-03": 55,
+        "2026-09-04-08": 55,
+        "2026-09-04-12": 55,
+        "2026-09-04-15": 55,
+        "2026-09-04-18": 55,
+        "2026-09-04-20": 55,
+        "2026-09-04-22": 55,
+        "2026-09-05-03": 55,
+        "2026-09-05-08": 55,
+        "2026-09-05-10": 55,
+        "2026-09-05-13": 55,
+        "2026-09-05-15": 55,
+        "2026-09-05-17": 55,
+        "2026-09-05-19": 55,
+        "2026-09-05-21": 55,
+        "2026-09-06-02": 55,
+        "2026-09-06-06": 55,
+        "2026-09-06-10": 55,
+        "2026-09-06-13": 55,
+        "2026-09-06-15": 55,
+        "2026-09-06-17": 55,
+        "2026-09-06-19": 55,
+        "2026-09-06-21": 55,
+        "2026-09-07-02": 55,
+        "2026-09-07-07": 55,
+        "2026-09-07-13": 55,
+        "2026-09-07-17": 55,
+        "2026-09-07-20": 55,
+        "2026-09-07-22": 55,
+        "2026-09-08-03": 55,
+        "2026-09-08-08": 55,
+        "2026-09-08-12": 55,
+        "2026-09-08-16": 55,
+        "2026-09-08-19": 55,
+        "2026-09-08-21": 55,
+        "2026-09-09-02": 55,
+        "2026-09-09-07": 55,
+        "2026-09-09-11": 55,
+        "2026-09-09-15": 55,
+        "2026-09-09-18": 55,
+        "2026-09-09-20": 55,
+        "2026-09-09-22": 55,
+        "2026-09-10-03": 55,
+        "2026-09-10-08": 55,
+        "2026-09-10-12": 55,
+        "2026-09-10-15": 55,
+        "2026-09-10-18": 55,
+        "2026-09-10-20": 55,
+        "2026-09-10-22": 55,
+        "2026-09-11-03": 55
+      },
+      "stats": {
+        "experience": 0,
+        "magic": 0,
+        "fist": 0,
+        "club": 0,
+        "sword": 0,
+        "axe": 0,
+        "distance": 0,
+        "shielding": 0,
+        "fishing": 0
+      },
+      "deaths": [],
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0,
+      "war_kills": 0,
+      "war_kills_day": 0,
+      "war_kills_week": 0
+    },
+    {
+      "name": "Ultimate Warrior",
+      "level": 2000,
+      "resets": 25,
+      "vocation": "Elite Knight",
+      "nick": "",
+      "status": "offline",
+      "rank": "The Leader",
+      "reset_history": [],
+      "hourly_snapshots": {
+        "2026-09-03-03": 25,
+        "2026-09-03-08": 25,
+        "2026-09-03-12": 25,
+        "2026-09-03-15": 25,
+        "2026-09-03-18": 25,
+        "2026-09-03-20": 25,
+        "2026-09-03-22": 25,
+        "2026-09-04-03": 25,
+        "2026-09-04-08": 25,
+        "2026-09-04-12": 25,
+        "2026-09-04-15": 25,
+        "2026-09-04-18": 25,
+        "2026-09-04-20": 25,
+        "2026-09-04-22": 25,
+        "2026-09-05-03": 25,
+        "2026-09-05-08": 25,
+        "2026-09-05-10": 25,
+        "2026-09-05-13": 25,
+        "2026-09-05-15": 25,
+        "2026-09-05-17": 25,
+        "2026-09-05-19": 25,
+        "2026-09-05-21": 25,
+        "2026-09-06-02": 25,
+        "2026-09-06-06": 25,
+        "2026-09-06-10": 25,
+        "2026-09-06-13": 25,
+        "2026-09-06-15": 25,
+        "2026-09-06-17": 25,
+        "2026-09-06-19": 25,
+        "2026-09-06-21": 25,
+        "2026-09-07-02": 25,
+        "2026-09-07-07": 25,
+        "2026-09-07-13": 25,
+        "2026-09-07-17": 25,
+        "2026-09-07-20": 25,
+        "2026-09-07-22": 25,
+        "2026-09-08-03": 25,
+        "2026-09-08-08": 25,
+        "2026-09-08-12": 25,
+        "2026-09-08-16": 25,
+        "2026-09-08-19": 25,
+        "2026-09-08-21": 25,
+        "2026-09-09-02": 25,
+        "2026-09-09-07": 25,
+        "2026-09-09-11": 25,
+        "2026-09-09-15": 25,
+        "2026-09-09-18": 25,
+        "2026-09-09-20": 25,
+        "2026-09-09-22": 25,
+        "2026-09-10-03": 25,
+        "2026-09-10-08": 25,
+        "2026-09-10-12": 25,
+        "2026-09-10-15": 25,
+        "2026-09-10-18": 25,
+        "2026-09-10-20": 25,
+        "2026-09-10-22": 25,
+        "2026-09-11-03": 25
       },
       "stats": {
         "experience": 0,
@@ -422,31 +416,31 @@
       "val_label": "Experience",
       "entries": [
         {
-          "name": "Kolwaski",
+          "name": "Gizao",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
-          "name": "Gizao",
+          "name": "Achilles",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Exalted Monk",
+          "guild_rank": 2
+        },
+        {
+          "name": "Kolwaski",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 2
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
-          "guild_rank": 3
-        },
-        {
-          "name": "Achilles",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Exalted Monk",
           "guild_rank": 4
         }
       ]
@@ -456,31 +450,31 @@
       "val_label": "Magic Level",
       "entries": [
         {
-          "name": "Kolwaski",
+          "name": "Gizao",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
-          "name": "Gizao",
+          "name": "Achilles",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Exalted Monk",
+          "guild_rank": 2
+        },
+        {
+          "name": "Kolwaski",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 2
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
-          "guild_rank": 3
-        },
-        {
-          "name": "Achilles",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Exalted Monk",
           "guild_rank": 4
         }
       ]
@@ -490,31 +484,31 @@
       "val_label": "Fist",
       "entries": [
         {
-          "name": "Kolwaski",
+          "name": "Gizao",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
-          "name": "Gizao",
+          "name": "Achilles",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Exalted Monk",
+          "guild_rank": 2
+        },
+        {
+          "name": "Kolwaski",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 2
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
-          "guild_rank": 3
-        },
-        {
-          "name": "Achilles",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Exalted Monk",
           "guild_rank": 4
         }
       ]
@@ -524,31 +518,31 @@
       "val_label": "Club",
       "entries": [
         {
-          "name": "Kolwaski",
+          "name": "Gizao",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
-          "name": "Gizao",
+          "name": "Achilles",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Exalted Monk",
+          "guild_rank": 2
+        },
+        {
+          "name": "Kolwaski",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 2
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
-          "guild_rank": 3
-        },
-        {
-          "name": "Achilles",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Exalted Monk",
           "guild_rank": 4
         }
       ]
@@ -558,31 +552,31 @@
       "val_label": "Sword",
       "entries": [
         {
-          "name": "Kolwaski",
+          "name": "Gizao",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
-          "name": "Gizao",
+          "name": "Achilles",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Exalted Monk",
+          "guild_rank": 2
+        },
+        {
+          "name": "Kolwaski",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 2
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
-          "guild_rank": 3
-        },
-        {
-          "name": "Achilles",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Exalted Monk",
           "guild_rank": 4
         }
       ]
@@ -592,31 +586,31 @@
       "val_label": "Axe",
       "entries": [
         {
-          "name": "Kolwaski",
+          "name": "Gizao",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
-          "name": "Gizao",
+          "name": "Achilles",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Exalted Monk",
+          "guild_rank": 2
+        },
+        {
+          "name": "Kolwaski",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 2
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
-          "guild_rank": 3
-        },
-        {
-          "name": "Achilles",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Exalted Monk",
           "guild_rank": 4
         }
       ]
@@ -626,31 +620,31 @@
       "val_label": "Distance",
       "entries": [
         {
-          "name": "Kolwaski",
+          "name": "Gizao",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
-          "name": "Gizao",
+          "name": "Achilles",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Exalted Monk",
+          "guild_rank": 2
+        },
+        {
+          "name": "Kolwaski",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 2
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
-          "guild_rank": 3
-        },
-        {
-          "name": "Achilles",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Exalted Monk",
           "guild_rank": 4
         }
       ]
@@ -660,31 +654,31 @@
       "val_label": "Shielding",
       "entries": [
         {
-          "name": "Kolwaski",
+          "name": "Gizao",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
-          "name": "Gizao",
+          "name": "Achilles",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Exalted Monk",
+          "guild_rank": 2
+        },
+        {
+          "name": "Kolwaski",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 2
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
-          "guild_rank": 3
-        },
-        {
-          "name": "Achilles",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Exalted Monk",
           "guild_rank": 4
         }
       ]
@@ -694,31 +688,31 @@
       "val_label": "Fishing",
       "entries": [
         {
-          "name": "Kolwaski",
+          "name": "Gizao",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
-          "name": "Gizao",
+          "name": "Achilles",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Exalted Monk",
+          "guild_rank": 2
+        },
+        {
+          "name": "Kolwaski",
           "value": 0,
           "level": 2000,
           "vocation": "Royal Paladin",
-          "guild_rank": 2
+          "guild_rank": 3
         },
         {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
-          "guild_rank": 3
-        },
-        {
-          "name": "Achilles",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Exalted Monk",
           "guild_rank": 4
         }
       ]
