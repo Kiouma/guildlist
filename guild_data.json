@@ -1,12 +1,12 @@
 {
   "name": "Lowly People",
-  "updated_at": "23/09/2026 às 20:15 (Brasília)",
+  "updated_at": "23/09/2026 às 22:44 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 4,
-  "online_count": 3,
-  "offline_count": 1,
-  "guild_day_start": "22/09/2026 às 22:00 (Brasília)",
+  "online_count": 2,
+  "offline_count": 2,
+  "guild_day_start": "23/09/2026 às 22:00 (Brasília)",
   "members": [
     {
       "name": "Gizao",
@@ -27,7 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-09-15-20": 61,
         "2026-09-15-22": 61,
         "2026-09-16-03": 61,
         "2026-09-16-09": 61,
@@ -78,7 +77,8 @@
         "2026-09-23-09": 61,
         "2026-09-23-14": 61,
         "2026-09-23-17": 61,
-        "2026-09-23-20": 61
+        "2026-09-23-20": 61,
+        "2026-09-23-22": 61
       },
       "stats": {
         "experience": 0,
@@ -109,7 +109,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-09-15-20": 18,
         "2026-09-15-22": 18,
         "2026-09-16-03": 18,
         "2026-09-16-09": 18,
@@ -160,98 +159,8 @@
         "2026-09-23-09": 18,
         "2026-09-23-14": 18,
         "2026-09-23-17": 18,
-        "2026-09-23-20": 18
-      },
-      "stats": {
-        "experience": 0,
-        "magic": 0,
-        "fist": 0,
-        "club": 0,
-        "sword": 0,
-        "axe": 0,
-        "distance": 0,
-        "shielding": 0,
-        "fishing": 0
-      },
-      "deaths": [],
-      "pvp_kills_total": 0,
-      "pvp_kills_today": 0,
-      "pvp_kills_week": 0,
-      "war_kills": 0,
-      "war_kills_day": 0,
-      "war_kills_week": 0
-    },
-    {
-      "name": "Kolwaski",
-      "level": 2000,
-      "resets": 55,
-      "vocation": "Royal Paladin",
-      "nick": "",
-      "status": "online",
-      "rank": "Member",
-      "reset_history": [
-        {
-          "resets": 55,
-          "time": "13/08/2026 18:32"
-        },
-        {
-          "resets": 54,
-          "time": "08/08/2026 01:00"
-        }
-      ],
-      "hourly_snapshots": {
-        "2026-09-15-20": 55,
-        "2026-09-15-22": 55,
-        "2026-09-16-03": 55,
-        "2026-09-16-09": 55,
-        "2026-09-16-14": 55,
-        "2026-09-16-17": 55,
-        "2026-09-16-20": 55,
-        "2026-09-16-22": 55,
-        "2026-09-17-03": 55,
-        "2026-09-17-09": 55,
-        "2026-09-17-14": 55,
-        "2026-09-17-17": 55,
-        "2026-09-17-20": 55,
-        "2026-09-17-22": 55,
-        "2026-09-18-03": 55,
-        "2026-09-18-08": 55,
-        "2026-09-18-12": 55,
-        "2026-09-18-15": 55,
-        "2026-09-18-18": 55,
-        "2026-09-18-20": 55,
-        "2026-09-18-22": 55,
-        "2026-09-19-03": 55,
-        "2026-09-19-08": 55,
-        "2026-09-19-11": 55,
-        "2026-09-19-14": 55,
-        "2026-09-19-16": 55,
-        "2026-09-19-18": 55,
-        "2026-09-19-20": 55,
-        "2026-09-19-22": 55,
-        "2026-09-20-04": 55,
-        "2026-09-20-09": 55,
-        "2026-09-20-13": 55,
-        "2026-09-20-16": 55,
-        "2026-09-20-18": 55,
-        "2026-09-20-20": 55,
-        "2026-09-20-22": 55,
-        "2026-09-21-04": 55,
-        "2026-09-21-11": 55,
-        "2026-09-21-16": 55,
-        "2026-09-21-19": 55,
-        "2026-09-21-22": 55,
-        "2026-09-22-03": 55,
-        "2026-09-22-09": 55,
-        "2026-09-22-14": 55,
-        "2026-09-22-17": 55,
-        "2026-09-22-20": 55,
-        "2026-09-22-22": 55,
-        "2026-09-23-03": 55,
-        "2026-09-23-09": 55,
-        "2026-09-23-14": 55,
-        "2026-09-23-17": 55,
-        "2026-09-23-20": 55
+        "2026-09-23-20": 18,
+        "2026-09-23-22": 18
       },
       "stats": {
         "experience": 0,
@@ -282,7 +191,6 @@
       "rank": "The Leader",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-09-15-20": 25,
         "2026-09-15-22": 25,
         "2026-09-16-03": 25,
         "2026-09-16-09": 25,
@@ -333,7 +241,99 @@
         "2026-09-23-09": 25,
         "2026-09-23-14": 25,
         "2026-09-23-17": 25,
-        "2026-09-23-20": 25
+        "2026-09-23-20": 25,
+        "2026-09-23-22": 25
+      },
+      "stats": {
+        "experience": 0,
+        "magic": 0,
+        "fist": 0,
+        "club": 0,
+        "sword": 0,
+        "axe": 0,
+        "distance": 0,
+        "shielding": 0,
+        "fishing": 0
+      },
+      "deaths": [],
+      "pvp_kills_total": 0,
+      "pvp_kills_today": 0,
+      "pvp_kills_week": 0,
+      "war_kills": 0,
+      "war_kills_day": 0,
+      "war_kills_week": 0
+    },
+    {
+      "name": "Kolwaski",
+      "level": 2000,
+      "resets": 55,
+      "vocation": "Royal Paladin",
+      "nick": "",
+      "status": "offline",
+      "rank": "Member",
+      "reset_history": [
+        {
+          "resets": 55,
+          "time": "13/08/2026 18:32"
+        },
+        {
+          "resets": 54,
+          "time": "08/08/2026 01:00"
+        }
+      ],
+      "hourly_snapshots": {
+        "2026-09-15-22": 55,
+        "2026-09-16-03": 55,
+        "2026-09-16-09": 55,
+        "2026-09-16-14": 55,
+        "2026-09-16-17": 55,
+        "2026-09-16-20": 55,
+        "2026-09-16-22": 55,
+        "2026-09-17-03": 55,
+        "2026-09-17-09": 55,
+        "2026-09-17-14": 55,
+        "2026-09-17-17": 55,
+        "2026-09-17-20": 55,
+        "2026-09-17-22": 55,
+        "2026-09-18-03": 55,
+        "2026-09-18-08": 55,
+        "2026-09-18-12": 55,
+        "2026-09-18-15": 55,
+        "2026-09-18-18": 55,
+        "2026-09-18-20": 55,
+        "2026-09-18-22": 55,
+        "2026-09-19-03": 55,
+        "2026-09-19-08": 55,
+        "2026-09-19-11": 55,
+        "2026-09-19-14": 55,
+        "2026-09-19-16": 55,
+        "2026-09-19-18": 55,
+        "2026-09-19-20": 55,
+        "2026-09-19-22": 55,
+        "2026-09-20-04": 55,
+        "2026-09-20-09": 55,
+        "2026-09-20-13": 55,
+        "2026-09-20-16": 55,
+        "2026-09-20-18": 55,
+        "2026-09-20-20": 55,
+        "2026-09-20-22": 55,
+        "2026-09-21-04": 55,
+        "2026-09-21-11": 55,
+        "2026-09-21-16": 55,
+        "2026-09-21-19": 55,
+        "2026-09-21-22": 55,
+        "2026-09-22-03": 55,
+        "2026-09-22-09": 55,
+        "2026-09-22-14": 55,
+        "2026-09-22-17": 55,
+        "2026-09-22-20": 55,
+        "2026-09-22-22": 55,
+        "2026-09-23-03": 55,
+        "2026-09-23-09": 55,
+        "2026-09-23-14": 55,
+        "2026-09-23-17": 55,
+        "2026-09-23-20": 55,
+        "2026-09-23-22": 55
       },
       "stats": {
         "experience": 0,
@@ -410,17 +410,17 @@
           "guild_rank": 2
         },
         {
-          "name": "Kolwaski",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 3
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 3
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 4
         }
       ]
@@ -444,17 +444,17 @@
           "guild_rank": 2
         },
         {
-          "name": "Kolwaski",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 3
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 3
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 4
         }
       ]
@@ -478,17 +478,17 @@
           "guild_rank": 2
         },
         {
-          "name": "Kolwaski",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 3
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 3
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 4
         }
       ]
@@ -512,17 +512,17 @@
           "guild_rank": 2
         },
         {
-          "name": "Kolwaski",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 3
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 3
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 4
         }
       ]
@@ -546,17 +546,17 @@
           "guild_rank": 2
         },
         {
-          "name": "Kolwaski",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 3
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 3
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 4
         }
       ]
@@ -580,17 +580,17 @@
           "guild_rank": 2
         },
         {
-          "name": "Kolwaski",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 3
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 3
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 4
         }
       ]
@@ -614,17 +614,17 @@
           "guild_rank": 2
         },
         {
-          "name": "Kolwaski",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 3
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 3
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 4
         }
       ]
@@ -648,17 +648,17 @@
           "guild_rank": 2
         },
         {
-          "name": "Kolwaski",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 3
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 3
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 4
         }
       ]
@@ -682,17 +682,17 @@
           "guild_rank": 2
         },
         {
-          "name": "Kolwaski",
-          "value": 0,
-          "level": 2000,
-          "vocation": "Royal Paladin",
-          "guild_rank": 3
-        },
-        {
           "name": "Ultimate Warrior",
           "value": 0,
           "level": 2000,
           "vocation": "Elite Knight",
+          "guild_rank": 3
+        },
+        {
+          "name": "Kolwaski",
+          "value": 0,
+          "level": 2000,
+          "vocation": "Royal Paladin",
           "guild_rank": 4
         }
       ]
