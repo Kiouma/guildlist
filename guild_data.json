@@ -1,6 +1,6 @@
 {
   "name": "Lowly People",
-  "updated_at": "29/09/2026 às 22:40 (Brasília)",
+  "updated_at": "30/09/2026 às 04:33 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 4,
@@ -27,8 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-09-21-22": 61,
-        "2026-09-22-03": 61,
         "2026-09-22-09": 61,
         "2026-09-22-14": 61,
         "2026-09-22-17": 61,
@@ -71,7 +69,8 @@
         "2026-09-29-10": 61,
         "2026-09-29-15": 61,
         "2026-09-29-19": 61,
-        "2026-09-29-22": 61
+        "2026-09-29-22": 61,
+        "2026-09-30-04": 61
       },
       "stats": {
         "experience": 0,
@@ -94,7 +93,7 @@
     },
     {
       "name": "Kolwaski",
-      "level": 1997,
+      "level": 2000,
       "resets": 55,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -111,8 +110,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-09-21-22": 55,
-        "2026-09-22-03": 55,
         "2026-09-22-09": 55,
         "2026-09-22-14": 55,
         "2026-09-22-17": 55,
@@ -155,7 +152,8 @@
         "2026-09-29-10": 55,
         "2026-09-29-15": 55,
         "2026-09-29-19": 55,
-        "2026-09-29-22": 55
+        "2026-09-29-22": 55,
+        "2026-09-30-04": 55
       },
       "stats": {
         "experience": 0,
@@ -192,8 +190,6 @@
       "rank": "The Leader",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-09-21-22": 25,
-        "2026-09-22-03": 25,
         "2026-09-22-09": 25,
         "2026-09-22-14": 25,
         "2026-09-22-17": 25,
@@ -236,7 +232,8 @@
         "2026-09-29-10": 25,
         "2026-09-29-15": 25,
         "2026-09-29-19": 25,
-        "2026-09-29-22": 25
+        "2026-09-29-22": 25,
+        "2026-09-30-04": 25
       },
       "stats": {
         "experience": 0,
@@ -267,8 +264,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-09-21-22": 18,
-        "2026-09-22-03": 18,
         "2026-09-22-09": 18,
         "2026-09-22-14": 18,
         "2026-09-22-17": 18,
@@ -311,7 +306,8 @@
         "2026-09-29-10": 18,
         "2026-09-29-15": 18,
         "2026-09-29-19": 18,
-        "2026-09-29-22": 18
+        "2026-09-29-22": 18,
+        "2026-09-30-04": 18
       },
       "stats": {
         "experience": 0,
@@ -349,7 +345,7 @@
         {
           "name": "Kolwaski",
           "value": 55,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -383,7 +379,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -417,7 +413,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -451,7 +447,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -485,7 +481,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -519,7 +515,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -553,7 +549,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -587,7 +583,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -621,7 +617,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -655,7 +651,7 @@
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
