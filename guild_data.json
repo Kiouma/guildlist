@@ -1,16 +1,16 @@
 {
   "name": "Lowly People",
-  "updated_at": "29/09/2026 às 19:42 (Brasília)",
+  "updated_at": "29/09/2026 às 22:40 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 4,
   "online_count": 2,
   "offline_count": 2,
-  "guild_day_start": "28/09/2026 às 22:00 (Brasília)",
+  "guild_day_start": "29/09/2026 às 22:00 (Brasília)",
   "members": [
     {
       "name": "Gizao",
-      "level": 1997,
+      "level": 2000,
       "resets": 61,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -27,7 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-09-21-19": 61,
         "2026-09-21-22": 61,
         "2026-09-22-03": 61,
         "2026-09-22-09": 61,
@@ -71,7 +70,8 @@
         "2026-09-29-03": 61,
         "2026-09-29-10": 61,
         "2026-09-29-15": 61,
-        "2026-09-29-19": 61
+        "2026-09-29-19": 61,
+        "2026-09-29-22": 61
       },
       "stats": {
         "experience": 0,
@@ -94,7 +94,7 @@
     },
     {
       "name": "Kolwaski",
-      "level": 2000,
+      "level": 1997,
       "resets": 55,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -111,7 +111,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-09-21-19": 55,
         "2026-09-21-22": 55,
         "2026-09-22-03": 55,
         "2026-09-22-09": 55,
@@ -155,7 +154,8 @@
         "2026-09-29-03": 55,
         "2026-09-29-10": 55,
         "2026-09-29-15": 55,
-        "2026-09-29-19": 55
+        "2026-09-29-19": 55,
+        "2026-09-29-22": 55
       },
       "stats": {
         "experience": 0,
@@ -168,7 +168,13 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Sep 29, 2026 22:13",
+          "by": "a haunted hunter (monstro)",
+          "is_pvp": false
+        }
+      ],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -186,7 +192,6 @@
       "rank": "The Leader",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-09-21-19": 25,
         "2026-09-21-22": 25,
         "2026-09-22-03": 25,
         "2026-09-22-09": 25,
@@ -230,7 +235,8 @@
         "2026-09-29-03": 25,
         "2026-09-29-10": 25,
         "2026-09-29-15": 25,
-        "2026-09-29-19": 25
+        "2026-09-29-19": 25,
+        "2026-09-29-22": 25
       },
       "stats": {
         "experience": 0,
@@ -261,7 +267,6 @@
       "rank": "Member",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-09-21-19": 18,
         "2026-09-21-22": 18,
         "2026-09-22-03": 18,
         "2026-09-22-09": 18,
@@ -305,7 +310,8 @@
         "2026-09-29-03": 18,
         "2026-09-29-10": 18,
         "2026-09-29-15": 18,
-        "2026-09-29-19": 18
+        "2026-09-29-19": 18,
+        "2026-09-29-22": 18
       },
       "stats": {
         "experience": 0,
@@ -336,14 +342,14 @@
         {
           "name": "Gizao",
           "value": 61,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Kolwaski",
           "value": 55,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -370,14 +376,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -404,14 +410,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -438,14 +444,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -472,14 +478,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -506,14 +512,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -540,14 +546,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -574,14 +580,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -608,14 +614,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
@@ -642,14 +648,14 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
         {
           "name": "Kolwaski",
           "value": 0,
-          "level": 2000,
+          "level": 1997,
           "vocation": "Royal Paladin",
           "guild_rank": 2
         },
