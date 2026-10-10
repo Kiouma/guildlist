@@ -1,12 +1,12 @@
 {
   "name": "Lowly People",
-  "updated_at": "09/10/2026 às 20:36 (Brasília)",
+  "updated_at": "09/10/2026 às 23:52 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 2,
   "online_count": 1,
   "offline_count": 1,
-  "guild_day_start": "08/10/2026 às 22:00 (Brasília)",
+  "guild_day_start": "09/10/2026 às 22:00 (Brasília)",
   "members": [
     {
       "name": "Gizao",
@@ -27,7 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-10-01-22": 61,
         "2026-10-02-04": 61,
         "2026-10-02-11": 61,
         "2026-10-02-16": 61,
@@ -62,7 +61,8 @@
         "2026-10-09-03": 61,
         "2026-10-09-10": 61,
         "2026-10-09-16": 61,
-        "2026-10-09-20": 61
+        "2026-10-09-20": 61,
+        "2026-10-09-23": 61
       },
       "stats": {
         "experience": 0,
@@ -75,7 +75,13 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [],
+      "deaths": [
+        {
+          "time": "Oct 09, 2026 20:46",
+          "by": "Vikthor (jogador)",
+          "is_pvp": true
+        }
+      ],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -93,7 +99,6 @@
       "rank": "The Leader",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-10-01-22": 25,
         "2026-10-02-04": 25,
         "2026-10-02-11": 25,
         "2026-10-02-16": 25,
@@ -128,7 +133,8 @@
         "2026-10-09-03": 25,
         "2026-10-09-10": 25,
         "2026-10-09-16": 25,
-        "2026-10-09-20": 25
+        "2026-10-09-20": 25,
+        "2026-10-09-23": 25
       },
       "stats": {
         "experience": 0,
