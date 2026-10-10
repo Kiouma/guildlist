@@ -1,6 +1,6 @@
 {
   "name": "Lowly People",
-  "updated_at": "10/10/2026 às 06:08 (Brasília)",
+  "updated_at": "10/10/2026 às 12:35 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 2,
@@ -10,7 +10,7 @@
   "members": [
     {
       "name": "Gizao",
-      "level": 1997,
+      "level": 2000,
       "resets": 61,
       "vocation": "Royal Paladin",
       "nick": "",
@@ -27,7 +27,6 @@
         }
       ],
       "hourly_snapshots": {
-        "2026-10-02-11": 61,
         "2026-10-02-16": 61,
         "2026-10-02-20": 61,
         "2026-10-02-23": 61,
@@ -62,7 +61,8 @@
         "2026-10-09-16": 61,
         "2026-10-09-20": 61,
         "2026-10-09-23": 61,
-        "2026-10-10-06": 61
+        "2026-10-10-06": 61,
+        "2026-10-10-12": 61
       },
       "stats": {
         "experience": 0,
@@ -79,11 +79,6 @@
         {
           "time": "Oct 10, 2026 03:18",
           "by": "Tajuquinha (jogador)",
-          "is_pvp": true
-        },
-        {
-          "time": "Oct 09, 2026 20:46",
-          "by": "Vikthor (jogador)",
           "is_pvp": true
         }
       ],
@@ -104,7 +99,6 @@
       "rank": "The Leader",
       "reset_history": [],
       "hourly_snapshots": {
-        "2026-10-02-11": 25,
         "2026-10-02-16": 25,
         "2026-10-02-20": 25,
         "2026-10-02-23": 25,
@@ -139,7 +133,8 @@
         "2026-10-09-16": 25,
         "2026-10-09-20": 25,
         "2026-10-09-23": 25,
-        "2026-10-10-06": 25
+        "2026-10-10-06": 25,
+        "2026-10-10-12": 25
       },
       "stats": {
         "experience": 0,
@@ -170,7 +165,7 @@
         {
           "name": "Gizao",
           "value": 61,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -190,7 +185,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -210,7 +205,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -230,7 +225,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -250,7 +245,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -270,7 +265,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -290,7 +285,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -310,7 +305,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -330,7 +325,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
@@ -350,7 +345,7 @@
         {
           "name": "Gizao",
           "value": 0,
-          "level": 1997,
+          "level": 2000,
           "vocation": "Royal Paladin",
           "guild_rank": 1
         },
