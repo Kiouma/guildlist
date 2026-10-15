@@ -1,6 +1,6 @@
 {
   "name": "Lowly People",
-  "updated_at": "15/10/2026 às 16:29 (Brasília)",
+  "updated_at": "15/10/2026 às 19:42 (Brasília)",
   "owner": "Gizao",
   "founded": "Apr 30, 2026",
   "total_members": 2,
@@ -63,7 +63,8 @@
         "2026-10-15-02": 61,
         "2026-10-15-07": 61,
         "2026-10-15-12": 61,
-        "2026-10-15-16": 61
+        "2026-10-15-16": 61,
+        "2026-10-15-19": 61
       },
       "stats": {
         "experience": 0,
@@ -76,13 +77,7 @@
         "shielding": 0,
         "fishing": 0
       },
-      "deaths": [
-        {
-          "time": "Oct 15, 2026 08:52",
-          "by": "Skeleto (jogador)",
-          "is_pvp": true
-        }
-      ],
+      "deaths": [],
       "pvp_kills_total": 0,
       "pvp_kills_today": 0,
       "pvp_kills_week": 0,
@@ -136,7 +131,8 @@
         "2026-10-15-02": 25,
         "2026-10-15-07": 25,
         "2026-10-15-12": 25,
-        "2026-10-15-16": 25
+        "2026-10-15-16": 25,
+        "2026-10-15-19": 25
       },
       "stats": {
         "experience": 0,
